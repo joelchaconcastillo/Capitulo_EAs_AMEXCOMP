@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2018.4.16)  30 AUG 2018 16:31
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.20)  3 SEP 2018 07:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -684,10 +684,17 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 Package: ulem 2012/05/18
 \ULdepth=\dimen142
 ) (./main.aux
-LaTeX Info: Redefining \. on input line 27.
-LaTeX Info: Redefining \% on input line 27.
-LaTeX Info: Redefining \. on input line 31.
-LaTeX Info: Redefining \% on input line 31.
+LaTeX Info: Redefining \. on input line 25.
+LaTeX Info: Redefining \% on input line 25.
+LaTeX Info: Redefining \. on input line 29.
+LaTeX Info: Redefining \% on input line 29.
+
+
+LaTeX Warning: Label `fig:Simulations_Index_20' multiply defined.
+
+
+LaTeX Warning: Label `alg:SBX_Operator' multiply defined.
+
 )
 \openout1 = `main.aux'.
 
@@ -773,7 +780,111 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 157.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 157.
-(./Introduction.tex)
+(./Introduction.tex
+
+LaTeX Warning: Citation `Talbi:09' on page 1 undefined on input line 8.
+
+
+LaTeX Warning: Citation `chakraborty2008advances' on page 1 undefined on input 
+line 9.
+
+
+LaTeX Warning: Citation `storn1997differential' on page 1 undefined on input li
+ne 11.
+
+
+LaTeX Warning: Citation `das2011differential' on page 1 undefined on input line
+ 14.
+
+
+LaTeX Warning: Citation `nelder1965simplex' on page 1 undefined on input line 2
+1.
+
+
+LaTeX Warning: Citation `price1983global' on page 1 undefined on input line 22.
+
+
+
+LaTeX Warning: Citation `das2011differential' on page 1 undefined on input line
+ 25.
+
+
+LaTeX Warning: Citation `zhang2009jade' on page 1 undefined on input line 27.
+
+
+LaTeX Warning: Citation `sa2008exploration' on page 1 undefined on input line 2
+8.
+
+
+LaTeX Warning: Citation `lampinen2000stagnation' on page 1 undefined on input l
+ine 28.
+
+
+LaTeX Warning: Citation `zaharie2003control' on page 1 undefined on input line 
+28.
+
+
+LaTeX Warning: Citation `Talbi:09' on page 1 undefined on input line 33.
+
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 40.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 40.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 40.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 40.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 40.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 40.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 40.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 40.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 40.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 40.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 40.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 40.
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Citation `sa2008exploration' on page 2 undefined on input line 4
+2.
+
+
+LaTeX Warning: Citation `zaharie2003control' on page 2 undefined on input line 
+45.
+
+
+LaTeX Warning: Citation `yang2015differential' on page 2 undefined on input lin
+e 46.
+
+
+LaTeX Warning: Citation `sa2008exploration' on page 2 undefined on input line 4
+7.
+
+
+LaTeX Warning: Citation `Crepinsek:13' on page 2 undefined on input line 49.
+
+
+LaTeX Warning: Citation `segura2016novel' on page 2 undefined on input line 55.
+
+
+
+LaTeX Warning: Reference `sec:trends' on page 2 undefined on input line 71.
+
+
+LaTeX Warning: Reference `sec:Proposal' on page 2 undefined on input line 76.
+
+
+LaTeX Warning: Reference `sec:Experimental' on page 2 undefined on input line 7
+8.
+
+)
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 161.
 Package babel Info: Redefining spanish shorthand >>
@@ -799,61 +910,1561 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 165.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 165.
- (./Evolucion_Diferencial.tex)
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 169.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 169.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 169.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 169.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 169.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 169.
+ (./Evolucion_Diferencial.tex
 
-(./Operadores.tex)
+LaTeX Warning: Citation `das2011differential' on page 2 undefined on input line
+ 6.
+
+LaTeX Info: Redefining \. on input line 13.
+LaTeX Info: Redefining \% on input line 13.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 173.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 173.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 173.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 173.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 173.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 173.
- (./Conclusion.tex) (./main.bbl
+(babel)             in language  on input line 13.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 13.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 13.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 13.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 13.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 13.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 13.
+[2]
+LaTeX Info: Redefining \. on input line 78.
+LaTeX Info: Redefining \% on input line 78.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 78.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 78.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 78.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 78.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 78.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 78.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 78.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 78.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 78.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 78.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 78.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 78.
+ [3]
+
+LaTeX Warning: Citation `zaharie2003control' on page 4 undefined on input line 
+129.
+
+
+LaTeX Warning: Citation `montgomery2009differential' on page 4 undefined on inp
+ut line 132.
+
+
+LaTeX Warning: Citation `montgomery2012simple' on page 4 undefined on input lin
+e 135.
+
+
+LaTeX Warning: Citation `bolufe2013differential' on page 4 undefined on input l
+ine 141.
+
+LaTeX Info: Redefining \. on input line 150.
+LaTeX Info: Redefining \% on input line 150.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 150.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 150.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 150.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 150.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 150.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 150.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 150.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 150.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 150.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 150.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 150.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 150.
+[4]
+
+LaTeX Warning: Citation `sa2008exploration' on page 5 undefined on input line 1
+51.
+
+
+LaTeX Warning: Citation `yang2015differential' on page 5 undefined on input lin
+e 161.
+
+
+LaTeX Warning: Citation `zhao2016differential' on page 5 undefined on input lin
+e 163.
+
+
+LaTeX Warning: Citation `montgomery2012simple' on page 5 undefined on input lin
+e 176.
+
+
+LaTeX Warning: Citation `segura2016novel' on page 5 undefined on input line 179
+.
+
+
+Underfull \hbox (badness 1558) in paragraph at lines 187--187
+[][][]\OT1/cmr/m/n/8 The co-de in C++ can be down-loa-ded in the next link []$\
+OT1/cmtt/m/n/8 https : / / github . com /
+ []
+
+
+LaTeX Warning: Reference `alg:DEEDM' on page 5 undefined on input line 189.
+
+LaTeX Info: Redefining \. on input line 213.
+LaTeX Info: Redefining \% on input line 213.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 213.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 213.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 213.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 213.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 213.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 213.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 213.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 213.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 213.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 213.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 213.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 213.
+[5]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 217.
+
+
+LaTeX Warning: Reference `alg:Replacement' on page 6 undefined on input line 22
+7.
+
+
+LaTeX Warning: Reference `alg:Replacement' on page 6 undefined on input line 25
+3.
+
+
+LaTeX Warning: Reference `eqn:distance' on page 6 undefined on input line 275.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+LaTeX Info: Redefining \. on input line 283.
+LaTeX Info: Redefining \% on input line 283.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 13.
+(babel)             in language  on input line 283.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 13.
+(babel)             in language  on input line 283.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 13.
+(babel)             in language  on input line 283.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 13.
+(babel)             in language  on input line 283.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 13.
+(babel)             in language  on input line 283.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 13.
+(babel)             in language  on input line 283.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 13.
+(babel)             in language  on input line 283.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 13.
+(babel)             in language  on input line 283.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 13.
+(babel)             in language  on input line 283.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 13.
+(babel)             in language  on input line 283.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 13.
+(babel)             in language  on input line 283.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 13.
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+(babel)             in language  on input line 283.
+ [6]
+
+LaTeX Warning: Reference `eqn:distance' on page 7 undefined on input line 299.
+
+
+LaTeX Warning: Citation `segura2016novel' on page 7 undefined on input line 322
+.
+
+LaTeX Info: Redefining \. on input line 379.
+LaTeX Info: Redefining \% on input line 379.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 379.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 379.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 379.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 379.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 379.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 379.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 379.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 379.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 379.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 379.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 379.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 379.
+[7]
+
+LaTeX Warning: Reference `eqn:cr' on page 8 undefined on input line 395.
+
+
+LaTeX Warning: Citation `awad2016ensemble' on page 8 undefined on input line 40
+5.
+
+
+LaTeX Warning: Citation `brest2016shade' on page 8 undefined on input line 405.
+
+
+
+LaTeX Warning: Reference `eqn:cauchy' on page 8 undefined on input line 407.
+
+
+LaTeX Warning: Citation `elsayed2016testing' on page 8 undefined on input line 
+440.
+
+
+LaTeX Warning: Citation `awad2016ensemble' on page 8 undefined on input line 44
+0.
+
+
+LaTeX Warning: Citation `kumar2017improving' on page 8 undefined on input line 
+443.
+
+
+LaTeX Warning: Citation `brest2017single' on page 8 undefined on input line 443
+.
+
+
+LaTeX Warning: Citation `molina2017analysis' on page 8 undefined on input line 
+449.
+
+LaTeX Info: Redefining \. on input line 451.
+LaTeX Info: Redefining \% on input line 451.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 451.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 451.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 451.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 451.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 451.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 451.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 451.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 451.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 451.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 451.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 451.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 451.
+[8]
+
+LaTeX Warning: Citation `Joel:StatisticalTest' on page 9 undefined on input lin
+e 474.
+
+
+LaTeX Warning: Reference `tab:Summary_CEC2016' on page 9 undefined on input lin
+e 487.
+
+
+LaTeX Warning: Reference `tab:Summary_CEC2017' on page 9 undefined on input lin
+e 487.
+
+
+LaTeX Warning: Reference `eqn:total_scores' on page 9 undefined on input line 5
+20.
+
+LaTeX Info: Redefining \. on input line 527.
+LaTeX Info: Redefining \% on input line 527.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 527.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 527.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 527.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 527.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 527.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 527.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 527.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 527.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 527.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 527.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 527.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 527.
+[9]
+
+LaTeX Warning: Reference `fig:diversity' on page 10 undefined on input line 555
+.
+
+Package epstopdf Info: Source file: <img/ED/Diversity_Elite.eps>
+(epstopdf)                    date: 2018-08-24 13:15:00
+(epstopdf)                    size: 21957 bytes
+(epstopdf)             Output file: <img/ED/Diversity_Elite-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2018-08-24 13:15:00
+(epstopdf)                    size: 10305 bytes
+(epstopdf)             Command: <repstopdf --outfile=img/ED/Diversity_Elite-eps
+-converted-to.pdf img/ED/Diversity_Elite.eps>
+(epstopdf)             \includegraphics on input line 572.
+Package epstopdf Info: Output file is already uptodate.
+<img/ED/Diversity_Elite-eps-converted-to.pdf, id=132, 505.89pt x 722.7pt>
+File: img/ED/Diversity_Elite-eps-converted-to.pdf Graphic file (type pdf)
+
+<use img/ED/Diversity_Elite-eps-converted-to.pdf>
+Package pdftex.def Info: img/ED/Diversity_Elite-eps-converted-to.pdf used on in
+put line 572.
+(pdftex.def)             Requested size: 116.35225pt x 166.2175pt.
+Package epstopdf Info: Source file: <img/ED/Diversity_Trial.eps>
+(epstopdf)                    date: 2018-08-24 13:15:00
+(epstopdf)                    size: 22024 bytes
+(epstopdf)             Output file: <img/ED/Diversity_Trial-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2018-08-24 13:15:00
+(epstopdf)                    size: 10257 bytes
+(epstopdf)             Command: <repstopdf --outfile=img/ED/Diversity_Trial-eps
+-converted-to.pdf img/ED/Diversity_Trial.eps>
+(epstopdf)             \includegraphics on input line 573.
+Package epstopdf Info: Output file is already uptodate.
+
+<img/ED/Diversity_Trial-eps-converted-to.pdf, id=133, 505.89pt x 722.7pt>
+File: img/ED/Diversity_Trial-eps-converted-to.pdf Graphic file (type pdf)
+
+<use img/ED/Diversity_Trial-eps-converted-to.pdf>
+Package pdftex.def Info: img/ED/Diversity_Trial-eps-converted-to.pdf used on in
+put line 573.
+(pdftex.def)             Requested size: 116.35225pt x 166.2175pt.
+
+Overfull \hbox (9.26837pt too wide) in paragraph at lines 571--575
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 577.
+LaTeX Info: Redefining \% on input line 577.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 577.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 577.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 577.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 577.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 577.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 577.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 577.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 577.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 577.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 577.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 577.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 577.
+[10]
+
+LaTeX Warning: Reference `tab:Results_CEC2016' on page 11 undefined on input li
+ne 622.
+
+
+LaTeX Warning: Reference `tab:Results_CEC2017' on page 11 undefined on input li
+ne 622.
+
+Package epstopdf Info: Source file: <img/ED/Tuning_CEC.eps>
+(epstopdf)                    date: 2018-08-20 20:16:48
+(epstopdf)                    size: 18442 bytes
+(epstopdf)             Output file: <img/ED/Tuning_CEC-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-08-20 20:16:48
+(epstopdf)                    size: 7238 bytes
+(epstopdf)             Command: <repstopdf --outfile=img/ED/Tuning_CEC-eps-conv
+erted-to.pdf img/ED/Tuning_CEC.eps>
+(epstopdf)             \includegraphics on input line 730.
+Package epstopdf Info: Output file is already uptodate.
+<img/ED/Tuning_CEC-eps-converted-to.pdf, id=139, 505.89pt x 722.7pt>
+File: img/ED/Tuning_CEC-eps-converted-to.pdf Graphic file (type pdf)
+
+<use img/ED/Tuning_CEC-eps-converted-to.pdf>
+Package pdftex.def Info: img/ED/Tuning_CEC-eps-converted-to.pdf used on input l
+ine 730.
+(pdftex.def)             Requested size: 151.76816pt x 216.81166pt.
+
+Overfull \hbox (12.28421pt too wide) in paragraph at lines 720--734
+\OT1/cmr/m/n/10 fac-tors we-re con-si-de-red ($\OML/cmm/m/it/10 D[] \OT1/cmr/m/
+n/10 = \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 0[]0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10
+ 0[]1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0[]2\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 
+0[]3\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0[]4\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0
+[]5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0[]6\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0[
+]7\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0[]8\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0[]
+9\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1[]0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1[]1
+\OMS/cmsy/m/n/10 g$\OT1/cmr/m/n/10 ).
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 734.
+LaTeX Info: Redefining \% on input line 734.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 734.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 734.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 734.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 734.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 734.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 734.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 734.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 734.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 734.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 734.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 734.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 734.
+ [11 <./img/ED/Diversity_Elite-eps-converted-to.pdf> <./img/ED/Diversity_Trial-
+eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `fig:one' on page 12 undefined on input line 735.
+
+)
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 169.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 169.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 169.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 169.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 169.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 169.
+ (./Operadores.tex
+<img/Operadores/DensitySBX.png, id=169, 1290.8225pt x 920.43875pt>
+File: img/Operadores/DensitySBX.png Graphic file (type png)
+
+<use img/Operadores/DensitySBX.png>
+Package pdftex.def Info: img/Operadores/DensitySBX.png used on input line 21.
+(pdftex.def)             Requested size: 169.0pt x 120.50392pt.
+LaTeX Info: Redefining \. on input line 27.
+LaTeX Info: Redefining \% on input line 27.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 27.
+ [12]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 27.
+LaTeX Info: Redefining \% on input line 27.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 27.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 27.
+ [13 <./img/ED/Tuning_CEC-eps-converted-to.pdf>]
+LaTeX Info: Redefining \. on input line 48.
+LaTeX Info: Redefining \% on input line 48.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 48.
+ [14 <./img/Operadores/DensitySBX.png>]
+
+LaTeX Warning: Citation `Joel:SBX1994' on page 15 undefined on input line 52.
+
+
+LaTeX Warning: Citation `deb1999self' on page 15 undefined on input line 71.
+
+
+LaTeX Warning: Citation `Joel:NSGAII' on page 15 undefined on input line 95.
+
+
+LaTeX Warning: Citation `Joel:jMetal' on page 15 undefined on input line 95.
+
+LaTeX Info: Redefining \. on input line 140.
+LaTeX Info: Redefining \% on input line 140.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 140.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 140.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 140.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 140.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 140.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 140.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 140.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 140.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 140.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 140.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 140.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 140.
+[15]
+
+LaTeX Warning: Citation `Joel:NSGAII' on page 16 undefined on input line 145.
+
+LaTeX Info: Redefining \. on input line 186.
+LaTeX Info: Redefining \% on input line 186.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 186.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 186.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 186.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 186.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 186.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 186.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 186.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 186.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 186.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 186.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 186.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 186.
+[16] <img/Operadores/SBX_2D_Index_20.png, id=247, 505.89pt x 505.89pt>
+File: img/Operadores/SBX_2D_Index_20.png Graphic file (type png)
+
+<use img/Operadores/SBX_2D_Index_20.png>
+Package pdftex.def Info: img/Operadores/SBX_2D_Index_20.png used on input line 
+202.
+(pdftex.def)             Requested size: 101.40103pt x 101.40005pt.
+
+<img/Operadores/DSBX_2D_Index_20.png, id=248, 505.89pt x 505.89pt>
+File: img/Operadores/DSBX_2D_Index_20.png Graphic file (type png)
+
+<use img/Operadores/DSBX_2D_Index_20.png>
+Package pdftex.def Info: img/Operadores/DSBX_2D_Index_20.png used on input line
+ 203.
+(pdftex.def)             Requested size: 101.40103pt x 101.40005pt.
+
+<img/Operadores/SBX_3D_Index_20.png, id=249, 505.89pt x 505.89pt>
+File: img/Operadores/SBX_3D_Index_20.png Graphic file (type png)
+
+<use img/Operadores/SBX_3D_Index_20.png>
+Package pdftex.def Info: img/Operadores/SBX_3D_Index_20.png used on input line 
+204.
+(pdftex.def)             Requested size: 101.40103pt x 101.40005pt.
+
+<img/Operadores/DSBX_3D_Index_20.png, id=250, 505.89pt x 505.89pt>
+File: img/Operadores/DSBX_3D_Index_20.png Graphic file (type png)
+
+<use img/Operadores/DSBX_3D_Index_20.png>
+Package pdftex.def Info: img/Operadores/DSBX_3D_Index_20.png used on input line
+ 205.
+(pdftex.def)             Requested size: 101.40103pt x 101.40005pt.
+
+! Undefined control sequence.
+l.215 First, the most important \MOEAS
+                                      {} paradigms are defined.
+? 
+! Undefined control sequence.
+l.219 Finally, the popular \SBX
+                               {} operator, which is used extensively in thi...
+
+? 
+! Undefined control sequence.
+l.223 In the last years, a large number of \MOEAS
+                                                 {} following different desi...
+
+? 
+
+LaTeX Warning: Citation `Joel:BOOK_MOEAs' on page 17 undefined on input line 22
+5.
+
+! Undefined control sequence.
+l.227 ...nding to the principles of design, \MOEAS
+                                                  {} can be based on Pareto ...
+
+? 
+
+LaTeX Warning: Citation `pilat2010evolutionary' on page 17 undefined on input l
+ine 227.
+
+! Undefined control sequence.
+l.229 ... representatives, so in this paper \MOEAS
+                                                  {} belonging to the differ...
+
+? 
+
+LaTeX Warning: Citation `Joel:NSGAII' on page 17 undefined on input line 231.
+
+! Undefined control sequence.
+l.232 the MOEA based on Decomposition (\MOEAD
+                                             {})~\cite{Joel:MOEAD}, and the ...
+
+? 
+
+LaTeX Warning: Citation `Joel:MOEAD' on page 17 undefined on input line 232.
+
+! Undefined control sequence.
+l.232 ...bjective Optimization Algorithm (\SMSEMOA
+                                                  {})~\cite{Joel:SMSEMOA}.
+? 
+
+LaTeX Warning: Citation `Joel:SMSEMOA' on page 17 undefined on input line 232.
+
+! Undefined control sequence.
+l.242 \MOEAS
+            {} belonging to this category are based on the application of th...
+
+? 
+
+LaTeX Warning: Citation `horoba2008benefits' on page 17 undefined on input line
+ 252.
+
+LaTeX Info: Redefining \. on input line 254.
+LaTeX Info: Redefining \% on input line 254.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 254.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 254.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 254.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 254.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 254.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 254.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 254.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 254.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 254.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 254.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 254.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 254.
+[17]
+! Undefined control sequence.
+l.255 ...r techniques of this group is the \NSGAII
+                                                  {}.
+? 
+
+LaTeX Warning: Citation `Joel:NSGAII' on page 18 undefined on input line 257.
+
+! Undefined control sequence.
+l.267 Decomposition-based \MOEAS
+                                {} \cite{Joel:MOEAD} transform a \MOP{} in a...
+
+? 
+
+LaTeX Warning: Citation `Joel:MOEAD' on page 18 undefined on input line 267.
+
+! Undefined control sequence.
+l.267 ...OEAS{} \cite{Joel:MOEAD} transform a \MOP
+                                                  {} in a set of single-obje...
+
+? 
+LaTeX Info: Redefining \. on input line 274.
+LaTeX Info: Redefining \% on input line 274.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 274.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 274.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 274.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 274.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 274.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 274.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 274.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 274.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 274.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 274.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 274.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 274.
+[18 <./img/Operadores/SBX_2D_Index_20.png> <./img/Operadores/DSBX_2D_Index_20.p
+ng> <./img/Operadores/SBX_3D_Index_20.png> <./img/Operadores/DSBX_3D_Index_20.p
+ng>]
+! Undefined control sequence.
+l.275 \MOEAD
+            {}~\cite{Joel:MOEAD} is a recently designed decomposition-based ...
+
+? 
+
+LaTeX Warning: Citation `Joel:MOEAD' on page 19 undefined on input line 275.
+
+! Undefined control sequence.
+l.275 ...cently designed decomposition-based \MOEA
+                                                  {}.
+? 
+! Undefined control sequence.
+l.282 A popular variant of \MOEAD
+                                 {} is the \MOEADDE{}, which uses the \DE{} ...
+
+? 
+! Undefined control sequence.
+l.282 ...pular variant of \MOEAD{} is the \MOEADDE
+                                                  {}, which uses the \DE{} o...
+
+? 
+
+LaTeX Warning: Citation `price2006differential' on page 19 undefined on input l
+ine 282.
+
+
+LaTeX Warning: Citation `hamdan2012distribution' on page 19 undefined on input 
+line 283.
+
+
+LaTeX Warning: Citation `zhang2009performance' on page 19 undefined on input li
+ne 285.
+
+! Undefined control sequence.
+l.292 ... of the approximations attained by \MOEAS
+                                                  {}, a paradigm based on th...
+
+? 
+
+LaTeX Warning: Citation `Joel:IGDPlus_And_GDPlus' on page 19 undefined on input
+ line 296.
+
+! Undefined control sequence.
+l.302 ...indicator-based algorithm is the \SMSEMOA
+                                                  {}~\cite{Joel:SMSEMOA}.
+? 
+
+LaTeX Warning: Citation `Joel:SMSEMOA' on page 19 undefined on input line 302.
+
+! Undefined control sequence.
+l.308 Thus, \SMSEMOA
+                    {} uses the hypervolume as a density estimator which res...
+
+? 
+! Undefined control sequence.
+l.312 ...ccount the promising behavior of \SMSEMOA
+                                                  {}, it has been used in ou...
+
+? 
+<img/Operadores/DensitySBX_English.png, id=267, 1290.8225pt x 920.43875pt>
+File: img/Operadores/DensitySBX_English.png Graphic file (type png)
+
+<use img/Operadores/DensitySBX_English.png>
+Package pdftex.def Info: img/Operadores/DensitySBX_English.png used on input li
+ne 317.
+(pdftex.def)             Requested size: 180.67499pt x 128.83246pt.
+
+! Undefined control sequence.
+<argument> ...bility density function of the \SBX 
+                                                  {} operator with indexes o...
+l.318 ...nts are located in 2 and 5 respectively.}
+                                                  
+? 
+! Undefined control sequence.
+<argument> ...bility density function of the \SBX 
+                                                  {} operator with indexes o...
+l.318 ...nts are located in 2 and 5 respectively.}
+                                                  
+? 
+! Undefined control sequence.
+<argument> ...bility density function of the \SBX 
+                                                  {} operator with indexes o...
+l.318 ...nts are located in 2 and 5 respectively.}
+                                                  
+? 
+<img/Operadores/SBX_eta_20_2D_pv_1.png, id=268, 481.8pt x 361.35pt>
+File: img/Operadores/SBX_eta_20_2D_pv_1.png Graphic file (type png)
+
+<use img/Operadores/SBX_eta_20_2D_pv_1.png>
+Package pdftex.def Info: img/Operadores/SBX_eta_20_2D_pv_1.png used on input li
+ne 325.
+(pdftex.def)             Requested size: 77.73856pt x 58.30238pt.
+
+<img/Operadores/SBX_eta_20_2D_pv_01.png, id=269, 481.8pt x 361.35pt>
+File: img/Operadores/SBX_eta_20_2D_pv_01.png Graphic file (type png)
+
+<use img/Operadores/SBX_eta_20_2D_pv_01.png>
+Package pdftex.def Info: img/Operadores/SBX_eta_20_2D_pv_01.png used on input l
+ine 326.
+(pdftex.def)             Requested size: 77.73856pt x 58.30238pt.
+
+! Undefined control sequence.
+<argument> ...gnorespaces Simulations of the \SBX 
+                                                  {} operator with a distrib...
+l.328 ...nd in the right it corresponds to $0.1$.}
+                                                  
+? 
+! Undefined control sequence.
+<argument> ... }{\relax }}Simulations of the \SBX 
+                                                  {} operator with a distrib...
+l.328 ...nd in the right it corresponds to $0.1$.}
+                                                  
+? 
+! Undefined control sequence.
+<argument> ... }{\relax }}Simulations of the \SBX 
+                                                  {} operator with a distrib...
+l.328 ...nd in the right it corresponds to $0.1$.}
+                                                  
+? 
+<img/Operadores/SBX_eta_20_2D.png, id=272, 481.8pt x 361.35pt>
+File: img/Operadores/SBX_eta_20_2D.png Graphic file (type png)
+
+<use img/Operadores/SBX_eta_20_2D.png>
+Package pdftex.def Info: img/Operadores/SBX_eta_20_2D.png used on input line 33
+8.
+(pdftex.def)             Requested size: 77.73856pt x 58.30238pt.
+
+<img/Operadores/SBX_eta_20_3D.png, id=273, 481.8pt x 361.35pt>
+File: img/Operadores/SBX_eta_20_3D.png Graphic file (type png)
+
+<use img/Operadores/SBX_eta_20_3D.png>
+Package pdftex.def Info: img/Operadores/SBX_eta_20_3D.png used on input line 33
+9.
+(pdftex.def)             Requested size: 77.73856pt x 58.30238pt.
+
+! Undefined control sequence.
+<argument> ...gnorespaces Simulations of the \SBX 
+                                                  {} operator with a distrib...
+l.341 ...or two and three variables respectively.}
+                                                  
+? 
+! Undefined control sequence.
+<argument> ... }{\relax }}Simulations of the \SBX 
+                                                  {} operator with a distrib...
+l.341 ...or two and three variables respectively.}
+                                                  
+? 
+! Undefined control sequence.
+<argument> ... }{\relax }}Simulations of the \SBX 
+                                                  {} operator with a distrib...
+l.341 ...or two and three variables respectively.}
+                                                  
+? 
+! Undefined control sequence.
+l.362 ...is category are the Blend Crossover (\BLX
+                                                  {})~\cite{eshelman1993real...
+
+? 
+
+LaTeX Warning: Citation `eshelman1993real' on page 19 undefined on input line 3
+62.
+
+! Undefined control sequence.
+l.362 ...{})~\cite{eshelman1993real}, and the \SBX
+                                                  {}~\cite{Joel:SBX1994}.
+? 
+
+LaTeX Warning: Citation `Joel:SBX1994' on page 19 undefined on input line 362.
+
+! Undefined control sequence.
+l.368 ...dal Normally Distributed Crossover (\UNDX
+                                                  {})~\cite{Joel:UNDX}, and ...
+
+? 
+
+LaTeX Warning: Citation `Joel:UNDX' on page 19 undefined on input line 368.
+
+! Undefined control sequence.
+l.368 ...el:UNDX}, and the simplex crossover (\SPX
+                                                  {}) \cite{Joel:DE_Storn_SPX}.
+
+? 
+
+LaTeX Warning: Citation `Joel:DE_Storn_SPX' on page 19 undefined on input line 
+368.
+
+
+LaTeX Warning: Citation `jain2011parent' on page 19 undefined on input line 370
+.
+
+! Undefined control sequence.
+l.375 Among the crossover operators, \SBX
+                                         {} is probably the most frequently ...
+
+? 
+LaTeX Info: Redefining \. on input line 376.
+LaTeX Info: Redefining \% on input line 376.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 376.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 376.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 376.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 376.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 376.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 376.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 376.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 376.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 376.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 376.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 376.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 376.
+[19]
+Underfull \vbox (badness 5431) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 377.
+LaTeX Info: Redefining \% on input line 377.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 377.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 377.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 377.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 377.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 377.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 377.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 377.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 377.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 377.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 377.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 377.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 377.
+ [20 <./img/Operadores/DensitySBX_English.png> <./img/Operadores/SBX_eta_20_2D_
+pv_1.png> <./img/Operadores/SBX_eta_20_2D_pv_01.png> <./img/Operadores/SBX_eta_
+20_2D.png> <./img/Operadores/SBX_eta_20_3D.png>]
+! Undefined control sequence.
+l.387 Simulated Binary Crossover (\SBX
+                                      {})~\cite{deb1994simulated} is probabl...
+
+? 
+
+LaTeX Warning: Citation `deb1994simulated' on page 21 undefined on input line 3
+87.
+
+! Undefined control sequence.
+l.387 ...or for continuous domains and most \MOEAS
+                                                  {} have been extensively
+? 
+
+LaTeX Warning: Citation `Joel:NSGAII' on page 21 undefined on input line 388.
+
+
+LaTeX Warning: Citation `Joel:SMSEMOA' on page 21 undefined on input line 388.
+
+! Undefined control sequence.
+l.390 \SBX
+          {} is classified as Parent-Centric, meaning that two children valu...
+
+? 
+! Undefined control sequence.
+l.414 ...f children values and parent values, \SBX
+                                                  {} has the following prope...
+
+? 
+
+LaTeX Warning: Citation `deb1999self' on page 21 undefined on input line 448.
+
+LaTeX Info: Redefining \. on input line 451.
+LaTeX Info: Redefining \% on input line 451.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 451.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 451.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 451.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 451.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 451.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 451.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 451.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 451.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 451.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 451.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 451.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 451.
+[21]
+! Undefined control sequence.
+<argument> ...es Simulated Binary Crossover (\SBX 
+                                                  {})}}{\thepage }{\@current...
+l.478 ...tion{Simulated Binary Crossover (\SBX{})}
+                                                  
+? 
+! Undefined control sequence.
+<argument> ...es Simulated Binary Crossover (\SBX 
+                                                  {})
+l.478 ...tion{Simulated Binary Crossover (\SBX{})}
+                                                  
+? 
+
+LaTeX Warning: Citation `Joel:SBX1994' on page 22 undefined on input line 503.
+
+! Undefined control sequence.
+l.503 ...l:SBX1994} several extensions of the \SBX
+                                                  {} to problems with multiple
+? 
+
+LaTeX Warning: Citation `Joel:UNDX' on page 22 undefined on input line 506.
+
+! Undefined control sequence.
+l.512 ... is the most typical way of applying \SBX
+                                                  {} in problems with multip...
+
+? 
+! Undefined control sequence.
+l.517 ...currently used implementation of the \SBX
+                                                  {} operator for problems w...
+
+? 
+<img/Operadores/SBX_eta_2.png, id=309, 481.8pt x 361.35pt>
+File: img/Operadores/SBX_eta_2.png Graphic file (type png)
+
+<use img/Operadores/SBX_eta_2.png>
+Package pdftex.def Info: img/Operadores/SBX_eta_2.png used on input line 549.
+(pdftex.def)             Requested size: 81.12186pt x 60.83871pt.
+
+<img/Operadores/SBX_eta_20.png, id=310, 481.8pt x 361.35pt>
+File: img/Operadores/SBX_eta_20.png Graphic file (type png)
+
+<use img/Operadores/SBX_eta_20.png>
+Package pdftex.def Info: img/Operadores/SBX_eta_20.png used on input line 550.
+(pdftex.def)             Requested size: 81.12186pt x 60.83871pt.
+
+! Undefined control sequence.
+<argument> ...ignorespaces Simulation of the \SBX 
+                                                  {} operator sampling $10,0...
+l.552 ...tion index of $2$ and $20$ respectively.}
+                                                  
+? 
+! Undefined control sequence.
+<argument> ...f }{\relax }}Simulation of the \SBX 
+                                                  {} operator sampling $10,0...
+l.552 ...tion index of $2$ and $20$ respectively.}
+                                                  
+? 
+! Undefined control sequence.
+<argument> ...f }{\relax }}Simulation of the \SBX 
+                                                  {} operator sampling $10,0...
+l.552 ...tion index of $2$ and $20$ respectively.}
+                                                  
+? 
+LaTeX Info: Redefining \. on input line 555.
+LaTeX Info: Redefining \% on input line 555.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 555.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 555.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 555.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 555.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 555.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 555.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 555.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 555.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 555.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 555.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 555.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 555.
+[22]
+! Undefined control sequence.
+l.556 ...rating the two child values with the \SBX
+                                                  {} distribution, such values
+? 
+
+LaTeX Warning: Citation `tuvsar2007differential' on page 23 undefined on input 
+line 563.
+
+
+LaTeX Warning: Citation `muhlenbein1993predictive' on page 23 undefined on inpu
+t line 563.
+
+! Undefined control sequence.
+l.567 ... this action it is not so clear that \SBX
+                                                  {} can be categorized as a...
+
+? 
+! Undefined control sequence.
+l.576 ...y the most well known feature of the \SBX
+                                                  {}.
+? 
+
+LaTeX Warning: Citation `voigt1995fuzzy' on page 23 undefined on input line 580
+.
+
+! Undefined control sequence.
+l.587 The \SBX
+              {} implementation is shown in Algorithm \ref{alg:SBX_Operator}.
+? 
+
+LaTeX Warning: Citation `Joel:NSGAII' on page 23 undefined on input line 589.
+
+! Undefined control sequence.
+l.596 As is usual, for the basic case, \SBX
+                                           {} is configured with $\delta_1 =...
+
+? 
+
+Underfull \vbox (badness 6078) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 600.
+LaTeX Info: Redefining \% on input line 600.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 600.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 600.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 600.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 600.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 600.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 600.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 600.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 600.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 600.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 600.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 600.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 600.
+ [23 <./img/Operadores/SBX_eta_2.png> <./img/Operadores/SBX_eta_20.png>]
+! Undefined control sequence.
+l.617 traditional \SBX
+                      {} implementation.
+? 
+! Undefined control sequence.
+l.632 ...ed in the standard implementation of \SBX
+                                                  {}.
+? 
+! Undefined control sequence.
+l.641 of \SBX
+             {}.
+? 
+
+LaTeX Warning: Citation `zitzler1999multiobjective' on page 24 undefined on inp
+ut line 650.
+
+
+LaTeX Warning: Citation `hamdan2012distribution' on page 24 undefined on input 
+line 650.
+
+LaTeX Info: Redefining \. on input line 655.
+LaTeX Info: Redefining \% on input line 655.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 655.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 655.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 655.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 655.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 655.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 655.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 655.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 655.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 655.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 655.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 655.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 655.
+[24]
+Overfull \hbox (60.43867pt too wide) in paragraph at lines 724--768
+ [][] 
+ []
+
+! Undefined control sequence.
+l.771 ...btained with the dynamic variants of \SBX
+                                                  {} (\DSBX{}).
+? 
+! Undefined control sequence.
+l.771 ...ith the dynamic variants of \SBX{} (\DSBX
+                                                  {}).
+? 
+! Undefined control sequence.
+l.773 ...over operator was integrated with \NSGAII
+                                                  {}, \MOEAD{} and \SMSEMOA{}.
+? 
+! Undefined control sequence.
+l.773 ...tor was integrated with \NSGAII{}, \MOEAD
+                                                  {} and \SMSEMOA{}.
+? 
+! Undefined control sequence.
+l.773 ...ted with \NSGAII{}, \MOEAD{} and \SMSEMOA
+                                                  {}.
+? 
+
+LaTeX Warning: Citation `Joel:WFG' on page 25 undefined on input line 779.
+
+
+LaTeX Warning: Citation `Joel:DTLZ_2' on page 25 undefined on input line 779.
+
+
+LaTeX Warning: Citation `zhang2009performance' on page 25 undefined on input li
+ne 779.
+
+
+LaTeX Warning: Citation `tuvsar2007differential' on page 25 undefined on input 
+line 781.
+
+! Undefined control sequence.
+l.782 ...he aim of comparing our extension of \SBX
+                                                  {} with other well-known o...
+
+? 
+LaTeX Info: Redefining \. on input line 783.
+LaTeX Info: Redefining \% on input line 783.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 783.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 783.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 783.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 783.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 783.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 783.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 783.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 783.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 783.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 783.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 783.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 783.
+[25]
+
+LaTeX Warning: Citation `Joel:DTLZ_2' on page 26 undefined on input line 791.
+
+! Undefined control sequence.
+l.796 whereas for the cases that used the \SBX
+                                              {}, the crossover probability ...
+
+? 
+
+LaTeX Warning: Citation `Joel:Kuhn_Munkres' on page 26 undefined on input line 
+810.
+
+
+LaTeX Warning: Citation `Joel:OperatorAHX' on page 26 undefined on input line 8
+10.
+
+LaTeX Info: Redefining \. on input line 844.
+LaTeX Info: Redefining \% on input line 844.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 844.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 844.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 844.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 844.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 844.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 844.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 844.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 844.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 844.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 844.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 844.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 844.
+[26]
+
+LaTeX Warning: Citation `zitzler1999multiobjective' on page 27 undefined on inp
+ut line 851.
+
+
+LaTeX Warning: Citation `Joel:IGDPlus_And_GDPlus' on page 27 undefined on input
+ line 851.
+
+! Undefined control sequence.
+l.879 ... discussed results, a variant of the \SBX
+                                                  {} is proposed where the c...
+
+? 
+! Undefined control sequence.
+l.886 .... in a similar way than the standard \SBX
+                                                  {}.
+? 
+! Undefined control sequence.
+l.899 when using the traditional \SBX
+                                     {} results deteriorate.
+? 
+! Undefined control sequence.
+l.901 Thus, when properly configuring a \DSBX
+                                             {} results similar or superior ...
+
+? 
+LaTeX Info: Redefining \. on input line 903.
+LaTeX Info: Redefining \% on input line 903.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 903.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 903.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 903.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 903.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 903.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 903.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 903.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 903.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 903.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 903.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 903.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 903.
+[27]
+! Undefined control sequence.
+l.906 ...ong all the five cases that consider \SBX
+                                                  {} and \DSBX{} were carrie...
+
+? 
+! Undefined control sequence.
+l.906 ...five cases that consider \SBX{} and \DSBX
+                                                  {} were carried out.
+? 
+! Undefined control sequence.
+l.908 This was performed independently for \NSGAII
+                                                  {}, \MOEAD{} and \SMSEMOA{}.
+? 
+! Undefined control sequence.
+l.908 ...ormed independently for \NSGAII{}, \MOEAD
+                                                  {} and \SMSEMOA{}.
+? 
+! Undefined control sequence.
+l.908 ...ntly for \NSGAII{}, \MOEAD{} and \SMSEMOA
+                                                  {}.
+? 
+! Undefined control sequence.
+l.919 Only in the case of \NSGAII
+                                 {} with three objectives, case 4 could outp...
+
+? 
+! Undefined control sequence.
+l.923 ...posals when compared to the standard \SBX
+                                                  {} (case 1).
+? 
+! Undefined control sequence.
+l.925 ...not clearly superior to the standard \SBX
+                                                  {} is the case number 2, a...
+
+? 
+)
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 173.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 173.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 173.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 173.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 173.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 173.
+ (./Conclusion.tex) (./main.bbl)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 246.
 LaTeX Info: Redefining \. on input line 246.
 LaTeX Info: Redefining \% on input line 246.
@@ -881,39 +2492,71 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 246.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 246.
- [2]
+ [28]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 246.
  (./main.aux
-LaTeX Info: Redefining \. on input line 27.
-LaTeX Info: Redefining \% on input line 27.
-LaTeX Info: Redefining \. on input line 31.
-LaTeX Info: Redefining \% on input line 31.
+LaTeX Info: Redefining \. on input line 34.
+LaTeX Info: Redefining \% on input line 34.
+LaTeX Info: Redefining \. on input line 38.
+LaTeX Info: Redefining \% on input line 38.
 )
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 246.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 246.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: C863998F66FC8D461EDEDCAA52797632;362.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 246.
  ) 
 Here is how much of TeX's memory you used:
- 8257 strings out of 493304
- 118853 string characters out of 6139871
- 214813 words of memory out of 5000000
- 11570 multiletter control sequences out of 15000+600000
- 10187 words of font info for 37 fonts, out of 8000000 for 9000
+ 8634 strings out of 493304
+ 125451 string characters out of 6139871
+ 255794 words of memory out of 5000000
+ 11776 multiletter control sequences out of 15000+600000
+ 11612 words of font info for 42 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 29i,7n,32p,233b,508s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (2 pages, 86978 bytes).
+ 29i,17n,32p,670b,815s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{equation.4.5} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{equation.4.7} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{equation.4.6} has been referenced but does not exis
+t, replaced by a fixed one
+
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pf
+b>
+Output written on main.pdf (28 pages, 652971 bytes).
 PDF statistics:
- 78 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
- 16 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 509 PDF objects out of 1000 (max. 8388607)
+ 418 compressed objects within 5 object streams
+ 165 named destinations out of 1000 (max. 500000)
+ 116 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -3,9 +3,13 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: spphys.bst
 Database file #1: example.bib
+Warning--I didn't find a database entry for "Joel:SBX1994"
+Warning--I didn't find a database entry for "deb1999self"
+Warning--I didn't find a database entry for "Joel:NSGAII"
+Warning--I didn't find a database entry for "Joel:jMetal"
 You've used 1 entry,
             2815 wiz_defined-function locations,
-            600 strings with 4529 characters,
+            607 strings with 4608 characters,
 and the built_in function-call counts, 663 in all, are:
 = -- 73
 > -- 7
@@ -44,3 +48,4 @@ warning$ -- 0
 while$ -- 5
 width$ -- 2
 write$ -- 15
+(There were 4 warnings)
