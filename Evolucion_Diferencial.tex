@@ -197,112 +197,131 @@ for some cases.
 
 \subsection{Propuesta}
 
-Our proposal is motivated by two main works in the area of control of diversity in EAs.
+Nuestra propuesta está motivada por dos trabajos significativos de ésta área cuyo propósito es el control de la diversidad en los \EAs{}.
+%Our proposal is motivated by two main works in the area of control of diversity in EAs.
 %
-The first one is the empirical study developed by Montgomery et al~\cite{montgomery2012simple},
-which presents several empirical analyses that confirm issues related to premature convergence in \DE{}.
-%
-The second work, by Segura et al.~\cite{segura2016novel}, provides significant improvements in the combinatorial optimization field
-by developing a novel replacement strategy called \textit{Replacement with Multi-objective based Dynamic Diversity Control} (\RMDDC{}) 
-that relates the control of diversity with the stopping criterion and elapsed generations.
-%
-Important benefits were attained by methods including \RMDDC{}, so given the conclusions of these previous works, the proposal of this paper is a 
-novel \DE{} variant that includes an explicit mechanism that follows some of the principles of \RMDDC{}.
-%
-This novel optimizer is called \textit{Differential Evolution with Enhanced Diversity Maintenance} (\DEEDM{}) and its source
-code is freely available~\footnote{The code in C++ can be downloaded in the next link \url{https://github.com/joelchaconcastillo/Diversity\_DE\_Research.git}}.
+Por su parte el primero es un estudio empírico desarrollado por Montgomery y otros~\cite{montgomery2012simple}, este trabajo presenta varios análisis empíricos los cuales confirman los problemas relacionados con la convergencia prematura.
 
-The core of \DEEDM{} (see Algorithm~\ref{alg:DEEDM}) is quite similar to the standard \DE{}.
+%The first one is the empirical study developed by Montgomery et al~\cite{montgomery2012simple},
+%which presents several empirical analyses that confirm issues related to premature convergence in \DE{}.
 %
-In fact the way of creating new trial solutions is not modified at all (lines 5 and 6).
+Por otro lado, el segundo trabajo propuesto por Segura~\cite{segura2016novel} y otros, proporciona mejoras significativas en el campo optimización combinatoria, en esta propuesta se desarrolla una novel estrategia de reemplazo nombrada \textit{Reemplazo con Control de Diversidad Dinámico Basado en Varios Objetivos} (Replacement with Multi-objective based Dynamic Diversity Control - \RMDDC{}) donde se controla el grado de diversidad con el criterio de paro y las generaciones transcurridas.
+%The second work, by Segura et al.~\cite{segura2016novel}, provides significant improvements in the combinatorial optimization field
+%by developing a novel replacement strategy called \textit{Replacement with Multi-objective based Dynamic Diversity Control} (\RMDDC{}) 
+%that relates the control of diversity with the stopping criterion and elapsed generations.
 %
-The novelty is the incorporation of an elite population ($E$) and a novel diversity-based replacement strategy.
+Se obtuvieron beneficios por los métodos que incluyeron el \RMDDC{}, por lo tanto y basados en las conclusiones de los trabajos previos, la propuesta de esta sección es una novel variante de \DE{} que incluye un mecanismo explícito el cual sigue uno de los principios del \RMDDC{}.
+%Important benefits were attained by methods including \RMDDC{}, so given the conclusions of these previous works, the proposal of this paper is a 
+%novel \DE{} variant that includes an explicit mechanism that follows some of the principles of \RMDDC{}.
 %
-In order to select the members of the elite population, the original greedy replacement of \DE{} is used (line 7).
+Este novel optimizador es nombrado \textit{Evolución Diferencial con Mantinimiento Mejorado de Diversidad} (Differential Evolution with Enhanced Diversity Maintenance} - \DEEDM{}) y su código fuente está disponible de forma gratuita~\footnote{El código en C++ puede ser descargado en la siguiente dirección \url{https://github.com/joelchaconcastillo/Diversity\_DE\_Research.git} }
+%This novel optimizer is called \textit{Differential Evolution with Enhanced Diversity Maintenance} (\DEEDM{}) and its source
+%code is freely available~\footnote{The code in C++ can be downloaded in the next link \url{https://github.com/joelchaconcastillo/Diversity\_DE\_Research.git}}.
+
+
+La escencia de \DEEDM{} (ver algoritmo~\ref{alg:DEEDM} ) es suficiente similar a la versión estándar de \DE{}.
+%The core of \DEEDM{} (see Algorithm~\ref{alg:DEEDM}) is quite similar to the standard \DE{}.
 %
-On the other way, the replacement strategy (line 8), which is in charge of selecting the next population members,
-follows the same principle that guided the 
-design of \RMDDC{}, i.e. individuals that contribute too little to diversity should not be accepted as members of the next generation.
+De hecho la forma en que se crean los vectores de prueba no es modificado de forma significativa (líneas 5 y 6).
+%In fact the way of creating new trial solutions is not modified at all (lines 5 and 6).
 %
-In this way, the greedy selection strategy of \DE{} is not used to maintain the parent population ($X$).
+La novedad de la propuesta es que incorpora una población elite ($E$) y una novel estrategia de reemplazo basada en la diversidad.
+%%The novelty is the incorporation of an elite population ($E$) and a novel diversity-based replacement strategy.
 %
-In order to establish the minimum acceptable diversity contribution to be selected, the stopping criterion and elapsed
-generations are taken into account.
+En orden, para seleccionar a los miembros de la población, se aplica el reemplazo agresivo (glotón) de la versión original de \DE (línea 7).
+%In order to select the members of the elite population, the original greedy replacement of \DE{} is used (line 7).
 %
-One of the main weaknesses of \RMDDC{} is that its convergence is highly delayed.
+Por otra parte, se considera otra estrategia de reemplazo (línea 8), la cual realiza la selección de los miembros que participarán en el siguiente procedimiento de selección, esto se realiza siguiendo el mismo principio que el \RMDDC{}, es decir los individuos que contribuyen muy poco a la diversidad no deberán ser aceptados como miembros en la siguiente generación.
+%On the other way, the replacement strategy (line 8), which is in charge of selecting the next population members,
+%follows the same principle that guided the 
+%design of \RMDDC{}, i.e. individuals that contribute too little to diversity should not be accepted as members of the next generation.
 %
-Thus, in order to promote a faster convergence than in \RMDDC{} two modifications are performed.
+En este sentido, no se utiliza la misma estrategia de selección agresiva que pertenece a \DE{} para mantener a la población padre ($X$).
+%In this way, the greedy selection strategy of \DE{} is not used to maintain the parent population ($X$).
 %
-First, no concepts of the multi-objective field are applied, instead a more greedy selection is taken into account.
+En este orden para establecer una contribución aceptable de diversidad mínima para realizar la selección, son tomados en cuenta el criterio de paro y las generaciones transcurridas.
+%In order to establish the minimum acceptable diversity contribution to be selected, the stopping criterion and elapsed
+%generations are taken into account.
 %
-Second, the elite population is also considered as an input of the replacement strategy.
+Una de las principales debilidades del \RMDDC{} es que su convergencia se retrasa de forma significativa.
+%One of the main weaknesses of \RMDDC{} is that its convergence is highly delayed.
+%
+Por lo tanto, se realizan dos modificaciones al \RMDDC{} para promover una convergencia acelerada.
+%Thus, in order to promote a faster convergence than in \RMDDC{} two modifications are performed.
+%
+Primero, no son considerados los conceptos multi-objetivo, en su lugar se considera una selección mas agresiva.
+%First, no concepts of the multi-objective field are applied, instead a more greedy selection is taken into account.
+%
+Segundo, también es considerada la población elite en  la estrategia de reemplazo.
+%Second, the elite population is also considered as an input of the replacement strategy.
 
 \begin{algorithm}[t]
 \algsetup{linenosize=\tiny}
   \scriptsize
-	\caption{General scheme of DE-EDM} 
+	\caption{Esquema general del DE-EDM} 
+	%\caption{General scheme of DE-EDM} 
 	\begin{algorithmic}[1]
-	\STATE Randomly initialize the population of $NP$ individuals, where each one is uniformly distributed.
+	%\STATE Randomly initialize the population of $NP$ individuals, where each one is uniformly distributed.
+	\STATE Inicializar de forma aleatoria a la población con $NP$ individuos, donde cada uno es distribuído de forma uniforme.
 	\STATE $G=0$
-	\WHILE{ stopping criterion is not satisfied}
+	\WHILE{ El criterio de paro no sea alcanzado}
+	%\WHILE{ stopping criterion is not satisfied}
 	   \FOR{ $i=1$ to $NP$} 
-		\STATE Mutation: Generate the mutant vector ($V_{i,G}$) according to Eq. (\ref{eqn:mutation}).
-		\STATE Crossover: use recombination to generate the trial vector ($U_{i,G}$) according to Eq. (\ref{eqn:crossover}).
-		\STATE Selection: Update the elite vector ($E_{i,G}$ instead of $X_{i,G}$) according to Eq. (\ref{eqn:selection}).
+		\STATE Mutación: Generar al vector mutado ($V_{i,G}$) de acuerdo a la ecuación (\ref{eqn:mutation}).
+		%\STATE Mutation: Generate the mutant vector ($V_{i,G}$) according to Eq. (\ref{eqn:mutation}).
+		\STATE Cruza: Utilizar la recombinación para general al vector de prueba ($U_{i,G}$) de acuerdo a la ecuación (\ref{eqn:crossover}).
+		%\STATE Crossover: use recombination to generate the trial vector ($U_{i,G}$) according to Eq. (\ref{eqn:crossover}).
+		\STATE Selección: Actualizar al vector elite ($E_{i,G}$ en lugar de $X_{i,G}$) de acuerdo a la ecuación (\ref{eqn:selection}).
+		%\STATE Selection: Update the elite vector ($E_{i,G}$ instead of $X_{i,G}$) according to Eq. (\ref{eqn:selection}).
 	   \ENDFOR
-		\STATE Replacement: Select the target vectors ($X_{G+1}$) according to Algorithm \ref{alg:Replacement} .
+		\STATE Reemplazo: Seleccionar a los vectores objetivo ($X_{G+1}$) de acuerdo a la ecuación \ref{alg:Replacement} .
+		%\STATE Replacement: Select the target vectors ($X_{G+1}$) according to Algorithm \ref{alg:Replacement} .
 	   \STATE $G=G+1$
 	\ENDWHILE
 \end{algorithmic}
     \label{alg:DEEDM}
 \end{algorithm}
 
-%\DEEDM{} alters the replacement strategy of \DE{} with the aim of controlling the 
-%balance between exploration and exploitation by extending \RMDDC{}.
+
+Nuestra estrategia de reemplazo (ver Algoritmo \ref{alg:Replacement}) funciona de la siguiente forma.
+%Our replacement strategy (see Algorithm \ref{alg:Replacement}) operates as follows.
 %
-%The principles of the \RMDDC{} are as follows.
+Éste recive a la población padre (vectores objetivo), la población de hijos (vectores de prueba) y a los vectores elite.
+%It receives as input the parent population (target vectors), the offspring population (trial vectors), and the elite population.
 %
-%It considers the maximization of the diversity contribution of each individual as an explicit objective.
+En cada generación son seleccionados $NP$ vectores para la siguiente población de padres.
+%In each generation it must select the $NP$ vectors of the next parent population.
 %
-%Then, the notion of Pareto dominance is used to select the survivors.
+Primero, en base al número de evaluaciones a funcion (línea 2) es calculada una distancia mínima $D_t$ deseada para mantener la diversidad.
+%First, it calculates the desired minimum distance $D_t$ given the current number of elapsed function evaluations (line 2).
 %
-%It uses a dynamic threshold to prevent the selection of individuals with low contribution to diversity.
+Entonces, son juntadas las tres poblaciones en un conjunto de miembros candidatos (línea 3).
+%Then, it joins the three populations in a set of current members (line 3).
 %
+El conjunto de miembros candidatos continen vectores que podrían ser seleccionados para sobrevivir.
+%The current members set contains vectors that might be selected to survive.
 %
-%Thus, executions of several days were required to attain high-quality solutions in many of the tested problems.
+Entonces, el conjunto de individuos sobrevivientes y penalizados son inicializados por el conjunto vacío (línea 4).
+%Then, the set of survivors and penalized individuals are initialized to the empty set (line 4).
 %
-%As a result our proposal incorporates two extensions to alleviate such a drawback.
+En orden para seleccionar a los $NP$ sobreviviente (población padre de la siguiente generación) se repite un procedo iterativo (líneas 5 - 13).
+%In order to select the $NP$ survivors (next parent population) an iterative process is repeated (lines 5 - 13).
 %
-%This modification considers the inclusion of an elite population, which records the individuals with the best fitness.
+En cada paso es seleccionado el mejor individuo para sobrevivir del \textit{Conjunto de Candidatos}, es decir al individuo que tiene la mejor aptitud, entonces es movido al \textit{Conjunto de Sobrevivientes}.
+%In each step the best individual in the \textit{Current set}, i.e. the one with best objective function is selected
+%to survive, i.e. it is moved to the \textit{Survivor set} (line 6 - 8).
+%
+Entonces, los individuos que pertenecen al \textit{Conjunto de Candidatos} cuya métrica de mínima distancia sea menor que $D_t$ son transferidos \textit{Conjunto de Penalizados} (línea 9).
+%Then, individuals in the \textit{Current set} with a distance metric lower than $D_t$ are transferred to the \textit{Penalized set} (line 9).
 %
 
-Our replacement strategy (see Algorithm \ref{alg:Replacement}) operates as follows.
-%
-It receives as input the parent population (target vectors), the offspring population (trial vectors), and the elite population.
-%
-In each generation it must select the $NP$ vectors of the next parent population.
-%
-First, it calculates the desired minimum distance $D_t$ given the current number of elapsed function evaluations (line 2).
-%
-Then, it joins the three populations in a set of current members (line 3).
-%
-The current members set contains vectors that might be selected to survive.
-%
-Then, the set of survivors and penalized individuals are initialized to the empty set (line 4).
-%
-In order to select the $NP$ survivors (next parent population) an iterative process is repeated (lines 5 - 13).
-%
-In each step the best individual in the \textit{Current set}, i.e. the one with best objective function is selected
-to survive, i.e. it is moved to the \textit{Survivor set} (line 6 - 8).
-%
-Then, individuals in the \textit{Current set} with a distance metric lower than $D_t$ are transferred to the \textit{Penalized set} (line 9).
-%
-%%The way to calculate the distance between two individuals is by a using a normalized Euclidean distance (Eq.~\ref{eqn:distance}).
-The way to calculate the distance between two individuals is by using the normalized Euclidean distance described in Eq.~\ref{eqn:distance}, where $D$ is the dimension of the problem, and $a_d, b_d$ are the minimum and maximum bounds of each dimension ($d$).
+La forma para calcular la distancia entre dos indivíduos es en base a la distancia Euclideana normalizada descrita en la ecuación~\ref{eqn:distance}, donde $D$ es la dimensión del problema, y $a_d, b_d$ son los límites menores y mayores de cada dimensión ($d$).
+%The way to calculate the distance between two individuals is by using the normalized Euclidean distance described in Eq.~\ref{eqn:distance}, where $D$ is the dimension of the problem, and $a_d, b_d$ are the minimum and maximum bounds of each dimension ($d$).
 %
 %
-In cases where the \textit{Current set} is empty previous to the selection of $NP$ individuals, the \textit{Survivor set} is filled by selecting in each step 
-the individual in $Penalized$ with the largest distance to the closest individual in the \textit{Survivor set} (lines 10 - 13).
+En los casos donde \textit{El conjunto de Candidatos} está vacío previamente a la selcción de los $NP$ individuos, el \textit{Conjunto de Sobrevivientes} se llena seleccionando en cada iteración al individuo $Penalizado$ con la mayor distancia al individuo más cercano al \textit{Conjunto de Sobrevivientes} (líneas 10 - 13).
+%%In cases where the \textit{Current set} is empty previous to the selection of $NP$ individuals, the \textit{Survivor set} is filled by selecting in each step 
+%%the individual in $Penalized$ with the largest distance to the closest individual in the \textit{Survivor set} (lines 10 - 13).
 
 \begin{equation}\label{eqn:distance}
 distance ( x_{i}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{i}^d - x_j^d}{b_d - a_d} \right )^2  }} {\sqrt{D}}
@@ -312,22 +331,36 @@ distance ( x_{i}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{i}^d - x_j^
 \begin{algorithm}[t]
 \algsetup{linenosize=\tiny}
   \scriptsize
-	\caption{Replacement Phase} \label{alg:Replacement}
+	\caption{Fase de Reemplazo} \label{alg:Replacement}
+	%\caption{Replacement Phase} \label{alg:Replacement}
 	\begin{algorithmic}[1]
-	\STATE Input: $Population$ ($target$ $vectors$), $Offspring$ ($trial$ $vectors$), and $Elite$
-	\STATE Update $D_t = D_I - D_I *(nfes/(0.95*max\_nfes)) $ 
-	\STATE $Current = Population \cup Offspring \cup Elite$.
-	\STATE $Survivors = Penalized = \emptyset$.
-	\WHILE{ $|Survivors| < NP$ And $|Current| > 0$ }
-	   \STATE $Selected$ = Select the best individual of $Current$.
-		 \STATE Remove $Selected$ from $Current$.
-	   \STATE Copy $Selected$ to $Survivors$.
-	   \STATE Find the individuals from $Current$ with a distance to $Selected$ lower than $D_t$ and move them to $Penalized$. Normalized distance is considered (Eq. \ref{eqn:distance}).
+	\STATE Entrada: \texit{Población} (\textit{Vectores Objetivo}), \textit{Hijos} (\textit{Vectores de prueba}), y \textit{Elite}
+	%\STATE Input: $Population$ ($target$ $vectors$), $Offspring$ ($trial$ $vectors$), and $Elite$
+	\STATE Actulizar $D_t = D_I - D_I *(nfes/(0.95*max\_nfes)) $ 
+	%\STATE Update $D_t = D_I - D_I *(nfes/(0.95*max\_nfes)) $ 
+	\STATE \textit{Candidatos = Población} $\cup$ \textit{Hijos} $\cup$ \textit{Elite}.
+	%\STATE $Current = Population \cup Offspring \cup Elite$.
+	\STATE \textit{Sobrevivientes} $=$ \textit{Penalizados} $\emptyset$.
+	%\STATE $Survivors = Penalized = \emptyset$.
+	\WHILE{ \textit{Sobrevivientes} $< NP$  y $|$\textit{Candidatos}$| > 0$ }
+	%\WHILE{ $|Survivors| < NP$ And $|Current| > 0$ }
+	   \STATE \textit{Seleccionados} = Seleccionar al mejor individuo de \textit{Candidatos}.
+	   %\STATE $Selected$ = Select the best individual of $Current$.
+		 \STATE Eliminar \textit{Seleccionado} de \textit{Candidatos}.
+		 %\STATE Remove $Selected$ from $Current$.
+	   \STATE Copias \textit{Seleccionado} a \textit{Sobrevivientes}.
+	  % \STATE Copy $Selected$ to $Survivors$.
+	   \STATE Encontrar los individuos de \textit{Candidatos} cuya distancia a \textit{Seleccionados} sea menor que $D_t$ y moverlos al \textit{Penalizados}. En esta parte se considera la distancia normalizada (Ecuación \ref{eqn:distance}).
+	   %\STATE Find the individuals from $Current$ with a distance to $Selected$ lower than $D_t$ and move them to $Penalized$. Normalized distance is considered (Eq. \ref{eqn:distance}).
 	\ENDWHILE
-	\WHILE{ $|Survivors| < NP$ }
-	   \STATE $Selected$ = Select the individual from $Penalized$ with the largest distance to the closest individual in $Survivors$.
-		 \STATE Remove $Selected$ from $Penalized$.
-	   \STATE Copy $Selected$ to $Survivors$.
+	\WHILE{ $|$\textit{Sobrevivientes}$| < NP$ }
+	%\WHILE{ $|Survivors| < NP$ }
+	   \STATE \textit{Seleccionado} = Seleccionar al individuo de \textit{Penalizados} con la mayor distancia al individuo mas cercano a \textit{Sobrevivientes}.
+	   %\STATE $Selected$ = Select the individual from $Penalized$ with the largest distance to the closest individual in $Survivors$.
+		 \STATE Eliminar \textit{Seleccionado} de \textit{Penalizados}.
+		 %\STATE Remove $Selected$ from $Penalized$.
+	   \STATE Copiar \textit{Seleccionado} a \textit{Sobrevivientes}
+	   %\STATE Copy $Selected$ to $Survivors$.
 	\ENDWHILE
   \RETURN $Survivors$
 \end{algorithmic}
