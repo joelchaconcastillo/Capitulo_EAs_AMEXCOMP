@@ -1,48 +1,60 @@
 long term~\cite{montgomery2010analysis}.
 \subsection{Evolución Diferencia: Conceptos Básicos}
 
-This section is devoted to summarize the classic \DE{} variant and to introduce some of the most important terms used in the \DE{} field.
+Esta sección esta dedicada para repasar la variante clásica de \DE{} y para introducir algunos de los mas importantes términos utilizados en el campo de \DE{}.
+%This section is devoted to summarize the classic \DE{} variant and to introduce some of the most important terms used in the \DE{} field.
 %
-The classic \DE{} scheme is called the \DE{}/rand/1/bin and it has been extensively used to generate more complex \DE{} variants~\cite{das2011differential}.
+El clásico esquema \DE{} es identificado como \DE{}/rand/1/bin el cual ha sido extensamente utilizado para generar más variantes complejas~\cite{das2011differential}.
+%The classic \DE{} scheme is called the \DE{}/rand/1/bin and it has been extensively used to generate more complex \DE{} variants~\cite{das2011differential}.
 %
-In fact, our proposal also extends the classic variant.
+De hecho, nuestra propuesta también extiende a la clásica versión \DE{}.
+%In fact, our proposal also extends the classic variant.
 %
-However, in order to perform fair comparisons,
-our experimental validation takes into account state-of-the-art approaches that incorporate more complex 
-components and even algorithms not belonging to the \DE{} field.
+Originalmente \DE{} fue propuesta como un método de búsqueda directo para optimización contínua mono-objetivo.
+%\DE{} was originally proposed as a direct search method for single-objective continuous optimization.
+%
+El conjunto de variables involucradas en el planteamiento de un problema son dados como un vector de la forma $\vec{X} = [x_1, x_2, ..., x_D]$, donde $D$ es la dimensión del problema.
+%The variables governing a given problem performance are given as a vector like $\vec{X} = [x_1, x_2, ..., x_D]$, where $D$ is the
+%dimension of the problem.
+%
+En optimización contínua, cada $x_i$ es un número real, además son proporcionadas restricciones de caja, es decir, existe un límite inferior ($a_{i}$) y un límite superior ($b_{i}$) para cada variable.
+%In continuous optimization, each $x_i$ is a real number and usually box-constraints are given, i.e. there is a lower bound ($a_{i}$) and
+%upper bound ($b_{i}$) for each variable.
+%
+El objetivo de un proceso de optimización es obtener un vector $\vec{X}^*$ el cual minimiza una función objetivo dada, esto matemáticamente es definido por $f : \Omega \subseteq \Re^D \rightarrow \Re$.
+%The aim of the optimization process is to obtain the vector $\vec{X}^*$ which minimizes a given objective function, mathematically 
+%denoted by $f : \Omega \subseteq \Re^D \rightarrow \Re$.
+%
+En el caso de la restricción de caja $\Omega = {\prod}_{j=1}^{D} [a_{j}, b_{j}]$.
 
-\DE{} was originally proposed as a direct search method for single-objective continuous optimization.
+%In the box-constrained case $\Omega = {\prod}_{j=1}^{D} [a_{j}, b_{j}]$.
+\DE{} es un algoritmo estocástico basado en una población, por lo tanto éste involucra iterativamente a un conjunto de soluciones candidatas.
+%\DE{} is a population-based stochastic algorithm, so it iteratively evolves a set of candidate solutions.
 %
-The variables governing a given problem performance are given as a vector like $\vec{X} = [x_1, x_2, ..., x_D]$, where $D$ is the
-dimension of the problem.
+En \DE{} dichas soluciones candidatas son usualmente conocidas como vectores.
+%In \DE{} such candidate solutions are usually called vectors.
 %
-In continuous optimization, each $x_i$ is a real number and usually box-constraints are given, i.e. there is a lower bound ($a_{i}$) and
-upper bound ($b_{i}$) for each variable.
+En la variante básica de \DE{}, para cada miembro de la población conocidos como \textit{vectores objetivo} es generado un nuevo vector conocido como \textit{vector mutado}.
+%In the basic \DE{} variant for each member of the population --- they are called \textit{target vectors} --- a new \textit{mutant vector}
+%is created.
 %
-The aim of the optimization process is to obtain the vector $\vec{X}^*$ which minimizes a given objective function, mathematically 
-denoted by $f : \Omega \subseteq \Re^D \rightarrow \Re$.
+Entonces, el vector mutado es combinado con el vector objetivo para generar al \textit{vector de prueba}.
+%Then, the mutant vector is combined with the target vector to generate a \textit{trial vector}.
 %
-In the box-constrained case $\Omega = {\prod}_{j=1}^{D} [a_{j}, b_{j}]$.
-
-\DE{} is a population-based stochastic algorithm, so it iteratively evolves a set of candidate solutions.
+Finalmente, una fase de selección es aplicada para seleccionar a los vectores sobrevivientes.
+%Finally, a selection phase is applied to choose the survivors.
 %
-In \DE{} such candidate solutions are usually called vectors.
+De esta forma, transcurren las generaciones hasta cumplir el criterio de paro.
+%In this way, several generations are evolved until a stopping criterion is reached.
 %
-In the basic \DE{} variant for each member of the population --- they are called \textit{target vectors} --- a new \textit{mutant vector}
-is created.
+El $i$-ésimo vector de la población en la generación $G$ es definido como$\vec{X}_{i,G} = [x_{1,i,G}, x_{2,i,G},..., X_{D,i, G}]$.
+%The $i$th vector of the population at the generation $G$ is denoted as $\vec{X}_{i,G} = [x_{1,i,G}, x_{2,i,G},..., X_{D,i, G}]$.
 %
-Then, the mutant vector is combined with the target vector to generate a \textit{trial vector}.
-%
-Finally, a selection phase is applied to choose the survivors.
-%
-In this way, several generations are evolved until a stopping criterion is reached.
-%
-The $i$th vector of the population at the generation $G$ is denoted as $\vec{X}_{i,G} = [x_{1,i,G}, x_{2,i,G},..., X_{D,i, G}]$.
-%
-In the following more details are given for each component of \DE{}.
+A continuación se explica en más detalle cada componente de \DE{}.
+%In the following more details are given for each component of \DE{}.
 
 
-\subsubsection{Initialization}
+\subsubsection{Inicialización}
 
 \DE{} usually starts the optimization process with a randomly initiated population of $NP$ vectors.
 %
@@ -51,62 +63,76 @@ Since there is commonly no information about the performance of different region
 Hence, the $j$th component of the $i$th vector is initialized as $x_{j,i,0} = a_{j} + rand_{i,j}[0,1] (b_{j} - a_{j})$,
 where $rand_{i,j}[0,1]$ is an uniformly distributed random number lying between $0$ and $1$.
 
-\subsubsection{Mutation}
+\subsubsection{Mutación}
 
-For each target vector a mutant vector is created and several ways of performing
-such a process have been proposed.
+Para cada vector objetivo un vector mutado es creado, varias estratigias para realizar este procedimiento han sido propuestas.
+%For each target vector a mutant vector is created and several ways of performing
+%such a process have been proposed.
 %
-In the classic \DE{} variant the rand/1 strategy is applied.
+En la variante clásica de \DE{} se aplica la estrategia rand/1.
+%In the classic \DE{} variant the rand/1 strategy is applied.
 %
-In this case, the mutant vector $V_{i,G}$ is created as follows:
+En este caso, es creado el vector mutado $V_{i,G}$ de la siguiente forma:
+%In this case, the mutant vector $V_{i,G}$ is created as follows:
 
 \begin{equation}\label{eqn:mutation}
 \vec{V}_{i,G} = \vec{X}_{r1, G} + F \times (\vec{X}_{r2, G} - \vec{X}_{r3, G}) \quad r1 \neq r2 \neq r3
 \end{equation}
 %
-The indices $r1, r2, r3 \in [1,NP]$ are different integers randomly chosen from the range $[1, NP]$.
+Los índices $r1, r2, r3 \in [1,NP]$ distintos enteros seleccionados de forma aleatoria en el rango $[1, NP]$.
+%The indices $r1, r2, r3 \in [1,NP]$ are different integers randomly chosen from the range $[1, NP]$.
 %
-In addition, they are all different from the index $i$.
+Además, estos índices son distintos al índice $i$.
+%In addition, they are all different from the index $i$.
 %
-It is important to take into account that the difference between vectors is scaled with the number F, which is usually defined in the interval $[0.4, 1]$.
+Es imporante tomar en cuenta que la diferencia entre los vectores es escalada por medio del parámetro $F$, el cual se define usualmente en el intérvalo $[0.4, 1]$.
+%It is important to take into account that the difference between vectors is scaled with the number F, which is usually defined in the interval $[0.4, 1]$.
 %
-The scaled difference is added to a third vector, meaning that
-when diversity decreases and consequently differences are low, mutant vectors are similar to target vectors.
+La diferencia escalada es agregada al tercer vector, por lo tanto los vectores mutados son similares a los vectores objetivo cuando el grado de diversidad es poco y las diferencias son pequeñas.
+%The scaled difference is added to a third vector, meaning that
+%when diversity decreases and consequently differences are low, mutant vectors are similar to target vectors.
 %
-As a result, maintaining some degree of diversity is specially important in \DE{}.
+Como resultado, es importante mantener un grado de diversidad mínimo en \DE{}.
+%As a result, maintaining some degree of diversity is specially important in \DE{}.
 
-\subsubsection{Crossover}
+\subsubsection{Cruza}
 
-In order to combine information of different candidate solutions and with the aim of increasing diversity, the crossover
-operator is applied.
+En orden con el objetivo de combinar la información de distintas soluciones candiadtas y con el propósito de incrementar la diversidad es aplicado el operador de cruce.
+%In order to combine information of different candidate solutions and with the aim of increasing diversity, the crossover
+%operator is applied.
 %
-Specifically, each target vector $\vec{X}_{i,G}$ is mixed with its corresponding mutant vector $V_{i,G}$ to 
-generate the trial vector $\vec{U_{i,G}} = [u_{1,i,G},u_{2,i,G}, ..., u_{D,i,G} ]$.
+Específicamente, cada vector objetivo $\vec{X}_{i,G}$ es mezclado con su correspondiente vector mutado $V_{i,G}$ para general un vector de prueba $\vec{U_{i,G}} = [u_{1,i,G},u_{2,i,G}, ..., u_{D,i,G} ]$.
+%Specifically, each target vector $\vec{X}_{i,G}$ is mixed with its corresponding mutant vector $V_{i,G}$ to 
+%generate the trial vector $\vec{U_{i,G}} = [u_{1,i,G},u_{2,i,G}, ..., u_{D,i,G} ]$.
 %
-The most typical crossover is the \textit{binomial} one, which operates as follows:
+La estrategia de cruza mas típica es conocida como cruza \textit{binomial}, el cual funciona de la siguiente forma:
+%The most typical crossover is the \textit{binomial} one, which operates as follows:
 %
 \begin{equation} \label{eqn:crossover}
 \vec{U}_{j,i,G}= 
 \begin{cases}
-    \vec{V}_{j,i,G},& \text{if} (rand_{i,j}[0,1] \leq CR \quad or \quad j = j_{rand}  )\\
-    \vec{X}_{j,i,G},              & \text{otherwise}
+    \vec{V}_{j,i,G},& \text{si} (rand_{i,j}[0,1] \leq CR \quad or \quad j = j_{rand}  )\\
+    \vec{X}_{j,i,G},              & \text{de otra forma}
 \end{cases}
 \end{equation}
-where $rand_{i,j}[0,1]$ is a uniformly distributed random number,
-$j_{rand}$ is a randomly chosen index which ensures that $\vec{U}_{i,G}$ inherits at least one component from $\vec{V}_{i,G}$ and
-$CR \in [0,1]$ is the crossover rate.
+donde $rand_{i,j}[0,1]$ es un número uniformemente distribuido, $j_{rand}$ es un índice aleatoriamente seleccionado el cual asegura que $\vec{U}_{i,G}$ genera al menos un componente de $\vec{V}_{i,G}$ y $CR \in [0,1]$ es la razón de cruce.
+%where $rand_{i,j}[0,1]$ is a uniformly distributed random number,
+%$j_{rand}$ is a randomly chosen index which ensures that $\vec{U}_{i,G}$ inherits at least one component from $\vec{V}_{i,G}$ and
+%$CR \in [0,1]$ is the crossover rate.
 
 
-\subsubsection{Selection}
-Finally, a greedy selection is performed to determine the survivors of the next generation.
+\subsubsection{Selección}
+Finalmente, se aplica una selección glotona para determinar a los sobreviviente de la siguiente generación.
+%Finally, a greedy selection is performed to determine the survivors of the next generation.
 %
-Each trial vector is compared with its corresponding target vector and the best one survives:
+Cada vector de prueba es comparado con su correspondiente vector objetivo y el mejor es el que sobrevive:
+%Each trial vector is compared with its corresponding target vector and the best one survives:
 
 \begin{equation} \label{eqn:selection}
 \vec{X}_{j,i,G+1}= 
 \begin{cases}
-    \vec{U}_{i,G},& \text{if} \quad f(\vec{U}_{i,G}) \leq f(\vec{X}_{i,G})  \\
-    \vec{X}_{i,G},              & \text{otherwise}
+    \vec{U}_{i,G},& \text{si} \quad f(\vec{U}_{i,G}) \leq f(\vec{X}_{i,G})  \\
+    \vec{X}_{i,G},              & \text{de otra forma}
 \end{cases}
 \end{equation}
 

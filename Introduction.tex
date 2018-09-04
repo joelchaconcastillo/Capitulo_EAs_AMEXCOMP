@@ -1,80 +1,96 @@
-*Usos de los algoritmos evolutivos.
-*Definición de convergencia prematura.
-*
-*Como esta organizado el trabajo.
+Los Algoritmos Evolutivos (Evolutionary Algorithms \EA{}) son considerados como uno de los enfoques con mayor aficacia para resolver distintas categorías de optimización.
+%
+Particularmente, se han aplicado en problemas tanto de dominio continuo ref 3ANDBRS como de dominio discreto.
+%
+Especialmente, los \EAS{} son aplicados para resolver problemas complejos cuyo enfoque determinístico es complicado o imposible~\cite{chakraborty2008advances}.
+% 
+Además, diversas variantes se han utilizado y aplicado en muchos campos, como es en ciencia, economía e ingeniería.
+%
+%
+Actualmente, los \EAS{} son plenamente conocidos como metaheurísticas ref 3-ANDBRS.
+%
+A pesar del éxito que tienen los \EAS{}, existe una dificultad en su adaptación o configuración ante nuevos problemas.
+%
+Una dificultad popular en el diseño de un \EA{} es obtener un balanceo propio entre exploración y explotación ref5-ANDBRS.
+%
+Sin embargo, no siempre son comprendidas las implicaciones al mantener un grado de diversidad en este balanceo y como son promovidas las exploración y explotación ref6-ANDBRS.
+%
+Desde su inicio los \EAS{} han presentado problemas de convergencia siendo como una desventaja importante ref6-ANDBRS.
+%
+La convergencia prematura es originada cuando todos los miembros de la población están ubicados en una parte reducida del espacio de búsqueda, esta región es distinta a la región óptima y además los componentes seleccionados no son suficientes para escapar de esta región.
+%
+Basado en esto se han desarrollado varias estrategias para aliviar este problems.
+%
+Además en através de varios estudios se ha revelado que mantener una populación diversa en un requisito previo para evitar la convergencia prematura ref6-ANDBRS.
+%
+Sin embargo, si la población es muy diversa, entonces un grado adecuado de explotación podría ser prevenido, resultando en un convergencia lenta y por lo tanto soluciones de baja calidad.
+%
+Por esta razón, Mahfoud ref10-ANDBRS utilizó el concepto de diversidad util, con cual se refiere a la cantidad de diversidad que resulta en soluciones de alta calidad.
+%
+En la literatura existen distintas forma para aliviar el problema de convergencia prematura ref40-TIPDMEALCO.
+%
+En los 90s, la mayoría de estrategias para aliviar la convergencia prematura se centraron en modificar el esquema de selección de padres.
+%
+La principal razón es que en esa época la mayoría de esquemas eran generacionales, por lo tanto la presión de selección estaba definida principalmente en la selección de padres.
+%
+Sin embargo, se descubrió que tratando de aliviar la convergencia prematura donde únicamente sea considerada la selección de padres no fue suficiente ref4-TIPDMEALCO.
+%
+Posteriormente, la una gran cantidad de \EAS{} incorporaron una fase de reemplazo que abandonaron al menos parcialmente a los métodos generacionales iniciales.
+%
+Basado en esto muchos autores descubrieron la posibilidad de incorporar métodos para aliviar el problema de convergencia prematura ref10-TIPDMEALCO.
+%
+Es importante considerar que aún cuando los métodos de reemplazamiento generacionales ref11-ANDBRS fueron suficientemente populares, algunos autores ya habían tomado en cuenta esta estrategia ref-30-TIPDMEALCO.
+%
+Sin embargo, con la efectividad de elitismo y otras estrategias de reemplazo, el número de esquemas que adoptaron estos principios crecieron de forma considerable ref-27-TIPDMEALCO.
+%
 
-Evolutionary Algorithms (\EAS{}) are one of the most widely used techniques to deal with complex optimization problems.
+Un aspecto importante de la convergencia prematura es que depende completamente de la cantidad de tiempo y/o generaciones asignados a las ejecuciones del \EA{}, es decir el criterio de paro.
 %
-Several variants of these strategies have been devised~\cite{Talbi:09} and applied in many fields, such as in science, 
-economic and engineering~\cite{chakraborty2008advances}.
+En su lugar, un \EA{} debería ser ejecutado para resolver un problema dado por un tiempo definido y éste debería proporcionar soluciones prometedoras.
 %
-Among them, Differential Evolution (\DE{}) \cite{storn1997differential} is one of the most effective strategies to deal
-with continuous optimization.
+A pesar de esto, es sorprendente que la mayoría de métodos que se han propuesto para aliviar la desventaja de la convergencia prematura no consideran el criterio de paro el cual es asignado por el usuario para alterar su comportamiento interno.
 %
-In fact, it has been the winning strategy of several optimization competitions~\cite{das2011differential}.
+Esto significa que, dependiendo en el criterio de paro, distintas parametrizaciones podrían ser requeridas.
 %
-Similarly to other \EAS{}, \DE{} is inspired by the natural evolution process and it involves the application of mutation, recombination and 
-selection.
+Como resultado, para criterio de paro distinto, el usuario debería estudiar el efecto de distintos parámetros.
 %
-The main peculiarity of \DE{} is that it considers the differences among vectors that are present in the population to explore the search space.
+Un ejemplo popular de esto es \textit{El Torneo de Selección Restringida (TSR)} ref14-TIPDMEALCO, este método retrasa la convergencia de los \EAS{}.
 %
-In this sense it is similar to the Nelder-Mead~\cite{nelder1965simplex} and the 
-Controlled Random Search (CRS) \cite{price1983global} optimizers.
+Específicamente, este método incorpora un parámetro que puede ser utilizado para alterar el balanceo entre exploración e intensificación.
+%
+Sin embargo, la pérdida de diversidad y posteriormente el balanceo entre exploración e intensificación no dependen únicamente en este parámetro, por lo tanto distintos valores deberían ser utilizados para cada problema y además para cada criterio de paro.
+%
+El principio básico de las técnicas para la preservación de la diversidad y que afectan a la fase de reemplazo se basa en que el efecto de diversificar a los sobrevivientes inducide un mayor grado de exploración.
+%
+Esto se debe a varios aspectos importantes, principalmente una población grande mantiene varias regiones del espacio de búsqueda.
+%
+Además los operadores de cruce tienden a se más explorativos cuando están involucrados individuos distantes ref13-TIPDMEALCO.
 
-In spite of the effectiveness of \DE{}, there exists several weaknesses that have been detected and partially
-solved by extending the standard variant~\cite{das2011differential}.
-%
-Among them, the sensitivity to its parameters~\cite{zhang2009jade}, the appearance of stagnation due to the reduced exploration 
-capabilities~\cite{sa2008exploration,lampinen2000stagnation} and premature convergence~\cite{zaharie2003control} are some of the most well-known
-issues.
-%
-This last one issue is tackled in this paper.
-%
-Note that, attending to the proper design of population-based meta-heuristics~\cite{Talbi:09}, special attention must be
-paid to attain a proper balance between exploration and exploitation.
-%
-A too large exploration degree prevents the proper intensification of the best located regions, usually resulting in a
-too slow convergence.
-%
-Differently, an excessive exploitation degree provokes loss of diversity meaning that only a limited number of regions are sampled.
 
-Since the appearance of \DE{}, some criticism appeared because of its incapability to maintain a large
-enough diversity due to the use of a selection with high pressure~\cite{sa2008exploration}.
+Entre las distintas categorías de \EAS{}, Evolución Diferencial (Differential Evolution - \DE{}) es una de las estrategias más efectivas para lidiar con problemas de optimización contínua~\cite{storn1997differential}.
 %
-Thus, several extensions of \DE{} to deal with premature convergence have been devised 
-such as parameter adaptation~\cite{zaharie2003control}, 
-auto-enhanced population diversity~\cite{yang2015differential} and selection strategies 
-with a lower selection pressure~\cite{sa2008exploration}.
+De hecho, esta categoría de algoritmos han sido los ganadores en varias competencias de optimización~\cite{das2011differential}.
 %
-Some of the last studies on design of population-based meta-heuristics~\cite{Crepinsek:13} show that 
-explicitly controlling the diversity to properly balance the exploration and intensification degree
-is particularly useful.
+Similarmente a otros \EAS{}. \DE{} está inspirado en el proceso de evolución natural, y además involucra la aplicaciónde mutación, recombinación y selección.
 %
-Specifically, in the field of combinatorial optimization some novel replacement strategies that dynamically alter 
-the balance between exploration and exploitation 
-have appeared~\cite{segura2016novel}.
+La principal característica de \DE{} es que éste considera las diferencias de los vectores que están presentes en la población con el motivo de explorar el espacio de búsqueda.
 %
-The main principle of such proposals is to use the stopping criterion and elapsed generations to bias the decisions 
-taken by the optimizers with the aim of promoting exploration in the initial stages and exploitation in the last ones.
+En este sentido \DE{} es similar a los optimizadores \textit{Nelder-Mead}~\cite{nelder1965simplex}  y a la \textit{Búsqueda Aleatoria Controlada (BAC)} \cite{price1983global}.
 %
-Probably their main weakness is that the time required to obtain high-quality solution increases.
+A pesar de la efectividad de \DE{}, existen varias debilidades que han sido detectadas y resueltas de forma parcial que por lo tanto a generado extensiones a la variante estándar de \DE{}~\cite{das2011differential}.
 %
+Algunos de los problemas más conocidos es la sensibilidad de la parametrización~\cite{zhang2009jade}, la apariencia de estancamiento debido a las capacidades de exploración reducidas~\cite{sa2008exploration,lampinen2000stagnation} y la convergencia prematura~\cite{zaharie2003control}.
+%
+Desde la aparición de \DE{}, varias críticas se hicieron debido a su falta de capacidad para mantener un grado de diversidad suficiente dado a la elevada presión de selección~\cite{sa2008exploration}.
+%
+Por lo tanto, se han generado varias extensiones de \DE{} para aliviar la convergencia prematura, como la adaptiación de parámetros~\cite{zaharie2003control}, auto-adaptación de la diversidad en la población~\cite{yang2015differential} y estrategias de selección con una menor presión de selección~\cite{sa2008exploration}.
+%
+Algúnos de los últimos estudios en el diseño metaheurísticas poblacionales~\cite{Crepinsek:13} mostraron que controlando explícitamente la diversidad es particularmente útil para obtener un propio balanceo entre el grado de exploración y de intensificación.
+%
+Nuestra hipótesis es que introduciendo un mecanismo para la preservación de la diversidad results en un balanceo adecuado entre exploración e intensidifación, que a su vez propociona soluciones de alta calidad en ejecuciones a largo plazo.
+
+Principalmente en este capítulo se explican dos propuestas, primeramente \DE{} con Mantenimiento de Diversidad Mejorado ( \DE with Enhanced Diversity Maintenance\DEEDM{}), el cual integra un principio similar en \DE{} y el operador Dinámico basado en el Cruce Binario Simulado ( Dynamic Simulated Binary Crossover \DSBX{}).
+
 Our novel proposal, which is called \DE{} with Enhanced Diversity Maintenance (\DEEDM{}), integrates a similar principle into \DE{}.
 %
-However, in order to avoid the excessive growth of computational requirements typical of diversity-based replacement strategies, 
-the method was designed with the aim of inducing a larger degree of intensification.
-
-The rest of the paper is organized as follows.
-%
-Some basic concepts of \DE{} and a review of works related to diversity within \DE{} are given in section~\ref{sec:Literature}.
-%
-Section~\ref{sec:trends} presents an analysis about the algorithms with best performance on the last continuous optimization 
-contests held at the \textsc{ieee} Congress on Evolutionary Computation.
-%
-More emphasis is given on the variants based on \DE{}.
-%
-Our proposal is described in section~\ref{sec:Proposal}.
-%
-The experimental validation, which includes comparisons against state-of-the-art approaches, is shown in section~\ref{sec:Experimental}. 
-%
-Finally, our conclusions and some lines of future work are given in section~\ref{sec:Conclusion}.
+El resto de este capítulo está organizado de la siguiente forma.
