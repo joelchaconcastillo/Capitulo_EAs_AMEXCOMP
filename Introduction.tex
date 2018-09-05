@@ -1,47 +1,47 @@
 Los Algoritmos Evolutivos (Evolutionary Algorithms \EA{}) son considerados como uno de los enfoques con mayor aficacia para resolver distintas categorías de optimización.
 %
-Particularmente, se han aplicado en problemas tanto de dominio continuo ref 3ANDBRS como de dominio discreto.
+Particularmente, se han aplicado en problemas tanto de dominio continuo \cite{glover2005handbook} como de dominio discreto.
 %
 Especialmente, los \EAS{} son aplicados para resolver problemas complejos cuyo enfoque determinístico es complicado o imposible~\cite{chakraborty2008advances}.
 % 
 Además, diversas variantes se han utilizado y aplicado en muchos campos, como es en ciencia, economía e ingeniería.
 %
 %
-Actualmente, los \EAS{} son plenamente conocidos como metaheurísticas ref 3-ANDBRS.
+Actualmente, los \EAS{} son plenamente conocidos como metaheurísticas \cite{glover2005handbook}.
 %
 A pesar del éxito que tienen los \EAS{}, existe una dificultad en su adaptación o configuración ante nuevos problemas.
 %
-Una dificultad popular en el diseño de un \EA{} es obtener un balanceo propio entre exploración y explotación ref5-ANDBRS.
+Una dificultad popular en el diseño de un \EA{} es obtener un balanceo propio entre exploración y explotación \cite{herrera1996adaptation}.
 %
-Sin embargo, no siempre son comprendidas las implicaciones al mantener un grado de diversidad en este balanceo y como son promovidas las exploración y explotación ref6-ANDBRS.
+Sin embargo, no siempre son comprendidas las implicaciones al mantener un grado de diversidad en este balanceo y como son promovidas las exploración y explotación \cite{Crepinsek:13}.
 %
-Desde su inicio los \EAS{} han presentado problemas de convergencia siendo como una desventaja importante ref6-ANDBRS.
+Desde su inicio los \EAS{} han presentado problemas de convergencia siendo como una desventaja importante\cite{Crepinsek:13}.
 %
 La convergencia prematura es originada cuando todos los miembros de la población están ubicados en una parte reducida del espacio de búsqueda, esta región es distinta a la región óptima y además los componentes seleccionados no son suficientes para escapar de esta región.
 %
 Basado en esto se han desarrollado varias estrategias para aliviar este problems.
 %
-Además en através de varios estudios se ha revelado que mantener una populación diversa en un requisito previo para evitar la convergencia prematura ref6-ANDBRS.
+Además en através de varios estudios se ha revelado que mantener una populación diversa en un requisito previo para evitar la convergencia prematura~\cite{Crepinsek:13}.
 %
 Sin embargo, si la población es muy diversa, entonces un grado adecuado de explotación podría ser prevenido, resultando en un convergencia lenta y por lo tanto soluciones de baja calidad.
 %
-Por esta razón, Mahfoud ref10-ANDBRS utilizó el concepto de diversidad util, con cual se refiere a la cantidad de diversidad que resulta en soluciones de alta calidad.
+Por esta razón, Mahfoud~\cite{dasgupta2013evolutionary} utilizó el concepto de diversidad util, con cual se refiere a la cantidad de diversidad que resulta en soluciones de alta calidad.
 %
-En la literatura existen distintas forma para aliviar el problema de convergencia prematura ref40-TIPDMEALCO.
+En la literatura existen distintas forma para aliviar el problema de convergencia prematura~\cite{pandey2014comparative}.
 %
 En los 90s, la mayoría de estrategias para aliviar la convergencia prematura se centraron en modificar el esquema de selección de padres.
 %
 La principal razón es que en esa época la mayoría de esquemas eran generacionales, por lo tanto la presión de selección estaba definida principalmente en la selección de padres.
 %
-Sin embargo, se descubrió que tratando de aliviar la convergencia prematura donde únicamente sea considerada la selección de padres no fue suficiente ref4-TIPDMEALCO.
+Sin embargo, se descubrió que tratando de aliviar la convergencia prematura donde únicamente sea considerada la selección de padres no fue suficiente~\cite{blickle1996comparison}.
 %
 Posteriormente, la una gran cantidad de \EAS{} incorporaron una fase de reemplazo que abandonaron al menos parcialmente a los métodos generacionales iniciales.
 %
-Basado en esto muchos autores descubrieron la posibilidad de incorporar métodos para aliviar el problema de convergencia prematura ref10-TIPDMEALCO.
+Basado en esto muchos autores descubrieron la posibilidad de incorporar métodos para aliviar el problema de convergencia prematura~\cite{Crepinsek:13}.
 %
-Es importante considerar que aún cuando los métodos de reemplazamiento generacionales ref11-ANDBRS fueron suficientemente populares, algunos autores ya habían tomado en cuenta esta estrategia ref-30-TIPDMEALCO.
+Es importante considerar que aún cuando los métodos de reemplazamiento generacionales~\cite{de2006evolutionary} fueron suficientemente populares, algunos autores ya habían tomado en cuenta esta estrategia~\cite{mahfoud1992crowding}.
 %
-Sin embargo, con la efectividad de elitismo y otras estrategias de reemplazo, el número de esquemas que adoptaron estos principios crecieron de forma considerable ref-27-TIPDMEALCO.
+Sin embargo, con la efectividad de elitismo y otras estrategias de reemplazo, el número de esquemas que adoptaron estos principios crecieron de forma considerable~\cite{lozano2008replacement}.
 %
 
 Un aspecto importante de la convergencia prematura es que depende completamente de la cantidad de tiempo y/o generaciones asignados a las ejecuciones del \EA{}, es decir el criterio de paro.
@@ -54,7 +54,7 @@ Esto significa que, dependiendo en el criterio de paro, distintas parametrizacio
 %
 Como resultado, para criterio de paro distinto, el usuario debería estudiar el efecto de distintos parámetros.
 %
-Un ejemplo popular de esto es \textit{El Torneo de Selección Restringida (TSR)} ref14-TIPDMEALCO, este método retrasa la convergencia de los \EAS{}.
+Un ejemplo popular de esto es \textit{El Torneo de Selección Restringida (TSR)}~\cite{Crepinsek:13}, este método retrasa la convergencia de los \EAS{}.
 %
 Específicamente, este método incorpora un parámetro que puede ser utilizado para alterar el balanceo entre exploración e intensificación.
 %
@@ -64,7 +64,7 @@ El principio básico de las técnicas para la preservación de la diversidad y q
 %
 Esto se debe a varios aspectos importantes, principalmente una población grande mantiene varias regiones del espacio de búsqueda.
 %
-Además los operadores de cruce tienden a se más explorativos cuando están involucrados individuos distantes ref13-TIPDMEALCO.
+Además los operadores de cruce tienden a se más explorativos cuando están involucrados individuos distantes \cite{eiben1998evolutionary}.
 
 
 Entre las distintas categorías de \EAS{}, Evolución Diferencial (Differential Evolution - \DE{}) es una de las estrategias más efectivas para lidiar con problemas de optimización contínua~\cite{storn1997differential}.
