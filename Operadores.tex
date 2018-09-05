@@ -334,23 +334,30 @@ Considerando que $p_1 < p_2$ y con un límite inferior igual a $a$, se tiene que
 Similarmente, el segundo valor hijo $c_2$ es calculado con $\alpha = 1 + (b-p_2)/(p_2 - p_1)$, donde $b$ corresponde al límite superior.
 %Similarly, the second child $c_2$ is computed with $\alpha = 1 + (b-p_2)/(p_2 - p_1)$, where $b$ correspond to the upper bound.
 %
-Then, the second child is computed as is indicated in Equation (\ref{eq:child_2}).
+Entonces, el segundo valor hijo es calculado como se indica en la ecuación (\ref{eq:child_2}).
+%Then, the second child is computed as is indicated in Equation (\ref{eq:child_2}).
 
 \begin{algorithm}[t]
 \algsetup{linenosize=\tiny}
 \scriptsize
-\caption{Simulated Binary Crossover (\SBX{})}
+\caption{Operador de Cruce basado en Simulación Binaria (\SBX{})}
+%\caption{Simulated Binary Crossover (\SBX{})}
 \label{alg:SBX_Operator}
 \begin{algorithmic}[1]
-    \STATE Input: Parents ($P_{1}, P_{2}$), Distribution index ($\eta_c$), Crossover probability ($P_c$).
-    \STATE Output: Children ($C_{1}, C_{2}$).
+    \STATE Entrada: Soluciones padre ($P_{1}, P_{2}$), Índica de distribución ($\eta_c$), Probabilidad de cruce ($P_c$).
+    %\STATE Input: Parents ($P_{1}, P_{2}$), Distribution index ($\eta_c$), Crossover probability ($P_c$).
+    \STATE Salida: Soluciones hijo ($C_{1}, C_{2}$).
+    %\STATE Output: Children ($C_{1}, C_{2}$).
     \IF{ $U[0, 1] \leq P_c$}
-       \FOR{ each variable d}
+       \FOR{para cada variable $d$}
+       %\FOR{ each variable d}
 	\IF{ $U[0, 1] \leq  \delta_1$} \label{alg:inherit_variable}
-		\STATE Generate $C_{1,d}$ with Equations (\ref{eq:sbx_spread}) and (\ref{eq:child_1}).
-		\STATE Generate $C_{2,d}$ with Equations (\ref{eq:sbx_spread}) and (\ref{eq:child_2}).
+		\STATE Generar $C_{1,d}$ utilizando las ecuaciones (\ref{eq:sbx_spread}) y (\ref{eq:child_1}).
+		%\STATE Generate $C_{1,d}$ with Equations (\ref{eq:sbx_spread}) and (\ref{eq:child_1}).
+		\STATE Generar $C_{2,d}$ utilizando las ecuaciones (\ref{eq:sbx_spread}) y (\ref{eq:child_2}).
+		%\STATE Generate $C_{1,d}$ with Equations (\ref{eq:sbx_spread}) and (\ref{eq:child_1}).
 		 \IF{$ U[0, 1]  \leq  (1 - \delta_2) $} 
-			\STATE Swap $C_{1,d}$ with $C_{2,d}$.
+			\STATE Intercambiar $C_{1,d}$ con $C_{2,d}$.
 		 \ENDIF
         \ELSE
 	   \STATE $C_{1,d} = P_{1, d}$.
@@ -364,46 +371,63 @@ Then, the second child is computed as is indicated in Equation (\ref{eq:child_2}
 \end{algorithmic}
 \end{algorithm}
 
-Note that as reported in~\cite{Joel:SBX1994} several extensions of the \SBX{} to problems with multiple
-variables might be provided.
+Es importante hacer mención de en base a lo reportado en ~\cite{Joel:SBX1994} se han proporcionaron varias extensiones del \SBX{}.
+%Note that as reported in~\cite{Joel:SBX1994} several extensions of the \SBX{} to problems with multiple
+%variables might be provided.
 %
-Authors considered a simple strategy for choosing the variables to cross~\cite{Joel:UNDX}.
+Los autores consideraron una estrategia simple para escoger las variables que se van a cruzar~\cite{Joel:UNDX}.
+%Authors considered a simple strategy for choosing the variables to cross~\cite{Joel:UNDX}.
 %
-Specifically, each variable is crossed with probability 0.5, following the principles of uniform crossover.
+Específicamente, en base a los principios del operador de cruce unifome cada vairable es cruzada con una probabilidad del $0.5$.
+%Specifically, each variable is crossed with probability 0.5, following the principles of uniform crossover.
 %
-Authors recognized the important implications on the linkage among variables of such decisions.
+Sin embargo, los autores reconocieron las implicaciones que existen con los problemas donde un grado elevado de dependencia puede existir entre las variables.
+%Authors recognized the important implications on the linkage among variables of such decisions.
 %
-In any case, this is the most typical way of applying \SBX{} in problems with multiple variables nowadays.
+En cualquier caso, actualmente esta es la forma mas común de aplicar el \SBX{} en problemas con múltiple varibles.
+%In any case, this is the most typical way of applying \SBX{} in problems with multiple variables nowadays.
 %
 
-\subsubsection{Implementation and analyses of SBX operator}
+\subsubsection{Implementación y análisis del operador \SBX{}}
+%\subsubsection{Implementation and analyses of SBX operator}
 
-This section discusses some of the main characteristics of the most currently used implementation of the \SBX{} operator for problems with multiple variables.
+En este apartado se discuten algunas de las principales características de la implementación más utilizada del operador \SBX{}, los cuales son utilizados con problemas de múltiples variables.
+%This section discusses some of the main characteristics of the most currently used implementation of the \SBX{} operator for problems with multiple variables.
 %
-Essentially, three key components that might affect its performance are discussed.
+Escencialmente, se consideran tres componentes clave los cuales affectar el rendimiento de los \MOEAS{}.
+%Essentially, three key components that might affect its performance are discussed.
 %
-Firstly, as already mentioned it alters each variable with a fixed probability equal to $0.5$.
+Inicialmente, como ya se mencionó con anterioridad cada variable es alterada dada una probabilidad de $0.5$.
+%Firstly, as already mentioned it alters each variable with a fixed probability equal to $0.5$.
 %
-If this probability value is increased, the children tend to be more distant to the parents, since in average 
-more variables are modified simultaneously.
+Si este valor de probabilidad es incrementado, entonces existe una tendencia de generar valores hijo mas distante de los padres debido a que mas variables son modificadas por cada operación.
+%If this probability value is increased, the children tend to be more distant to the parents, since in average 
+%more variables are modified simultaneously.
 %
-In separable problems, altering only one variable might be adequate.
+De acuerdo a esto, sería adecuado modificar una variable en los problemas separables.
+%In separable problems, altering only one variable might be adequate.
 %
-However, for non-separable problems altering several variables simultaneously seems more promising.
+Sin embargo, parece ser mas conveniente modificar un conjunto de variables de forma simulánea en problemas no-separables.
+%However, for non-separable problems altering several variables simultaneously seems more promising.
 %
-The implications of varying this probability is illustrated in Figure~\ref{fig:Simulation_pv}, where a problem
-with two variables is taken into account.
+En la figura~\ref{fig:Simulation_pv} se pueden observar las implicaciones de variar esta probabilidad, donde se considera un problema con dos variables.
+%The implications of varying this probability is illustrated in Figure~\ref{fig:Simulation_pv}, where a problem
+%with two variables is taken into account.
 %
-In the right side a low probability is used and it provokes a bias to explore by keeping some values intact
-creating a figure similar to a cross in the two-dimensional case.
+Particularmente, en la parte derecha se muestra que una probabilidad pequeña provoca una tendencia de explorarión donde algunas variables no son modificadas, es decir hay una tendencia de generar desplazamientos paralelos a los ejes.
+%In the right side a low probability is used and it provokes a bias to explore by keeping some values intact
+%creating a figure similar to a cross in the two-dimensional case.
 %
-This feature might be suitable for separable problems.
+Esta característica es ideal para problemas semarables.
+%This feature might be suitable for separable problems.
 %
-Alternatively, the left side shows that when using a high probability this bias disappears, which could be 
-more suitable for non-separable problems.
+De forma alternative, en la parte izquierda se muestra que utilizando una probabilidad elevada existe un comportamiento de búsqueda distinto donde la tendencia anterior desaparece, lo cual podría ser ideal para problemas no separables.
+%Alternatively, the left side shows that when using a high probability this bias disappears, which could be 
+%more suitable for non-separable problems.
 %
-Note that this probability is somewhat related with the distribution index in the sense that both have a
-direct effect on the similarity between parents and children.
+Es importante destacar que existe una relación entre esta probabilidad y con el índice de distribución, de hecho estos dos factores tienen un efecto directo en la similitud que exist entre las soluciones padre e hijo.
+%Note that this probability is somewhat related with the distribution index in the sense that both have a
+%direct effect on the similarity between parents and children.
 %
 %Otherwise, a low probability value is suitable for objective functions that are separable \cite{ma2016multiobjective}, due that few decision variables are modified by the crossover operation.
 %
@@ -417,69 +441,96 @@ direct effect on the similarity between parents and children.
 \label{fig:Simulation_Case_3}
 \end{figure}
 
-The second key issue is that after generating the two child values with the \SBX{} distribution, such values
-are interchanged with a fixed probability that is usually set to $0.5$, i.e. the value closer to parent $p_1$ is
-not always inherited by $c_1$.
+El segundo aspecto clave es después de generar dos valores de las soluciones hijo con la distribución \SBX{}, ya que estos valores son intercambiados con una probabilidad fija que usualmente es $0.5$, es decir el valor de la solución hijo $c_1$ no siempre es heradado por la solución padre mas cercana $p_1$.
+%The second key issue is that after generating the two child values with the \SBX{} distribution, such values
+%are interchanged with a fixed probability that is usually set to $0.5$, i.e. the value closer to parent $p_1$ is
+%not always inherited by $c_1$.
 %
-This is a feature that is not usually discussed but it is important for the obtained performance.
+Esta es una característica no muy discutida, sin embargo es un aspecto muy relevante y afecta al rendimiento del algoritmo.
+%This is a feature that is not usually discussed but it is important for the obtained performance.
 %
-In some contexts this probability is known as ``Variable uniform crossover probability'' 
-\cite{tuvsar2007differential} or ``Discrete Recombination'' \cite{muhlenbein1993predictive}.
-%
-Since in multi-objective optimization more diversity is maintained these swaps might produce a high disruptive operator.
-%
-In fact, in some sense due to this action it is not so clear that \SBX{} can be categorized as a parent-centric operator.
-%
-These interchanges between the children has the effect of performing multiple ``reflections'' in the search space.
-%
-When increasing the dimensions of the decision variables the number of regions covered increases exponentially 
-as is illustrated in Figure \ref{fig:Simulations_Index_20} where cases with two and three decision variables are taken into account.
-%
-Note also that this feature has a considerable effect on the distance between parents and offspring.
+En algunos contextos esta probabilidad se identifica como ``Probabilidad de cruce uniforme por variable'' (Variable uniform crossover probability) \cite{tuvsar2007differential} o ``Recombinación Discreta'' (Discrete Recombination) \cite{muhlenbein1993predictive}.
 
-Finally, the last component is the distribution index, which is probably the most well known feature of the \SBX{}.
+%In some contexts this probability is known as ``Variable uniform crossover probability'' 
+%\cite{tuvsar2007differential} or ``Discrete Recombination'' \cite{muhlenbein1993predictive}.
 %
-A low index results in greater exploration levels.
+Desde que en el ámbito multi-objetivo se promueve más diversidad en las variables de decision de forma implícita, estos intercambios podrían ser altamente disruptivos.
+%Since in multi-objective optimization more diversity is maintained these swaps might produce a high disruptive operator.
 %
-In fact, a distribution index equal to one has a similar effect to the Fuzzy Recombination Operator \cite{voigt1995fuzzy}.
+De hecho, en algún sentido y dado a esto, no es totalmente claro que el \SBX{} pueda ser categorizado como un operador totalmente basado en los padres.
+%In fact, in some sense due to this action it is not so clear that \SBX{} can be categorized as a parent-centric operator.
 %
-The effect of applying different indexes is illustrated in Figure~\ref{fig:Simulation_Case_3} where the left side
-considers a low index value whereas the right side takes into account a higher index value, which creates 
-new candidate solutions that are more similar to the parents.
+Estos intercambios que existen entre los valores de las soluciones hijo tienen un efecto de realizar múltiples ``reflexiones'' en el espacio de búsqueda.
+%These interchanges between the children has the effect of performing multiple ``reflections'' in the search space.
+%
+De hecho, conforme incrementa la dimensionalidad en el espacio de las variales, el número de regiones cubiertas incrementa de forma exponencial como se puede observar en los casos de dos y tres dimensiones en la figura \ref{fig:Simulations_Index_20}.
+%When increasing the dimensions of the decision variables the number of regions covered increases exponentially 
+%as is illustrated in Figure \ref{fig:Simulations_Index_20} where cases with two and three decision variables are taken into account.
+%
+Es importante notar que esta característica tiene un efecto relevante en la distancia entre las soluciones padre y las soluciones hijo.
+%Note also that this feature has a considerable effect on the distance between parents and offspring.
+
+Finalmente, siendo quizás la característica mas conocida del operador \SBX{} es el índice de distribución.
+%Finally, the last component is the distribution index, which is probably the most well known feature of the \SBX{}.
+%
+Un índice de distribución pequeño provoca un grado de exploración elevado.
+%A low index results in greater exploration levels.
+%
+De hecho, un índice de distribución de la unidad tiene un efecto similar al \textit{Operador de Recombinación Difusa} (Fuzzy Recombination Operator) \cite{voigt1995fuzzy}.
+%In fact, a distribution index equal to one has a similar effect to the Fuzzy Recombination Operator \cite{voigt1995fuzzy}.
+%
+En la figura~\ref{fig:Simulation_Case_3} se puede observar el efecto de aplicar distintos índices de distribución.
+%
+Particularmente, en la parte izquierda se considera un índice de distribución pequeño, mientras en la parte derecha se considera un índice de distribución grande, se observa que este último genera soluciones candidatas similares a las soluciones padre.
+%The effect of applying different indexes is illustrated in Figure~\ref{fig:Simulation_Case_3} where the left side
+%considers a low index value whereas the right side takes into account a higher index value, which creates 
+%new candidate solutions that are more similar to the parents.
 %
 
-The \SBX{} implementation is shown in Algorithm \ref{alg:SBX_Operator}.
+En el algoritmo \ref{alg:SBX_Operator} se muestra la implementación del operador \SBX{}.
+%The \SBX{} implementation is shown in Algorithm \ref{alg:SBX_Operator}.
 %
-This pseudocode is based on the implementation that is integrated in the NSGA-II code published by Deb et al. \cite{Joel:NSGAII} and which
-is the most popular variant nowadays.
+Este pseudocódigo está basado en la implementación que está integrado en el código \NSGAII propuesto por Deb y otros \cite{Joel:NSGAII}, el cual es considerada como la variante mas popular.
+%This pseudocode is based on the implementation that is integrated in the NSGA-II code published by Deb et al. \cite{Joel:NSGAII} and which
+%is the most popular variant nowadays.
 %
-As an input it requires two parents ($P_1$ and $P_2$) and it creates two children ($C_1$ and $C_2$).
+Como parámetros de entrada se requieren dos soluciones padre ($P_1$ and $P_2$), y como salida se obtinen dos soluciones hijo ($C_1$ and $C_2$).
+%As an input it requires two parents ($P_1$ and $P_2$) and it creates two children ($C_1$ and $C_2$).
 %
-The first and second key components commented previously correspond to the lines 5 and 8, respectively. 
+El primero y el segundo componente que mencionados previamente corresponden a las líneas 5 y 9 respectivamente.
+%The first and second key components commented previously correspond to the lines 5 and 8, respectively. 
 %
-As is usual, for the basic case, \SBX{} is configured with $\delta_1 = \delta_2 = 0.5$ and $\eta_c = 20$.
+Como es usual, el caso clásico del operador \SBX{} es configurado asignando los parámetros $\delta_1 = \delta_2 = 0.5$ y $\eta_c = 20$.
+%As is usual, for the basic case, \SBX{} is configured with $\delta_1 = \delta_2 = 0.5$ and $\eta_c = 20$.
 %
-It is important take into account that this implementation does not consider the dimension of the decision variables 
-or the stopping criteria to set any of its internal parameters.
+Es important notar que la implementación clásica no considera la dimensión de la variable o el criterio de paro en sus parámetros internos.
+%It is important take into account that this implementation does not consider the dimension of the decision variables 
+%or the stopping criteria to set any of its internal parameters.
 
 \subsection{Propuesta}
 
-Based on the previous analyses and with the aim of inducing an appropriate balance between 
-exploration and intensification, the following modifications are proposed.
+Basado en el análisis anterior y con el propósito de inducir un balance entre exploración e intensificación, se proponen las siguiente modificaciones.
+%Based on the previous analyses and with the aim of inducing an appropriate balance between 
+%exploration and intensification, the following modifications are proposed.
 %
-First, the probability to modify a variable ($\delta_1$) is dynamically
-modified during the execution.
+Primeramente, se modifica la probabilidad de alterar una variable ($\delta_1$) durante la ejecución de forma dinámica.
+%First, the probability to modify a variable ($\delta_1$) is dynamically
+%modified during the execution.
 %
-The rationality behind this modification is to increase the exploration capability in the initial stages
-by altering simultaneously several variables and then, as the evolution proceeds reduce the number of variables
-that are modified.
+La intención de esta modificación es incrementar la capacidad de exploración en las primeras etapas, esto alterando de forma simultánea un conjunto de variables y conforme la execución procede se reduce el número de variables que son modificadas.
+%The rationality behind this modification is to increase the exploration capability in the initial stages
+%by altering simultaneously several variables and then, as the evolution proceeds reduce the number of variables
+%that are modified.
 %
-The value of $\delta_1$ is changed in base of a linear decreasing model, where initially it is fixed to $1.0$ and 
-then it is decreased so that at the half of total generations is equal to $0.5$.
+El valor de $\delta_1$ se cambia en base a un modelo lineal decreciente, donde inicialmente es fijado a $1.0$ y entonces es decrementado hasta la mitad del total de generaciones con un valor de $0.5$.
+%The value of $\delta_1$ is changed in base of a linear decreasing model, where initially it is fixed to $1.0$ and 
+%then it is decreased so that at the half of total generations is equal to $0.5$.
 %
-This last value is maintained until the end of the execution, i.e. from the half of the execution it behaves as the 
-traditional \SBX{} implementation.
+Esta último valor es mantenido haste el final de la ejecución, es decir desde la mitad de la execución este parámetro se comporta similar a la implementación tradicional del \SBX{}.
+%This last value is maintained until the end of the execution, i.e. from the half of the execution it behaves as the 
+%traditional \SBX{} implementation.
 %
+
 Equation (\ref{eqn:linear}) is the one used to set the value of $\delta_1$, where $G_{Elapsed}$ is the current generation 
 and $G_{End}$ is the total number of generations.
 
