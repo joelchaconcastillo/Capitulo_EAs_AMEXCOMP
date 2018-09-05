@@ -531,38 +531,49 @@ Esta último valor es mantenido haste el final de la ejecución, es decir desde 
 %traditional \SBX{} implementation.
 %
 
-Equation (\ref{eqn:linear}) is the one used to set the value of $\delta_1$, where $G_{Elapsed}$ is the current generation 
-and $G_{End}$ is the total number of generations.
+Para asignar el valor $\delta_1$ se utiliza la ecuación (\ref{eqn:linear}), donde $G_{Transcurridas}$ corresponde a la generación actual y $G_{Total}$ corresponde al número total de generaciones.
+%Equation (\ref{eqn:linear}) is the one used to set the value of $\delta_1$, where $G_{Elapsed}$ is the current generation 
+%and $G_{End}$ is the total number of generations.
 
-In a similar way, the second change is related to the probability of performing reflections ($1 - \delta_2$).
+Similarmente, el segundo cambio está relacionado con la probabilidad de aplicar reflexiones ($1 - \delta_2$).
+%In a similar way, the second change is related to the probability of performing reflections ($1 - \delta_2$).
 %
-In this case $\delta_2$ is also updated as in Equation (\ref{eqn:linear}), meaning that the probability of performing
-a reflection increases from $0.0$ to $0.5$ during the execution.
+En este caso $\delta_2$ es actualizado de acuerdo a la ecuación (\ref{eqn:linear}), por lo tanto la probabilidad de aplicar una reflexión incrementa de $0.0$ a $0.5$ durante la ejecución.
+%In this case $\delta_2$ is also updated as in Equation (\ref{eqn:linear}), meaning that the probability of performing
+%a reflection increases from $0.0$ to $0.5$ during the execution.
 %
-This modification is performed with the aim of avoiding the disruptive behavior of interchanging the variables at the
-first generations because this might result in very drastic modifications.
+Esta modificación se realiza con el propósito de evitar el comportamiento disruptivo de intercambiar variables en las primeras generaciones ya que esto provocaría modificaciones muy drásticas.
+%This modification is performed with the aim of avoiding the disruptive behavior of interchanging the variables at the
+%first generations because this might result in very drastic modifications.
 %
-Once that the individuals converge to certain degree it might make more sense to perform such reflections.
+De esta forma, sería mas sensato aplicar estas reflexiones una vez que los individuos convergen a cierto grado-
+%Once that the individuals converge to certain degree it might make more sense to perform such reflections.
 %
-Thus, this probability is increased to $0.5$ which is the value used in the standard implementation of \SBX{}.
+Por lo tanto, esta probabilidad es incrementado a $0.5$, siendo el valor utilizando en la implementación del \SBX{} estándar.
+%Thus, this probability is increased to $0.5$ which is the value used in the standard implementation of \SBX{}.
 
 \begin{equation}\label{eqn:linear}
-	\delta_1 = \delta_2 = max \left (0.5, 1.0 - \frac{G_{Elapsed}}{G_{End}} \right )
+	\delta_1 = \delta_2 = max \left (0.5, 1.0 - \frac{G_{Transcurridas}}{G_{Total}} \right )
 \end{equation}
 
-Finally, the distribution index is also changed during the execution. 
+Finalmente, el índice de distribución también es modificado durante la ejecución.
+%Finally, the distribution index is also changed during the execution. 
 %
-At the first stages a low distribution index is induced with the aim of increasing the exploration capabilities 
-of \SBX{}.
+De esta forma, en la primeras etapas se promueve un íncide de distribución pequeño con el propósito de incrementar la capacidad de exploración del \SBX{}.
+%At the first stages a low distribution index is induced with the aim of increasing the exploration capabilities 
+%of \SBX{}.
 %
-Then, it is linearly incremented which has the effect of closing the distribution curve, meaning that more intensification is
-promoted.
+Posteriormente es decrementado de forma lineal, lo cual tiene implica que la curva de distribución se cierre, por lo tanto se promueve un mayor grado de intensificación en las etapas finales.
+%Then, it is linearly incremented which has the effect of closing the distribution curve, meaning that more intensification is
+%promoted.
 %
-The linear increment is governed by Equation (\ref{eqn:index_eta}), meaning that the distribution index is altered
-from $2$ to $22$.
+El incremento lineal es indicado en la ecuación (\ref{eqn:index_eta}), por lo tanto el índice de distribución es alterado de $2$ a $22$.
+%The linear increment is governed by Equation (\ref{eqn:index_eta}), meaning that the distribution index is altered
+%from $2$ to $22$.
 %
-Note that modifications similar to this last one have been explored previously 
-\cite{zitzler1999multiobjective}, \cite{hamdan2012distribution}.
+Es importante hacer mención que ya se han considerado modificaciones similares al índice de distribución \cite{zitzler1999multiobjective}, \cite{hamdan2012distribution}.
+%Note that modifications similar to this last one have been explored previously 
+%\cite{zitzler1999multiobjective}, \cite{hamdan2012distribution}.
 %
 
 \begin{equation}\label{eqn:index_eta}
@@ -574,11 +585,13 @@ Note that modifications similar to this last one have been explored previously
 \begin{table}[t]
 \centering
 \scriptsize
-\caption{References points for the HV indicator}
+\caption{Puntos de referencias para el indicador HV}
+%\caption{References points for the HV indicator}
 \label{tab:ReferencePoints}
 \begin{tabular}{cc}
 \hline
-\textbf{Instances} & \textbf{Reference Point} \\ \hline
+\textbf{Instancias} & \textbf{Punto de referencia} \\ \hline
+%\textbf{Instances} & \textbf{Reference Point} \\ \hline
 WFG1-WFG9 & $[2.1, ...,2m+0.1]$ \\
 DTLZ 1, 2, 4 & $[1.1, ..., 1.1]$ \\
 DTLZ 3, 5, 6 & $[3, ..., 3]$ \\
@@ -594,7 +607,8 @@ UF 1-10 & $[2, ..., 2]$ \\ \hline
 \begin{table*}[t]
 \centering
 
-\caption{Statistical Information of Metrics with two objectives}
+\caption{Información estadística de las métricas considerando dos objetivos}
+%\caption{Statistical Information of Metrics with two objectives}
 \label{tab:Metrics_2}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
@@ -616,7 +630,8 @@ Average IGD+ & 0.12 & 0.09 & 0.11 & 0.07 & 0.06 & \textbf{0.05} & 0.14 & 0.12 & 
 % \usepackage{graphicx}
 \begin{table*}[t]
 \centering
-\caption{Statistical Information of Metrics with three objectives}
+\caption{Información estadística de las métricas considerando tres objetivos}
+%\caption{Statistical Information of Metrics with three objectives}
 \label{tab:Metrics_3}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
@@ -634,7 +649,8 @@ Average IGD+ & 0.13 & 0.16 & 0.13 & \textbf{0.12} & \textbf{0.12} & 0.13 & 0.15 
 \end{table*}
 \begin{table*}[t]
 \centering
-\caption{Summary of Statistical Tests}
+\caption{Resúmen de las pruebas estadísticas}
+%\caption{Summary of Statistical Tests}
 \label{tab:statistical_Tests}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
@@ -682,16 +698,21 @@ Average IGD+ & 0.13 & 0.16 & 0.13 & \textbf{0.12} & \textbf{0.12} & 0.13 & 0.15 
 \end{tabular}
 \end{table*}
 
-
-This section is devoted to analyze the results obtained with the dynamic variants of \SBX{} (\DSBX{}).
+En este apartado se analizan los resultados obtenidos con las variantes dinámicas del \SBX{} (\DSBX{}).
+%This section is devoted to analyze the results obtained with the dynamic variants of \SBX{} (\DSBX{}).
 %
-The novel crossover operator was integrated with \NSGAII{}, \MOEAD{} and \SMSEMOA{}.
+Cada uno de los casos estudiados y una propuesta final se integraron en los algoritmos \NSGAII{}, \MOEAD{} and \SMSEMOA{}.
+%The novel crossover operator was integrated with \NSGAII{}, \MOEAD{} and \SMSEMOA{}.
 %
-First, three variants that alter only one of each of the components previously discussed are analyzed.
+Primeramente, es analizado cada uno de los tres componentes previamente analizados.
+%First, three variants that alter only one of each of the components previously discussed are analyzed.
 %
-Then, a case that alters two of them simultaneously is taken into account.
+Posteriormente se construye un caso donde se consideran dos componentes de forma simultánea.
+%Then, a case that alters two of them simultaneously is taken into account.
 %
-The WFG \cite{Joel:WFG}, DTLZ \cite{Joel:DTLZ_2} and UF \cite{zhang2009performance} test problems have been used for our purpose.
+%%##UNFINISHED
+Los problemas de prueba considerados  WFG \cite{Joel:WFG}, DTLZ \cite{Joel:DTLZ_2} and UF \cite{zhang2009performance}.
+%The WFG \cite{Joel:WFG}, DTLZ \cite{Joel:DTLZ_2} and UF \cite{zhang2009performance} test problems have been used for our purpose.
 %
 Our experimental validation also includes the variant of Differential Evolution known as DEMO~\cite{tuvsar2007differential}
 with the aim of comparing our extension of \SBX{} with other well-known operators.
