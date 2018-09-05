@@ -1,0 +1,110 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{DOI \discretionary{}{}{}#1}\else
+  \providecommand{\doi}{DOI \discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem{chakraborty2008advances}
+U.K. Chakraborty, \emph{Advances in differential evolution}, vol. 143
+  (Springer, 2008)
+
+\bibitem{storn1997differential}
+R.~Storn, K.~Price, Differential evolution--a simple and efficient heuristic
+  for global optimization over continuous spaces, Journal of global
+  optimization \textbf{11}(4), 341 (1997)
+
+\bibitem{das2011differential}
+S.~Das, P.N. Suganthan, Differential evolution: A survey of the
+  state-of-the-art, IEEE transactions on evolutionary computation
+  \textbf{15}(1), 4 (2011)
+
+\bibitem{nelder1965simplex}
+J.A. Nelder, R.~Mead, A simplex method for function minimization, The computer
+  journal \textbf{7}(4), 308 (1965)
+
+\bibitem{price1983global}
+W.~Price, Global optimization by controlled random search, Journal of
+  Optimization Theory and Applications \textbf{40}(3), 333 (1983)
+
+\bibitem{zhang2009jade}
+J.~Zhang, A.C. Sanderson, Jade: adaptive differential evolution with optional
+  external archive, IEEE Transactions on evolutionary computation
+  \textbf{13}(5), 945 (2009)
+
+\bibitem{sa2008exploration}
+{\^A}.A. S{\'a}, A.O. Andrade, A.B. Soares, S.J. Nasuto, in \emph{AISB 2008
+  Convention Communication, Interaction and Social Intelligence}, vol.~1
+  (2008), vol.~1, p.~57
+
+\bibitem{lampinen2000stagnation}
+J.~Lampinen, I.~Zelinka, et~al., in \emph{Proceedings of MENDEL} (2000), pp.
+  76--83
+
+\bibitem{zaharie2003control}
+D.~Zaharie, in \emph{Proc. of MENDEL}, vol.~9 (2003), vol.~9, pp. 41--46
+
+\bibitem{yang2015differential}
+M.~Yang, C.~Li, Z.~Cai, J.~Guan, Differential evolution with auto-enhanced
+  population diversity, IEEE transactions on cybernetics \textbf{45}(2), 302
+  (2015)
+
+\bibitem{Crepinsek:13}
+M.~\v{C}repin\v{s}ek, S.H. Liu, M.~Mernik, Exploration and exploitation in
+  evolutionary algorithms: A survey, ACM Computing Surveys \textbf{45}(3), 35:1
+  (2013)
+
+\bibitem{montgomery2009differential}
+J.~Montgomery, in \emph{Evolutionary Computation, 2009. CEC'09. IEEE Congress
+  on} (IEEE, 2009), pp. 2833--2840
+
+\bibitem{montgomery2012simple}
+J.~Montgomery, S.~Chen, in \emph{Evolutionary Computation (CEC), 2012 IEEE
+  Congress on} (IEEE, 2012), pp. 1--8
+
+\bibitem{bolufe2013differential}
+A.~Boluf{\'e}-R{\"o}hler, S.~Est{\'e}vez-Velarde, A.~Piad-Morffis, S.~Chen,
+  J.~Montgomery, in \emph{Evolutionary Computation (CEC), 2013 IEEE Congress
+  on} (IEEE, 2013), pp. 40--47
+
+\bibitem{segura2016novel}
+C.~Segura, C.A.C. Coello, E.~Segredo, A.H. Aguirre, A novel diversity-based
+  replacement strategy for evolutionary algorithms, IEEE transactions on
+  cybernetics \textbf{46}(12), 3233 (2016)
+
+\bibitem{montgomery2010analysis}
+J.~Montgomery, S.~Chen, in \emph{Evolutionary Computation (CEC), 2010 IEEE
+  Congress on} (IEEE, 2010), pp. 1--8
+
+\bibitem{awad2016ensemble}
+N.H. Awad, M.Z. Ali, P.N. Suganthan, R.G. Reynolds, in \emph{Evolutionary
+  Computation (CEC), 2016 IEEE Congress on} (IEEE, 2016), pp. 2958--2965
+
+\bibitem{brest2016shade}
+J.~Brest, M.S. Mau{\v{c}}ec, B.~Bo{\v{s}}kovi{\'c}, in \emph{Evolutionary
+  Computation (CEC), 2016 IEEE Congress on} (IEEE, 2016), pp. 1188--1195
+
+\bibitem{elsayed2016testing}
+S.~Elsayed, N.~Hamza, R.~Sarker, in \emph{Evolutionary Computation (CEC), 2016
+  IEEE Congress on} (IEEE, 2016), pp. 2966--2973
+
+\bibitem{kumar2017improving}
+A.~Kumar, R.K. Misra, D.~Singh, in \emph{Evolutionary Computation (CEC), 2017
+  IEEE Congress on} (IEEE, 2017), pp. 1835--1842
+
+\bibitem{brest2017single}
+J.~Brest, M.S. Mau{\v{c}}ec, B.~Bo{\v{s}}kovi{\'c}, in \emph{Evolutionary
+  Computation (CEC), 2017 IEEE Congress on} (IEEE, 2017), pp. 1311--1318
+
+\bibitem{molina2017analysis}
+D.~Molina, F.~Moreno-Garc{\'\i}a, F.~Herrera, in \emph{Evolutionary Computation
+  (CEC), 2017 IEEE Congress on} (IEEE, 2017), pp. 805--812
+
+\bibitem{Joel:StatisticalTest}
+J.J. Durillo, A.J. Nebro, C.A.C. Coello, J.~Garcia-Nieto, F.~Luna, E.~Alba, {A
+  Study of Multiobjective Metaheuristics When Solving Parameter Scalable
+  Problems}, IEEE Transactions on Evolutionary Computation \textbf{14}(4), 618
+  (2010)
+
+\end{thebibliography}

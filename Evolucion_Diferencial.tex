@@ -1,4 +1,3 @@
-long term~\cite{montgomery2010analysis}.
 \subsection{Evolución Diferencia: Conceptos Básicos}
 
 Esta sección esta dedicada para repasar la variante clásica de \DE{} y para introducir algunos de los mas importantes términos utilizados en el campo de \DE{}.
@@ -145,59 +144,81 @@ Note that in case of a tie, the trial vector survives.
 %
 %The general convention is DE/\textit{x}/\textit{y}/\textit{x}, where DE indicates ``Differential Evolution'', \textit{x} denotes the base vector to be perturbed, \textit{y} is the number of difference vectors considered for perturbation and \textit{z} is the type of crossover to use.
 
-\subsection{Diversity in Differential Evolution}
+\subsection{Diversidad en Evolución Diferencial}
+%\subsection{Diversity in Differential Evolution}
 
-\DE{} is highly susceptible to the loss of diversity due to the greedy strategy applied in the selection phase.
+Los algoritmos basados en \DE{} son altamente suceptibles a la pérdida de diversidad devido a la estrategia de selección agresiva.
+%\DE{} is highly susceptible to the loss of diversity due to the greedy strategy applied in the selection phase.
 %
-However, several analyses to better deal with this issue have been carried out.
+Sin embargo, se han desarrollado varios análisis para lidiar con este problema.
+%However, several analyses to better deal with this issue have been carried out.
 %
-Since the general implications of each parameter on the diversity are known, one of
-the alternatives is to theoretically estimate proper values for the \DE{} parameters~\cite{zaharie2003control}.
+Desde que se conocen las implicaciones de cada parámetro en la diversidad, una alternativa es la estimación teórica de los valores adecuados en \DE{}~\cite{zaharie2003control}.
+%Since the general implications of each parameter on the diversity are known, one of
+%the alternatives is to theoretically estimate proper values for the \DE{} parameters~\cite{zaharie2003control}.
 %
-Differently, some analyses regarding the effects of the norm of the difference vectors used in the mutation
-have also been performed~\cite{montgomery2009differential}.
+Alternativamente, se han desarrollado algunos análisis donde es considerado el efecto de los vectores de diferencia en la mutación~\cite{montgomery2009differential}.
+%Differently, some analyses regarding the effects of the norm of the difference vectors used in the mutation
+%have also been performed~\cite{montgomery2009differential}.
 %
-Such analyses and additional empirical studies regarding the crossover allowed to conclude that some kind of movements 
-might be disallowed to delay the convergence~\cite{montgomery2012simple}.
+Estos análisis y otros estudios empíricos basados en la cruza permitieron concluir que ciertos tipos de movimientos deberían ser deshabilidatos para retrasar la convergencia~\cite{montgomery2012simple}.
+%Such analyses and additional empirical studies regarding the crossover allowed to conclude that some kind of movements 
+%might be disallowed to delay the convergence~\cite{montgomery2012simple}.
 %
-In this last study the kind of accepted movements varies along the run.
+En este último estudio varía el tipo de movimientos aceptados a lo largo de la ejecución.
+%In this last study the kind of accepted movements varies along the run.
 %
-Specifically, it discards movements with a size below a threshold and this threshold decreases taking into account the elapsed generations.
+Específicamente, esto descarta movimientos menores a un umbral el cual es decrementado conforme transcurren las generaciones.
+%Specifically, it discards movements with a size below a threshold and this threshold decreases taking into account the elapsed generations.
 %
-Other ways of altering the kind of accepted movements have been proposed~\cite{bolufe2013differential}.
+Se han propuesto otras formas de alterar el procedimiento en que se aceptan los movimientos~\cite{bolufe2013differential}.
+%Other ways of altering the kind of accepted movements have been proposed~\cite{bolufe2013differential}.
 %
-Note that these kinds of methods have similarities with our proposal in the sense that decisions are biased by the number of elapsed generations.
+Es importante notar que este tipo de métodos tienen similitudes con nuestra propuesta en el sentido de que las decisiones están basadas por el número de generaciones transcurridas.
+%Note that these kinds of methods have similarities with our proposal in the sense that decisions are biased by the number of elapsed generations.
 %
-However, our method operates on the replacement strategy and not on the mutation phase.
+Sin embargo, nuestro método opera en la estrategia de reemplazo y no en la fase de mutación.
+%However, our method operates on the replacement strategy and not on the mutation phase.
 %
-Moreover, these methods do not consider explicitly the differences appearing on the whole population.
+Mas aún, estos métodos no consideran de forma explícita las diferencias que aparecen en la población entera.
+%Moreover, these methods do not consider explicitly the differences appearing on the whole population.
 %
-Instead, the restrictions apply to the differences appearing in the reproduction phase.
+En su lugar, las restricciones son aplicadas a las diferencias que aparecen en la fase de reemplazo.
+%Instead, the restrictions apply to the differences appearing in the reproduction phase.
 
-A different alternative operates by altering the selection operator~\cite{sa2008exploration}.
+Una alternativa distinta reside en alterar el operador de selección~\cite{sa2008exploration}.
+%A different alternative operates by altering the selection operator~\cite{sa2008exploration}.
 %
-Particularly, the selection pressure is relaxed through a probabilistic selection to maintain the population diversity and consequently 
-to allow escaping from basin of attraction of local optima.
+Particularmente, se relaja la presión de selección a través de una selección probabilística con el propósito de mantener la diversidad en la población y consecuentemente permitir escapar de la base de atracción de un óptimo local.
+%Particularly, the selection pressure is relaxed through a probabilistic selection to maintain the population diversity and consequently 
+%to allow escaping from basin of attraction of local optima.
 %
-Since it considers the fitness to establish the acceptance probabilities, it is very sensitive to scale transformations.
+Sin embargo este método es muy sensible a transformaciones desde que esta estrategia considera la aptitud para definir las probabilidades para aceptar un individuo mutado.
+%Since it considers the fitness to establish the acceptance probabilities, it is very sensitive to scale transformations.
 %
-In this case, decisions are not biased by the elapsed generations.
+En este caso las decisiones no se basan en las generaciones transcurridas.
+%In this case, decisions are not biased by the elapsed generations.
 
-Finally, in the \textit{Auto-Enhanced Population Diversity} (\textsc{aepd}), the diversity is explicitly measured and it triggers a mechanism
-to diversify the population when a too low diversity is detected~\cite{yang2015differential}.
+Finalmente, en el algoritmo \textit{Diversidad de la Población Auto-Mejorado} (\textit{Auto-Enhanced Population Diversity} - \textsc{aepd}), la diversidad es explícitamente medida y esto es un dispara un mecanismo para diversificar a la población cuando se detecta poca diversidad en la población~\cite{yang2015differential}.
+%Finally, in the \textit{Auto-Enhanced Population Diversity} (\textsc{aepd}), the diversity is explicitly measured and it triggers a mechanism
+%to diversify the population when a too low diversity is detected~\cite{yang2015differential}.
 %
-Strategies with similar principles but with different disturbance schemes have also been devised~\cite{zhao2016differential}.
+También ya se han propuesto estrategias con principios similares pero con esquemas de perturbación distintos.
+%Strategies with similar principles but with different disturbance schemes have also been devised~\cite{zhao2016differential}.
 
-Note that \DE{} variants with best performance in competitions do not apply these modifications
-and that most of these extensions have not been implemented in the most widely used frameworks.
+
+Es importante notar que las mejores variantes-\DE{} de las competencias no utilizan estas modificaciones y que la mayoría de estas extensiones no han sido implementadas en los herramientas de optimización más utilizadas.
+%Note that \DE{} variants with best performance in competitions do not apply these modifications
+%and that most of these extensions have not been implemented in the most widely used frameworks.
 %
-As a result, these extensions are not so widely used in the community in spite of their important benefits
-for some cases.
+Como resultado, estas extensiones no son ampliamente utilizadas por la comunidad a pesar de sus beneficios en ciertos casos.
+%As a result, these extensions are not so widely used in the community in spite of their important benefits
+%for some cases.
 
 
 \subsection{Propuesta}
 
-Nuestra propuesta está motivada por dos trabajos significativos de ésta área cuyo propósito es el control de la diversidad en los \EAs{}.
+Nuestra propuesta está motivada por dos trabajos significativos de ésta área cuyo propósito es el control de la diversidad en los \EAS{}.
 %Our proposal is motivated by two main works in the area of control of diversity in EAs.
 %
 Por su parte el primero es un estudio empírico desarrollado por Montgomery y otros~\cite{montgomery2012simple}, este trabajo presenta varios análisis empíricos los cuales confirman los problemas relacionados con la convergencia prematura.
@@ -214,7 +235,7 @@ Se obtuvieron beneficios por los métodos que incluyeron el \RMDDC{}, por lo tan
 %Important benefits were attained by methods including \RMDDC{}, so given the conclusions of these previous works, the proposal of this paper is a 
 %novel \DE{} variant that includes an explicit mechanism that follows some of the principles of \RMDDC{}.
 %
-Este novel optimizador es nombrado \textit{Evolución Diferencial con Mantinimiento Mejorado de Diversidad} (Differential Evolution with Enhanced Diversity Maintenance} - \DEEDM{}) y su código fuente está disponible de forma gratuita~\footnote{El código en C++ puede ser descargado en la siguiente dirección \url{https://github.com/joelchaconcastillo/Diversity\_DE\_Research.git} }
+Este novel optimizador es nombrado \textit{Evolución Diferencial con Mantinimiento Mejorado de Diversidad} (Differential Evolution with Enhanced Diversity Maintenance - \DEEDM{}) y su código fuente está disponible de forma gratuita~\footnote{El código en C++ puede ser descargado en la siguiente dirección \url{https://github.com/joelchaconcastillo/Diversity\_DE\_Research.git} }
 %This novel optimizer is called \textit{Differential Evolution with Enhanced Diversity Maintenance} (\DEEDM{}) and its source
 %code is freely available~\footnote{The code in C++ can be downloaded in the next link \url{https://github.com/joelchaconcastillo/Diversity\_DE\_Research.git}}.
 
@@ -274,7 +295,7 @@ Segundo, también es considerada la población elite en  la estrategia de reempl
 		\STATE Selección: Actualizar al vector elite ($E_{i,G}$ en lugar de $X_{i,G}$) de acuerdo a la ecuación (\ref{eqn:selection}).
 		%\STATE Selection: Update the elite vector ($E_{i,G}$ instead of $X_{i,G}$) according to Eq. (\ref{eqn:selection}).
 	   \ENDFOR
-		\STATE Reemplazo: Seleccionar a los vectores objetivo ($X_{G+1}$) de acuerdo a la ecuación \ref{alg:Replacement} .
+		\STATE Reemplazo: Seleccionar a los vectores objetivo ($X_{G+1}$) de acuerdo a la ecuación (\ref{alg:Replacement}).
 		%\STATE Replacement: Select the target vectors ($X_{G+1}$) according to Algorithm \ref{alg:Replacement} .
 	   \STATE $G=G+1$
 	\ENDWHILE
@@ -334,7 +355,7 @@ distance ( x_{i}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{i}^d - x_j^
 	\caption{Fase de Reemplazo} \label{alg:Replacement}
 	%\caption{Replacement Phase} \label{alg:Replacement}
 	\begin{algorithmic}[1]
-	\STATE Entrada: \texit{Población} (\textit{Vectores Objetivo}), \textit{Hijos} (\textit{Vectores de prueba}), y \textit{Elite}
+	\STATE Entrada: \textit{Población} (\textit{Vectores Objetivo}), \textit{Hijos} (\textit{Vectores de prueba}), y \textit{Elite}
 	%\STATE Input: $Population$ ($target$ $vectors$), $Offspring$ ($trial$ $vectors$), and $Elite$
 	\STATE Actulizar $D_t = D_I - D_I *(nfes/(0.95*max\_nfes)) $ 
 	%\STATE Update $D_t = D_I - D_I *(nfes/(0.95*max\_nfes)) $ 
@@ -366,222 +387,280 @@ distance ( x_{i}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{i}^d - x_j^
 \end{algorithmic}
 \end{algorithm}
 
+En este orden con el propósito de completar la descripción es importante especificar la forma en que se calcula $D_t$ y el para actualizar a los individuos elite.
+%In order to complete the description it is important to specify the way to calculate $D_t$ and the methodology to update the 
+%elite individuals.
+%
+El resto del algortimo es mantenido de igual forma que la clásica variante de \DE{}.
+%All the remaining steps are maintained as in the classic \DE{} variant.
+%
+El valor de $D_t$ es utilizado para alterar el grado entre exploración y explotación, por lo tanto éste parámetro debería depender en la etapa de optimización.
+%The value of $D_t$ is used to alter the degree between exploration and explotation so it should depend on the optimization stage.
+%
+Específicamente, este valor debería se reducido conforme se alcanza el criterio de paro con el objetivo de promover un grado de intensificación.
+%Specifically, this value should be reduced as the stopping criterion is reached with the aim of promoting explotation.
+%
+En nuestro esquema se requiere asignar un valor inicial para $D_t$ ($D_I$).
+%In our scheme, an initial value for $D_t$ ($D_I$) must be set.
+%
+Así, similarmente que en~\cite{segura2016novel}, se calcula una reducción lineal de $D_t$ considerando las evoluciones a función y el criterio de paro, 
+%Then, similarly than in~\cite{segura2016novel}, a linear reduction of $D_t$ is performed by taking into account the elapsed function evaluations and stopping criterion.
+%
+Particularmente, en este trabajo, el criterio de paro es asigna en base a las evaluaciones a función.
+%Particularly, in this work, the stopping criterion is set by function evaluations.
+%
+La reducción es calculada de tal forma que en el $95\%$ del máximo número de evaluaciones a función el valor de $D_t$ es $0$.
+%The reduction is calculated in such a way that by the $95\%$ of maximum number of evaluations the resulting $D_t$ value is $0$.
+%
+Por lo tanto, la diversidad no es considerada del todo en el restante $5\%$.
+%Therefore, in the remaining $5\%$ diversity is not considered at all.
+%
+Entonces, si $max\_nfes$ es el máximo número de evaluaciones y $nfes$ es el número de evaluciones trascurridas $nfes$, entonces $D_t$ puede ser calculado de la siguiente forma $D_t=D_I - D_I *(nfes/(0.95*max\_nfes))$.
+%Thus, if $max\_nfes$ is the maximum number of evaluations and $nfes$ is the elapsed number of evaluations, $D_t$ can be calculated as $D_t=D_I - D_I *(nfes/(0.95*max\_nfes))$.
+%
 
-In order to complete the description it is important to specify the way to calculate $D_t$ and the methodology to update the 
-elite individuals.
+La distancia inicial ($D_I$) afecta de forma considerable al rendimiento del \DEEDM{}.
+%The initial distance ($D_I$) heavily affects the performance of \DEEDM{}.
 %
-All the remaining steps are maintained as in the classic \DE{} variant.
+Si este parámetro es elevado, entonces el algoritmo tiene como objetivo maximizar la diversidad de la población en las primeras etapas de optimización, por lo tanto se genera una exploración adecuada la cual es muy importante, particularmente en varios tipos de problemas tales como altamente multi-modales y deceptivos.
+%If this parameter is fixed large enough, then at the first optimization stages the algorithm aims to maximize the diversity of the population, 
+%so a proper exploration is performed which is very important in some kinds of problems such as highly multimodal and deceptive ones.
 %
-The value of $D_t$ is used to alter the degree between exploration and explotation so it should depend on the optimization stage.
+Entonces, se podría aliviar el efecto de la convergencia prematura.
+%Thus, the effect of premature convergence might be alleviated.
 %
-Specifically, this value should be reduced as the stopping criterion is reached with the aim of promoting explotation.
+Un valor muy elevado de $D_I$ podría inducir exploración excesivamente y por lo tanto una fase de intensificación podría no ser no es efectuada.
+%A too large $D_I$ might induce too much exploration so a proper exploitation phase is not performed.
 %
-In our scheme, an initial value for $D_t$ ($D_I$) must be set.
+Por otra parte, un valor muy pequeño de $D_I$ podría evitar la fase de exploración, por lo tanto será más difícil evitar óptimos locales.
+%In the opposite case, a too low $D_I$ might avoid the exploration phase, so avoiding local optima is more difficult.
 %
-Then, similarly than in~\cite{segura2016novel}, a linear reduction of $D_t$ is performed by taking into account the elapsed function evaluations and stopping criterion.
+El optimo $D_I$ podría variar dependiendo en el tipo problema y el criterio de paro.
+%Depending on the kind of fitness landscape and stopping criterion, the optimal $D_I$ might vary.
 %
-Particularly, in this work, the stopping criterion is set by function evaluations.
+En su lugar, los problemas deceptivos y altamente multi-modales usualmente requieren valores más elevados que en los problemas unimodales.
+%For instance, deceptive and highly multi-modal problems usually require larger values than unimodal problems.
 %
-The reduction is calculated in such a way that by the $95\%$ of maximum number of evaluations the resulting $D_t$ value is $0$.
+Sin embargo, en nuestra propuesta no se adapta un valor $D_I$ para cada problema, por lo tanto con el propósito de analizar la estabilidad de este parámetro se realiza un análisis con diferentes valores de $D_I$ en la sección de validación experimental.
+%However, in our proposal, $D_I$ is not adapted to each problem, instead an experimental study to check the robustness
+%of different $D_I$ value is attached in the experimental validation section. 
 %
-Therefore, in the remaining $5\%$ diversity is not considered at all.
-%
-Thus, if $max\_nfes$ is the maximum number of evaluations and $nfes$ is the elapsed number of evaluations, $D_t$ can be calculated as $D_t=D_I - D_I *(nfes/(0.95*max\_nfes))$.
-%
-%The reduction of this parameter is based in a linear reduction, as is indicated in .
-%
-%They indicated that a linear decrement generally provides the most stable results.
-%%
-%%We consider a linear model reduction based in empirical studies of similar works \cite{segura2016novel}, where they indicated that a linear decrement generally provides the most stable results.
-%%%
-
-%Principally, the replacement phase considers a defined radius ($D_t$), which for simplicity is considered through the normalized euclidean distance (Eq. \ref{eqn:distance}), however other distances could be implemented (e.g. mahalanobis distance).
-%
-%It is important to mention that the normalized distance is needed, thus each dimension is equally important, also this simplifies the setting of the $D_I$ parameter, since that the maximum distance is the unity, which is a fraction of the main space diagonal.
-
-
-The initial distance ($D_I$) heavily affects the performance of \DEEDM{}.
-%
-If this parameter is fixed large enough, then at the first optimization stages the algorithm aims to maximize the diversity of the population, 
-so a proper exploration is performed which is very important in some kinds of problems such as highly multimodal and deceptive ones.
-%
-Thus, the effect of premature convergence might be alleviated.
-%
-A too large $D_I$ might induce too much exploration so a proper exploitation phase is not performed.
-%
-In the opposite case, a too low $D_I$ might avoid the exploration phase, so avoiding local optima is more difficult.
-%
-Depending on the kind of fitness landscape and stopping criterion, the optimal $D_I$ might vary.
-%
-For instance, deceptive and highly multi-modal problems usually require larger values than unimodal problems.
-%
-However, in our proposal, $D_I$ is not adapted to each problem, instead an experimental study to check the robustness
-of different $D_I$ value is attached in the experimental validation section. 
-%
-%It is interesting to take into account that our proposal could be translated to the multi-modal fashion just setting a final distance factor, which should be strictly positive, however this trend is not considered in this work.
-%
-%Therefore, when the initial distance factor is setted several factors should be taken into account.
-%
-%One of them is the maximum number of evaluations, when the problem is setted with few number of evaluations, the initial distance factor should be low, since the exploitation should be promoted.
-%
-%On the other hand, when the problem is configured with a large number of evaluations, then the initial distance factor should be higher.
-%
-%Also, the number of vectors (population size) should be considered, since that they are directly related with the diversity.
-%
-%Although our proposal should take into account the previously details, there exist an usual range where the results are enough stable, it is showed in the empirical analyzes.
-%
-%Our proposal provides several advantages in contrast of the standard DE and some of the state-of-the-art algorithms, perhaps the most important is that it is not over-parameterized.
-%
-%Although several top-rank algorithms present good enough results, usually these algorithms need a tuning phase to fit the parameters, therefore in real application it could be infeasible.
 
 %
-Similarly that the standard \DE{}, in \DEEDM{} the crossover probability ($CR$) and the mutation factor ($F$) must be set.
+Al igual que a la versión estándar \DE{}, en nuestra propuesta \DEEDM{} se debe asignar una probabilidad de cruce ($CR$) y un factor de mutación ($F$).
+
+%Similarly that the standard \DE{}, in \DEEDM{} the crossover probability ($CR$) and the mutation factor ($F$) must be set.
 %
-The first one is perhaps the most important for the performance according to several studies developed by Montgomery 
-et al. \cite{montgomery2010analysis}.
+El primero es quizás es más importante de acuerdo a varios estudios desarrollados por Montgomery y otros \cite{montgomery2010analysis}.
+%The first one is perhaps the most important for the performance according to several studies developed by Montgomery 
+%et al. \cite{montgomery2010analysis}.
 %
-These authors empirically proved that extremes $CR$ values leads to vastly different search behaviors.
+Estos autores probaron de forma empírica que valores extremos de $CR$ resultan en un comportamiento muy distinto.
+%These authors empirically proved that extremes $CR$ values leads to vastly different search behaviors.
 %
-They explained that low $CR$ values result in a search that is aligned with a small number of search space axes and
-induce small displacements.
+Ellos explicaron que bajos valores de $CR$ resultan en una búsqueda que es alineada con un pequeño número de ejes y además induce pequeños desplazamientos.
+%They explained that low $CR$ values result in a search that is aligned with a small number of search space axes and
+%induce small displacements.
 %
-This provokes a gradual and slow convergence that in some scenarios might result in a robust behavior.
+Esto provoca una convergencia lenta y gradual que en algunos escenarios podría provocar un comportamiento robusto.
+%This provokes a gradual and slow convergence that in some scenarios might result in a robust behavior.
 %
-Additionally, high $CR$ values might generate higher quality solutions with a lower probability.
+Adicionalmente, valores elevados de $CR$ podrían generar soluciones de mayor calidad con una menor probabilidad.
+%Additionally, high $CR$ values might generate higher quality solutions with a lower probability.
 %
-However, these transformations provoke large displacements that could improve significantly the solutions when successful.
+Sin embargo, estas transformaciones provocan largos desplazamientos que podrían mejorar de forma significativa.
+%However, these transformations provoke large displacements that could improve significantly the solutions when successful.
 %
-According to this, we employ both high and low $CR$ values as it is showed in Eq. \ref{eqn:cr}.
+De acuerdo a esto, en nuestra propuesta se emplean los dos principios, es decir, valores elevados y pequeños de $CR$ como es mostrado en la ecuación \ref{eqn:cr}.
+%According to this, we employ both high and low $CR$ values as it is showed in Eq. \ref{eqn:cr}.
 
 \begin{equation} \label{eqn:cr}
 CR = 
 \begin{cases}
-     Normal(0.2, 0.1),& \text{if} \quad rand[0,1] \leq 0.5  \\
-     Normal(0.9, 0.1),              & \text{otherwise}
+     Normal(0.2, 0.1),& \text{si} \quad rand[0,1] \leq 0.5  \\
+     Normal(0.9, 0.1),              & \text{de otra forma}
 \end{cases}
 \end{equation}
 
-Following the principles of several SHADE variants~\cite{awad2016ensemble, brest2016shade}, the function evaluations are considered in the random generation of the mutation factor $F$.
+Siguiendo los principios de distintas variantes del SHADE~\cite{awad2016ensemble, brest2016shade}, se consideran las evaluaciones a función en el proceso de generación aleatorio del factor de mutación $F$.
+%Following the principles of several SHADE variants~\cite{awad2016ensemble, brest2016shade}, the function evaluations are considered in the random generation of the mutation factor $F$.
 %
-Particularly, each $F$ is sampled through a Cauchy distribution (Eq. \ref{eqn:cauchy}).
+Particularmente, cada valor $F$ es una muestra de una distribución Cauchy (Ecuación\ref{eqn:cauchy} ).
+%Particularly, each $F$ is sampled through a Cauchy distribution (Eq. \ref{eqn:cauchy}).
 \begin{equation}\label{eqn:cauchy}
  Cauchy(0.5, 0.5*nfes/max\_nfes)
 \end{equation}
 %
-Therefore, at the first optimization stages, F values near to $0.5$ are generated.
+Por lo tanto, en las primeras etapas de optimización los valores de $F$ son generados de forma cercana a $0.5$.
+%Therefore, at the first optimization stages, F values near to $0.5$ are generated.
 %
-Then, as the execution advances, the density function suffers a gradual transformation and the variance is increased, meaning
-that values outside the interval $[0.0, 1.0]$ are generated with a higher probability.
+Conforme la execución transcurre, la función de densidad sufre una transformación gradual donde la varianza se incremente, esto implica que son generados valores fuera del intérvalo $[0.0, 1.0]$ con una probabilidad alta.
+%Then, as the execution advances, the density function suffers a gradual transformation and the variance is increased, meaning
+%that values outside the interval $[0.0, 1.0]$ are generated with a higher probability.
 %
-In the cases when values larger than $1.0$ are generated, the value $1.0$ is used.
+En los casos cuando los valores son mayores a $1.0$, es utilizado un valor de $1.0$.
+%In the cases when values larger than $1.0$ are generated, the value $1.0$ is used.
 %
-In the case of generating a negative value, the $F$ is resampled.
+Si se genera un valor negativo, entonces este valor se vuelve a generar.
+%In the case of generating a negative value, the $F$ is resampled.
 %
-One of the effects of this approach is to increase the probability of generating large $F$-values as the execution progresses
-with the aim of avoiding a fast convergence.
+Uno de los efectos de este enfoque es incrementar la probabilidad de generar valores elevados de $F$ conforme transcurren las generaciones con el objetivo de evitar una convergencia en las últimas etapas de optimización.
+%One of the effects of this approach is to increase the probability of generating large $F$-values as the execution progresses
+%with the aim of avoiding a fast convergence.
 
 
 
 \subsection{Resultados}
-In this section the experimental validation is presented.
+En esta sección se presenta la validación experimental.
+%In this section the experimental validation is presented.
 %
-Specifically, we show that by explicitly controlling the diversity in DE, results of state-of-the-art algorithms
-are improved further.
+Especialmente, demostramos que los resultados de los algoritmos que pertenecen al estado-del-arte pueden ser mejorados controlando explícitamente la diversidad en el clásico \DE{}.
+%Specifically, we show that by explicitly controlling the diversity in DE, results of state-of-the-art algorithms
+%are improved further.
 %
-Particularly, the benchmarks of \CEC{} 2016 and \CEC{} 2017 are considered.
+Particularmente, se consideradon los conjuntos de prueba del \CEC{} 2016 y \CEC{} 2017.
+%Particularly, the benchmarks of \CEC{} 2016 and \CEC{} 2017 are considered.
 %
-Each one of them is composed of thirty different problems.
+Cada uno está compuesto de treinta distintos problemas.
+%Each one of them is composed of thirty different problems.
 %
-The state-of-the-art is composed by the algorithms that attained the first places of each year competition.
+El estado-del-arte está compuesto por los algoritmos que alcanzaros los primeros lugares en cada año.
+%The state-of-the-art is composed by the algorithms that attained the first places of each year competition.
 %
-Additionally, the standard \DE{} was included.
+Adicionalmente, se incluyó la versión estándar \DE{}.
+%Additionally, the standard \DE{} was included.
 %
-Thus, the algorithms considered from the \CEC{} 2016 are UMOEAs-II \cite{elsayed2016testing} and L-SHADE-EpSin \cite{awad2016ensemble} that achieved 
-the first and second place respectively.
+Por lo tanto, los algoritmos considerados del \CEC{} 2016 son el UMOEAs-II~\cite{elsayed2016testing} y L-SHADE-EpSin \cite{awad2016ensemble}, los cuales alcanzaron el primero y el segundo lugar respectivamente.
+%Thus, the algorithms considered from the \CEC{} 2016 are UMOEAs-II \cite{elsayed2016testing} and L-SHADE-EpSin \cite{awad2016ensemble} that achieved 
+%the first and second place respectively.
 %
-Similarly, the top algorithms from \CEC{} 2017 are EBOwithCMAR \cite{kumar2017improving} and jSO \cite{brest2017single}.
-%
-It is interesting to remark that EBOwithCMAR is considered as an improvement of the UMOEAs-II.
-%
-Additionally, jSO and L-SHADE-EpSin belong to the SHADE's family.
-%
-All these algorithms are tested with both benchmarks as it is suggested by \cite{molina2017analysis}.
+Similarmente, los mejores algoritmos del \CEC{} 2017 son el EBOwithCMAR~\cite{kumar2017improving} y el jSO~\cite{brest2017single}.
 
-Given that all of them are stochastic algorithms, each execution was repeated 51 times with different seeds.
+%Similarly, the top algorithms from \CEC{} 2017 are EBOwithCMAR \cite{kumar2017improving} and jSO \cite{brest2017single}.
 %
-In every case, the stopping criterion was set to $25,000,000$ functions evaluations.
+Es imporante destacar que el EBOwithCMAR es considerado como una mejora del UMOEAs-II.
+%It is interesting to remark that EBOwithCMAR is considered as an improvement of the UMOEAs-II.
 %
-We performed our evaluation following the guidelines of \CEC{} benchmark competitions.
+Adicionalmente, el jSO y el L-SHADE-EpSin pertenecen al a la familia de SHADE.
+%Additionally, jSO and L-SHADE-EpSin belong to the SHADE's family.
 %
-Thus, if the gap between the values of the best solution found and the optimal solution was $10^{-8}$ or smaller, the error is treated as $0$.
+Todos estos algoritmos fueron probados con los dos conjuntos de prueba como es sugeriodo en \cite{molina2017analysis}.
+%All these algorithms are tested with both benchmarks as it is suggested by \cite{molina2017analysis}.
+Debido a que todos los algoritmos son estocásticos se realizaron 51 ejecuciones con distintas semillas.
+%Given that all of them are stochastic algorithms, each execution was repeated 51 times with different seeds.
 %
-%The minimal tolerance to consider a determined problem solved is $1e-8$, hence if the difference of the optimal obtained and the true optinal is below this tolerance then the error is zero.
+
+En cada caso, el criterio de paso fue asignado a $25,000,000$ evaluaciones a función.
+%In every case, the stopping criterion was set to $25,000,000$ functions evaluations.
 %
-The parameterization indicated by the authors was used in every algorithm and it is as follows:
+La evaluación de los algoritmos se realizó siguiendo los lineamientos de las competencias del \CEC{}.
+%We performed our evaluation following the guidelines of \CEC{} benchmark competitions.
+%
+Entonces, se asignó un error de $0$ si la diferencia entre la mejor solución encontrada y la solución óptima era menor que $10^{-8}$.
+%Thus, if the gap between the values of the best solution found and the optimal solution was $10^{-8}$ or smaller, the error is treated as $0$.
+%
+%
+Para cada algoritmo Se utilizó la parametrización indicada por los respectivos autores, que son definidos a continuación:
+%The parameterization indicated by the authors was used in every algorithm and it is as follows:
 \begin{itemize}
-\item \textbf{EBOwithCMAR}: For EBO, the maximum population size of $S_1 = 18D$, minimum population size of $S_1 = 4$, maximum population size of $S_2 = 146.8D$, minimum population size of $S_2 = 10$, historical memory size H=$6$. For CMAR Population size $S_3 = 4 + 3log(D)$, $\sigma=0.3$, CS = $50$, probability of local search $pl = 0.1$ and $cfe_{ls} = 0.4* FE_{max}$.
-\item \textbf{UMOEAs-II}: For MODE, maximum population size of $S_1 = 18D$, minimum population size of $S_1 = 4$, size memory H=$6$. For CMA-ES Population size $S_2 = 4 + \lfloor 3log(D) \rfloor$, $\mu=\frac{PS}{2}$, $\sigma=0.3$, CS = $50$. For local search, $cfe_{ls} = 0.2 * FE_{max}$.
-\item \textbf{jSO}: Maximum population size = $25log(D)\sqrt{D}$, historical memory size H= $5$, initial mutation memory $M_F = 0.5$, initial probability memory $M_{CR} = 0.8$, minimum population size = $4$, initial p-best = $0.25*N$, final p-best = $2$.
-\item \textbf{L-SHADE-EpSin}: Maximum population size = $25log(D)\sqrt{D}$, historical memory size H= $5$, initial mutation memory $M_F = 0.5$, initial probability memory $M_{CR} = 0.5$, initial memory frequency $\mu_F = 0.5$, minimum population size = $4$, initial p-best = $0.25*N$, final p-best = $2$, generations of local search $G_{LS}=250$.
-\item \textbf{ DE-EDM}: $D_I = 0.3$, population size = $250$.
-\item \textbf{ Standard-DE}: population size = $250$ (operators as \DEEDM{}).
+%\item \textbf{EBOwithCMAR}: For EBO, the maximum population size of $S_1 = 18D$, minimum population size of $S_1 = 4$, maximum population size of $S_2 = 146.8D$, minimum population size of $S_2 = 10$, historical memory size H=$6$. For CMAR Population size $S_3 = 4 + 3log(D)$, $\sigma=0.3$, CS = $50$, probability of local search $pl = 0.1$ and $cfe_{ls} = 0.4* FE_{max}$.
+\item \textbf{EBOwithCMAR}: Para la parte EBO, el tamaño máximo de la población de $S_1 = 18D$, el tamaño mínimo de la población de $S_1 = 4$, el tamaño máximo de la población de $S_2 = 146.8D$, el tamaño mínimo de la población de $S_2 = 10$, el tamaño de la memoria histórica H=$6$. Para la parte de CMAR el tamaño de la población $S_3 = 4 + 3log(D)$, $\sigma=0.3$, CS = $50$, la probabilidad de búsqueda local $pl = 0.1$ y $cfe_{ls} = 0.4* FE_{max}$.
+\item \textbf{UMOEAs-II}: Para la parte de MODE, el tamaño máxio de la población de $S_1 = 18D$, el tamaño mínimo de la població de $S_1 = 4$, el tamaño de la memoria histórica H=$6$. Para la parte del CMA-ES el tamaño de la población $S_2 = 4 + \lfloor 3log(D) \rfloor$, $\mu=\frac{PS}{2}$, $\sigma=0.3$, CS = $50$. Para la búsqueda local, $cfe_{ls} = 0.2 * FE_{max}$.
+%\item \textbf{UMOEAs-II}: For MODE, maximum population size of $S_1 = 18D$, minimum population size of $S_1 = 4$, size memory H=$6$. For CMA-ES Population size $S_2 = 4 + \lfloor 3log(D) \rfloor$, $\mu=\frac{PS}{2}$, $\sigma=0.3$, CS = $50$. For local search, $cfe_{ls} = 0.2 * FE_{max}$.
+\item \textbf{jSO}: El tamaño máximo de la población = $25log(D)\sqrt{D}$, el tamaño de la memoria histórica H= $5$, valor de mutación inicial de la memoria $M_F = 0.5$, probabilidad inicial de la memoria $M_{CR} = 0.8$, tamaño mínimo de la población = $4$, valor inicial p-best = $0.25*N$, valor final p-best = $2$.
+%\item \textbf{jSO}: Maximum population size = $25log(D)\sqrt{D}$, historical memory size H= $5$, initial mutation memory $M_F = 0.5$, initial probability memory $M_{CR} = 0.8$, minimum population size = $4$, initial p-best = $0.25*N$, final p-best = $2$.
+\item \textbf{L-SHADE-EpSin}: Tamaño máximo de la población = $25log(D)\sqrt{D}$, tamaño de la memoria histórica H= $5$, valor de la mutación inicial de la memoria $M_F = 0.5$, probabilidad inicial de la memoria $M_{CR} = 0.5$, frecuencia inicial de la memoria $\mu_F = 0.5$, tamaño mínimo de la población = $4$, valor inicial p-best = $0.25*N$, valor final p-best = $2$, generaciones de la búsqueda local $G_{LS}=250$.
+%\item \textbf{L-SHADE-EpSin}: Maximum population size = $25log(D)\sqrt{D}$, historical memory size H= $5$, initial mutation memory $M_F = 0.5$, initial probability memory $M_{CR} = 0.5$, initial memory frequency $\mu_F = 0.5$, minimum population size = $4$, initial p-best = $0.25*N$, final p-best = $2$, generations of local search $G_{LS}=250$.
+\item \textbf{ DE-EDM}: $D_I = 0.3$, tamaño de la población = $250$.
+%\item \textbf{ DE-EDM}: $D_I = 0.3$, population size = $250$.
+\item \textbf{ Standard-DE}: tamaño de la población = $250$ (mismos operadores que en \DEEDM{}).
 \end{itemize}
 %
 
-Our experimental analyses have been performed in base of the difference between the optimal solution and the best obtained solution.
+Nuestro análisis experimental se desarrolló en base a la diferencia entre la solución óptima y la mejor solución obtenida.
+%Our experimental analyses have been performed in base of the difference between the optimal solution and the best obtained solution.
 %
-In order to statistically compare the results, a similar guideline than the one proposed in~\cite{Joel:StatisticalTest} was used. 
-%
-First a Shapiro-Wilk test was performed to check whatever or not the values of the results followed a Gaussian distribution. 
-%
-If, so, the Levene test was used to check for the homogeneity of the variances. 
-%
-If samples had equal variance, an ANOVA test was done; if not, a Welch test was performed. 
-%
-For non-Gaussian distributions, the non parametric Kruskal-Wallis test was used to test whether samples are drawn from the same distribution. 
-%
-An algorithm $X$ is said to win algorithm $Y$ when the differences between them are statistically significant, and the mean and median obtained by $X$ are higher 
-than the mean and median achieved by $Y$.
+En orden para comparar los resultados estadísticamente, se siguió un procedimiento similar que el propuesto en~\cite{Joel:StatisticalTest}.
 
-In tables \ref{tab:Summary_CEC2016} and \ref{tab:Summary_CEC2017} a summary of the results obtained for \CEC{} 2016 and \CEC{} 2017 are shown, respectively.
+%In order to statistically compare the results, a similar guideline than the one proposed in~\cite{Joel:StatisticalTest} was used. 
 %
-The column tagged with ``Always Solved'' shows the number of functions where a zero error was obtained in the 51 runs.
+Concretamente, en primer lugar se utilizó el test Shapiro-Wilk para comprobar si los resultados se ajustaban a una distribución Gaussiana. 
 %
-Additionally, column tagged with ``At least one time solved'' shows the number of functions that were solved to optimality at least in one run.
+En los casos en que sí se ajustaban, se utilizó el test de Levene para comprobar la homogeneidad de las varianzas, procediendo con el test de ANOVA en caso positivo o con el de Welch en caso negativo.
 %
-Practically all functions (28 of them) of the \CEC{} 2017 benchmark were solved with our proposal at least one time.
+Por otro lado, para los casos que no se ajustaban a distribuciones Guassianas, se utilizó el test de Kruskal-Wallis.
 %
-Additionally, 21 functions of the \CEC{} 2016 were also solved.
+En todos los casos se fijó el nivel de confianza al 95\%.
 %
-This constrast with the results obtained by state-of-the-art algorithms.
+Se considera que un algoritmo $X$ es superior a un algoritmo $Y$, si el procedimiento anterior reporta diferencias significativas y si la media y mediana del hipervolumen obtenido por el método $X$ son superiores a las obtenidas por el método $Y$.
 %
-They were able to reach optimal values in significantly less functions.
+%First a Shapiro-Wilk test was performed to check whatever or not the values of the results followed a Gaussian distribution. 
+%%
+%If, so, the Levene test was used to check for the homogeneity of the variances. 
+%%
+%If samples had equal variance, an ANOVA test was done; if not, a Welch test was performed. 
+%%
+%For non-Gaussian distributions, the non parametric Kruskal-Wallis test was used to test whether samples are drawn from the same distribution. 
+%%
+%An algorithm $X$ is said to win algorithm $Y$ when the differences between them are statistically significant, and the mean and median obtained by $X$ are higher 
+%than the mean and median achieved by $Y$.
+En las tablas \ref{tab:Summary_CEC2016} y \ref{tab:Summary_CEC2017} se presenta un resúmen de los resultados obtenidos para el \CEC{} 2016 y el \CEC{} 2017 respectivamente.
+%In tables \ref{tab:Summary_CEC2016} and \ref{tab:Summary_CEC2017} a summary of the results obtained for \CEC{} 2016 and \CEC{} 2017 are shown, respectively.
 %
-In order to confirm the superioriy of \DEEDM{}, pair-wise statisticall test were used.
+La columna etiquetada con ``Simpre Resuelto'' muestra el número de funciones en que se obtuvo un error de cero en las 51 ejecuciones.
+%The column tagged with ``Always Solved'' shows the number of functions where a zero error was obtained in the 51 runs.
 %
-The column tagged with the symbol $\uparrow$ shows the number of times that the superiority of each method could be confirmed, whereas
-the column tagged with the symbol $\downarrow$ count the number of cases where the method was inferior.
+Adicionalmente, la columna etiquetada con ``Al menos una vez resuelto'' muestra el número de soluciones que se resolvieron en al menos una ejecución.
+%Additionally, column tagged with ``At least one time solved'' shows the number of functions that were solved to optimality at least in one run.
 %
-Finally, the number comparisons whose differences were not significant are shown in the column tagged with the symbol $\longleftrightarrow$.
+Practicamente nuestra propuesta resolvió al menos una vez todas las funciones (28 funciones) que pertenecen al conjunto de problemas del \CEC{} 2017.
+%Practically all functions (28 of them) of the \CEC{} 2017 benchmark were solved with our proposal at least one time.
+%
+Adicionalmente, fueron resueltas al menos una vez 21 funciones que pertenecen al \CEC{} 2016.
+%Additionally, 21 functions of the \CEC{} 2016 were also solved.
+%
+Esta es una diferencia sustancial con los resultados obtenidos por los algoritmos que pertenecen al el estado-del-arte.
+%This constrast with the results obtained by state-of-the-art algorithms.
+%
+Estos algoritmos obtuvieron los valores óptimos significativamente en menos funciones.
+%They were able to reach optimal values in significantly less functions.
+%
+En orden para confirmar la superioridad del \DEEDM{}, se implementaron las pruebas estadísticas por pares.
+%In order to confirm the superioriy of \DEEDM{}, pair-wise statisticall test were used.
+%
+La columna etiquetada con el símbolo $\uparrow$ muestra que el número de veces en que cada método fue superiror, mientras que la columna etiquetada con $\downarrow$ cuenta el número de casos donde el método fue inferior.
+%The column tagged with the symbol $\uparrow$ shows the number of times that the superiority of each method could be confirmed, whereas
+%the column tagged with the symbol $\downarrow$ count the number of cases where the method was inferior.
+%
+Finalmente, la columna etiquetada con $\longleftrightarrow$ muestra el número de comparaciones cuyas diferencias no fueron significativas.
+%Finally, the number comparisons whose differences were not significant are shown in the column tagged with the symbol $\longleftrightarrow$.
 %
 %TODO: Poner frases del tipo que fue el que mas veces ganó y el que menos veces perdió
-The statistical tests indicate that the \DEEDM{} attained the best results in both years.
+Las pruebas estadísticas indican que el \DEEDM{} alcanzó los mejores resultados en los dos años.
+%The statistical tests indicate that the \DEEDM{} attained the best results in both years.
 %
-The number of wins in \CEC{} 2016 and \CEC{} 2017 were $77$ and $88$ respectively.
+De hecho el número de veces en que nuestra propuesta ganó en el \CEC{} 2016 y el \CEC{} 2017 fue de $77$ y $88$ respectivemente.
+%The number of wins in \CEC{} 2016 and \CEC{} 2017 were $77$ and $88$ respectively.
 %
-Also the number of losts were of $25$ and $6$ respectively.
+Además el número de veces en que perdió fueron de $25$ y $6$ respectivamente.
+%Also the number of losts were of $25$ and $6$ respectively.
 %
-Additionally, the last place attained in both years was by the L-SHADE-Epsilon with $20$ wins in 2016 and $7$ wins in 2017.
+Adicionalmente, el último lugar alcanzado en los dos años  fue por el algoritmo L-SHADE-Epsilon con $20$ comparaciones positivas en el 2016 y $7$ comparaciones positivas en el 2017.
+%Additionally, the last place attained in both years was by the L-SHADE-Epsilon with $20$ wins in 2016 and $7$ wins in 2017.
 %
 %
-The last column tagget with ``Score'' shows the analyses proposed in the \CEC{}'s competitions.
+La última columna etiquetada con ``Puntaje'' muestra un análisis que fue propuesto en las competencias del \CEC{}.
+%The last column tagget with ``Score'' shows the analyses proposed in the \CEC{}'s competitions.
 %
-Particularly, the evaluation method combines two scores defined in the equation (\ref{eqn:total_scores}).
+Particularmente, este método de evaluación combina dos puntajes como se indica en la ecuación (\ref{eqn:total_scores}).
+%Particularly, the evaluation method combines two scores defined in the equation (\ref{eqn:total_scores}).
 %
 %TODO: pasar el score a la última columna y decir que además del análisis se realizó el análisis propuesto en la competición, que se base
 %en calcular un score...
 %
-Thus the final score is composed by the sum $Score = Score_1 + Score_2$.
+Por lo tanto el puntaje final está compuesto por la suma $Score = Score_1 + Score_2$.
+
+%Thus the final score is composed by the sum $Score = Score_1 + Score_2$.
 %
 \begin{equation}\label{eqn:total_scores}
 \begin{split}
@@ -589,41 +668,55 @@ Score_1 &= \left (1 - \frac{SE - SE_{min}}{SE} \right) \times 50, \\
 Score_2 &= \left  (1 - \frac{SR - SR_{min}}{SR} \right ) \times 50, \\
 \end{split}
 \end{equation}
-Here, $SE_{min}$ is the minimal sum of errors from all the algorithms, and $SE$ is the sum of error values $SE = \sum_{i=1}^{30} error\_f_i$.
+donde, $SE_{min}$ es la suma mínima de errres entre todos los algoritmos, y $SE$ es la suma de errores dado un algoritmo $SE = \sum_{i=1}^{30} error\_f_i$.
+%Here, $SE_{min}$ is the minimal sum of errors from all the algorithms, and $SE$ is the sum of error values $SE = \sum_{i=1}^{30} error\_f_i$.
 %
-Also, $SR_{min}$ is the minimal sum of ranks from all the algorithms, namely the sum of each rank in each function for the considered algorithms $SE = \sum_{i=1}^{30} error\_f_i$.
+Similarmente, $SR_{min}$ es la suma mínima de los rangos entre todos los algoritmos, especificamente es la suma de cada rango en cada función para los algoritmos considerados $SE = \sum_{i=1}^{30} error\_f_i$.
+%Also, $SR_{min}$ is the minimal sum of ranks from all the algorithms, namely the sum of each rank in each function for the considered algorithms $SE = \sum_{i=1}^{30} error\_f_i$.
 %
 %TODO: remarcar que la nueva propuesta consigue score 100 en ambos casos, confirmando la superioridad que se vio con el resto de análisis realizados, decir
 %que significa tener score 100
-% 
-Principally, our proposal attained the best scores ($100.00$) in both years, showing its superiority.
 %
-Additionally, the Standard-DE attained good enough results, in fact it got the third and second places in \CEC{} 2016 and \CEC{} 2017 respectively.
+Principalmente, nuestra propuesta alcanzó los mejores puntajes ($100.00$) en los dos años, demostrando su superioridad. 
+%Principally, our proposal attained the best scores ($100.00$) in both years, showing its superiority.
 %
-This shows that the performance of the state-of-the-art algorithms is different considering long-term executions.
+Adicionalmente, la versión estándar de \DE{} alcanzó resultados suficientemente buenos, de hecho obtuvo el tercer y el segundo lugar en los años 2016 y 2017 respectivamente.
+%Additionally, the Standard-DE attained good enough results, in fact it got the third and second places in \CEC{} 2016 and \CEC{} 2017 respectively.
 %
-Specifically, although that in \CEC{} 2017 the L-SHADE-Epsilon algorithm got the lowest number of wins in the statistical test it showed a competitive score.
+Esto muestra que el rendimiento de los algortimos en el-estado-del-arte es distinto al considerar ejecuciones a largo plazo.
+%This shows that the performance of the state-of-the-art algorithms is different considering long-term executions.
 %
-This might occurs since that the statistical scores considers both mean and median errors.
+El algoritmo L-SHADE-Epsilon obtuvo un puntaje competitivo a pesar de que en el \CEC{} del 2017  alcanzó el menor número de comparaciones positivas dentro de las pruebas estadísticas.
+%Specifically, although that in \CEC{} 2017 the L-SHADE-Epsilon algorithm got the lowest number of wins in the statistical test it showed a competitive score.
 %
-Morever, the score considers a rank and mean based in the error.
+Esto podría ocurrir desde que los puntajes estadísticos consideran la media y mediana de los errores.
+%This might occurs since that the statistical scores considers both mean and median errors.
+%
+Es más el puntaje considera el rango y la media basado en el error.
+%Morever, the score considers a rank and mean based in the error.
 %
 
 %TODO: Poner Dado que nuestra novedad está en el control de la diversidad, para comprender mejor el comportamiento de la propuesta...
-
-Giving that our proposal is based in the explicitly control of the diversity and with the aim of a better understanding of its behavior in the figure \ref{fig:diversity} is showed the diversity through the elapsed function evaluatons.
+Dado que nuestra propuesta está basada en el control explícito de la diversidad y con el objetivo de entender mejor su comportamiento, en la figura \ref{fig:diversity} se muestra la evolución de la diversidad a través de las evaluaciones a función.
+%Giving that our proposal is based in the explicitly control of the diversity and with the aim of a better understanding of its behavior in the figure \ref{fig:diversity} is showed the diversity through the elapsed function evaluatons.
 %
-Particularly, the \DEEDM{} was executed with the functions $f_1$ and $f_{30}$.
+Particularmente, se ejecutó el \DEEDM{} con las funciones $F_1$ y $f_{30}$.
+%Particularly, the \DEEDM{} was executed with the functions $f_1$ and $f_{30}$.
 %
-Specifically, based in their properties the first function is easily solved (unimodal) and the second is one of the most difficult (hybrid).
+Basado en sus propiedades la primer función se resuelve de forma sencilla (unimodal) y la segunda función es considerada como una de las más difíciles (híbrida).
+%Specifically, based in their properties the first function is easily solved (unimodal) and the second is one of the most difficult (hybrid).
 %
-In the left side is showed the diversity of the Elite population.
+En la parte izquierda se muestra la diversidad que se mantienen en la población Elite.
+%In the left side is showed the diversity of the Elite population.
 %
-Although there are not constraints in the Elite population to lost the diversity, it seems that in both functions $f_1$ and $f_{30}$ the diversity is implicitly maintained.
+A pesar de que existen mecanismos para evitar la pérdida de diversidad en la población Elite, se puede observar que se mantiene un grado de diversidad de forma implícito en las dos funciones.
+%Although there are not constraints in the Elite population to lost the diversity, it seems that in both functions $f_1$ and $f_{30}$ the diversity is implicitly maintained.
 %
-Similarly, in the right side is showed the diversity of the trial vectors.
+Similarmente, la parte derecha corresponde a la diversidad de los vectores de prueba.
+%Similarly, in the right side is showed the diversity of the trial vectors.
 %
-It shows that the diversity is explicitly maintained as is desired ( i.e. until the $95\%$ of the total function evaluations).
+Esto demuestra que se demuestra un grado de diversidad de forma explícito, es decir hasta el $95\%$ del total de evaluaciones a función.
+%It shows that the diversity is explicitly maintained as is desired ( i.e. until the $95\%$ of the total function evaluations).
 
 \begin{figure}[t]
 \centering
@@ -631,7 +724,8 @@ It shows that the diversity is explicitly maintained as is desired ( i.e. until 
    \includegraphics[scale=0.23, angle=-90]{img/ED/Diversity_Elite.eps} 
    \includegraphics[scale=0.23, angle=-90]{img/ED/Diversity_Trial.eps} 
 \end{tabular}
-\caption{ Average \DCN{} of the 51 executions with the problems $f_1$ and $f_{30}$ (\CEC{} 2016 and \CEC{} 2017). The initial distance factor considered corresponds to $D_I=0.3$.}
+\caption{ Promedio del \DCN{} de las 51 ejecuciones con los problemas $f_1$ y $f_{30}$ (\CEC{} 2016 y \CEC{} 2017). El factor de distancia inicial corresponde a $D_I=0.3$.}
+%\caption{ Average \DCN{} of the 51 executions with the problems $f_1$ and $f_{30}$ (\CEC{} 2016 and \CEC{} 2017). The initial distance factor considered corresponds to $D_I=0.3$.}
 \label{fig:diversity}
 \end{figure}
 
@@ -640,11 +734,11 @@ It shows that the diversity is explicitly maintained as is desired ( i.e. until 
 % \usepackage{multirow}
 \begin{table}[t]
 \centering
-\caption{Summary results - \CEC{} 2016}
+\caption{Resúmen de los resultados - \CEC{} 2016}
 \label{tab:Summary_CEC2016}
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
-\multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Always \\ solved\end{tabular}}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}At least one\\ time solved\end{tabular}}} & \multicolumn{3}{c|}{\textbf{Statistical Tests}} & \multirow{2}{*}{\textbf{Score}} \\ \cline{4-6}
+\multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Siempre \\ Resuelto\end{tabular}}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Resuelto al menos\\ una vez\end{tabular}}} & \multicolumn{3}{c|}{\textbf{Pruebas Estadísticas}} & \multirow{2}{*}{\textbf{Puntaje}} \\ \cline{4-6}
  &  &  & $\uparrow$ & $\downarrow$ & $\longleftrightarrow $ &  \\ \hline
 \textbf{EBOwithCMAR} & 8 & 14 & 35 & 56 & 59 & 50.28 \\ \hline
 \textbf{jSO} & 9 & 17 & 47 & 51 & 52 & 55.43 \\ \hline
@@ -660,11 +754,13 @@ It shows that the diversity is explicitly maintained as is desired ( i.e. until 
 % \usepackage{multirow}
 \begin{table}[t]
 \centering
-\caption{Summary results - \CEC{} 2017}
+%\caption{Summary results - \CEC{} 2017}
+\caption{Resúmen de los resultados - \CEC{} 2017}
 \label{tab:Summary_CEC2017}
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
-\multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Always \\ solved\end{tabular}}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}At least one\\ time solved\end{tabular}}} & \multicolumn{3}{c|}{\textbf{Statistical Tests}} & \multirow{2}{*}{\textbf{Score}} \\ \cline{4-6}
+\multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Siempre \\ Resuelto\end{tabular}}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Resuelto al menos\\ una vez\end{tabular}}} & \multicolumn{3}{c|}{\textbf{Pruebas Estadísticas}} & \multirow{2}{*}{\textbf{Puntaje}} \\ \cline{4-6}
+%\multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Always \\ solved\end{tabular}}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}At least one\\ time solved\end{tabular}}} & \multicolumn{3}{c|}{\textbf{Statistical Tests}} & \multirow{2}{*}{\textbf{Score}} \\ \cline{4-6}
  &  &  & $\uparrow$ & $\downarrow$ & $\longleftrightarrow $ &  \\ \hline
 \textbf{EBOwithCMAR} & 9 & 18 & 34 & 46 & 70 & 37.14 \\ \hline
 \textbf{jSO} & 8 & 15 & 29 & 55 & 66 & 29.30 \\ \hline
@@ -678,23 +774,28 @@ It shows that the diversity is explicitly maintained as is desired ( i.e. until 
 
 
 %TODO: Con el fin de que otros autores se puedan comparar con los resultados, reportamos el error alcanzado
-In order, to provide comparable results of our proposal, in the tables \ref{tab:Results_CEC2016} and \ref{tab:Results_CEC2017} are reported the best, worst, median, mean, standard deviation and success ratio.
+En orden, con el fin de proporcionar resultados comparables, en las tablas \ref{tab:Results_CEC2016} y \ref{tab:Results_CEC2017} se reporta el mejor, peor, mediana, media, desviación estándar y razón de éxito.
+%In order, to provide comparable results of our proposal, in the tables \ref{tab:Results_CEC2016} and \ref{tab:Results_CEC2017} are reported the best, worst, median, mean, standard deviation and success ratio.
 %
-Particularly, these tables show that the uni-modal were solved by our proposal.
+Particularmente, en estas tablas se observa que nuestra propuesta resuelve a todos los problemas unimodales.
+%Particularly, these tables show that the uni-modal were solved by our proposal.
 %
-Also, several simple multi-modal functions were adequatelly approximated.
+Además, varias funciones multimodales son aproximadas de forma aceptable.
+%Also, several simple multi-modal functions were adequatelly approximated.
 %
-Principally, our proposal solved several complex functions (e.g. Composition Functions) that were not solved by the state-of-the-art.
+Principalmente, nuestra propuesta resolvió y mejoro significativamente varias funciones complejas (por ejemplo funciones computestas), que por otra parte no fueron resueltas por los algoritmos del estado-del-arte.
+%Principally, our proposal solved several complex functions (e.g. Composition Functions) that were not solved by the state-of-the-art.
 %
 \begin{table}[t]
 \begin{scriptsize}
 \centering
-\caption{Results for DE based diversity \CEC{} 2016 problems}
+\caption{Resultados del \DEEDM{} con los problemas del \CEC{} 2016}
+%\caption{Results for DE based diversity \CEC{} 2016 problems}
 \label{tab:Results_CEC2016}
 %\resizebox{\textwidth}{!}{%
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
- & \textbf{Best} & \textbf{Worst} & \textbf{Median} & \textbf{Mean} & \textbf{Std} & \textbf{Succ. Ratio} \\ \hline
+ & \textbf{Mejor} & \textbf{Peor} & \textbf{Mediana} & \textbf{Media} & \textbf{Sd} & \textbf{Razón de éxito} \\ \hline
 $f_1$ & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 1.00E+00 \\ \hline
 $f_2$ & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 1.00E+00 \\ \hline
 $f_3$ & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 1.00E+00 \\ \hline
@@ -733,12 +834,14 @@ $f_{30}$ & 1.84E+02 & 1.84E+02 & 1.84E+02 & 1.84E+02 & 3.25E-02 & 0.00E+00 \\ \h
 \begin{table}[t]
 \begin{scriptsize}
 \centering
-\caption{Results for DE based diversity \CEC{} 2017 problems}
+\caption{Resultados del \DEEDM{} con los problemas del \CEC{} 2017}
+%\caption{Results for DE based diversity \CEC{} 2017 problems}
 \label{tab:Results_CEC2017}
 %\resizebox{\textwidth}{!}{%
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
- & \textbf{Best} & \textbf{Worst} & \textbf{Median} & \textbf{Mean} & \textbf{Std} & \textbf{Succ. Ratio} \\ \hline
+ & \textbf{Mejor} & \textbf{Peor} & \textbf{Mediana} & \textbf{Media} & \textbf{Sd} & \textbf{Razón de éxito} \\ \hline
+ %& \textbf{Best} & \textbf{Worst} & \textbf{Median} & \textbf{Mean} & \textbf{Std} & \textbf{Succ. Ratio} \\ \hline
 $f_1$ & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 1.00E+00 \\ \hline
 $f_2$ & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 1.00E+00 \\ \hline
 $f_3$ & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 0.00E+00 & 1.00E+00 \\ \hline
@@ -774,31 +877,45 @@ $f_{30}$ & 3.95E+02 & 3.95E+02 & 3.95E+02 & 3.95E+02 & 2.10E-01 & 0.00E+00 \\ \h
 \end{scriptsize}
 \end{table}
 
-\subsection{Empirical analyses of the initial distance factor}
+\subsection{Análisis Empirico del factor de distancia inicial}
+%\subsection{Empirical analyses of the initial distance factor}
 
-In our proposal the diversity is explicitly promoted through several stages, which are controlled with the initial distance factor $D_I$.
+En nuestra propuesta la diversidad es explícitamente promovida a través de varias etapas, y son promovidas por medio del factor de distancia inicial $D_I$.
+%In our proposal the diversity is explicitly promoted through several stages, which are controlled with the initial distance factor $D_I$.
 %
-Therefore, the effect of this parameter is analysed in detail.
+Por lo tanto, se analiza en detalle el efecto de este parámetro.
+%Therefore, the effect of this parameter is analysed in detail.
 %
-Particularly, the general configuration of the experimental validation is taken into account.
+Paricularmente, se considera la configuración general de la validación experimental.
+%Particularly, the general configuration of the experimental validation is taken into account.
 %
-Thus, several initial distance factors were considered ($D_I = \{0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1 \}$).
+Entonces, se consideraron varios factores de distancia inicial ($D_I = \{0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1 \}$).
+
+%Thus, several initial distance factors were considered ($D_I = \{0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1 \}$).
 %
 \begin{figure}[t]
 \centering
   \includegraphics[scale=0.3, angle=-90]{img/ED/Tuning_CEC.eps}
-\caption{Average success rate with different initial distance factors in the benchmark of \CEC{} 2016 and \CEC{} 2017, is considered a population size of $250$ and $25,000,000$ function evaluations.}
+\caption{Razón de éxito promedio con distintos factores de distancia inicial con los problemas de prueba del \CEC{} 2016 y \CEC{} 2017, específicamente se considera una población de $250$ individuos y $25,000,000$ evaluaciones a función.}
+%\caption{Average success rate with different initial distance factors in the benchmark of \CEC{} 2016 and \CEC{} 2017, is considered a population size of $250$ and $25,000,000$ function evaluations.}
 \label{fig:one}
 \end{figure}
 
-In the figure \ref{fig:one} is showed the average success ratio vs. the initial distance factor $D_I$.
+En la figura \ref{fig:one} se muestra la razón de éxito promedio vs. el factor de distancia inicial ($D_I$).
+%In the figure \ref{fig:one} is showed the average success ratio vs. the initial distance factor $D_I$.
 %
-The most relevant points are described as follows:
+Principalmente se puede observar lo siguiente:
+%The most relevant points are described as follows:
 \begin{itemize}
-\item If the diversity is not promoted ($D_I = 0.0 $) the performance of the algorithms is seriously implicated.
-\item In this scenario the ideal configuration is $D_I=0.3$, although that the range $[0.1, 0.4]$ also provides quality solutions.
-\item If the diversity of the solutions increases (after a range) the quality of solutions is implicated.
+\item Si la diversidad no es promovida ($D_I=0.0$) entonces el rendimiento del algoritmo está comprometido.
+%\item If the diversity is not promoted ($D_I = 0.0 $) the performance of the algorithms is seriously implicated.
+\item En este escenario la configuración ideal es de $D_I=0.3$, a pesar de que aún existen soluciones de calidad en el rango $[0.1, 0.4]$.
+%\item In this scenario the ideal configuration is $D_I=0.3$, although that the range $[0.1, 0.4]$ also provides quality solutions.
+\item Si se incrementa la diversidad inicial entonces se observa un deteriodo en la calidad de las soluciones.
+%\item If the diversity of the solutions increases (after a range) the quality of solutions is implicated.
 \end{itemize}
-Finally, its important stand out that the solutions are less affected by the population size, however there is still present a relation between the $D_I$ and the population size.
+Finalmente, es importante aclarar que en base a varios estudios la calidad de las soluciones es afectado en un menor grado por el tamaño de la población que con el parámetro $D_I$.
+%
+%Finally, its important stand out that the solutions are less affected by the population size, however there is still present a relation between the $D_I$ and the population size.
 %
 
