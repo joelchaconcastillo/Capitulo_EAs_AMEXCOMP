@@ -1,0 +1,96 @@
+Los Algoritmos Evolutivos (Evolutionary Algorithms \EA{}) son considerados como uno de los enfoques con mayor aficacia para resolver distintas categorías de optimización.
+%
+Particularmente, se han aplicado en problemas tanto de dominio continuo \cite{glover2005handbook} como de dominio discreto.
+%
+Especialmente, los \EAS{} son aplicados para resolver problemas complejos cuyo enfoque determinístico es complicado o imposible~\cite{chakraborty2008advances}.
+% 
+Además, diversas variantes se han utilizado y aplicado en muchos campos, como es en ciencia, economía e ingeniería.
+%
+%
+Actualmente, los \EAS{} son plenamente conocidos como metaheurísticas \cite{glover2005handbook}.
+%
+A pesar del éxito que tienen los \EAS{}, existe una dificultad en su adaptación o configuración ante nuevos problemas.
+%
+Una dificultad popular en el diseño de un \EA{} es obtener un balanceo propio entre exploración y explotación \cite{herrera1996adaptation}.
+%
+Sin embargo, no siempre son comprendidas las implicaciones al mantener un grado de diversidad en este balanceo y como son promovidas las exploración y explotación \cite{Crepinsek:13}.
+%
+Desde su inicio los \EAS{} han presentado problemas de convergencia siendo como una desventaja importante\cite{Crepinsek:13}.
+%
+La convergencia prematura es originada cuando todos los miembros de la población están ubicados en una parte reducida del espacio de búsqueda, esta región es distinta a la región óptima y además los componentes seleccionados no son suficientes para escapar de esta región.
+%
+Basado en esto se han desarrollado varias estrategias para aliviar este problems.
+%
+Además en através de varios estudios se ha revelado que mantener una populación diversa en un requisito previo para evitar la convergencia prematura~\cite{Crepinsek:13}.
+%
+Sin embargo, si la población es muy diversa, entonces un grado adecuado de explotación podría ser prevenido, resultando en un convergencia lenta y por lo tanto soluciones de baja calidad.
+%
+Por esta razón, Mahfoud~\cite{dasgupta2013evolutionary} utilizó el concepto de diversidad util, con cual se refiere a la cantidad de diversidad que resulta en soluciones de alta calidad.
+%
+En la literatura existen distintas forma para aliviar el problema de convergencia prematura~\cite{pandey2014comparative}.
+%
+En los 90s, la mayoría de estrategias para aliviar la convergencia prematura se centraron en modificar el esquema de selección de padres.
+%
+La principal razón es que en esa época la mayoría de esquemas eran generacionales, por lo tanto la presión de selección estaba definida principalmente en la selección de padres.
+%
+Sin embargo, se descubrió que tratando de aliviar la convergencia prematura donde únicamente sea considerada la selección de padres no fue suficiente~\cite{blickle1996comparison}.
+%
+Posteriormente, la una gran cantidad de \EAS{} incorporaron una fase de reemplazo que abandonaron al menos parcialmente a los métodos generacionales iniciales.
+%
+Basado en esto muchos autores descubrieron la posibilidad de incorporar métodos para aliviar el problema de convergencia prematura~\cite{Crepinsek:13}.
+%
+Es importante considerar que aún cuando los métodos de reemplazamiento generacionales~\cite{de2006evolutionary} fueron suficientemente populares, algunos autores ya habían tomado en cuenta esta estrategia~\cite{mahfoud1992crowding}.
+%
+Sin embargo, con la efectividad de elitismo y otras estrategias de reemplazo, el número de esquemas que adoptaron estos principios crecieron de forma considerable~\cite{lozano2008replacement}.
+%
+
+Un aspecto importante de la convergencia prematura es que depende completamente de la cantidad de tiempo y/o generaciones asignados a las ejecuciones del \EA{}, es decir el criterio de paro.
+%
+En su lugar, un \EA{} debería ser ejecutado para resolver un problema dado por un tiempo definido y éste debería proporcionar soluciones prometedoras.
+%
+A pesar de esto, es sorprendente que la mayoría de métodos que se han propuesto para aliviar la desventaja de la convergencia prematura no consideran el criterio de paro el cual es asignado por el usuario para alterar su comportamiento interno.
+%
+Esto significa que, dependiendo en el criterio de paro, distintas parametrizaciones podrían ser requeridas.
+%
+Como resultado, para criterio de paro distinto, el usuario debería estudiar el efecto de distintos parámetros.
+%
+Un ejemplo popular de esto es \textit{El Torneo de Selección Restringida (TSR)}~\cite{Crepinsek:13}, este método retrasa la convergencia de los \EAS{}.
+%
+Específicamente, este método incorpora un parámetro que puede ser utilizado para alterar el balanceo entre exploración e intensificación.
+%
+Sin embargo, la pérdida de diversidad y posteriormente el balanceo entre exploración e intensificación no dependen únicamente en este parámetro, por lo tanto distintos valores deberían ser utilizados para cada problema y además para cada criterio de paro.
+%
+El principio básico de las técnicas para la preservación de la diversidad y que afectan a la fase de reemplazo se basa en que el efecto de diversificar a los sobrevivientes inducide un mayor grado de exploración.
+%
+Esto se debe a varios aspectos importantes, principalmente una población grande mantiene varias regiones del espacio de búsqueda.
+%
+Además los operadores de cruce tienden a se más explorativos cuando están involucrados individuos distantes \cite{eiben1998evolutionary}.
+
+
+Entre las distintas categorías de \EAS{}, Evolución Diferencial (Differential Evolution - \DE{}) es una de las estrategias más efectivas para lidiar con problemas de optimización contínua~\cite{storn1997differential}.
+%
+De hecho, esta categoría de algoritmos han sido los ganadores en varias competencias de optimización~\cite{das2011differential}.
+%
+Similarmente a otros \EAS{}. \DE{} está inspirado en el proceso de evolución natural, y además involucra la aplicaciónde mutación, recombinación y selección.
+%
+La principal característica de \DE{} es que éste considera las diferencias de los vectores que están presentes en la población con el motivo de explorar el espacio de búsqueda.
+%
+En este sentido \DE{} es similar a los optimizadores \textit{Nelder-Mead}~\cite{nelder1965simplex}  y a la \textit{Búsqueda Aleatoria Controlada (BAC)} \cite{price1983global}.
+%
+A pesar de la efectividad de \DE{}, existen varias debilidades que han sido detectadas y resueltas de forma parcial que por lo tanto a generado extensiones a la variante estándar de \DE{}~\cite{das2011differential}.
+%
+Algunos de los problemas más conocidos es la sensibilidad de la parametrización~\cite{zhang2009jade}, la apariencia de estancamiento debido a las capacidades de exploración reducidas~\cite{sa2008exploration,lampinen2000stagnation} y la convergencia prematura~\cite{zaharie2003control}.
+%
+Desde la aparición de \DE{}, varias críticas se hicieron debido a su falta de capacidad para mantener un grado de diversidad suficiente dado a la elevada presión de selección~\cite{sa2008exploration}.
+%
+Por lo tanto, se han generado varias extensiones de \DE{} para aliviar la convergencia prematura, como la adaptiación de parámetros~\cite{zaharie2003control}, auto-adaptación de la diversidad en la población~\cite{yang2015differential} y estrategias de selección con una menor presión de selección~\cite{sa2008exploration}.
+%
+Algúnos de los últimos estudios en el diseño metaheurísticas poblacionales~\cite{Crepinsek:13} mostraron que controlando explícitamente la diversidad es particularmente útil para obtener un propio balanceo entre el grado de exploración y de intensificación.
+%
+Nuestra hipótesis es que introduciendo un mecanismo para la preservación de la diversidad results en un balanceo adecuado entre exploración e intensidifación, que a su vez propociona soluciones de alta calidad en ejecuciones a largo plazo.
+
+Principalmente en este capítulo se explican dos propuestas, primeramente \DE{} con Mantenimiento de Diversidad Mejorado ( \DE with Enhanced Diversity Maintenance\DEEDM{}), el cual integra un principio similar en \DE{} y el operador Dinámico basado en el Cruce Binario Simulado ( Dynamic Simulated Binary Crossover \DSBX{}).
+
+Our novel proposal, which is called \DE{} with Enhanced Diversity Maintenance (\DEEDM{}), integrates a similar principle into \DE{}.
+%
+El resto de este capítulo está organizado de la siguiente forma.

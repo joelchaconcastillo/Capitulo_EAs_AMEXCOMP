@@ -3,47 +3,52 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: segura-InfSci14.aux
 The style file: elsart-num-sort.bst
 Database file #1: InfSci-14-segura.bib
-Warning--empty pages in Angela:08
-Warning--there's a number but no volume in LaTorre:14
-You've used 60 entries,
+Warning--empty institution in Joel:SBX1994
+Warning--empty pages in hamdan2012distribution
+Warning--can't use both author and editor fields in Joel:WFG
+Warning--empty chapter and pages in Joel:WFG
+Warning--empty booktitle in Joel:UNDX
+Warning--empty year in Joel:BOOK_MOEAs
+Warning--empty pages in voigt1995fuzzy
+You've used 57 entries,
             2670 wiz_defined-function locations,
-            1034 strings with 16556 characters,
-and the built_in function-call counts, 23165 in all, are:
-= -- 1963
-> -- 1049
-< -- 33
-+ -- 431
-- -- 364
-* -- 1969
-:= -- 3501
-add.period$ -- 60
-call.type$ -- 60
-change.case$ -- 352
+            962 strings with 15428 characters,
+and the built_in function-call counts, 20449 in all, are:
+= -- 1775
+> -- 864
+< -- 24
++ -- 366
+- -- 300
+* -- 1680
+:= -- 3071
+add.period$ -- 57
+call.type$ -- 57
+change.case$ -- 313
 chr.to.int$ -- 0
-cite$ -- 62
-duplicate$ -- 897
-empty$ -- 2116
-format.name$ -- 423
-if$ -- 5011
+cite$ -- 64
+duplicate$ -- 797
+empty$ -- 1924
+format.name$ -- 347
+if$ -- 4372
 int.to.chr$ -- 0
-int.to.str$ -- 60
-missing$ -- 60
-newline$ -- 186
-num.names$ -- 136
-pop$ -- 395
+int.to.str$ -- 57
+missing$ -- 64
+newline$ -- 179
+num.names$ -- 114
+pop$ -- 383
 preamble$ -- 1
-purify$ -- 291
+purify$ -- 263
 quote$ -- 0
-skip$ -- 742
+skip$ -- 646
 stack$ -- 0
-substring$ -- 1678
-swap$ -- 254
-text.length$ -- 33
+substring$ -- 1530
+swap$ -- 203
+text.length$ -- 24
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 236
-warning$ -- 2
-while$ -- 217
-width$ -- 62
-write$ -- 521
-(There were 2 warnings)
+type$ -- 212
+warning$ -- 7
+while$ -- 220
+width$ -- 59
+write$ -- 476
+(There were 7 warnings)
