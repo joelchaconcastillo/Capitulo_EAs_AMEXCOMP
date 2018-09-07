@@ -7,6 +7,10 @@
 R.~B. Agrawal, K.~Deb, K.~Deb, R.~B. Agrawal, Simulated binary crossover for
   continuous search space, Tech. rep. (1994).
 
+\bibitem{alba2005parallel}
+E.~Alba, Parallel metaheuristics: a new class of algorithms, vol.~47, John
+  Wiley \& Sons, 2005.
+
 \bibitem{awad2016ensemble}
 N.~H. Awad, M.~Z. Ali, P.~N. Suganthan, R.~G. Reynolds, An ensemble sinusoidal
   parameter adaptation incorporated with l-shade for solving cec2014 benchmark
@@ -82,14 +86,20 @@ J.~J. Durillo, A.~J. Nebro, C.~A.~C. Coello, J.~Garcia-Nieto, F.~Luna, E.~Alba,
   Problems}, IEEE Transactions on Evolutionary Computation 14~(4) (2010)
   618--635.
 
-\bibitem{eiben1998evolutionary}
-A.~E. Eiben, C.~A. Schippers, On evolutionary exploration and exploitation,
-  Fundamenta Informaticae 35~(1-4) (1998) 35--50.
+\bibitem{eiben2003introduction}
+A.~E. Eiben, J.~E. Smith, et~al., Introduction to evolutionary computing,
+  vol.~53, Springer, 2003.
 
 \bibitem{elsayed2016testing}
 S.~Elsayed, N.~Hamza, R.~Sarker, Testing united multi-operator evolutionary
   algorithms-ii on single objective optimization problems, in: Evolutionary
   Computation (CEC), 2016 IEEE Congress on, IEEE, 2016, pp. 2966--2973.
+
+\bibitem{Joel:CHC}
+L.~J. Eshelman, {The CHC Adaptive Search Algorithm: How to Have Safe Search
+  When Engaging in Nontraditional Genetic Recombination}, in: G.~J. Rawlins
+  (ed.), {Foundations of Genetic Algorithms}, vol.~1, Morgan Kaufmann
+  Publishers, 1991, pp. 265 -- 283.
 
 \bibitem{eshelman1993real}
 L.~J. Eshelman, Real coded genetic algorithms and interval-schemata,
@@ -110,6 +120,10 @@ M.~Hamdan, The distribution index in polynomial mutation for evolutionary
 F.~Herrera, M.~Lozano, Adaptation of genetic algorithm parameters based on
   fuzzy logic controllers, Genetic Algorithms and Soft Computing 8 (1996)
   95--125.
+
+\bibitem{Joel:herrera2003fuzzy}
+F.~Herrera, M.~Lozano, Fuzzy adaptive genetic algorithms: design, taxonomy, and
+  future directions, Soft Computing 7~(8) (2003) 545--562.
 
 \bibitem{horoba2008benefits}
 C.~Horoba, F.~Neumann, Benefits and drawbacks for the use of epsilon-dominance
@@ -138,10 +152,6 @@ A.~Kumar, R.~K. Misra, D.~Singh, Improving the local search capability of
   effective butterfly optimizer using covariance matrix adapted retreat phase,
   in: Evolutionary Computation (CEC), 2017 IEEE Congress on, IEEE, 2017, pp.
   1835--1842.
-
-\bibitem{lampinen2000stagnation}
-J.~Lampinen, I.~Zelinka, et~al., On stagnation of the differential evolution
-  algorithm, in: Proceedings of MENDEL, 2000, pp. 76--83.
 
 \bibitem{lozano2008replacement}
 M.~Lozano, F.~Herrera, J.~R. Cano, Replacement strategies to preserve useful
@@ -177,21 +187,12 @@ H.~M{\"u}hlenbein, D.~Schlierkamp-Voosen, Predictive models for the breeder
   genetic algorithm i. continuous parameter optimization, Evolutionary
   computation 1~(1) (1993) 25--49.
 
-\bibitem{nelder1965simplex}
-J.~A. Nelder, R.~Mead, A simplex method for function minimization, The computer
-  journal 7~(4) (1965) 308--313.
-
 \bibitem{Joel:UNDX}
 I.~Ono, H.~Kita, S.~Kobayashi, Advances in evolutionary computing, chap. A
   Real-coded Genetic Algorithm Using the Unimodal Normal Distribution
   Crossover, Springer-Verlag New York, Inc., New York, NY, USA, 2003, pp.
   213--237.
 \newline\urlprefix\url{http://dl.acm.org/citation.cfm?id=903758.903767}
-
-\bibitem{pandey2014comparative}
-H.~M. Pandey, A.~Chaudhary, D.~Mehrotra, A comparative review of approaches to
-  prevent premature convergence in ga, Applied Soft Computing 24 (2014)
-  1047--1077.
 
 \bibitem{pilat2010evolutionary}
 M.~Pil{\'a}t, Evolutionary multiobjective optimization: A short survey of the
@@ -202,14 +203,15 @@ M.~Pil{\'a}t, Evolutionary multiobjective optimization: A short survey of the
 K.~Price, R.~M. Storn, J.~A. Lampinen, Differential evolution: a practical
   approach to global optimization, Springer Science \& Business Media, 2006.
 
-\bibitem{price1983global}
-W.~Price, Global optimization by controlled random search, Journal of
-  Optimization Theory and Applications 40~(3) (1983) 333--348.
-
 \bibitem{sa2008exploration}
 {\^A}.~A. S{\'a}, A.~O. Andrade, A.~B. Soares, S.~J. Nasuto, Exploration vs.
   exploitation in differential evolution, in: AISB 2008 Convention
   Communication, Interaction and Social Intelligence, vol.~1, 2008, p.~57.
+
+\bibitem{Joel:Dynamic_FAP}
+E.~Segredo, C.~Segura, C.~Le{\'o}n, A multiobjectivised memetic algorithm for
+  the frequency assignment problem, in: Evolutionary Computation (CEC), 2011
+  IEEE Congress on, IEEE, 2011, pp. 1132--1139.
 
 \bibitem{segura2016novel}
 C.~Segura, C.~A.~C. Coello, E.~Segredo, A.~H. Aguirre, A novel diversity-based
@@ -219,11 +221,6 @@ C.~Segura, C.~A.~C. Coello, E.~Segredo, A.~H. Aguirre, A novel diversity-based
 \bibitem{Joel:BOOK_MOEAs}
 A.~G. Slim~Bechikh, Rituparna~Datta, {Recent Advances in Evolutionary
   Multi-objective Optimization}, springer.
-
-\bibitem{storn1997differential}
-R.~Storn, K.~Price, Differential evolution--a simple and efficient heuristic
-  for global optimization over continuous spaces, Journal of global
-  optimization 11~(4) (1997) 341--359.
 
 \bibitem{Joel:DE_Storn_SPX}
 R.~Storn, K.~Price, Differential evolution \&ndash; a simple and efficient
@@ -254,11 +251,6 @@ M.~Yang, C.~Li, Z.~Cai, J.~Guan, Differential evolution with auto-enhanced
 \bibitem{zaharie2003control}
 D.~Zaharie, Control of population diversity and adaptation in differential
   evolution algorithms, in: Proc. of MENDEL, vol.~9, 2003, pp. 41--46.
-
-\bibitem{zhang2009jade}
-J.~Zhang, A.~C. Sanderson, Jade: adaptive differential evolution with optional
-  external archive, IEEE Transactions on evolutionary computation 13~(5) (2009)
-  945--958.
 
 \bibitem{Joel:MOEAD}
 Q.~Zhang, H.~Li, {MOEA/D: A Multiobjective Evolutionary Algorithm Based on

@@ -7,45 +7,45 @@ Warning--empty year in Joel:BOOK_MOEAs
 Warning--empty institution in Joel:SBX1994
 Warning--empty booktitle in Joel:UNDX
 Warning--can't use both author and editor fields in Joel:WFG
-You've used 57 entries,
+You've used 52 entries,
             2815 wiz_defined-function locations,
-            930 strings with 15116 characters,
-and the built_in function-call counts, 31499 in all, are:
-= -- 3233
-> -- 507
+            900 strings with 14400 characters,
+and the built_in function-call counts, 29884 in all, are:
+= -- 3134
+> -- 472
 < -- 28
-+ -- 324
-- -- 150
-* -- 1418
-:= -- 2691
++ -- 309
+- -- 140
+* -- 1327
+:= -- 2511
 add.period$ -- 4
-call.type$ -- 57
-change.case$ -- 29
+call.type$ -- 52
+change.case$ -- 25
 chr.to.int$ -- 0
-cite$ -- 61
-duplicate$ -- 3788
-empty$ -- 2691
-format.name$ -- 197
-if$ -- 7100
+cite$ -- 56
+duplicate$ -- 3602
+empty$ -- 2502
+format.name$ -- 184
+if$ -- 6724
 int.to.chr$ -- 0
-int.to.str$ -- 57
-missing$ -- 560
-newline$ -- 183
-num.names$ -- 57
-pop$ -- 1495
+int.to.str$ -- 52
+missing$ -- 512
+newline$ -- 168
+num.names$ -- 52
+pop$ -- 1418
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1785
+skip$ -- 1741
 stack$ -- 0
-substring$ -- 1372
-swap$ -- 2963
+substring$ -- 1320
+swap$ -- 2859
 text.length$ -- 28
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 4
-while$ -- 167
-width$ -- 59
-write$ -- 490
+while$ -- 158
+width$ -- 54
+write$ -- 447
 (There were 4 warnings)

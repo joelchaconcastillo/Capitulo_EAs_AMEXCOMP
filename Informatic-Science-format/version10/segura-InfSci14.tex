@@ -88,6 +88,7 @@
 %\newcommand{\METCO}{\mbox{\sc{metco}}{}}
 %\newcommand{\NP}{{\sc np}}
 
+\renewcommand\spanishtablename{Tabla}
 \begin{document}
 
 \begin{frontmatter}
@@ -107,25 +108,26 @@
 \address[label1]{Area of Computer Science, Centre for Research in Mathematics (CIMAT), Callej\'on Jalisco s/n, Mineral de Valenciana, Guanajuato, Guanajuato 36240, Mexico}
 
 \begin{abstract}
-Differential Evolution is an efficient metaheuristic for continuous optimization that suffers from the curse of dimensionality.
-A large amount of experimentation has allowed researchers to find
-several potential weaknesses in Differential Evolution.
-Some of these weaknesses do not significantly affect its performance when dealing with low-dimensional problems,
-so the research community has not paid much attention to them.
-The aim of this paper is to provide a better insight into the reasons of the curse of dimensionality
-and to propose techniques to alleviate this problem.
-Two different weaknesses are revisited and schemes for dealing with them are devised.
-The schemes increase the diversity of trial vectors and improve on the exploration capabilities of Differential Evolution.
-\textcolor{red}{
-Some important mathematical properties induced by our proposals are studied and compared against the ones of related schemes.
-Experimentation with a set of problems with up to 1000 dimensions and with several variants of Differential Evolution
-shows that the analyzed weaknesses
-significantly affect the performance of Differential Evolution when used on high-dimensional optimization problems.
-The gains of the proposals appear when too exploitative schemes are used.
-Our proposals enable the achievement of high-quality solution with small populations,
-meaning that the most significant advantages emerge when dealing with large-scale optimization problems,
-where the benefits of using small populations have been previously shown.
-}
+La convergencia prematura es uno de las mayores desventajas que afectan el rendimiento de los algoritmos evolutivos.
+%
+Mantener un grado de diversidad de forma explícito es una alternativa para lidiar con este problema.
+%
+En este capítulo se realizan dos aportaciones para promover la diversidad en el espacio de las variables.
+%
+En la primera en el ámbito de evolución diferencial propone una estrategia de reemplazo que combina una población elite y un mecanismo para mantener la diversidad de forma explícito.
+%
+La novedad de esta primera propuesta es el uso de un balanceo dinámico entre exploración e intensificación en las distintas etapas de optimización.
+%
+La validación experimental es llevada a cabo con varios problemas de prueba propuestos en los problemas del Congreso de Cómputo Evolutivo.
+%
+Por otra parte, en la segunda aportación enfocado a los operadores de cruce, se analiza el Operador de Cruce basado en Simulación Binaria (Simulated Binary Crossover - SBX).
+%
+Además, se proponen extensiones del SBX donde se consideran modificaciones de forma dinámica donde es considerado el criterio de paro.
+%
+Esto con el propósito de inducir un cambio gradual entre exploración a intensificación en el proceso de búsqueda.
+%
+La validación experimental se realizó con los problemas de prueba mas populares del ámbito multi-objetivo, donde se demostró una mejora significativa.
+%
 \end{abstract}
 
 \begin{keyword}
@@ -140,7 +142,8 @@ Diversidad \sep Multi-objetivo \sep Convergencia Prematura \sep Evolución Difer
 \label{sec:Introduction}
 \input{Introduction.tex}
 
-\section{Mecanismos para evitar la convergencia prematura}
+%\section{Mecanismos para evitar la convergencia prematura}
+\section{Preservación de diversidad en algoritmos evolutivos}
 \label{sec:Mecanismos}
 \input{Mecanismos.tex}
 

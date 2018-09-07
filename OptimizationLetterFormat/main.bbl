@@ -29,28 +29,6 @@ M.~\v{C}repin\v{s}ek, S.H. Liu, M.~Mernik, Exploration and exploitation in
 D.~Dasgupta, Z.~Michalewicz, \emph{Evolutionary algorithms in engineering
   applications} (Springer Science \& Business Media, 2013)
 
-\bibitem{pandey2014comparative}
-H.M. Pandey, A.~Chaudhary, D.~Mehrotra, A comparative review of approaches to
-  prevent premature convergence in ga, Applied Soft Computing \textbf{24}, 1047
-  (2014)
-
-\bibitem{blickle1996comparison}
-T.~Blickle, L.~Thiele, A comparison of selection schemes used in evolutionary
-  algorithms, Evolutionary Computation \textbf{4}(4), 361 (1996)
-
-\bibitem{de2006evolutionary}
-K.A. De~Jong, \emph{Evolutionary computation: a unified approach} (MIT press,
-  2006)
-
-\bibitem{mahfoud1992crowding}
-S.W. Mahfoud, Crowding and preselection revisited, Urbana \textbf{51}, 61801
-  (1992)
-
-\bibitem{lozano2008replacement}
-M.~Lozano, F.~Herrera, J.R. Cano, Replacement strategies to preserve useful
-  diversity in steady-state genetic algorithms, Information Sciences
-  \textbf{178}(23), 4421 (2008)
-
 \bibitem{eiben1998evolutionary}
 A.E. Eiben, C.A. Schippers, On evolutionary exploration and exploitation,
   Fundamenta Informaticae \textbf{35}(1-4), 35 (1998)

@@ -55,12 +55,16 @@ A continuación se explica en más detalle cada componente de \DE{}.
 
 \subsubsection{Inicialización}
 
-\DE{} usually starts the optimization process with a randomly initiated population of $NP$ vectors.
+Usualmente \DE{} inicia el proceso de optimización con una población de $NP$ vectores que inicializada de forma aleatoria.
+%\DE{} usually starts the optimization process with a randomly initiated population of $NP$ vectors.
 %
-Since there is commonly no information about the performance of different regions, uniform random generators are usually applied.
+Principalmente los vectores de la población inicial son generados en base a una distribución uniforme, ya que usualmente no se posee información del espacio de búsqueda.
+%Since there is commonly no information about the performance of different regions, uniform random generators are usually applied.
 %
-Hence, the $j$th component of the $i$th vector is initialized as $x_{j,i,0} = a_{j} + rand_{i,j}[0,1] (b_{j} - a_{j})$,
-where $rand_{i,j}[0,1]$ is an uniformly distributed random number lying between $0$ and $1$.
+Por lo tanto el $j$-ésimo componente del $i$-ésimo vector es inicializado de la forma $x_{j,i,0} = a_{j} + rand_{i,j}[0,1] (b_{j} - a_{j})$,
+donde $rand_{i,j}[0,1]$ es un número aleatorio uniformemente distribuído que se encuentra entre $0$ y $1$.
+%Hence, the $j$th component of the $i$th vector is initialized as $x_{j,i,0} = a_{j} + rand_{i,j}[0,1] (b_{j} - a_{j})$,
+%where $rand_{i,j}[0,1]$ is an uniformly distributed random number lying between $0$ and $1$.
 
 \subsubsection{Mutación}
 
@@ -143,77 +147,6 @@ Note that in case of a tie, the trial vector survives.
 
 %
 %The general convention is DE/\textit{x}/\textit{y}/\textit{x}, where DE indicates ``Differential Evolution'', \textit{x} denotes the base vector to be perturbed, \textit{y} is the number of difference vectors considered for perturbation and \textit{z} is the type of crossover to use.
-
-\subsection{Diversidad en Evolución Diferencial}
-%\subsection{Diversity in Differential Evolution}
-
-Los algoritmos basados en \DE{} son altamente suceptibles a la pérdida de diversidad devido a la estrategia de selección agresiva.
-%\DE{} is highly susceptible to the loss of diversity due to the greedy strategy applied in the selection phase.
-%
-Sin embargo, se han desarrollado varios análisis para lidiar con este problema.
-%However, several analyses to better deal with this issue have been carried out.
-%
-Desde que se conocen las implicaciones de cada parámetro en la diversidad, una alternativa es la estimación teórica de los valores adecuados en \DE{}~\cite{zaharie2003control}.
-%Since the general implications of each parameter on the diversity are known, one of
-%the alternatives is to theoretically estimate proper values for the \DE{} parameters~\cite{zaharie2003control}.
-%
-Alternativamente, se han desarrollado algunos análisis donde es considerado el efecto de los vectores de diferencia en la mutación~\cite{montgomery2009differential}.
-%Differently, some analyses regarding the effects of the norm of the difference vectors used in the mutation
-%have also been performed~\cite{montgomery2009differential}.
-%
-Estos análisis y otros estudios empíricos basados en la cruza permitieron concluir que ciertos tipos de movimientos deberían ser deshabilidatos para retrasar la convergencia~\cite{montgomery2012simple}.
-%Such analyses and additional empirical studies regarding the crossover allowed to conclude that some kind of movements 
-%might be disallowed to delay the convergence~\cite{montgomery2012simple}.
-%
-En este último estudio varía el tipo de movimientos aceptados a lo largo de la ejecución.
-%In this last study the kind of accepted movements varies along the run.
-%
-Específicamente, esto descarta movimientos menores a un umbral el cual es decrementado conforme transcurren las generaciones.
-%Specifically, it discards movements with a size below a threshold and this threshold decreases taking into account the elapsed generations.
-%
-Se han propuesto otras formas de alterar el procedimiento en que se aceptan los movimientos~\cite{bolufe2013differential}.
-%Other ways of altering the kind of accepted movements have been proposed~\cite{bolufe2013differential}.
-%
-Es importante notar que este tipo de métodos tienen similitudes con nuestra propuesta en el sentido de que las decisiones están basadas por el número de generaciones transcurridas.
-%Note that these kinds of methods have similarities with our proposal in the sense that decisions are biased by the number of elapsed generations.
-%
-Sin embargo, nuestro método opera en la estrategia de reemplazo y no en la fase de mutación.
-%However, our method operates on the replacement strategy and not on the mutation phase.
-%
-Mas aún, estos métodos no consideran de forma explícita las diferencias que aparecen en la población entera.
-%Moreover, these methods do not consider explicitly the differences appearing on the whole population.
-%
-En su lugar, las restricciones son aplicadas a las diferencias que aparecen en la fase de reemplazo.
-%Instead, the restrictions apply to the differences appearing in the reproduction phase.
-
-Una alternativa distinta reside en alterar el operador de selección~\cite{sa2008exploration}.
-%A different alternative operates by altering the selection operator~\cite{sa2008exploration}.
-%
-Particularmente, se relaja la presión de selección a través de una selección probabilística con el propósito de mantener la diversidad en la población y consecuentemente permitir escapar de la base de atracción de un óptimo local.
-%Particularly, the selection pressure is relaxed through a probabilistic selection to maintain the population diversity and consequently 
-%to allow escaping from basin of attraction of local optima.
-%
-Sin embargo este método es muy sensible a transformaciones desde que esta estrategia considera la aptitud para definir las probabilidades para aceptar un individuo mutado.
-%Since it considers the fitness to establish the acceptance probabilities, it is very sensitive to scale transformations.
-%
-En este caso las decisiones no se basan en las generaciones transcurridas.
-%In this case, decisions are not biased by the elapsed generations.
-
-Finalmente, en el algoritmo \textit{Diversidad de la Población Auto-Mejorado} (\textit{Auto-Enhanced Population Diversity} - \textsc{aepd}), la diversidad es explícitamente medida y esto es un dispara un mecanismo para diversificar a la población cuando se detecta poca diversidad en la población~\cite{yang2015differential}.
-%Finally, in the \textit{Auto-Enhanced Population Diversity} (\textsc{aepd}), the diversity is explicitly measured and it triggers a mechanism
-%to diversify the population when a too low diversity is detected~\cite{yang2015differential}.
-%
-También ya se han propuesto estrategias con principios similares pero con esquemas de perturbación distintos.
-%Strategies with similar principles but with different disturbance schemes have also been devised~\cite{zhao2016differential}.
-
-
-Es importante notar que las mejores variantes-\DE{} de las competencias no utilizan estas modificaciones y que la mayoría de estas extensiones no han sido implementadas en los herramientas de optimización más utilizadas.
-%Note that \DE{} variants with best performance in competitions do not apply these modifications
-%and that most of these extensions have not been implemented in the most widely used frameworks.
-%
-Como resultado, estas extensiones no son ampliamente utilizadas por la comunidad a pesar de sus beneficios en ciertos casos.
-%As a result, these extensions are not so widely used in the community in spite of their important benefits
-%for some cases.
 
 
 \subsection{Propuesta}
