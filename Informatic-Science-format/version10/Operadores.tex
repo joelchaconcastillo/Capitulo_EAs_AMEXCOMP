@@ -1,16 +1,33 @@
-Esta sección está destinada algunos de los trabajos mas importantes relacionados al ámbito de operadores de cruce y al concepto multi-objetivo.
+En esta sección se revisan algunos de los trabajos más importantes en relación a los operadores de cruce.
+%
 %This section is devoted to review some of the most important works that are highly related to the research presented in this paper.
 %
-Primero, son definidos los paradigmas multi-objetivo mas importantes.
+Inicialmente, se definen varios conceptos del campo multi-objetivo.
 %First, the most important \MOEAS{} paradigms are defined.
 %
-Después de eso, se introducen algunas clasificaciones relevantes de los operadores de cruce.
+Posteriormente, se introducen algunas clasificaciones relevantes de los operadores de cruce.
 %Thereafter, some relevant classifications of crossover operators are introduced.
 %
-Finalmente, es discutido el operador de curce \SBX{}, el cual es utilizado de forma extensa en esta sección.
+Finalmente, es discute el operador de cruce \SBX{} el cual es utilizado de forma extenda en esta sección.
 %Finally, the popular \SBX{} operator, which is used extensively in this paper, is discussed.
 
 \subsection{Algoritmos Evolutivos Multi-objetivo}
+
+
+Un MOP continuo basado en minimización puede ser definido como se indica en la ecuación (\ref{eqn:Model})
+%A continuous minimization-based MOP can be defined as indicated in the equation (\ref{eqn:Model}).
+
+\begin{equation}
+ \label{eqn:Model}
+   \begin{split}
+    Minimizar \quad & f_m(\mathbf{x}), \quad m = 1, 2,...,M;\\
+   Sujeto \quad a \quad &  x_i^{(L)} \leq x_i \leq x_i^{(U)}, \quad i=1,2,..., n. \\
+   & \mathbf{x} \in \Omega
+   \end{split}
+\end{equation}
+
+donde $\mathbf{n}$ es la dimensión correspondiente al espacio de las variables, $\Omega$ es el espacio factible, $\mathbf{x}$ es un vector compuesto por $\mathbf{n}$ variables de decisión $x=(x_1, ..., x_n) \in R^n$, y $x_i^{(L)}$ y $x_i^{(U)}$ son los límites inferior y superior de cada variable.      
+
 
 En los últimos años, se han ideado una gran cantidad de \MOEAS{} los cuales siguen distintos principios.
 %In the last years, a large number of \MOEAS{} following different design principles have been devised.

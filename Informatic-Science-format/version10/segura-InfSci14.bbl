@@ -200,6 +200,10 @@ M.~Lozano, F.~Herrera, J.~R. Cano, Replacement strategies to preserve useful
 \bibitem{mahfoud1992crowding}
 S.~W. Mahfoud, Crowding and preselection revisited, Urbana 51 (1992) 61801.
 
+\bibitem{mengshoel2014adaptive}
+O.~J. Mengshoel, S.~F. Gal{\'a}n, A.~De~Dios, Adaptive generalized crowding for
+  genetic algorithms, Information Sciences 258 (2014) 140--159.
+
 \bibitem{molina2017analysis}
 D.~Molina, F.~Moreno-Garc{\'\i}a, F.~Herrera, Analysis among winners of
   different ieee cec competitions on real-parameters optimization: Is there

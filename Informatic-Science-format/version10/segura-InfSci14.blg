@@ -3,7 +3,6 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: segura-InfSci14.aux
 The style file: elsart-num-sort.bst
 Database file #1: InfSci-14-segura.bib
-Warning--I didn't find a database entry for "mengshoel2014adaptive"
 Warning--empty institution in Joel:SBX1994
 Warning--empty journal in de1975analysis
 Warning--empty pages in hamdan2012distribution
@@ -12,45 +11,45 @@ Warning--empty chapter and pages in Joel:WFG
 Warning--empty booktitle in Joel:UNDX
 Warning--empty year in Joel:BOOK_MOEAs
 Warning--empty pages in voigt1995fuzzy
-You've used 70 entries,
+You've used 71 entries,
             2670 wiz_defined-function locations,
-            1026 strings with 17501 characters,
-and the built_in function-call counts, 24857 in all, are:
-= -- 2138
-> -- 1059
+            1030 strings with 17627 characters,
+and the built_in function-call counts, 25192 in all, are:
+= -- 2170
+> -- 1076
 < -- 32
-+ -- 450
-- -- 367
-* -- 2039
-:= -- 3741
-add.period$ -- 70
-call.type$ -- 70
-change.case$ -- 381
++ -- 457
+- -- 373
+* -- 2070
+:= -- 3797
+add.period$ -- 71
+call.type$ -- 71
+change.case$ -- 387
 chr.to.int$ -- 0
-cite$ -- 78
-duplicate$ -- 962
-empty$ -- 2341
-format.name$ -- 421
-if$ -- 5304
+cite$ -- 79
+duplicate$ -- 972
+empty$ -- 2366
+format.name$ -- 428
+if$ -- 5369
 int.to.chr$ -- 0
-int.to.str$ -- 70
-missing$ -- 81
-newline$ -- 218
-num.names$ -- 142
-pop$ -- 471
+int.to.str$ -- 71
+missing$ -- 82
+newline$ -- 221
+num.names$ -- 144
+pop$ -- 475
 preamble$ -- 1
-purify$ -- 322
+purify$ -- 327
 quote$ -- 0
-skip$ -- 790
+skip$ -- 796
 stack$ -- 0
-substring$ -- 1849
-swap$ -- 246
+substring$ -- 1879
+swap$ -- 247
 text.length$ -- 32
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 256
+type$ -- 260
 warning$ -- 8
-while$ -- 265
-width$ -- 72
-write$ -- 581
-(There were 9 warnings)
+while$ -- 269
+width$ -- 73
+write$ -- 589
+(There were 8 warnings)
