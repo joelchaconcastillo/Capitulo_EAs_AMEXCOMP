@@ -3,54 +3,54 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: segura-InfSci14.aux
 The style file: elsart-num-sort.bst
 Database file #1: InfSci-14-segura.bib
-Warning--I didn't find a database entry for "lobo2007parameter"
-Warning--I didn't find a database entry for "yuen2009genetic"
+Warning--I didn't find a database entry for "mengshoel2014adaptive"
 Warning--empty institution in Joel:SBX1994
+Warning--empty journal in de1975analysis
 Warning--empty pages in hamdan2012distribution
 Warning--can't use both author and editor fields in Joel:WFG
 Warning--empty chapter and pages in Joel:WFG
 Warning--empty booktitle in Joel:UNDX
 Warning--empty year in Joel:BOOK_MOEAs
 Warning--empty pages in voigt1995fuzzy
-You've used 62 entries,
+You've used 70 entries,
             2670 wiz_defined-function locations,
-            983 strings with 16274 characters,
-and the built_in function-call counts, 22333 in all, are:
-= -- 1916
-> -- 963
-< -- 29
-+ -- 408
-- -- 335
-* -- 1834
-:= -- 3355
-add.period$ -- 62
-call.type$ -- 62
-change.case$ -- 342
+            1026 strings with 17501 characters,
+and the built_in function-call counts, 24857 in all, are:
+= -- 2138
+> -- 1059
+< -- 32
++ -- 450
+- -- 367
+* -- 2039
+:= -- 3741
+add.period$ -- 70
+call.type$ -- 70
+change.case$ -- 381
 chr.to.int$ -- 0
-cite$ -- 69
-duplicate$ -- 863
-empty$ -- 2101
-format.name$ -- 384
-if$ -- 4772
+cite$ -- 78
+duplicate$ -- 962
+empty$ -- 2341
+format.name$ -- 421
+if$ -- 5304
 int.to.chr$ -- 0
-int.to.str$ -- 62
-missing$ -- 72
-newline$ -- 194
-num.names$ -- 126
-pop$ -- 429
+int.to.str$ -- 70
+missing$ -- 81
+newline$ -- 218
+num.names$ -- 142
+pop$ -- 471
 preamble$ -- 1
-purify$ -- 290
+purify$ -- 322
 quote$ -- 0
-skip$ -- 708
+skip$ -- 790
 stack$ -- 0
-substring$ -- 1655
-swap$ -- 223
-text.length$ -- 29
+substring$ -- 1849
+swap$ -- 246
+text.length$ -- 32
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 226
-warning$ -- 7
-while$ -- 235
-width$ -- 64
-write$ -- 517
+type$ -- 256
+warning$ -- 8
+while$ -- 265
+width$ -- 72
+write$ -- 581
 (There were 9 warnings)

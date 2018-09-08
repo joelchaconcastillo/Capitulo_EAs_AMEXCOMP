@@ -118,58 +118,55 @@ Adicionalmente, estas estrategias puede se utilizas con esquemas para mantener l
 
 Este tipo de mecanismos modifican la fase de reemplazo para preservar la diversidad.
 %
-La idea principal de estos esquemas es que puede inducir un grado de exploración adecuado si se diversifican a los individuos sobrevivientes.
+La idea principal de estos esquemas es inducir un grado de exploración adecuado diversificando a los individuos sobrevivientes.
 %
-Una razón de esto es que si mantienen varias regiones del espacio de búsqueda si la diversidad de la población es elevada.
+Esto se sucede ya son exploradas más regiones del espacio de búsqueda si se mantinen una población cuya diversidad sea elevada.
 %
-Además, los operadores de cruce tienen un efecto de exploración elevado cuando se consideran individuos distantes ref38.
+Además, los operadores de cruce tienen un efecto de exploración al considerar individuos distantes~\cite{eiben1998evolutionary}.
 %
-El esquema de preselección Cavicchio's ref41 es uno de los primeros estudios que utilizan la fase de reemplazamiento para controlar la diversidad.
+Particularmente, el esquema de pre-selección propuesto por Cavicchio's~\cite{grefenstette1986optimization} es uno de los primeros estudios que utilizan la fase de reemplazamiento para controlar la diversidad.
 %
-Posteriormente, se extendió la preselección para generar el amontonamiento (crowding) ref42 que ha sido muy popular en los últioms años ref16,43.
+Posteriormente, esta pre-selección se extendió para generar el \textit{amontonamiento} (crowding) \cite{de1975analysis} el cual ha sido muy popular en los últioms años~\cite{mahfoud1992crowding, mengshoel2014adaptive}.
 %
-El principio del amontonamiento es forzar el ingreso de nuevos individuos en lugar sus correspondientes individuos similares.
-%
+El principio del crowing se basa en forzar el ingreso de nuevos individuos los cuales únicamente sustituyen a sus padres con los que son similares.
 
-%En los 90s, la mayoría de estrategias para aliviar la convergencia prematura se centraron en modificar el esquema de selección de padres.
-%En la literatura existen distintas forma para aliviar el problema de convergencia prematura~\cite{pandey2014comparative}.
-La principal razón es que en esa época la mayoría de esquemas eran generacionales, por lo tanto la presión de selección estaba definida principalmente en la selección de padres.
+La principal razón, es que en esa época la mayoría de esquemas eran generacionales, por lo tanto la presión de selección estaba definida principalmente en la selección de padres.
 %
-Sin embargo, se descubrió que no es suficiente alivar la convergencia prematura únicamente considerando la selección de los padres~\cite{blickle1996comparison}.
+Sin embargo, se descubrió que únicamente considerando la selección de padres no es suficiente para alivar la convergencia prematura~\cite{blickle1996comparison}.
 %
-Posteriormente, la una gran cantidad de \EAS{} incorporaron una fase de reemplazo que abandonaron (al menos parcialmente) a los métodos generacionales iniciales.
+Posteriormente, una gran cantidad de \EAS{} incorporaron una fase de reemplazo y abandonaron (al menos parcialmente) a los métodos generacionales iniciales.
 %
 Basado en esto, muchos autores descubrieron la posibilidad de incorporar métodos para aliviar el problema de convergencia prematura~\cite{Crepinsek:13}.
 %
-Es importante considerar que aún cuando los métodos de reemplazamiento generacionales~\cite{de2006evolutionary} fueron suficientemente populares, algunos autores ya habían tomado en cuenta esta estrategia~\cite{mahfoud1992crowding}.
+Es importante hacer mención de que aún cuando los métodos de reemplazamiento y generacionales~\cite{de2006evolutionary} fueron suficientemente populares, anteriormente algunos autores ya habían tomado en cuenta esta idea~\cite{mahfoud1992crowding}.
 %
-Sin embargo, con la efectividad de elitismo y otras estrategias de reemplazo, el número de esquemas que adoptaron estos principios crecieron de forma considerable~\cite{lozano2008replacement}.
+Sin embargo, con la efectividad del elitismo y otras estrategias de reemplazo, el número de esquemas que adoptaron estos principios crecieron de forma considerable~\cite{lozano2008replacement}.
 %
 \subsection{Diversidad en Evolución Diferencial}
 %\subsection{Diversity in Differential Evolution}
 
-Los algoritmos basados en \DE{} son altamente suceptibles a la pérdida de diversidad devido a la estrategia de selección agresiva.
+Los algoritmos basados en \DE{} son altamente suceptibles a la pérdida de diversidad, esto se debe a la estrategia de selección la cual es considerada muy agresiva.
 %\DE{} is highly susceptible to the loss of diversity due to the greedy strategy applied in the selection phase.
 %
 Sin embargo, se han desarrollado varios análisis para lidiar con este problema.
 %However, several analyses to better deal with this issue have been carried out.
 %
-Desde que se conocen las implicaciones de cada parámetro en la diversidad, una alternativa es la estimación teórica de los valores adecuados en \DE{}~\cite{zaharie2003control}.
+Desde que se conocen las implicaciones de cada parámetro en la diversidad, una alternativa es la estimación teórica ante distintos problemas\DE{}~\cite{zaharie2003control}.
 %Since the general implications of each parameter on the diversity are known, one of
 %the alternatives is to theoretically estimate proper values for the \DE{} parameters~\cite{zaharie2003control}.
 %
-Alternativamente, se han desarrollado algunos análisis donde es considerado el efecto de los vectores de diferencia en la mutación~\cite{montgomery2009differential}.
+Alternativamente, se han desarrollado algunos análisis donde se considera el efecto de los vectores de diferencia en el operador de mutación~\cite{montgomery2009differential}.
 %Differently, some analyses regarding the effects of the norm of the difference vectors used in the mutation
 %have also been performed~\cite{montgomery2009differential}.
 %
-Estos análisis y otros estudios empíricos basados en la cruza permitieron concluir que ciertos tipos de movimientos deberían ser deshabilidatos para retrasar la convergencia~\cite{montgomery2012simple}.
+Estos análisis y otros estudios empíricos están basados en el operador de cruce, donde se establece un mecanismo para retrasar la convergencia prematura, particularmente este deshabilita ciertos movimientos que pueden resultar perjudiciales para el rendimiento del algoritmo~\cite{montgomery2012simple}.
 %Such analyses and additional empirical studies regarding the crossover allowed to conclude that some kind of movements 
 %might be disallowed to delay the convergence~\cite{montgomery2012simple}.
 %
-En este último estudio varía el tipo de movimientos aceptados a lo largo de la ejecución.
+En este último estudio, el tipo de movimientos aceptados varía a lo largo de la ejecución.
 %In this last study the kind of accepted movements varies along the run.
 %
-Específicamente, esto descarta movimientos menores a un umbral el cual es decrementado conforme transcurren las generaciones.
+Particularmente, esto descarta movimientos menores a un umbral, el cual es decrementado conforme transcurren las generaciones.
 %Specifically, it discards movements with a size below a threshold and this threshold decreases taking into account the elapsed generations.
 %
 Se han propuesto otras formas de alterar el procedimiento en que se aceptan los movimientos~\cite{bolufe2013differential}.
@@ -181,38 +178,38 @@ Es importante notar que este tipo de métodos tienen similitudes con nuestra pro
 Sin embargo, nuestro método opera en la estrategia de reemplazo y no en la fase de mutación.
 %However, our method operates on the replacement strategy and not on the mutation phase.
 %
-Mas aún, estos métodos no consideran de forma explícita las diferencias que aparecen en la población entera.
+Mas aún, estos métodos no consideran de forma explícita los vectores de diferencias que aparecen en la toda población.
 %Moreover, these methods do not consider explicitly the differences appearing on the whole population.
 %
 En su lugar, las restricciones son aplicadas a las diferencias que aparecen en la fase de reemplazo.
 %Instead, the restrictions apply to the differences appearing in the reproduction phase.
 
-Una alternativa distinta reside en alterar el operador de selección~\cite{sa2008exploration}.
+Una distinta alternativa reside en alterar el operador de selección~\cite{sa2008exploration}.
 %A different alternative operates by altering the selection operator~\cite{sa2008exploration}.
 %
-Particularmente, se relaja la presión de selección a través de una selección probabilística con el propósito de mantener la diversidad en la población y consecuentemente permitir escapar de la base de atracción de un óptimo local.
+Particularmente, con el propósito de mantener la diversidad de la población, se altera la presión de selección mediante una selección probabilística, posteriormente eso podría permitir escapar de las bases de atracción que pertenecen a los óptimos locales.
 %Particularly, the selection pressure is relaxed through a probabilistic selection to maintain the population diversity and consequently 
 %to allow escaping from basin of attraction of local optima.
 %
-Sin embargo este método es muy sensible a transformaciones desde que esta estrategia considera la aptitud para definir las probabilidades para aceptar un individuo mutado.
+Sin embargo este método es muy sensible al mapeo del espacio de búsqueda ya que considera la aptitud para definir las probabilidades para seleccionar a un individuo.
 %Since it considers the fitness to establish the acceptance probabilities, it is very sensitive to scale transformations.
 %
 En este caso las decisiones no se basan en las generaciones transcurridas.
 %In this case, decisions are not biased by the elapsed generations.
 
-Finalmente, en el algoritmo \textit{Diversidad de la Población Auto-Mejorado} (\textit{Auto-Enhanced Population Diversity} - \textsc{aepd}), la diversidad es explícitamente medida y esto es un dispara un mecanismo para diversificar a la población cuando se detecta poca diversidad en la población~\cite{yang2015differential}.
+Finalmente, el algoritmo \textit{Diversidad de la Población Auto-Mejorado} (\textit{Auto-Enhanced Population Diversity} - \textsc{aepd}) mide la diversidad de forma explícita y cuando se detecta poca diversidad en la población se inicia un mecanismo de diversificación~\cite{yang2015differential}.
 %Finally, in the \textit{Auto-Enhanced Population Diversity} (\textsc{aepd}), the diversity is explicitly measured and it triggers a mechanism
 %to diversify the population when a too low diversity is detected~\cite{yang2015differential}.
 %
-También ya se han propuesto estrategias con principios similares pero con esquemas de perturbación distintos.
+Es importante mencionar que ya se han propuesto estrategias con principios similares pero con esquemas de perturbación distintos~\cite{zhao2016differential}.
 %Strategies with similar principles but with different disturbance schemes have also been devised~\cite{zhao2016differential}.
 
 
-Es importante notar que las mejores variantes-\DE{} de las competencias no utilizan estas modificaciones y que la mayoría de estas extensiones no han sido implementadas en los herramientas de optimización más utilizadas.
+Particularmente, es interesante notar que las variantes de \DE{} que alcanzaron los primeros lugares en varias competencias de optimización no consideran estas modificaciones, y además estas variantes no han sido incorporadas en las herramientas de optimización más populares.
 %Note that \DE{} variants with best performance in competitions do not apply these modifications
 %and that most of these extensions have not been implemented in the most widely used frameworks.
 %
-Como resultado, estas extensiones no son ampliamente utilizadas por la comunidad a pesar de sus beneficios en ciertos casos.
+Como resultado, estos algoritmo no son ampliamente utilizados.
 %As a result, these extensions are not so widely used in the community in spite of their important benefits
 %for some cases.
 

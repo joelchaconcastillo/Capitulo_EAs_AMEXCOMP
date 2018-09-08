@@ -64,6 +64,9 @@ S.~Das, P.~N. Suganthan, Differential evolution: A survey of the
 D.~Dasgupta, Z.~Michalewicz, Evolutionary algorithms in engineering
   applications, Springer Science \& Business Media, 2013.
 
+\bibitem{de1975analysis}
+K.~A. De~Jong, Analysis of the behavior of a class of genetic adaptive systems.
+
 \bibitem{de2006evolutionary}
 K.~A. De~Jong, Evolutionary computation: a unified approach, MIT press, 2006.
 
@@ -94,6 +97,10 @@ J.~J. Durillo, A.~J. Nebro, C.~A.~C. Coello, J.~Garcia-Nieto, F.~Luna, E.~Alba,
   Problems}, IEEE Transactions on Evolutionary Computation 14~(4) (2010)
   618--635.
 
+\bibitem{eiben1998evolutionary}
+A.~E. Eiben, C.~A. Schippers, On evolutionary exploration and exploitation,
+  Fundamenta Informaticae 35~(1-4) (1998) 35--50.
+
 \bibitem{eiben2003introduction}
 A.~E. Eiben, J.~E. Smith, et~al., Introduction to evolutionary computing,
   vol.~53, Springer, 2003.
@@ -122,6 +129,10 @@ W.~Gao, G.~G. Yen, S.~Liu, A cluster-based differential evolution with
 F.~Glover, G.~Kochenberger, Handbook of metaheuristics (international series in
   operations research and management science), JOURNAL-OPERATIONAL RESEARCH
   SOCIETY 56~(5) (2005) 614--614.
+
+\bibitem{grefenstette1986optimization}
+J.~J. Grefenstette, Optimization of control parameters for genetic algorithms,
+  IEEE Transactions on systems, man, and cybernetics 16~(1) (1986) 122--128.
 
 \bibitem{hamdan2012distribution}
 M.~Hamdan, The distribution index in polynomial mutation for evolutionary
@@ -160,11 +171,26 @@ H.~Jain, K.~Deb, Parent to mean-centric self-adaptation in sbx operator for
   real-parameter optimization, Swarm, Evolutionary, and Memetic Computing
   (2011) 299--306.
 
+\bibitem{jansen2002analysis}
+T.~Jansen, On the analysis of dynamic restart strategies for evolutionary
+  algorithms, in: International conference on parallel problem solving from
+  nature, Springer, 2002, pp. 33--43.
+
+\bibitem{koumousis2006saw}
+V.~K. Koumousis, C.~P. Katsaras, A saw-tooth genetic algorithm combining the
+  effects of variable population size and reinitialization to enhance
+  performance, IEEE Transactions on Evolutionary Computation 10~(1) (2006)
+  19--28.
+
 \bibitem{kumar2017improving}
 A.~Kumar, R.~K. Misra, D.~Singh, Improving the local search capability of
   effective butterfly optimizer using covariance matrix adapted retreat phase,
   in: Evolutionary Computation (CEC), 2017 IEEE Congress on, IEEE, 2017, pp.
   1835--1842.
+
+\bibitem{lobo2007parameter}
+F.~Lobo, C.~F. Lima, Z.~Michalewicz, Parameter setting in evolutionary
+  algorithms, vol.~54, Springer Science \& Business Media, 2007.
 
 \bibitem{lozano2008replacement}
 M.~Lozano, F.~Herrera, J.~R. Cano, Replacement strategies to preserve useful
@@ -281,6 +307,11 @@ W.-J. Yu, M.~Shen, W.-N. Chen, Z.-H. Zhan, Y.-J. Gong, Y.~Lin, O.~Liu,
   J.~Zhang, Differential evolution with two-level parameter adaptation, IEEE
   Transactions on Cybernetics 44~(7) (2014) 1080--1099.
 
+\bibitem{yuen2009genetic}
+S.~Y. Yuen, C.~K. Chow, A genetic algorithm that adaptively mutates and never
+  revisits, IEEE transactions on evolutionary computation 13~(2) (2009)
+  454--472.
+
 \bibitem{zaharie2003control}
 D.~Zaharie, Control of population diversity and adaptation in differential
   evolution algorithms, in: Proc. of MENDEL, vol.~9, 2003, pp. 41--46.
@@ -294,6 +325,11 @@ Q.~Zhang, H.~Li, {MOEA/D: A Multiobjective Evolutionary Algorithm Based on
 Q.~Zhang, W.~Liu, H.~Li, The performance of a new version of moea/d on cec09
   unconstrained mop test instances, in: Evolutionary Computation, 2009. CEC'09.
   IEEE Congress on, IEEE, 2009, pp. 203--208.
+
+\bibitem{zhao2016differential}
+L.~Zhao, C.-j. Sun, X.-c. Huang, B.-x. Zhou, Differential evolution with
+  strategy of improved population diversity, in: Control Conference (CCC), 2016
+  35th Chinese, IEEE, 2016, pp. 2784--2787.
 
 \bibitem{Joel:OperatorAHX}
 Q.~Zhu, Q.~Lin, Z.~Du, Z.~Liang, W.~Wang, Z.~Zhu, J.~Chen, P.~Huang, Z.~Ming,
