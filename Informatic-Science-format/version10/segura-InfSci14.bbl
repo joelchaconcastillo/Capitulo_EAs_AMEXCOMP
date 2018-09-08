@@ -47,6 +47,10 @@ J.~Brest, M.~S. Mau{\v{c}}ec, B.~Bo{\v{s}}kovi{\'c}, Single objective
   real-parameter optimization: Algorithm jso, in: Evolutionary Computation
   (CEC), 2017 IEEE Congress on, IEEE, 2017, pp. 1311--1318.
 
+\bibitem{cantu2000efficient}
+E.~Cantu-Paz, Efficient and accurate parallel genetic algorithms, vol.~1,
+  Springer Science \& Business Media, 2000.
+
 \bibitem{chakraborty2008advances}
 U.~K. Chakraborty, Advances in differential evolution, vol. 143, Springer,
   2008.
@@ -62,6 +66,10 @@ D.~Dasgupta, Z.~Michalewicz, Evolutionary algorithms in engineering
 
 \bibitem{de2006evolutionary}
 K.~A. De~Jong, Evolutionary computation: a unified approach, MIT press, 2006.
+
+\bibitem{deb1989investigation}
+K.~Deb, An investigation of niche and species formation in genetic function
+  optimization, ICGA'89 (1989) 42--50.
 
 \bibitem{deb1994simulated}
 K.~Deb, R.~B. Agrawal, Simulated binary crossover for continuous search space,
@@ -104,6 +112,11 @@ L.~J. Eshelman, {The CHC Adaptive Search Algorithm: How to Have Safe Search
 \bibitem{eshelman1993real}
 L.~J. Eshelman, Real coded genetic algorithms and interval-schemata,
   Foundations of genetic algorithms 2 (1993) 187--202.
+
+\bibitem{gao2014cluster}
+W.~Gao, G.~G. Yen, S.~Liu, A cluster-based differential evolution with
+  self-adaptive strategy for multimodal optimization, IEEE transactions on
+  cybernetics 44~(8) (2014) 1314--1327.
 
 \bibitem{glover2005handbook}
 F.~Glover, G.~Kochenberger, Handbook of metaheuristics (international series in
@@ -194,6 +207,11 @@ I.~Ono, H.~Kita, S.~Kobayashi, Advances in evolutionary computing, chap. A
   213--237.
 \newline\urlprefix\url{http://dl.acm.org/citation.cfm?id=903758.903767}
 
+\bibitem{pandey2014comparative}
+H.~M. Pandey, A.~Chaudhary, D.~Mehrotra, A comparative review of approaches to
+  prevent premature convergence in ga, Applied Soft Computing 24 (2014)
+  1047--1077.
+
 \bibitem{pilat2010evolutionary}
 M.~Pil{\'a}t, Evolutionary multiobjective optimization: A short survey of the
   state-of-the-art, Proceedings of the Contributed Papers Part I-Mathematics
@@ -212,6 +230,11 @@ K.~Price, R.~M. Storn, J.~A. Lampinen, Differential evolution: a practical
 E.~Segredo, C.~Segura, C.~Le{\'o}n, A multiobjectivised memetic algorithm for
   the frequency assignment problem, in: Evolutionary Computation (CEC), 2011
   IEEE Congress on, IEEE, 2011, pp. 1132--1139.
+
+\bibitem{segredo2014fuzzy}
+E.~Segredo, C.~Segura, C.~Le{\'o}n, Fuzzy logic-controlled diversity-based
+  multi-objective memetic algorithm applied to a frequency assignment problem,
+  Engineering Applications of Artificial Intelligence 30 (2014) 199--212.
 
 \bibitem{segura2016novel}
 C.~Segura, C.~A.~C. Coello, E.~Segredo, A.~H. Aguirre, A novel diversity-based
@@ -238,6 +261,11 @@ M.~\v{C}repin\v{s}ek, S.-H. Liu, M.~Mernik, Exploration and exploitation in
   evolutionary algorithms: A survey, ACM Computing Surveys 45~(3) (2013)
   35:1--35:33.
 
+\bibitem{Joel:Crepinsek}
+M.~\v{C}repin\v{s}ek, S.-H. Liu, M.~Mernik, {Exploration and Exploitation in
+  Evolutionary Algorithms: A Survey}, ACM Computing Surveys 45~(3) (2013)
+  35:1--35:33.
+
 \bibitem{voigt1995fuzzy}
 H.-M. Voigt, H.~M{\"u}hlenbein, D.~Cvetkovic, Fuzzy recombination for the
   breeder genetic algorithm, in: Proc. Sixth Int. Conf. on Genetic Algorithms,
@@ -247,6 +275,11 @@ H.-M. Voigt, H.~M{\"u}hlenbein, D.~Cvetkovic, Fuzzy recombination for the
 M.~Yang, C.~Li, Z.~Cai, J.~Guan, Differential evolution with auto-enhanced
   population diversity, IEEE transactions on cybernetics 45~(2) (2015)
   302--315.
+
+\bibitem{yu2014differential}
+W.-J. Yu, M.~Shen, W.-N. Chen, Z.-H. Zhan, Y.-J. Gong, Y.~Lin, O.~Liu,
+  J.~Zhang, Differential evolution with two-level parameter adaptation, IEEE
+  Transactions on Cybernetics 44~(7) (2014) 1080--1099.
 
 \bibitem{zaharie2003control}
 D.~Zaharie, Control of population diversity and adaptation in differential

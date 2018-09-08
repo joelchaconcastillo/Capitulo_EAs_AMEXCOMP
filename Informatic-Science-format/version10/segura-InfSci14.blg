@@ -3,6 +3,8 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: segura-InfSci14.aux
 The style file: elsart-num-sort.bst
 Database file #1: InfSci-14-segura.bib
+Warning--I didn't find a database entry for "lobo2007parameter"
+Warning--I didn't find a database entry for "yuen2009genetic"
 Warning--empty institution in Joel:SBX1994
 Warning--empty pages in hamdan2012distribution
 Warning--can't use both author and editor fields in Joel:WFG
@@ -10,45 +12,45 @@ Warning--empty chapter and pages in Joel:WFG
 Warning--empty booktitle in Joel:UNDX
 Warning--empty year in Joel:BOOK_MOEAs
 Warning--empty pages in voigt1995fuzzy
-You've used 55 entries,
+You've used 62 entries,
             2670 wiz_defined-function locations,
-            946 strings with 15139 characters,
-and the built_in function-call counts, 19954 in all, are:
-= -- 1705
-> -- 839
-< -- 28
-+ -- 354
-- -- 291
-* -- 1609
-:= -- 2964
-add.period$ -- 55
-call.type$ -- 55
-change.case$ -- 300
+            983 strings with 16274 characters,
+and the built_in function-call counts, 22333 in all, are:
+= -- 1916
+> -- 963
+< -- 29
++ -- 408
+- -- 335
+* -- 1834
+:= -- 3355
+add.period$ -- 62
+call.type$ -- 62
+change.case$ -- 342
 chr.to.int$ -- 0
-cite$ -- 62
-duplicate$ -- 795
-empty$ -- 1912
-format.name$ -- 335
-if$ -- 4309
+cite$ -- 69
+duplicate$ -- 863
+empty$ -- 2101
+format.name$ -- 384
+if$ -- 4772
 int.to.chr$ -- 0
-int.to.str$ -- 55
-missing$ -- 64
-newline$ -- 173
-num.names$ -- 112
-pop$ -- 394
+int.to.str$ -- 62
+missing$ -- 72
+newline$ -- 194
+num.names$ -- 126
+pop$ -- 429
 preamble$ -- 1
-purify$ -- 254
+purify$ -- 290
 quote$ -- 0
-skip$ -- 663
+skip$ -- 708
 stack$ -- 0
-substring$ -- 1446
-swap$ -- 216
-text.length$ -- 28
+substring$ -- 1655
+swap$ -- 223
+text.length$ -- 29
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 200
+type$ -- 226
 warning$ -- 7
-while$ -- 209
-width$ -- 57
-write$ -- 462
-(There were 7 warnings)
+while$ -- 235
+width$ -- 64
+write$ -- 517
+(There were 9 warnings)
