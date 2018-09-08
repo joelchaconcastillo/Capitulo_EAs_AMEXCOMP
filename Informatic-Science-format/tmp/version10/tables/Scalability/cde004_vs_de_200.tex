@@ -1,0 +1,32 @@
+\begin{table}[!t]
+%\renewcommand{\arraystretch}{1.4}
+\caption{Comparison of errors obtained by \textsc{DE} and \textsc{CDE}-0.04 in 1,000,000 evaluations ($D = 200$)}
+\label{tab:scalability_200}
+\centering
+\begin{scriptsize}
+\begin{tabular}{c || c c c | c c c c}
+\hline
+ & \multicolumn{3}{|c|}{\textsc{de}} & \multicolumn{4}{|c}{\textsc{cde-0.04}} \\ \hline
+    & Median                 & Mean                  & Std. Dev.             & Median                         & Mean                           & Std. Dev.                      & Stat.               \\ \hline
+F1  & $0$                    & $0$                   & $1.79 \cdot 10^{-14}$ & $0$                            & $0$                            & $0$                            & $\leftrightarrow$   \\ \hline
+F2  & $65.83$                & $65.89$               & $17.21$               & $\mathbf{1.43}$                & $\mathbf{1.46}$                & $\mathbf{0.19}$                & $\uparrow$          \\ \hline
+F3  & $243.92$               & $243.43$              & $59.87$               & $\mathbf{230.86}$              & $\mathbf{227.26}$              & $\mathbf{53.34}$               & $\uparrow$          \\ \hline
+F4  & $0$                    & $8.13 \cdot 10^{-2}$  & $0.71$                & ${0}$                          & ${4.34 \cdot 10^{-2}}$         & ${0.51}$                       & $\leftrightarrow$   \\ \hline
+F5  & $0$                    & $3.23 \cdot 10^{-4}$  & $5.38 \cdot 10^{-3}$  & ${0}$                          & ${8.74 \cdot 10^{-5}}$         & ${2.04 \cdot 10^{-3}}$         & $\leftrightarrow$   \\ \hline
+F6  & $1.98 \cdot 10^{-13}$  & $5.62 \cdot 10^{-3}$  & $4.14 \cdot 10^{-2}$  & $\mathbf{1.98 \cdot 10^{-13}}$ & $\mathbf{1.98 \cdot 10^{-13}}$ & $\mathbf{2.18 \cdot 10^{-14}}$          & $\uparrow$   \\ \hline
+F7  & $0$                    & $0$                   & $0$                   & $0$                            & $0$                            & $0$                            & $\leftrightarrow$   \\ \hline
+F8  & $4381.43$              & $4412.40$             & $609.19$              & $4404.58$                      & $4423.31$                      & $617.84$                       & $\leftrightarrow$   \\ \hline
+F9  & $0$                    & $0$                   & $0$                   & $0$                            & $1.69 \cdot 10^{-10}$          & $5.36 \cdot 10^{-9}$           & $\leftrightarrow$   \\ \hline
+F10 & $2.69 \cdot 10^{-20}$  & $3.12 \cdot 10^{-20}$ & $4.51 \cdot 10^{-20}$ & $\mathbf{2.05 \cdot 10^{-20}}$ & $\mathbf{2.14 \cdot 10^{-20}}$ & $\mathbf{1.03 \cdot 10^{-20}}$ & $\uparrow$          \\ \hline
+F11 & $0$                    & $0$                   & $0$                   & $0$                            & $2.31 \cdot 10^{-10}$          & $7.32 \cdot 10^{-9}$           & $\leftrightarrow$   \\ \hline
+F12 & $8.33 \cdot 10^{-17}$  & $1.81 \cdot 10^{-2}$  & $0.56$                & $\mathbf{8.32 \cdot 10^{-17}}$ & $\mathbf{5.45 \cdot 10^{-5}}$  & $\mathbf{1.07 \cdot 10^{-3}}$  & $\uparrow$          \\ \hline
+F13 & $147.99$               & $149.34$              & $63.67$               & $\mathbf{129.86}$              & $\mathbf{129.89}$              & $\mathbf{48.01}$               & $\uparrow$          \\ \hline
+F14 & $1.03 \cdot 10^{-17}$  & $9.00 \cdot 10^{-2}$  & $0.56$                & ${9.17 \cdot 10^{-18}}$        & $0.11$                         & ${0.59}$                       & *                   \\ \hline
+F15 & $9.94 \cdot 10^{-30}$  & $1.92 \cdot 10^{-7}$  & $6.09 \cdot 10^{-6}$  & $\mathbf{0}$                   & $\mathbf{1.48 \cdot 10^{-31}}$ & $\mathbf{4.51 \cdot 10^{-31}}$ & $\uparrow$          \\ \hline
+F16 & $5.56 \cdot 10^{-17}$  & $3.52 \cdot 10^{-4}$  & $8.23 \cdot 10^{-3}$  & ${5.62 \cdot 10^{-17}}$        & ${2.40 \cdot 10^{-5}}$         & ${4.76 \cdot 10^{-4}}$         & $\leftrightarrow$   \\ \hline
+F17 & $6.07$                 & $16.29$               & $23.80$               & $\mathbf{3.80}$                & $\mathbf{10.33}$               & $\mathbf{17.85}$               & $\uparrow$          \\ \hline
+F18 & $6.46 \cdot 10^{-17}$  & $5.96 \cdot 10^{-2}$  & $0.28$                & $\mathbf{5.88 \cdot 10^{-17}}$ & $\mathbf{5.89 \cdot 10^{-2}}$  & $\mathbf{0.30}$                & $\uparrow$   \\ \hline
+F19 & $1.31 \cdot 10^{-24}$  & $3.81 \cdot 10^{-3}$  & $0.12$                & $\mathbf{3.47 \cdot 10^{-27}}$ & $\mathbf{1.23 \cdot 10^{-26}}$ & $\mathbf{4.37 \cdot 10^{-26}}$ & $\uparrow$          \\ \hline
+\end{tabular}
+\end{scriptsize}
+\end{table}

@@ -1,0 +1,313 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem{Abbass:02}
+H.~Abbass, The self-adaptive pareto differential evolution algorithm, in: IEEE
+  Congr. on Evol. Computation 2002 (CEC'02), vol.~1, 2002, pp. 831--836.
+
+\bibitem{Angela:08}
+A.~Angela, A.~Andrade, A.~Soares, Exploration vs exploitation in differential
+  evolution, in: Convention in Commun., Interaction and Social Intell., 2008.
+
+\bibitem{Arabas:11}
+J.~Arabas, L.~Bartnik, K.~Opara, Dmea - an algorithm that combines differential
+  mutation with the fitness proportionate selection, in: 2011 IEEE Symp. on
+  Differential Evolution (SDE'11), 2011, pp. 1--8.
+
+\bibitem{Bowling:01}
+M.~Bowling, M.~Veloso, Rational and convergent learning in stochastic games,
+  in: Proceedings of the 17th International Joint Conference on Artificial
+  Intelligence - Volume 2, IJCAI'01, Morgan Kaufmann Publishers Inc., San
+  Francisco, CA, USA, 2001, pp. 1021--1026.
+
+\bibitem{Brest:12}
+J.~Brest, B.~Boskovic, A.~Zamuda, I.~Fister, M.~Maucec, Self-adaptive
+  differential evolution algorithm with a small and varying population size,
+  in: Evolutionary Computation (CEC), 2012 IEEE Congress on, 2012, pp. 1--8.
+
+\bibitem{Brest:06}
+J.~Brest, S.~Greiner, B.~Boskovic, M.~Mernik, V.~Zumer, {Self-Adapting Control
+  Parameters in Differential Evolution: A Comparative Study on Numerical
+  Benchmark Problems}, {IEEE} Trans. Evol. Comput. 10~(6) (2006) 646--657.
+
+\bibitem{Brest:11}
+J.~Brest, M.~Mau\^ec, Self-adaptive differential evolution algorithm using
+  population size reduction and three strategies, Soft Computing 15~(11) (2011)
+  2157--2174.
+
+\bibitem{Brest:08}
+J.~Brest, M.~Sepesy~Maučec, Population size reduction for the differential
+  evolution algorithm, Applied Intelligence 29~(3) (2008) 228--247.
+
+\bibitem{Brest:08b}
+J.~Brest, A.~Zamuda, B.~Bošković, S.~Greiner, V.~Žumer, {An Analysis of the
+  Control Parameters’ Adaptation in DE}, in: U.~Chakraborty (ed.), Advances
+  in Differential Evolution, vol. 143 of Studies in Computational Intelligence,
+  Springer Berlin Heidelberg, 2008, pp. 89--110.
+
+\bibitem{Brest:10}
+J.~Brest, A.~Zamuda, I.~Fister, M.~Mau\v{c}ec, Large scale global optimization
+  using self-adaptive differential evolution algorithm, in: 2010 IEEE Congress
+  on Evolutionary Computation (CEC), 2010, pp. 1--8.
+
+\bibitem{Das:05b}
+S.~Das, A.~Konar, U.~K. Chakraborty, Two improved differential evolution
+  schemes for faster global search, in: The 2005 Conference on Genetic and
+  Evol. Computation (GECCO'05), ACM, 2005, pp. 991--998.
+
+\bibitem{Das:11}
+S.~Das, P.~Suganthan, Differential evolution: A survey of the state-of-the-art,
+  {IEEE} Trans. Evol. Comput. 15~(1) (2011) 4--31.
+
+\bibitem{Durillo:10}
+J.~Durillo, A.~Nebro, C.~A. Coello~Coello, J.~Garcia-Nieto, F.~Luna, E.~Alba, A
+  study of multiobjective metaheuristics when solving parameter scalable
+  problems, {IEEE} Trans. Evol. Comput. 14~(4) (2010) 618--635.
+
+\bibitem{Eiben:03}
+A.~Eiben, J.~Smith, {Introduction to Evolutionary Computing}, Natural Computing
+  Series, Springer, 2003.
+
+\bibitem{Gamperle:02}
+R.~G\"amperle, S.~M\"uller, P.~Koumoutsakos, {A Parameter Study for
+  Differential Evolution}, in: A.~Grmela, N.~Mastorakis (eds.), {Advances in
+  Intelligent Syst., Fuzzy Syst., Evol. Computation}, WSEAS Press, 2002, pp.
+  293--298.
+
+\bibitem{Ghasemi:14}
+M.~Ghasemi, M.~M. Ghanbarian, S.~Ghavidel, S.~Rahmani, E.~M. Moghaddam,
+  Modified teaching learning algorithm and double differential evolution
+  algorithm for optimal reactive power dispatch problem: A comparative study,
+  Information Sciences 278~(0) (2014) 231 -- 249.
+
+\bibitem{Gong:11}
+W.~Gong, Álvaro Fialho, Z.~Cai, H.~Li, Adaptive strategy selection in
+  differential evolution for numerical optimization: An empirical study,
+  Information Sciences 181~(24) (2011) 5364 -- 5386.
+
+\bibitem{Good:92}
+I.~J. Good, {The Bayes/Non-Bayes Compromise: A Brief Review}, Journal of The
+  American Statistical Association 87~(419) (1992) 597--606.
+
+\bibitem{Lampinen:00}
+J.~Lampinen, I.~Zelinka, {On Stagnation Of The Differential Evolution
+  Algorithm}, in: 6th Int. Mendel Conference on Soft Computing (MENDEL 2000),
+  2000, pp. 76--83.
+
+\bibitem{Langdon:07}
+W.~Langdon, R.~Poli, Evolving problems to learn about particle swarm optimizers
+  and other search algorithms, {IEEE} Trans. Evol. Comput. 11~(5) (2007)
+  561--578.
+
+\bibitem{LaTorre:11}
+A.~LaTorre, S.~Muelas, J.-M. Pe\~na, A mos-based dynamic memetic differential
+  evolution algorithm for continuous optimization: a scalability test, Soft
+  Computing 15~(11) (2011) 2187--2199.
+
+\bibitem{LaTorre:12}
+A.~LaTorre, S.~Muelas, J.~M. Pe\~na, Multiple offspring sampling in large scale
+  global optimization, in: 2012 IEEE Congress on Evolutionary Computation
+  (CEC), 2012, pp. 1--8.
+
+\bibitem{LaTorre:14}
+A.~LaTorre, S.~Muelas, J.-M. Pe\~na, A comprehensive comparison of large scale
+  global optimizers, Information Sciences~(0) (2014) In Press.
+
+\bibitem{Lozano:10}
+M.~Lozano, D.~Molina, F.~Herrera, {Editorial Scalability of Evolutionary
+  Algorithms and Other Metaheuristics for Large-scale Continuous Optimization
+  Problems}, Soft Computing - A Fusion of Foundations, Methodologies and
+  Applications (2010) 1--3.
+
+\bibitem{Mahdavi:14}
+S.~Mahdavi, M.~E. Shiri, S.~Rahnamayan, Metaheuristics in large-scale global
+  continues optimization: A survey, Information Sciences 295~(0) (2015) 407 --
+  428.
+
+\bibitem{Mezura-Montes:06}
+E.~n. Mezura-Montes, J.~Vel\'{a}zquez-Reyes, C.~A. Coello~Coello, A comparative
+  study of differential evolution variants for global optimization, in: 8th
+  Annu. Conference on Genetic and Evol. Computation, GECCO '06, ACM, New York,
+  NY, USA, 2006, pp. 485--492.
+
+\bibitem{Montgomery:09}
+J.~Montgomery, Differential evolution: Difference vectors and movement in
+  solution space, in: IEEE Congress on Evolutionary Computation 2009, 2009, pp.
+  2833--2840.
+
+\bibitem{Nelder:65}
+J.~A. Nelder, R.~Mead, A simplex method for function minimization, Computer
+  Journal 7 (1965) 308--313.
+
+\bibitem{Neri:10}
+F.~Neri, V.~Tirronen, Recent advances in differential evolution: a survey and
+  experimental analysis, Artificial Intelligence Review 33~(1-2) (2010)
+  61--106.
+
+\bibitem{Olguin:13}
+M.~Olguin-Carbajal, E.~Alba, J.~Arellano-Verdejo, Micro-differential evolution
+  with local search for high dimensional problems, in: IEEE Congr. on Evol.
+  Computation 2013 (CEC'13), 2013, pp. 48--54.
+
+\bibitem{Olorunda:07}
+O.~Olorunda, A.~Engelbrecht, Differential evolution in high-dimensional search
+  spaces, in: IEEE Congr. on Evol. Computation 2007 (CEC'07), 2007, pp.
+  1934--1941.
+
+\bibitem{Nabi:13}
+M.~N. Omidvar, X.~Li, Y.~Mei, X.~Yao, Cooperative co-evolution with
+  differential grouping for large scale optimization, {IEEE} Trans. Evol.
+  Comput. In Press.
+
+\bibitem{Parsopoulos:09}
+K.~E. Parsopoulos, Cooperative micro-differential evolution for
+  high-dimensional problems, in: Proc. of the 11th Annu. Conference on Genetic
+  and Evol. Computation (GECCO'09), ACM, New York, NY, USA, 2009, pp. 531--538.
+
+\bibitem{Piotrowski:13}
+A.~P. Piotrowski, Adaptive memetic differential evolution with global and local
+  neighborhood-based mutation operators, Information Sciences 241 (2013) 164 --
+  194.
+
+\bibitem{Potter:94}
+M.~A. Potter, K.~A.~D. Jong, A cooperative coevolutionary approach to function
+  optimization, in: Proc. of the Third Conference on Parallel Problem Solving
+  from Nature (PPSN III), Springer-Verlag, London, UK, UK, 1994, pp. 249--257.
+
+\bibitem{Price:13}
+K.~Price, Differential evolution, in: I.~Zelinka, V.~Snášel, A.~Abraham
+  (eds.), Handbook of Optimization, vol.~38 of Intelligent Systems Reference
+  Library, Springer Berlin Heidelberg, 2013, pp. 187--214.
+
+\bibitem{Price:05}
+K.~Price, R.~Storn, J.~Lampinen, Differential Evolution: A Practical Approach
+  to Global Optimization, Natural Computing Series, U.S. Government Printing
+  Office, 2005.
+
+\bibitem{Qin:09}
+A.~K. Qin, V.~L. Huang, P.~Suganthan, Differential evolution algorithm with
+  strategy adaptation for global numerical optimization, {IEEE} Trans. Evol.
+  Comput. 13~(2) (2009) 398--417.
+
+\bibitem{Das:05}
+A.~K. Qin, P.~Suganthan, Self-adaptive differential evolution algorithm for
+  numerical optimization, in: IEEE Congr. on Evol. Computation 2005 (CEC'05),
+  vol.~2, 2005, pp. 1785--1791 Vol. 2.
+
+\bibitem{Rogelio:09}
+R.~Salinas-Gutiérrez, A.~Hernández-Aguirre, E.~Villa-Diharce, Using copulas
+  in estimation of distribution algorithms, in: A.~Aguirre, R.~Borja,
+  C.~Garciá (eds.), MICAI 2009: Advances in Artificial Intelligence, vol. 5845
+  of Lecture Notes in Computer Science, Springer Berlin Heidelberg, 2009, pp.
+  658--668.
+
+\bibitem{Segura:14}
+C.~Segura, C.~A. Coello~Coello, E.~Segredo, C.~Le\'on, On the adaptation of the
+  mutation scale factor in differential evolution, Optimization Letters (2014)
+  1--10.
+
+\bibitem{Shi:05}
+Y.-j. Shi, H.-f. Teng, Z.-q. Li, Cooperative co-evolutionary differential
+  evolution for function optimization, in: L.~Wang, K.~Chen, Y.~Ong (eds.),
+  Advances in Natural Computation, vol. 3611 of Lecture Notes in Computer
+  Science, Springer Berlin Heidelberg, 2005, pp. 1080--1088.
+
+\bibitem{Storn:95}
+R.~Storn, K.~Price, Differential evolution: A simple and efficient adaptive
+  scheme for global optimization over continuous spaces, Tech. rep.,
+  International Computer Science Institute, Berkeley, Tech. Rep. TR\-95\-\-012
+  (1995).
+
+\bibitem{Storn:97}
+R.~Storn, K.~Price, {Differential Evolution - A Simple and Efficient Heuristic
+  for Global Optimization over Continuous Spaces}, J. of Global Optimization
+  11~(4) (1997) 341--359.
+
+\bibitem{Tang:10}
+K.~T{\'{a}}ng, X.~L{\v{\i}}, P.~N. Suganthan, Z.~Y{\'{a}}ng, T.~Weise,
+  {Benchmark Functions for the CEC'2010 Special Session and Competition on
+  Large-Scale Global Optimization}, Tech. rep., {University of Science and
+  Technology of China (USTC), School of Computer Science and Technology, Nature
+  Inspired Computation and Applications Laboratory (NICAL): {H{\'{e}}f{\'{e}}i,
+  {\={A}}nhu{\={\i}}, China}} (2010).
+
+\bibitem{Tvrdik:13}
+J.~Tvrdík, R.~Poláková, J.~Veselský, P.~Bujok, Adaptive variants of
+  differential evolution: Towards control-parameter-free optimizers, in:
+  I.~Zelinka, V.~Snášel, A.~Abraham (eds.), Handbook of Optimization, vol.~38
+  of Intelligent Systems Reference Library, Springer Berlin Heidelberg, 2013,
+  pp. 423--449.
+
+\bibitem{Wang:11b}
+H.~Wang, Z.~Wu, S.~Rahnamayan, Enhanced opposition-based differential evolution
+  for solving high-dimensional continuous optimization problems, Soft Computing
+  15~(11) (2011) 2127--2140.
+
+\bibitem{Wang:10}
+H.~Wang, Z.~Wu, S.~Rahnamayan, D.~Jiang, Sequential de enhanced by neighborhood
+  search for large scale global optimization, in: 2010 IEEE Congress on
+  Evolutionary Computation (CEC), 2010, pp. 1--7.
+
+\bibitem{Weber:11}
+M.~Weber, F.~Neri, V.~Tirronen, Shuffle or update parallel differential
+  evolution for large-scale optimization, Soft Computing 15~(11) (2011)
+  2089--2107.
+
+\bibitem{Weise:12}
+T.~Weise, R.~Chiong, K.~T\'ang, Evolutionary optimization: Pitfalls and booby
+  traps, Journal of Computer Science and Technology (JCST) 27~(5) (2012)
+  907--936, special Issue on Evolutionary Computation.
+
+\bibitem{Yang:08}
+Z.~Yang, K.~Tang, X.~Yao, Large scale evolutionary optimization using
+  cooperative coevolution, Information Sciences 178~(15) (2008) 2985 -- 2999.
+
+\bibitem{Yang:11}
+Z.~Yang, K.~Tang, X.~Yao, Scalability of generalized adaptive differential
+  evolution for large-scale continuous optimization, Soft Computing 15~(11)
+  (2011) 2141--2155.
+
+\bibitem{Zaharie:03}
+D.~Zaharie, {Control of Population Diversity and Adaptation in Differential
+  Evolution Algorithms}, in: R.~Matousek, P.~Osmera (eds.), Proc. of Mendel
+  2003, 9th International Conference on Soft Computing, Brno, Czech Republic,
+  2003, pp. 41--46.
+
+\bibitem{Zaharie:09}
+D.~Zaharie, Influence of crossover on the behavior of differential evolution
+  algorithms, Applied Soft Computing 9~(3) (2009) 1126 -- 1138.
+
+\bibitem{Zhang:09}
+J.~Zhang, A.~Sanderson, {JADE: Adaptive Differential Evolution With Optional
+  External Archive}, {IEEE} Trans. Evol. Comput. 13~(5) (2009) 945--958.
+
+\bibitem{Zhao:14}
+J.~Zhao, Y.~Xu, F.~Luo, Z.~Dong, Y.~Peng, Power system fault diagnosis based on
+  history driven differential evolution and stochastic time domain simulation,
+  Information Sciences 275 (2014) 13 -- 29.
+
+\bibitem{Zhao:13}
+S.-Z. Zhao, P.~N. Suganthan, Empirical investigations into the exponential
+  crossover of differential evolutions, Swarm and Evolutionary Computation 9
+  (2013) 27 -- 36.
+
+\bibitem{Zhu:13}
+W.~Zhu, Y.~Tang, J.~an~Fang, W.~Zhang, Adaptive population tuning scheme for
+  differential evolution, Information Sciences 223 (2013) 164 -- 191.
+
+\bibitem{Zielinski:08}
+K.~Zielinski, X.~Wang, R.~Laur, Comparison of adaptive approaches for
+  differential evolution, in: G.~Rudolph, T.~Jansen, S.~Lucas, C.~Poloni,
+  N.~Beume (eds.), Parallel Problem Solving from Nature – PPSN X, vol. 5199
+  of Lecture Notes in Computer Science, Springer Berlin Heidelberg, 2008, pp.
+  641--650.
+
+\bibitem{Zielinski:06}
+K.~Zielinski, P.~Weitkemper, R.~Laur, K.~D. Kammeyer, Parameter study for
+  differential evolution using a power allocation problem including
+  interference cancellation, in: IEEE Congr. on Evol. Computation 2006
+  (CEC'06), 2006, pp. 1857--1864.
+
+\end{thebibliography}
