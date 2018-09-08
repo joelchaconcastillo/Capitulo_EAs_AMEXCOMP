@@ -1,4 +1,4 @@
-\subsection{Evolución Diferencia: Conceptos Básicos}
+\subsection{Evolución diferencia: conceptos básicos}
 
 Esta sección esta dedicada para revisar a la variante clásica de \DE{} y para introducir varios términos importantes que son utilizados en el campo de \DE{}.
 %This section is devoted to summarize the classic \DE{} variant and to introduce some of the most important terms used in the \DE{} field.
@@ -12,19 +12,21 @@ De hecho, nuestra propuesta también extiende a la clásica versión \DE{}.
 Originalmente \DE{} fue propuesta como un método de búsqueda directo para optimización contínua mono-objetivo.
 %\DE{} was originally proposed as a direct search method for single-objective continuous optimization.
 %
-El conjunto de variables que están involucradas en el planteamiento de un problema son representados como un vector de la forma $\vec{X} = [x_1, x_2, ..., x_D]$, donde $D$ es la dimensión del problema.
+%El conjunto de variables que están involucradas en el planteamiento de un problema son representados como un vector de la forma $\vec{X} = [x_1, x_2, ..., x_D]$, donde $D$ es la dimensión del problema.
 %The variables governing a given problem performance are given as a vector like $\vec{X} = [x_1, x_2, ..., x_D]$, where $D$ is the
 %dimension of the problem.
 %
-Particularmente, en la optimización de dominios continuos, cada $x_i$ es un número real, además se consideran \textit{restricciones de caja} (box-constraints), es decir existe un límite inferior ($a_{i}$) y un límite superior ($b_{i}$) para cada variable.
+%Particularmente, en la optimización de dominios continuos, cada $x_i$ es un número real, además se consideran \textit{restricciones de caja} (box-constraints), es decir existe un límite inferior ($a_{i}$) y un límite superior ($b_{i}$) para cada variable.
 %In continuous optimization, each $x_i$ is a real number and usually box-constraints are given, i.e. there is a lower bound ($a_{i}$) and
 %upper bound ($b_{i}$) for each variable.
 %
-En un proceso de optimización se desea obtener un vector $\vec{X}^*$ el cual minimice una determinada función objetivo, esto matemáticamente es definido por $f : \Omega \subseteq \Re^D \rightarrow \Re$.
+Particularmente, en un problema de optimización mono-objetivo se desea resolver la ecuación~\ref{eqn:Model_general}, esto significa que únicamente se considera un objetivo.
+
+%En un proceso de optimización se desea obtener un vector $\vec{X}^*$ el cual minimice una determinada función objetivo, esto matemáticamente es definido por $f : \Omega \subseteq \Re^D \rightarrow \Re$.
 %The aim of the optimization process is to obtain the vector $\vec{X}^*$ which minimizes a given objective function, mathematically 
 %denoted by $f : \Omega \subseteq \Re^D \rightarrow \Re$.
 %
-Además, la restricción de caja se define como $\Omega = {\prod}_{j=1}^{D} [a_{j}, b_{j}]$.
+%Además, la restricción de caja se define como $\Omega = {\prod}_{j=1}^{D} [a_{j}, b_{j}]$.
 
 %In the box-constrained case $\Omega = {\prod}_{j=1}^{D} [a_{j}, b_{j}]$.
 \DE{} es un algoritmo estocástico el cual es basado en una población, por lo tanto éste involucra a un conjunto de soluciones candidatas de forma iterativa.
@@ -61,7 +63,7 @@ Usualmente, \DE{} inicia el proceso de optimización con una población de $NP$ 
 Principalmente, los vectores de la población inicial son generados en base a una distribución uniforme, ya que usualmente no se posee información del espacio de búsqueda.
 %Since there is commonly no information about the performance of different regions, uniform random generators are usually applied.
 %
-Por lo tanto el $j$-ésimo componente del $i$-ésimo vector es inicializado de la forma $x_{j,i,0} = a_{j} + rand_{i,j}[0,1] (b_{j} - a_{j})$,
+Por lo tanto el $j$-ésimo componente del $i$-ésimo vector es inicializado de la forma $x_{j,i,0} = x_{j}^{(L)} + rand_{i,j}[0,1] (x_{j}^{(U)} - x_{j}^{(L)})$,
 donde $rand_{i,j}[0,1]$ es un número aleatorio uniformemente distribuido que se encuentra entre $0$ y $1$.
 %Hence, the $j$th component of the $i$th vector is initialized as $x_{j,i,0} = a_{j} + rand_{i,j}[0,1] (b_{j} - a_{j})$,
 %where $rand_{i,j}[0,1]$ is an uniformly distributed random number lying between $0$ and $1$.
@@ -172,7 +174,7 @@ Particularmente el \RMDDC{} controla el grado de diversidad en base al criterio 
 %by developing a novel replacement strategy called \textit{Replacement with Multi-objective based Dynamic Diversity Control} (\RMDDC{}) 
 %that relates the control of diversity with the stopping criterion and elapsed generations.
 %
-Es importante resaltar que se obtuvieron beneficios en varias aplicaciones por el \RMDDC{}, por lo tanto y basados en las conclusiones de los trabajos previos, la propuesta de esta sección es una variante novedoas de \DE{} la cual incluye un mecanismo explícito que sigue un principio del \RMDDC{}.
+Es importante resaltar que se obtuvieron beneficios en varias aplicaciones por el \RMDDC{}, por lo tanto y basados en las conclusiones de los trabajos previos, la propuesta de esta sección es una variante novedosa de \DE{} la cual incluye un mecanismo explícito que sigue un principio del \RMDDC{}.
 %Important benefits were attained by methods including \RMDDC{}, so given the conclusions of these previous works, the proposal of this paper is a 
 %novel \DE{} variant that includes an explicit mechanism that follows some of the principles of \RMDDC{}.
 %
@@ -665,7 +667,7 @@ Similarmente, la parte derecha corresponde a la diversidad de los vectores de pr
 Se puede apreciar el grado de diversidad mantenido explícitamenete hasta el $95\%$ del total de evaluaciones a función.
 %It shows that the diversity is explicitly maintained as is desired ( i.e. until the $95\%$ of the total function evaluations).
 
-\begin{figure}[t]
+\begin{figure}[!t]
 \centering
 \begin{tabular}{cc}
    \includegraphics[scale=0.23, angle=-90]{img/ED/Diversity_Elite.eps} 
@@ -683,6 +685,7 @@ Se puede apreciar el grado de diversidad mantenido explícitamenete hasta el $95
 \centering
 \caption{Resúmen de los resultados - \CEC{} 2016}
 \label{tab:Summary_CEC2016}
+\begin{scriptsize}
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
 \multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Siempre \\ Resuelto\end{tabular}}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Resuelto al menos\\ una vez\end{tabular}}} & \multicolumn{3}{c|}{\textbf{Pruebas Estadísticas}} & \multirow{2}{*}{\textbf{Puntaje}} \\ \cline{4-6}
@@ -694,6 +697,7 @@ Se puede apreciar el grado de diversidad mantenido explícitamenete hasta el $95
 \textbf{DE-EDM} & 13 & 21 & 77 & 25 & 48 & 100.00 \\ \hline
 \textbf{Standard-DE} & 11 & 19 & 50 & 46 & 54 & 56.29 \\ \hline
 \end{tabular}
+\end{scriptsize}
 \end{table}
 
 
@@ -703,7 +707,9 @@ Se puede apreciar el grado de diversidad mantenido explícitamenete hasta el $95
 \centering
 %\caption{Summary results - \CEC{} 2017}
 \caption{Resúmen de los resultados - \CEC{} 2017}
+\centering
 \label{tab:Summary_CEC2017}
+\begin{scriptsize}
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
 \multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Siempre \\ Resuelto\end{tabular}}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Resuelto al menos\\ una vez\end{tabular}}} & \multicolumn{3}{c|}{\textbf{Pruebas Estadísticas}} & \multirow{2}{*}{\textbf{Puntaje}} \\ \cline{4-6}
@@ -716,6 +722,7 @@ Se puede apreciar el grado de diversidad mantenido explícitamenete hasta el $95
 \textbf{DE-EDM} & 21 & 28 & 88 & 6 & 56 & 100.00 \\ \hline
 \textbf{Standard-DE} & 12 & 21 & 56 & 29 & 65 & 42.91 \\ \hline
 \end{tabular}
+\end{scriptsize}
 \end{table}
 
 
@@ -732,13 +739,12 @@ Además, varias funciones multi-modales son aproximadas de forma aceptable.
 Principalmente, nuestra propuesta resolvió y mejoró significativamente varias funciones complejas (por ejemplo funciones computestas), las cuales no fueron resueltas por los algoritmos del estado-del-arte.
 %Principally, our proposal solved several complex functions (e.g. Composition Functions) that were not solved by the state-of-the-art.
 %
-\begin{center}
 \begin{table}[!t]
-\begin{scriptsize}
 \centering
 \caption{Resultados del \DEEDM{} con los problemas del \CEC{} 2016}
 %\caption{Results for DE based diversity \CEC{} 2016 problems}
 \label{tab:Results_CEC2016}
+\begin{scriptsize}
 %\resizebox{\textwidth}{!}{%
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
@@ -777,11 +783,10 @@ $f_{30}$ & 1.84E+02 & 1.84E+02 & 1.84E+02 & 1.84E+02 & 3.25E-02 & 0.00E+00 \\ \h
 %}
 \end{scriptsize}
 \end{table}
-\end{center}
 
 \begin{table}[!t]
-\begin{scriptsize}
 \centering
+\begin{scriptsize}
 \caption{Resultados del \DEEDM{} con los problemas del \CEC{} 2017}
 %\caption{Results for DE based diversity \CEC{} 2017 problems}
 \label{tab:Results_CEC2017}

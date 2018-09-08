@@ -13,20 +13,18 @@ Finalmente, es discute el operador de cruce \SBX{} el cual es utilizado de forma
 
 \subsection{Algoritmos Evolutivos Multi-objetivo}
 
-
-Un MOP continuo basado en minimización puede ser definido como se indica en la ecuación (\ref{eqn:Model})
-%A continuous minimization-based MOP can be defined as indicated in the equation (\ref{eqn:Model}).
-
-\begin{equation}
- \label{eqn:Model}
-   \begin{split}
-    Minimizar \quad & f_m(\mathbf{x}), \quad m = 1, 2,...,M;\\
-   Sujeto \quad a \quad &  x_i^{(L)} \leq x_i \leq x_i^{(U)}, \quad i=1,2,..., n. \\
-   & \mathbf{x} \in \Omega
-   \end{split}
-\end{equation}
-
-donde $\mathbf{n}$ es la dimensión correspondiente al espacio de las variables, $\Omega$ es el espacio factible, $\mathbf{x}$ es un vector compuesto por $\mathbf{n}$ variables de decisión $x=(x_1, ..., x_n) \in R^n$, y $x_i^{(L)}$ y $x_i^{(U)}$ son los límites inferior y superior de cada variable.      
+Este tipo de algoritmos son utilizados para resolver Problemas de Optimización Multi-objetivo (Multi-objective Optimization Problems - MOPs).
+%
+Un MOP continuo se define en la Ecuación (\ref{eqn:Model_general}).
+%
+Además, dadas dos soluciones $\vec{x}$, $\vec{y}$ $\in \Omega$, $\vec{x}$ domina a $\vec{y}$, denotado por $\vec{x} \prec \vec{y}$, si y solo si $\forall m \in {1,2,...,M} : f_m(x_i) \leq f_m(y_i)$ y $\exists m \in {1,2,...,M} : f_m(x_i) < f_m(y_i)$.
+%
+Una solución $\vec{x^*} \in \Omega$ es conocida como solución óptima de Pareto si no existe otra solución $\vec{x} \in \Omega$ que domine a $\vec{x^*}$.
+%
+El conjunto de Pareto es el conjunto de todas las soluciones óptimas de Pareto y el frente de Pareto está formado por las imágenes del conjunto de Pareto.
+%
+El propósito de un Algoritmo Evolutivo Multi-objetivo (Multi-objective Evolutionary Algorithm - MOEA) es, esencialmente, obtener un conjunto de soluciones bien distribuidas y cercanas a las soluciones del frente de Pareto.
+%
 
 
 En los últimos años, se han ideado una gran cantidad de \MOEAS{} los cuales siguen distintos principios.

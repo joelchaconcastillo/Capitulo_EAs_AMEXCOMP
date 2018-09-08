@@ -1,11 +1,23 @@
 Los Algoritmos Evolutivos (Evolutionary Algorithms - \EAS{}) son considerados como uno de los enfoques con mayor aficacia para resolver distintas categorías de optimización.
 %
+Además, diversas variantes se han desarrollado y aplicado en muchos campos, como es en ciencia, economía e ingeniería.
+%
 Particularmente, se han aplicado en problemas tanto de dominio continuo~\cite{glover2005handbook} como de dominio discreto~\cite{Joel:Dynamic_FAP}.
 %
 Especialmente, los \EAS{} son aplicados para resolver problemas complejos cuyo enfoque determinístico es complicado o imposible~\cite{chakraborty2008advances}.
 % 
-Además, diversas variantes se han desarrollado y aplicado en muchos campos, como es en ciencia, economía e ingeniería.
-%
+Un problema de optimización puede ser definido de forma general como se indica en la ecuación (\ref{eqn:Model_general}).
+
+\begin{equation}
+ \label{eqn:Model_general}
+   \begin{split}
+    Minimizar \quad & f_m(\vec{x}), \quad m = 1, 2,...,M;\\
+   Sujeto \quad a \quad &  x_i^{(L)} \leq x_i \leq x_i^{(U)}, \quad i=1,2,..., D \\
+   & \mathbf{x} \in \Omega
+   \end{split}
+\end{equation}
+
+donde $D$ es la dimensión correspondiente al espacio de las variables, $\Omega$ es el espacio factible cuyo límite inferior es $x_i^{(L)}$ y límite superior es $x_i^{(U)}$, $\vec{X}$ es un vector compuesto por $D$ variables de decisión $\vec{X} = [x_1, x_2, ..., x_D]$, además cada solución es evaluada mediante el uso de la función $F : \Omega \rightarrow R^M$, la cual consiste de $M$ funciones objetivo y $R^M$ es conocido como el espacio objetivo, a no se que se indique lo contrario únicamente se considera una función objetivo.
 %
 Actualmente, los \EAS{} son probablemente conocidos como una de las metaheurísticas más conocidas~\cite{glover2005handbook}, y a pesar de su éxito, presentan la desventaja de ser configurados ante problemas nuevos.
 %
