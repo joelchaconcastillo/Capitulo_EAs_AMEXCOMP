@@ -1,152 +1,113 @@
+La convergencia prematura en una problemática muy conocida en el ámbito de los \EAS{} por lo que se han desarrollado gran cantidad de técnicas 
+para lidiar con la misma~\cite{pandey2014comparative}.
+%
+Estas técnicas modifican de manera directa o indirecta la cantidad de diversidad mantenida por el algoritmo~\cite{Joel:Crepinsek}
+y varían desde técnicas generales hasta mecanismos completamente dependientes de un problema dado.
+%
+En este apartado se revisan algunas de las técnicas generales más populares.
+%
+Inicialmente, se describen algunas maneras de clasificar a este tipo de estrategias, para posteriormente
+describir mecanismos clásicos específicos, así como algunas estrategias más novedosas que se basan en modificar
+la estrategia de reemplazamiento.
+%
+Finalmente, dado que en este capítulo se extiende \DE{}, se revisan también los trabajos de esta área que tienen una relación
+significativa con el manejo de diversidad.
+%
+Se invita a los lectores que requieran conocer estos mecanismos con más detalle a consultar~\cite{Joel:Crepinsek} así como los artículos
+específicos en que cada método es propuesto.
 
+\subsection{Clasificaciones de mecanismo para promover la diversidad}
 
-%%------------------------begin
-%%%
-%%%
-%%Un aspecto importante de la convergencia prematura es que depende completamente de la cantidad de tiempo y/o generaciones asignados a las ejecuciones del \EA{}, es decir el criterio de paro.
-%%%
-%%En su lugar, un \EA{} debería ser ejecutado para resolver un problema dado por un tiempo definido y éste debería proporcionar soluciones prometedoras.
-%%%
-%%A pesar de esto, es sorprendente que la mayoría de métodos que se han propuesto para aliviar la desventaja de la convergencia prematura no consideran el criterio de paro el cual es asignado por el usuario para alterar su comportamiento interno.
-%%%
-%%Esto significa que, dependiendo en el criterio de paro, distintas parametrizaciones podrían ser requeridas.
-%%%
-%%Como resultado, para criterio de paro distinto, el usuario debería estudiar el efecto de distintos parámetros.
-%%%
-%%Un ejemplo popular de esto es \textit{El Torneo de Selección Restringida (TSR)}~\cite{Crepinsek:13}, este método retrasa la convergencia de los \EAS{}.
-%%%
-%%Específicamente, este método incorpora un parámetro que puede ser utilizado para alterar el balanceo entre exploración e intensificación.
-%%%
-%%Sin embargo, la pérdida de diversidad y posteriormente el balanceo entre exploración e intensificación no dependen únicamente en este parámetro, por lo tanto distintos valores deberían ser utilizados para cada problema y además para cada criterio de paro.
-%%%
-%%El principio básico de las técnicas para la preservación de la diversidad y que afectan a la fase de reemplazo se basa en que el efecto de diversificar a los sobrevivientes inducide un mayor grado de exploración.
-%%%
-%%Esto se debe a varios aspectos importantes, principalmente una población grande mantiene varias regiones del espacio de búsqueda.
-%%%
-%%Además los operadores de cruce tienden a se más explorativos cuando están involucrados individuos distantes \cite{eiben1998evolutionary}.
-%%
-%%---------------------------END
+Debido a la gran cantidad de métodos desarrollados en esta áre, se han propuesto varias clasificaciones de los mismos.
+%
+Liu et al.\cite{liu2009explore} propuso diferenciar entre los enfoques uni-proceso y multi-proceso.
+%
+En el enfoque uni-proceso se modifica el balanceo entre exploración e intensificación considerando la modificación de un único componente del \EA{}. 
+%
+Así, es habitual diseñar los operadores de cruce con el objetivo de que en las primeras etapas, cuando la población es aún diversa, promueva la exploración
+y en las fases finales, cuando la población es menos diversa, promueva la intensificación.
+%
+Es importante notar que en los enfoques uni-proceso no se excluye el uso de otros componentes en el proceso de exploración y/o intensificación, 
+sino que más bien, si no se consigue el balanceo adecuado, sólo se modifica un componente hasta conseguir el comportamiento deseado.
+%
+Por otra parte, en los enfoques multi-proceso se tienen en cuenta las implicaciones de varios componentes en el balanceo, y se actúa modificando o rediseñando varios de ellos
+hasta conseguir el comportamiento adecuado.
+%
+Los esquemas uni-proceso son mucho más habituales actualmente~\cite{Crepinsek:13}, y en particular las dos propuestas incluidas en este capítulo son mecanismos
+uni-proceso.
 
+Extendiendo esto se propuso una clasificación más específica~\cite{Crepinsek:13}, en los que se tiene en cuenta cuál es la componente específica que se cambia.
+%
+En este sentido, los más populares son los siguientes:
 
-La convergencia prematura en una desventaja muy conocida en el ámbito de los \EAS{}, por lo tanto se han desarrollado una gran cantidad de técnicas para lidiar con este inconveniente~\cite{pandey2014comparative}.
-%
-Muchas de estas técnicas se basan en manejar la diversidad de forma directa o indirecta~\cite{Joel:Crepinsek}.
-%
-Estas estrategias varían desde técnicas generales hasta heurísticas las cuales dependen de cada problema.
-%
-En este apartado se revisan algunas de las técnicas mas populares.
-%
-Inicialmente, se describen dos taxonomías las cuales están basadas con las implicaciones que tienen los componentes de un \EA{} con la diversidad.
-%
-Posteriormente, se describen algunos enfoques clásicos para administrar la diversidad y varias estrategias de reemplazamiento basadas en diversidad.
-%
-Finalmente, este estudio se centra en el campo de Evolución Diferencial (Differential Evolution - \DE{}) donde son revisados los trabajos más significativos.
-%
-
-Para tener una revisión detallada de las estrategias que están relacionadas con diversidad se sugiere consultar~\cite{Joel:Crepinsek}
-%
-\subsection{Taxonomías basadas en el mecanismo para promover la diversidad}
-
-Recientemente, en base a su mecanismo interno para promover la diversidad y para alcanzar un balance entre exploración e intensificación se han propuesto una serie de taxonomías para categorizar a los \EAS{}.
-%
-Especialmente, con el propósito de explicar la relación entre exploración e intensificación, Liu et al.\cite{liu2009explore} propusieron los enfoques uni-proceso y multiproceso.
-%
-En el enfoque uni-proceso se alcanza un balance entre exploración e intensificación considerando un componente de forma independiente (selección, mutación y cruce), cada proceso es independientemente responsable para obtener este balance, y por lo tanto no hay una coordinación entre los procesos internos para lograr este balance. 
-%
-Un ejemplo ilustrativo es el operador de cruce, ya que en las primeras etapas cuando la población es aún diversa, este operador tiene un efecto de exploración, por otra parte en las últimas etapas se pierde la capacidad de exploración ya que la población pierde la diversidad y por lo tanto son recombinados individuos similares.
-%
-Sin embargo, el operador de cruce por sí mismo y sin cambiar la probabilidad de cruce, cambia gradualmente de exploración a intensificación.
-%
-Es importante notar que en los enfoques uni-proceso no se excluye del todo el uso de otros componentes en el proceso de exploración y/o intensificación, más bien un proceso único es controlado para obtener un balance entre exploración e intensificación, esto se puede realizar por medio de distintas técnicas (como ajustar los parámetros de control).
-%
-Por otra parte, los enfoques multiproceso coordinan este balance a lo largo de distintos procesos (como con una presión de selección elevada para explotación y una razón elevada del operador de cruza y/o mutación para promover más exploración).
-%
-En lo particular los contribuciones de este capítulo están clasificados como uni-proceso.
-%
-
-Otra clasificación de enfoques para controlar el balance entre exploración e intensificación y que utilizan el concepto de diversidad son los basados en poblaciones, basados en selección, basados en cruce/mutación e híbridos\cite{Crepinsek:13}.
-%
 \begin{itemize}
-\item \textbf{Enfoques basados en población}: la diversidad es alcanzada variando el tamaño de la población, eliminando individuos duplicados, utilizando técnicas de infusión, archivos externos o realizando migraciones entre poblaciones.
+\item \textbf{Enfoques basados en población}: se modifica el modelo habitual poblacional, utilizando algunas técnicas como hacer variar el tamaño de la población de forma
+dinámica, eliminar individuos duplicados, utilizar técnicas de infusión o realizar migraciones entre poblaciones.
 %
-\item \textbf{Enfoques basados en la selección}: la diversidad es alcanzada cambiando la presión de selección o utilizando restricciones de reemplazo.
+\item \textbf{Enfoques basados en la selección}: son los más clásicos y se basan principalmente en cambiar la presión de selección hacia zonas promisorias a la hora de realizar
+la selección de padres.
 %
-\item \textbf{Enfoques basados en la cruce y/o mutación}: la diversidad es alcanzada con restricciones de emparejamiento y operadores disruptivos.
-%
-\item \textbf{Enfoques híbridos}: la diversidad es alcanzada por una mezcla de otros enfoques.
+\item \textbf{Enfoques basados en el cruce y/o mutación}: se basan en rediseñar los operadores de cruce y/o mutación habitualmente teniendo en cuenta el problema específico
+que se está resolviendo, en aplicar restricciones sobre el emparejamiento o en incluir operadores disruptivos que podrían ser utilizado sólo en ciertos instantes del proceso
+de optimización.
 \end{itemize}
 
 
 \subsection{Esquemas clásicos para administrar la diversidad}
 
-Los primeros \EAS{} se basaron principalmente en esquemas generacionales, por lo tanto con la intención de obtener un balance propio entre exploración e intensificación se desarrollaron varias estrategias la cuales no afectan el mecanismo para la selección de los sobrevivientes.
+Los primeros \EAS{} se basaron principalmente en esquemas generacionales que no incluían fase de reemplazo, y por tanto
+muchos de los primeros esquemas que trataron de evitar la convergencia prematura se basaron en modificar el proceso de selección
+de padres.
 %
-Específicamente, en los \EAS{} generacionales se induce la presión de selección al considerar a la selección de padres.
+Así, en los 90s se desarrollaron varios esquemas que alteraban la presión de selección~\cite{eiben2003introduction}
+de forma estática o dinámica.
 %
-En los 90s se desarrollaron varios esquemas donde la presión de selección es controlada~\cite{eiben2003introduction}.
-%
-Además se diseñaron varias estrategias dinámicas con el fin de adaptar el balance entre exploración e intensificación.
-%
-Sin embargo, en base a varios estudios se observó que no se puede mantener un grado adecuado de diversidad considerando únicamente los operadores de selección, esto se mantiene con poblaciones grandes.
-%
+Sin embargo, en base a varios estudios teóricos y experimentales se observó que actuar exclusivamente sobre los operadores de selección no es suficiente, especialmente
+cuando se quieren realizar ejecuciones a largo plazo, ya que se requerirían poblaciones excesivamente grandes.
 
-Además, se han desarrollado modelos poblacionales con el propósito de mejorar la preservación de diversidad en los \EAS{}.
+Otra alternativa fue modificar los modelos poblaciones, encontrando en este grupo los esquemas basados en islas~\cite{alba2005parallel}, los celulares
+o más recientemente los basados en clústeres~\cite{gao2014cluster}.
 %
-Por lo tanto, en los últimos años los \EAS{} poblacionales han ganado reconocimiento~\cite{gao2014cluster}.
+La idea de introducir restricciones en el emparejamiento, principalmente en base a la ubicación de los individuos en el espacio de búsqueda también
+ha sido bastante exitosa aunque controlar los mismos para obtener el balanceo apropiado ante diferentes criterios de parada
+es un aspecto bastante complejo.
 %
-En estos esquemas se imponen algunas restricciones de emparejamiento en base a la ubicación de los individuos en la población.
+De hecho, en algunos casos parece ser más prometedor promover el emparejamiento entre individuos no similares~\cite{Joel:CHC}, mientras que en otros escenarios 
+se hace exactamente lo opuesto~\cite{deb1989investigation}.
 %
-De esta forma, se han ideado algunos esquemas con el propósito de reducir la interacción entre los individuos, lo cual facilita su paralelización.
+Otro problema común de muchas de las estrategias anteriores es que suelen introducir parámetros adicionales, por lo que el proceso de ajuste de parámetros, que ya de por sí
+es un problema importante de los \EAS{} se vuelve aún más complejo.
 %
-Sin embargo, estos esquemas tienen efectos importantes en la diversidad~\cite{alba2005parallel}, que en consecuencia se utilizan como un mecanismo para promover la exploración.
+Es importante resaltar que todas estas estrategias clásicas no evitan por completo la convergencia sino que su efecto es retrasarla.
 %
-Particularmente, estos esquemas no son efectivos en ejecuciones a largo plazo ya que no mantienen un grado de diversidad de forma explícita.
-%
-Además, no es sencillo controlar la reducción de la diversidad ya que existen varios componentes lo cuales influyen en la pérdida de diversidad~\cite{cantu2000efficient}.
-%
-Asimismo, estas estrategias usualmente introducen muchos parámetros y por lo tanto es necesario un proceso de ajuste.
+Por lo tanto estas estrategias se podrían introducir con mecanismos adicionales y varias de ellas podrían usarse de forma simultánea.
 
-Los esquemas puramente basados en restricciones de emparejamiento son similares a los previamente descritos en el sentido de que se evitan algunas interacciones entre los individuos.
+Otra alternativa diferente ha sido adaptar la fase de variación.
 %
-Sin embargo, en estas estrategias no se consideran las posiciones de los individuos de la población.
+En este sentido se han desarrollado diversas técnicas para controlar los parámetros que se consideran en la variación con el propósito de 
+adaptar el balance entre exploración e intensificación.
 %
-En su lugar, se considera la distancia normalizada entre los individuos.
+En algunos casos esto se consigue usando distintos valores en los parámetros para distintas etapas a lo largo del proceso de optimización~\cite{yu2014differential},
+mientras que en otros casos se hacen cambios más drásticos y se consideran varios operadores con distintas propiedades~\cite{lobo2007parameter}.
 %
-Además, en algunos casos parece ser más prometedor promover el emparejamiento entre individuos no similares~\cite{Joel:CHC}, sin embargo en algunos escenarios esto no se mantiene~\cite{deb1989investigation}.
+También existen mecanismos adaptativos que usan una memoria para almacenar información histórica sobre los efectos de la variación
+y en base a ello irla modificando~\cite{yuen2009genetic}.
 %
-Es importante resaltar que estas estrategias no previenen a la convergencia prematura de forma total, es decir solo retrasan a la convergencia.
-%
-Por lo tanto estas estrategias podrían introducir mecanismos adicionales.
-%
-Otra alternativa es adaptar la fase de variación en distintas etapas.
-%
-Por lo tanto se han desarrollado diversas técnicas para controlar los parámetros con el propósito de adaptar el balance entre exploración e intensificación.
-%
-Esto se realiza considerando distintos valores en los parámetros para distintas etapas a lo largo del proceso de optimización~\cite{yu2014differential}.
-%
-En otros casos se consideran varios operadores con distintas capacidades de búsqueda~\cite{lobo2007parameter}.
-%
-Usualmente, en estos esquemas no se considera la diversidad de forma directa.
-%
-En su lugar, esto se maneja de forma implícita utilizando distintos operadores o parámetros, lo cual en algunas situaciones puede causar desventajas.
-%
-Un enfoque muy prometedor es utilizar un procedimiento de forma directa para controlar la diversidad de forma explícita~\cite{segredo2014fuzzy, lobo2007parameter}.
-%
-Por otra parte se puede utilizar un mecanismo de memoria para adaptar la fase de variación~\cite{yuen2009genetic}.
-%
-Usualmente esto no es posible para ejecuciones de largo plazo, y por lo tanto se deben considerar otras alternativas.
-%
+Cabe destacar que en la mayor parte de estos esquemas no se considera la diversidad de forma directa, sino que sólo se considera para analizar el comportamiento
+y en base a ello rediseñar.
 
-Finalmente se encuentran los esquemas de reinicio los cuales son suficientemente populares.
+Finalmente, un esquema muy sencillo pero no por ello menos importante es el basado en reinicios.
 %
-En estos esquemas, en lugar de evitar la convergencia acelerada, se aplica un reinicio total o parcial de la población.
+En estos esquemas, en lugar de evitar la convergencia acelerada, se aplica un reinicio total o parcial de la población cada cierto número de
+generaciones o cuando se detecta que la población ha convergido.
 %
-En base a esto se han propuesto varias estrategias para establecer los puntos de reinicio~\cite{jansen2002analysis}.
+En base a esto se han propuesto diversas estrategias para establecer los puntos de reinicio~\cite{jansen2002analysis}.
 %
-Además, estos esquemas se implementan de forma fácil y en algunos casos han proporcionado mejoras significativas~\cite{koumousis2006saw}.
+Estos esquemas se implementan de forma muy sencilla y en algunos casos han proporcionado mejoras significativas~\cite{koumousis2006saw} por lo que
+es un método a tener en cuenta, al menos como alternativa inicial.
 %
-Adicionalmente, estas estrategias puede se utilizas con esquemas para mantener la diversidad ya que están enfocadas en recuperar la diversidad.
-%
+Es común comibnar las estrategias basadas en reinicio con alguna de las técnicas anterior, ya que las anteriores están basadas en mantener
+la diversidad, mientras que en esta el objetivo es recuperar la diversidad.
 
 \subsection{Esquemas de reemplazamiento basados en diversidad}
 
