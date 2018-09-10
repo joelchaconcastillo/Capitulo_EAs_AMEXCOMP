@@ -1,0 +1,85 @@
+Los Algoritmos Evolutivos (Evolutionary Algorithms - \EAS{}) son considerados como uno de los enfoques con mayor aficacia para resolver distintas categorías de optimización.
+%
+Además, diversas variantes se han desarrollado y aplicado en muchos campos, como es en ciencia, economía e ingeniería.
+%
+Particularmente, se han aplicado en problemas tanto de dominio continuo~\cite{glover2005handbook} como de dominio discreto~\cite{Joel:Dynamic_FAP}.
+%
+Especialmente, los \EAS{} son utilizados para resolver problemas complejos cuyo enfoque determinístico es complicado o imposible~\cite{chakraborty2008advances}.
+% 
+Un problema de optimización puede ser definido de forma general como se indica en la Ecuación (\ref{eqn:Model_general}).
+
+\begin{equation}
+ \label{eqn:Model_general}
+   \begin{split}
+    Minimizar \quad & f_m(\vec{x}), \quad m = 1, 2,...,M;\\
+   Sujeto \quad a \quad &  x_i^{(L)} \leq x_i \leq x_i^{(U)}, \quad i=1,2,..., D \\
+   & \mathbf{x} \in \Omega
+   \end{split}
+\end{equation}
+
+donde $D$ es la dimensión correspondiente al espacio de las variables, $\Omega$ es el espacio factible cuyo límite inferior es $x_i^{(L)}$ y límite superior es $x_i^{(U)}$, $\vec{X}$ es un vector compuesto por $D$ variables de decisión $\vec{X} = [x_1, x_2, ..., x_D]$, además cada solución es evaluada mediante el uso de la función $F : \Omega \rightarrow R^M$, la cual consiste de $M$ funciones objetivo y $R^M$ es conocido como el espacio objetivo, a no ser que se indique lo contrario únicamente se considera una función objetivo ($M=1$).
+%
+Actualmente, los \EAS{} son probablemente conocidos como una de las metaheurísticas más conocidas~\cite{glover2005handbook}, y a pesar de su éxito, presentan la desventaja de tener que ser configurados ante problemas nuevos.
+%
+Estos problemas implican la toma de varias decisiones difíciles.
+%
+En el diseño de un \EA{} están involucrados varios aspectos los cuales tienen un efecto directo en la calidad de las soluciones.
+%
+Por lo tanto, para obtener soluciones de calidad se necesita inducir un balance adecuado entre exploración e intensificación~\cite{herrera1996adaptation}.
+%
+Sin embargo, no siempre se comprenden las implicaciones de mantener un grado de diversidad adecuado para alcanzar este balance, muchas veces esto se debe a que existen varios componentes específicos los cuales afectan a la exploración e intensificación~\cite{Crepinsek:13}
+%
+
+Desde los inicios de los \EAS{} se han observado problemas de convergencia, que por ende son considerados como una desventaja muy importante\cite{Crepinsek:13}.
+%
+Específicamente, la convergencia prematura es originada cuando todos los miembros de la población están ubicados en una parte reducida del espacio de búsqueda, esta región es distinta a la región óptima y además los componentes seleccionados no son suficientes para escapar de esta región.
+%
+En base a esto, se han desarrollado varias estrategias para aliviar tales inconvenientes.
+%
+
+
+A través de varios estudios se ha revelado que mantener una populación diversa es un requisito previo para evitar la convergencia prematura~\cite{Crepinsek:13}.
+%
+Sin embargo, si la población es muy diversa no se podría alcanzar un grado adecuado de intensificación y por lo tanto se tendría una convergencia lenta, esto en consecuencia generaría soluciones de baja calidad.
+%
+Por esta razón, Mahfoud~\cite{dasgupta2013evolutionary} utilizó el concepto de diversidad útil, donde se refiere a la cantidad de diversidad necesaria para generar soluciones de calidad.
+%
+
+Al inicio, en su mayoría los \EAS{} fueron diseñados basados en enfoques que fueron generacionales~\cite{de2006evolutionary}, es decir que las soluciones hijo reemplazaban a la población sin importar su respectiva aptitud.
+%
+En estos esquemas iniciales se utilizó la selección de padres para influir al proceso de búsqueda hacia las regiones más prometedoras.
+%
+En resultado y con el propósito de alcanzar un balance entre exploración e intensificación, se desarrollaron muchas estrategias basadas en las selección de padres.
+%
+Además se desarrollaron otras alternativas en las cuales se modificaba la estrategia de variación~\cite{Joel:herrera2003fuzzy} y/o un modelo poblacional~\cite{alba2005parallel}.
+%
+Sin embargo en los \EAS{} más recientes se reemplaza la ``reproducción con énfasis'' o al menos es combinado con el principio de ``el sobreviviente más apto''~\cite{Joel:CHC}.
+%
+Específicamente, estos algoritmos utilizan una fase de selección adicional (en lugar de reemplazar a la población anterior), esto se realiza con el propósito de elegir a los individuos que sobrevivirán a la siguiente generación~\cite{eiben2003introduction}, particularmente a este procediemento se le conoce como la estrategia de reemplazo o selección del sobreviviente.
+%
+
+De forma general, los trabajos que se presentan en este capítulo están basados en la hipótesis de que se puede inducir un balance entre exploración e intensificación al considerar un mecanismo para preservar la diversidad de forma explícita que en consecuencia producirá soluciones de calidad al considerar ejecuciones a largo plazo~\cite{segura2016novel}.
+%
+Esto se fundamenta en las fases de variación y selección de padres, estas fases realizan decisiones que podrían afectar a las generaciones actuales ya que la elección de los sobrevivientes influye  de forma significativa a todo proceso de optimización.
+%
+Especialmente, este mecanismo se enfoca en seleccionar a las soluciones que sobreviven en la siguiente generación, por lo tanto la fase de reemplazo puede actuar adecuadamente evitando la selección de los individuos no deseados que provienen de las fases de variación y selección de padres.
+
+%
+Particularmente, en este capítulo se describen dos aportaciones, la primera está enfocada al área de \textit{Evolución Diferencial} (Differential Evolution - \DE{}),esta primera aportación es nombrada \DE{} \textit{Mejorado con Mantenimiento de Diversidad} (\DE{} with Enhanced Diversity Maintenance \DEEDM{}) e integra una estrategia de reemplazo que mantiene un grado de diversidad de forma explícita considerando además una población elite.
+%
+En la fase de reemplazo que incorpara el \DEEDM{} se promueve un balance entre exploración e intensificación de forma dinámica donde es considerando el criterio de paro.
+%
+De esta forma, en las primeras etapas se induce un grado de exploración ya que los individuos sobrevivientes son diversificados, posteriormente conforme transcurren las generaciones y de forma gradual se induce un grado de intensificación.
+% 
+La segunda aportación está enfocada a los operadores de cruce, particularmente se analizan los componentes que conforman a \textit{El Operador de Cruce basado en Simulación Binaria} (Simulated Binary Crossover - SBX), y además se propone una variante \DSBX{} el cual es considerado como una modificación del operador \SBX{} cuyo comportamiento interno es alterado de forma dinámica con el propósito de alcanzar un balance.
+%
+El resto de este capítulo está organizado de la siguiente forma.
+%
+Inicialmente, son revisadas algunas taxonomías que están basadas en los componentes internos utilizados en los \EAS{}, además se mencionan algunas de las estrategias más populares para mantener la diversidad.
+%
+Posteriormente se describe y valida experimentalmente la primera aportación basada en evolución diferencial donde es considerada la diversidad de forma explícita y además el critero de paro.
+%
+Siguiendo esta misma línea se lleva a cabo un análisis del operador de cruce \SBX{} y se mencionan algunas de sus implicaciones con la diversidad, además en base a una validación experimental se propone una variante dinámica en la cual se considera el criterio de paro.
+%
+Finalmente, se exponen las conclusiones y trabajo futuros trazados en base a los resultados obtenidos.
+%

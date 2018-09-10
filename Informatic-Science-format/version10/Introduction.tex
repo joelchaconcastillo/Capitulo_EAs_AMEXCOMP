@@ -75,12 +75,21 @@ Esto se fundamenta en las fases de variación y selección de padres, estas fase
 Especialmente, este mecanismo se enfoca en seleccionar a las soluciones que sobreviven en la siguiente generación, por lo tanto la fase de reemplazo puede actuar adecuadamente evitando la selección de los individuos no deseados que provienen de las fases de variación y selección de padres.
 
 %
-Particularmente, en este capítulo se describen dos aportaciones, la primera está enfocada al área de \textit{Evolución Diferencial} (Differential Evolution \DE{}),esta primera aportación es nombrada \DE{} \textit{Mejorado con Mantenimiento de Diversidad} (\DE with Enhanced Diversity Maintenance \DEEDM{}) e integra una estrategia de reemplazo que mantiene un grado de diversidad de forma explícita considerando además una población elite.
+Particularmente, en este capítulo se describen dos aportaciones, la primera está enfocada al área de \textit{Evolución Diferencial} (Differential Evolution - \DE{}),esta primera aportación es nombrada \DE{} \textit{Mejorado con Mantenimiento de Diversidad} (\DE{} with Enhanced Diversity Maintenance \DEEDM{}) e integra una estrategia de reemplazo que mantiene un grado de diversidad de forma explícita considerando además una población elite.
 %
-En la fase de reemplazo que incorpara el \DEEDM{} se promueve un balance entre exploración e intensificación de forma dinámica donde es considerando el criterio de paro.
+En la fase de reemplazo que incorpora el \DEEDM{} se promueve un balance entre exploración e intensificación de forma dinámica donde es considerando el criterio de paro.
 %
-De esta forma, en las primeras etapas se induce un grado de exploración ya que los individuos sobrevivientes son diversificados, posteriormente conforme transcurren las generaciones y de forma gradual se induce un grado de intecificación.
+De esta forma, en las primeras etapas se induce un grado de exploración ya que los individuos sobrevivientes son diversificados, posteriormente conforme transcurren las generaciones y de forma gradual se induce un grado de intensificación.
 % 
-La segunda aportación están enfocada a los operadores de cruce, particularmente se analizan los componentes que conforman a \textit{El Operador de Cruce basado en Simulación Binaria} (Simulated Binary Crossover - SBX), y además se propone una variante \DSBX{} el cual es considerado como una modificación del operador \SBX{} cuyo comportamiento interno es alterado de forma dinámica con el propósito de alcanzar un balance.
+La segunda aportación está enfocada a los operadores de cruce, particularmente se analizan los componentes que conforman a \textit{El Operador de Cruce basado en Simulación Binaria} (Simulated Binary Crossover - SBX), y además se propone una variante \DSBX{} el cual es considerado como una modificación del operador \SBX{} cuyo comportamiento interno es alterado de forma dinámica con el propósito de alcanzar un balance.
 %
 El resto de este capítulo está organizado de la siguiente forma.
+%
+Inicialmente, son revisadas algunas taxonomías que están basadas en los componentes internos utilizados en los \EAS{}, además se mencionan algunas de las estrategias más populares para mantener la diversidad.
+%
+Posteriormente se describe y valida experimentalmente la primera aportación basada en evolución diferencial donde es considerada la diversidad de forma explícita y además el criterio de paro.
+%
+Siguiendo esta misma línea se lleva a cabo un análisis del operador de cruce \SBX{} y se mencionan algunas de sus implicaciones con la diversidad, además en base a una validación experimental se propone una variante dinámica en la cual se considera el criterio de paro.
+%
+Finalmente, se exponen las conclusiones y trabajo futuros trazados en base a los resultados obtenidos.
+%

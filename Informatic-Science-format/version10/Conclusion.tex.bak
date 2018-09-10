@@ -6,7 +6,7 @@ Sin embargo, obtener este balance no es una tarea trivial debido a que cada prob
 %
 En base a esto se han desarrollado varias taxonomías con el propósito de clasificar a los \EAS{} en base a su(s) mecanismo(s) internos para preservar y promover la diversidad.
 %
-Particularmente, se han definido las clasificaciones uni-proceso y los multiproceso.
+Particularmente, se han definido las clasificaciones uniproceso y los multiproceso.
 %
 Mientras los primeros únicamente se enfocan en configurar un sólo mecanismo interno con el propósito de alcanzar un balance deseado.
 %
@@ -20,7 +20,7 @@ Así se obtuvo un balance adecuado entre exploración e intensificación.
 %
 Específicamente, en el algoritmo basado en evolución diferencial se induce este balance por medio de una fase de reemplazo, incorporando una población elite y considerando el criterio de paro.
 %
-Como resultado en las primeras etapas del proceso de optimización se promovió un grado de exploración al mantener la diversidad en al población de forma explícita.
+Como resultado en las primeras etapas del proceso de optimización se promovió un grado de exploración almantener la diversidad en al población de forma explícita.
 %
 Posteriormente en las últimas etapas del procedo de optimización se promovió un grado de intensificación.
 %
@@ -39,7 +39,7 @@ De forma general y en base a los resultados obtenidos en este capítulo, se obse
 %
 
 
-Varias extensiones de estas contribuciones podrían ser exploradas.
+Varias extensiones de estas constribuciones podrían ser exploradas.
 %
 En el caso de evolución diferencial se podrían analizar varias estrategias para disminuir el número de evaluaciones a función.
 %

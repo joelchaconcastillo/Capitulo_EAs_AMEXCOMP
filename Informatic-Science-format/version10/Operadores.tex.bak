@@ -598,7 +598,7 @@ Es importante aclarar que ya se han considerado modificaciones similares al índ
 %
 
 \begin{equation}\label{eqn:index_eta}
- \eta_c = 2 + 20 \times \left ( \frac{G_{Transcurridas}}{G_{Total}} \right)
+ \eta_c = 2 + 20 \times \left ( \frac{G_{Transcurridas}}{G_{End}} \right)
 \end{equation}
 
 \subsection{Resultados}
