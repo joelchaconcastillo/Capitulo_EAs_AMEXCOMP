@@ -11,45 +11,45 @@ Warning--empty chapter and pages in Joel:WFG
 Warning--empty booktitle in Joel:UNDX
 Warning--empty year in Joel:BOOK_MOEAs
 Warning--empty pages in voigt1995fuzzy
-You've used 71 entries,
+You've used 72 entries,
             2670 wiz_defined-function locations,
-            1030 strings with 17627 characters,
-and the built_in function-call counts, 25192 in all, are:
-= -- 2170
-> -- 1076
+            1036 strings with 17862 characters,
+and the built_in function-call counts, 25532 in all, are:
+= -- 2202
+> -- 1093
 < -- 32
-+ -- 457
-- -- 373
-* -- 2070
-:= -- 3797
-add.period$ -- 71
-call.type$ -- 71
-change.case$ -- 387
++ -- 464
+- -- 379
+* -- 2104
+:= -- 3853
+add.period$ -- 72
+call.type$ -- 72
+change.case$ -- 393
 chr.to.int$ -- 0
-cite$ -- 79
-duplicate$ -- 972
-empty$ -- 2366
-format.name$ -- 428
-if$ -- 5369
+cite$ -- 80
+duplicate$ -- 982
+empty$ -- 2392
+format.name$ -- 435
+if$ -- 5435
 int.to.chr$ -- 0
-int.to.str$ -- 71
-missing$ -- 82
-newline$ -- 221
-num.names$ -- 144
-pop$ -- 475
+int.to.str$ -- 72
+missing$ -- 83
+newline$ -- 224
+num.names$ -- 146
+pop$ -- 479
 preamble$ -- 1
-purify$ -- 327
+purify$ -- 332
 quote$ -- 0
-skip$ -- 796
+skip$ -- 802
 stack$ -- 0
-substring$ -- 1879
-swap$ -- 247
+substring$ -- 1909
+swap$ -- 248
 text.length$ -- 32
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 260
+type$ -- 264
 warning$ -- 8
-while$ -- 269
-width$ -- 73
-write$ -- 589
+while$ -- 273
+width$ -- 74
+write$ -- 597
 (There were 8 warnings)

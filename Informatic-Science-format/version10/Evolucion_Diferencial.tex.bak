@@ -9,7 +9,7 @@ El clásico esquema \DE{} es identificado como \DE{}/rand/1/bin el cual se utili
 De hecho, nuestra propuesta también extiende a la clásica versión \DE{}.
 %In fact, our proposal also extends the classic variant.
 %
-Originalmente \DE{} fue propuesta como un método de búsqueda directo para optimización continuo mono-objetivo.
+Originalmente \DE{} fue propuesta como un método de búsqueda directo para optimización contínua mono-objetivo.
 %\DE{} was originally proposed as a direct search method for single-objective continuous optimization.
 %
 %El conjunto de variables que están involucradas en el planteamiento de un problema son representados como un vector de la forma $\vec{X} = [x_1, x_2, ..., x_D]$, donde $D$ es la dimensión del problema.
@@ -90,7 +90,7 @@ Los índices $r1, r2, r3 \in [1,NP]$ deben ser enteros distintos y son generados
 Además, estos índices son distintos al índice $i$.
 %In addition, they are all different from the index $i$.
 %
-Es importante notar que la diferencia entre los vectores es escalada por medio del parámetro $F$, el cual usualmente se define en el intervalo $[0.4, 1]$.
+Es imporante notar que la diferencia entre los vectores es escalada por medio del parámetro $F$, el cual usualmente se define en el intrervalo $[0.4, 1]$.
 %It is important to take into account that the difference between vectors is scaled with the number F, which is usually defined in the interval $[0.4, 1]$.
 %
 Posteriormente, el vector de diferencia (escalado) es agregado a un tercer vector.
@@ -104,7 +104,7 @@ Como resultado, es crítico mantener un grado mínimo de diversidad en \DE{}.
 
 \subsubsection{Operador de cruce}
 
-Este operador es aplicado con el objetivo de combinar la información de distintas soluciones candidatas y para incrementar la diversidad de los vectores.
+Este operador es plicado con el objetivo de combinar la información de distintas soluciones candidatas y para incrementar la diversidad de los vectores.
 %In order to combine information of different candidate solutions and with the aim of increasing diversity, the crossover
 %operator is applied.
 %
@@ -178,12 +178,12 @@ Es importante resaltar que se obtuvieron beneficios en varias aplicaciones por e
 %Important benefits were attained by methods including \RMDDC{}, so given the conclusions of these previous works, the proposal of this paper is a 
 %novel \DE{} variant that includes an explicit mechanism that follows some of the principles of \RMDDC{}.
 %
-Este optimizador novedoso es nombrado \textit{Evolución Diferencial con Mantenimiento Mejorado de Diversidad} (Differential Evolution with Enhanced Diversity Maintenance - \DEEDM{}) y su código fuente está disponible ~\footnote{El código en C++ puede ser descargado en la siguiente dirección \url{https://github.com/joelchaconcastillo/Diversity\_DE\_Research.git} }
+Este optimizador novedoso es nombrado \textit{Evolución Diferencial con Mantinimiento Mejorado de Diversidad} (Differential Evolution with Enhanced Diversity Maintenance - \DEEDM{}) y su código fuente está disponible ~\footnote{El código en C++ puede ser descargado en la siguiente dirección \url{https://github.com/joelchaconcastillo/Diversity\_DE\_Research.git} }
 %This novel optimizer is called \textit{Differential Evolution with Enhanced Diversity Maintenance} (\DEEDM{}) and its source
 %code is freely available~\footnote{The code in C++ can be downloaded in the next link \url{https://github.com/joelchaconcastillo/Diversity\_DE\_Research.git}}.
 
 
-La esencia de \DEEDM{} (ver algoritmo~\ref{alg:DEEDM} ) es suficiente similar a la versión estándar de \DE{}.
+La escencia de \DEEDM{} (ver algoritmo~\ref{alg:DEEDM} ) es suficiente similar a la versión estándar de \DE{}.
 %The core of \DEEDM{} (see Algorithm~\ref{alg:DEEDM}) is quite similar to the standard \DE{}.
 %
 De hecho la forma en que se crean los vectores de prueba no es modificado de forma significativa (líneas 5 y 6).
@@ -205,14 +205,14 @@ En este sentido, no se utiliza la misma estrategia de selección agresiva que pe
 %
 En su lugar, se consideran tanto el criterio de paro como las generaciones transcurridas en la selección.
 %
-Así, se establecerá un grado de diversidad mínimo dependiente al tiempo de ejecución.
+Así, se establecera un grado de diversidad mínimo dependiente al tiempo de ejecución.
 %In order to establish the minimum acceptable diversity contribution to be selected, the stopping criterion and elapsed
 %generations are taken into account.
 %
 Una de las principales debilidades del \RMDDC{} es que su convergencia se retrasa de forma significativa.
 %One of the main weaknesses of \RMDDC{} is that its convergence is highly delayed.
 %
-Por lo tanto, se realizan dos modificaciones al \RMDDC{} con el propósito de promover una convergencia acelerada.
+Por lo tanto, se realizan dos modificaciones al \RMDDC{} con el propóstivo de promover una convergencia acelerada.
 %Thus, in order to promote a faster convergence than in \RMDDC{} two modifications are performed.
 %
 Primero, no son considerados los conceptos multi-objetivo, en su lugar se considera una selección más agresiva.
@@ -258,13 +258,13 @@ Inicialmente, ésta recive a la población padre (vectores objetivo), la poblaci
 Así, en cada generación se seleccionan $NP$ vectores para la siguiente población de padres.
 %In each generation it must select the $NP$ vectors of the next parent population.
 %
-Primero, en base al número de evaluaciones a función (línea 2) se calcula una distancia mínima $D_t$ para mantener la diversidad en la población.
+Primero, en base al número de evaluaciones a funcion (línea 2) se calcula una distancia mínima $D_t$ para mantener la diversidad en la población.
 %First, it calculates the desired minimum distance $D_t$ given the current number of elapsed function evaluations (line 2).
 %
 Entonces, se juntan las tres poblaciones en un conjunto de miembros candidatos (línea 3).
 %Then, it joins the three populations in a set of current members (line 3).
 %
-El conjunto de miembros candidatos contienen vectores que podrían ser seleccionados para sobrevivir.
+El conjunto de miembros candidatos continen vectores que podrían ser seleccionados para sobrevivir.
 %The current members set contains vectors that might be selected to survive.
 %
 Entonces, se inicializa tanto el conjunto de individuos sobrevivientes como los penalizados con el conjunto vacío (línea 4).
@@ -281,11 +281,11 @@ Posteriormente, los individuos que pertenecen al \textit{Conjunto de Candidatos}
 %Then, individuals in the \textit{Current set} with a distance metric lower than $D_t$ are transferred to the \textit{Penalized set} (line 9).
 %
 
-La forma para calcular la distancia entre dos individuos es en base a la distancia Euclidiana normalizada descrita en la Ecuación~\ref{eqn:distance}, donde $D$ es la dimensión del problema, y $a_d, b_d$ son los límites menores y mayores de cada dimensión ($d$).
+La forma para calcular la distancia entre dos individuos es en base a la distancia Euclideana normalizada descrita en la Ecuación~\ref{eqn:distance}, donde $D$ es la dimensión del problema, y $a_d, b_d$ son los límites menores y mayores de cada dimensión ($d$).
 %The way to calculate the distance between two individuals is by using the normalized Euclidean distance described in Eq.~\ref{eqn:distance}, where $D$ is the dimension of the problem, and $a_d, b_d$ are the minimum and maximum bounds of each dimension ($d$).
 %
 %
-En los casos donde \textit{El conjunto de Candidatos} está vacío previamente a la selección de los $NP$ individuos, el \textit{Conjunto de Sobrevivientes} se llena seleccionando en cada iteración al individuo $Penalizado$ con la mayor distancia al individuo más cercano al \textit{Conjunto de Sobrevivientes} (líneas 10 - 13).
+En los casos donde \textit{El conjunto de Candidatos} está vacío previamente a la selcción de los $NP$ individuos, el \textit{Conjunto de Sobrevivientes} se llena seleccionando en cada iteración al individuo $Penalizado$ con la mayor distancia al individuo más cercano al \textit{Conjunto de Sobrevivientes} (líneas 10 - 13).
 %%In cases where the \textit{Current set} is empty previous to the selection of $NP$ individuals, the \textit{Survivor set} is filled by selecting in each step 
 %%the individual in $Penalized$ with the largest distance to the closest individual in the \textit{Survivor set} (lines 10 - 13).
 
@@ -302,7 +302,7 @@ distancia ( x_{i}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{i}^d - x_j
 	\begin{algorithmic}[1]
 	\STATE Entrada: \textit{Población} (\textit{Vectores Objetivo}), \textit{Hijos} (\textit{Vectores de prueba}), y \textit{Elite}
 	%\STATE Input: $Population$ ($target$ $vectors$), $Offspring$ ($trial$ $vectors$), and $Elite$
-	\STATE Actualizar $D_t = D_I - D_I *(nfes/(0.95*max\_nfes)) $ 
+	\STATE Actulizar $D_t = D_I - D_I *(nfes/(0.95*max\_nfes)) $ 
 	%\STATE Update $D_t = D_I - D_I *(nfes/(0.95*max\_nfes)) $ 
 	\STATE \textit{Candidatos = Población} $\cup$ \textit{Hijos} $\cup$ \textit{Elite}.
 	%\STATE $Current = Population \cup Offspring \cup Elite$.
@@ -328,7 +328,7 @@ distancia ( x_{i}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{i}^d - x_j
 	   \STATE Copiar \textit{Seleccionado} a \textit{Sobrevivientes}
 	   %\STATE Copy $Selected$ to $Survivors$.
 	\ENDWHILE
-  \RETURN $Sobrevivientes$
+  \RETURN $Survivors$
 \end{algorithmic}
 \end{algorithm}
 
@@ -336,7 +336,7 @@ Adicionalmente, con el propósito de completar la descripción del \DEEDM{} se e
 %In order to complete the description it is important to specify the way to calculate $D_t$ and the methodology to update the 
 %elite individuals.
 %
-El resto del algoritmo se mantiene igual que la clásica variante de \DE{}.
+El resto del algortimo se mantiene igual que la clásica variante de \DE{}.
 %All the remaining steps are maintained as in the classic \DE{} variant.
 %
 El valor de $D_t$ se utiliza para alterar el grado entre exploración e intensificación, por lo tanto éste parámetro debería depender en la etapa de optimización.
@@ -360,7 +360,7 @@ La reducción se calcula de tal forma que al $95\%$ del número máximo de evalu
 Por lo tanto, la diversidad no es considerada del todo en el resto de la ejecución ($5\%$).
 %Therefore, in the remaining $5\%$ diversity is not considered at all.
 %
-Entonces, si $max\_nfes$ es el número máximo de evaluaciones y $nfes$ es el número de evaluaciones trascurridas $nfes$, entonces $D_t$ puede ser calculado de la siguiente forma $D_t=D_I - D_I *(nfes/(0.95*max\_nfes))$.
+Entonces, si $max\_nfes$ es el número máximo de evaluaciones y $nfes$ es el número de evaluciones trascurridas $nfes$, entonces $D_t$ puede ser calculado de la siguiente forma $D_t=D_I - D_I *(nfes/(0.95*max\_nfes))$.
 %Thus, if $max\_nfes$ is the maximum number of evaluations and $nfes$ is the elapsed number of evaluations, $D_t$ can be calculated as $D_t=D_I - D_I *(nfes/(0.95*max\_nfes))$.
 %
 
@@ -371,7 +371,7 @@ Si este parámetro es elevado, entonces el algoritmo tiene como objetivo maximiz
 %If this parameter is fixed large enough, then at the first optimization stages the algorithm aims to maximize the diversity of the population, 
 %so a proper exploration is performed which is very important in some kinds of problems such as highly multimodal and deceptive ones.
 %
-Por lo tanto, la convergencia prematura podría ser aliviada.
+Por lo tanto, la convegencia prematura podría ser aliviada.
 %Thus, the effect of premature convergence might be alleviated.
 %
 Sin embargo, un valor muy elevado de $D_I$ podría inducir exploración excesivamente y por lo tanto una fase de intensificación podría no ser no es efectuada.
@@ -383,7 +383,7 @@ Por otra parte, un valor muy pequeño de $D_I$ podría evitar la fase de explora
 El óptimo valor de $D_I$ podría variar dependiendo en el tipo problema y el criterio de paro.
 %Depending on the kind of fitness landscape and stopping criterion, the optimal $D_I$ might vary.
 %
-En su lugar, los problemas deceptivos y altamente multi-modales usualmente requieren valores más elevados que en los problemas uni-modales.
+En su lugar, los problemas deceptivos y altamente multi-modales usualmente requieren valores más elevados que en los problemas unimodales.
 %For instance, deceptive and highly multi-modal problems usually require larger values than unimodal problems.
 %
 Sin embargo, en nuestra propuesta no se adapta un valor $D_I$ para cada problema, por lo tanto en la sección de validación experimental se realiza un análisis de estabilidad.
@@ -398,7 +398,7 @@ Al igual que en la versión estándar de \DE{}, en nuestra propuesta (\DEEDM{}) 
 
 %Similarly that the standard \DE{}, in \DEEDM{} the crossover probability ($CR$) and the mutation factor ($F$) must be set.
 %
-De acuerdo a varios estudios desarrollados por Montgomery y otros~\cite{montgomery2010analysis} la probabilidad de cruce es el más importante.
+De acuerdo a varios estudios desarrollados por Montgomery y otros~\cite{montgomery2010analysis} la probabilidad de cruce es el más imporante.
 %The first one is perhaps the most important for the performance according to several studies developed by Montgomery 
 %et al. \cite{montgomery2010analysis}.
 %
@@ -443,7 +443,7 @@ Particularmente, cada valor $F$ es una muestra de una distribución Cauchy (Ecua
 Así, en las primeras etapas de optimización se generan valores de $F$ similares a $0.5$.
 %Therefore, at the first optimization stages, F values near to $0.5$ are generated.
 %
-Conforme la ejecución transcurre, la función de densidad sufre una transformación gradual ya que la varianza se incrementa, esto implica que se generan valores fuera del intervalo $[0.0, 1.0]$ con una probabilidad alta.
+Conforme la execución transcurre, la función de densidad sufre una transformación gradual ya que la varianza se incrementa, esto implica que se generan valores fuera del intervalo $[0.0, 1.0]$ con una probabilidad alta.
 %Then, as the execution advances, the density function suffers a gradual transformation and the variance is increased, meaning
 %that values outside the interval $[0.0, 1.0]$ are generated with a higher probability.
 %
@@ -487,13 +487,13 @@ Similarmente, los mejores algoritmos del \CEC{} 2017 son el EBOwithCMAR~\cite{ku
 
 %Similarly, the top algorithms from \CEC{} 2017 are EBOwithCMAR \cite{kumar2017improving} and jSO \cite{brest2017single}.
 %
-Es importante destacar que el EBOwithCMAR es considerado como una mejora del UMOEAs-II.
+Es imporante destacar que el EBOwithCMAR es considerado como una mejora del UMOEAs-II.
 %It is interesting to remark that EBOwithCMAR is considered as an improvement of the UMOEAs-II.
 %
 Adicionalmente, el jSO y el L-SHADE-EpSin pertenecen a la familia de SHADE.
 %Additionally, jSO and L-SHADE-EpSin belong to the SHADE's family.
 %
-Todos estos algoritmos fueron probados con los dos conjuntos de prueba como es sugerido en \cite{molina2017analysis}.
+Todos estos algoritmos fueron probados con los dos conjuntos de prueba como es sugeriodo en \cite{molina2017analysis}.
 %All these algorithms are tested with both benchmarks as it is suggested by \cite{molina2017analysis}.
 Debido a que todos los algoritmos son estocásticos se realizaron 51 ejecuciones con distintas semillas.
 %Given that all of them are stochastic algorithms, each execution was repeated 51 times with different seeds.
@@ -541,7 +541,7 @@ Por otro lado, para los casos que no se ajustaban a distribuciones Guassianas, s
 %
 En todos los casos se fijó el nivel de confianza al 95\%.
 %
-Se considera que un algoritmo $X$ es superior a un algoritmo $Y$, si el procedimiento anterior reporta diferencias significativas si la media y mediana del hipervolúmen obtenido por el método $X$ son superiores a las obtenidas por el método $Y$.
+Se considera que un algoritmo $X$ es superior a un algoritmo $Y$, si el procedimiento anterior reporta diferencias significativas si la media y mediana del hipervolumen obtenido por el método $X$ son superiores a las obtenidas por el método $Y$.
 %
 %First a Shapiro-Wilk test was performed to check whatever or not the values of the results followed a Gaussian distribution. 
 %%
@@ -553,16 +553,16 @@ Se considera que un algoritmo $X$ es superior a un algoritmo $Y$, si el procedim
 %%
 %An algorithm $X$ is said to win algorithm $Y$ when the differences between them are statistically significant, and the mean and median obtained by $X$ are higher 
 %than the mean and median achieved by $Y$.
-En las tablas \ref{tab:Summary_CEC2016} y \ref{tab:Summary_CEC2017} se presenta un resumen de los resultados obtenidos para el \CEC{} 2016 y el \CEC{} 2017 respectivamente.
+En las tablas \ref{tab:Summary_CEC2016} y \ref{tab:Summary_CEC2017} se presenta un resúmen de los resultados obtenidos para el \CEC{} 2016 y el \CEC{} 2017 respectivamente.
 %In tables \ref{tab:Summary_CEC2016} and \ref{tab:Summary_CEC2017} a summary of the results obtained for \CEC{} 2016 and \CEC{} 2017 are shown, respectively.
 %
-La columna etiquetada con ``Siempre Resuelto'' muestra el número de funciones en que se obtuvo un error de cero en las 51 ejecuciones.
+La columna etiquetada con ``Simpre Resuelto'' muestra el número de funciones en que se obtuvo un error de cero en las 51 ejecuciones.
 %The column tagged with ``Always Solved'' shows the number of functions where a zero error was obtained in the 51 runs.
 %
 Adicionalmente, la columna etiquetada con ``Al menos una vez resuelto'' muestra el número de soluciones que se resolvieron en al menos una ejecución.
 %Additionally, column tagged with ``At least one time solved'' shows the number of functions that were solved to optimality at least in one run.
 %
-Prácticamente nuestra propuesta resolvió al menos una vez todas las funciones (28 funciones) que pertenecen al conjunto de problemas del \CEC{} 2017.
+Practicamente nuestra propuesta resolvió al menos una vez todas las funciones (28 funciones) que pertenecen al conjunto de problemas del \CEC{} 2017.
 %Practically all functions (28 of them) of the \CEC{} 2017 benchmark were solved with our proposal at least one time.
 %
 Adicionalmente, se resolvieron 21 funciones al menos una vez pertenecientes al \CEC{} 2016.
@@ -577,7 +577,7 @@ Estos algoritmos obtuvieron los valores óptimos en significativamente menos fun
 En orden para confirmar la superioridad del \DEEDM{}, se implementaron las pruebas estadísticas por pares.
 %In order to confirm the superioriy of \DEEDM{}, pair-wise statisticall test were used.
 %
-La columna etiquetada con el símbolo $\uparrow$ muestra que el número de veces en que cada método fue superior, mientras que la columna etiquetada con $\downarrow$ cuenta el número de casos donde el método fue inferior.
+La columna etiquetada con el símbolo $\uparrow$ muestra que el número de veces en que cada método fue superiror, mientras que la columna etiquetada con $\downarrow$ cuenta el número de casos donde el método fue inferior.
 %The column tagged with the symbol $\uparrow$ shows the number of times that the superiority of each method could be confirmed, whereas
 %the column tagged with the symbol $\downarrow$ count the number of cases where the method was inferior.
 %
@@ -588,7 +588,7 @@ Finalmente, la columna etiquetada con $\longleftrightarrow$ muestra el número d
 Las pruebas estadísticas indican que el \DEEDM{} alcanzó los mejores resultados en los dos años.
 %The statistical tests indicate that the \DEEDM{} attained the best results in both years.
 %
-De hecho el número de veces en que nuestra propuesta ganó en el \CEC{} 2016 y el \CEC{} 2017 fue de $77$ y $88$ respectivamente.
+De hecho el número de veces en que nuestra propuesta ganó en el \CEC{} 2016 y el \CEC{} 2017 fue de $77$ y $88$ respectivemente.
 %The number of wins in \CEC{} 2016 and \CEC{} 2017 were $77$ and $88$ respectively.
 %
 Además el número de veces en que perdió fueron de $25$ y $6$ respectivamente.
@@ -620,7 +620,7 @@ Score_2 &= \left  (1 - \frac{SR - SR_{min}}{SR} \right ) \times 50, \\
 donde, $SE_{min}$ es la suma errores mínimo entre todos los algoritmos, y $SE$ es la suma de errores dado un algoritmo $SE = \sum_{i=1}^{30} error\_f_i$.
 %Here, $SE_{min}$ is the minimal sum of errors from all the algorithms, and $SE$ is the sum of error values $SE = \sum_{i=1}^{30} error\_f_i$.
 %
-Similarmente, $SR_{min}$ es la suma mínima de los rangos entre todos los algoritmos, específicamente se aplica la suma de cada rango en cada función para todos los algoritmos $SE = \sum_{i=1}^{30} error\_f_i$.
+Similarmente, $SR_{min}$ es la suma mínima de los rangos entre todos los algoritmos, especificamente se aplica la suma de cada rango en cada función para todos los algoritmos $SE = \sum_{i=1}^{30} error\_f_i$.
 %Also, $SR_{min}$ is the minimal sum of ranks from all the algorithms, namely the sum of each rank in each function for the considered algorithms $SE = \sum_{i=1}^{30} error\_f_i$.
 %
 %TODO: remarcar que la nueva propuesta consigue score 100 en ambos casos, confirmando la superioridad que se vio con el resto de análisis realizados, decir
@@ -632,7 +632,7 @@ Principalmente, nuestra propuesta alcanzó los mejores puntajes ($100.00$) en lo
 Adicionalmente, la versión estándar de \DE{} alcanzó resultados suficientemente buenos, de hecho obtuvo el tercer y el segundo lugar en los años 2016 y 2017 respectivamente.
 %Additionally, the Standard-DE attained good enough results, in fact it got the third and second places in \CEC{} 2016 and \CEC{} 2017 respectively.
 %
-Esto muestra que el rendimiento de los algoritmos en el estado-del-arte es distinto al considerar ejecuciones a largo plazo.
+Esto muestra que el rendimiento de los algortimos en el estado-del-arte es distinto al considerar ejecuciones a largo plazo.
 %This shows that the performance of the state-of-the-art algorithms is different considering long-term executions.
 %
 El algoritmo L-SHADE-Epsilon obtuvo un puntaje competitivo a pesar de que en el \CEC{} del 2017  alcanzó el menor número de comparaciones positivas dentro de las pruebas estadísticas.
@@ -664,7 +664,7 @@ A pesar de que existen mecanismos para evitar la pérdida de diversidad en la po
 Similarmente, la parte derecha corresponde a la diversidad de los vectores de prueba.
 %Similarly, in the right side is showed the diversity of the trial vectors.
 %
-Se puede apreciar el grado de diversidad mantenido explícitamente hasta el $95\%$ del total de evaluaciones a función.
+Se puede apreciar el grado de diversidad mantenido explícitamenete hasta el $95\%$ del total de evaluaciones a función.
 %It shows that the diversity is explicitly maintained as is desired ( i.e. until the $95\%$ of the total function evaluations).
 
 \begin{figure}[!t]
@@ -688,7 +688,7 @@ Se puede apreciar el grado de diversidad mantenido explícitamente hasta el $95\
 \begin{scriptsize}
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
-\multirow{2}{*}{\textbf{Algoritmo}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Siempre \\ Resuelto\end{tabular}}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Resuelto al menos\\ una vez\end{tabular}}} & \multicolumn{3}{c|}{\textbf{Pruebas Estadísticas}} & \multirow{2}{*}{\textbf{Puntaje}} \\ \cline{4-6}
+\multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Siempre \\ Resuelto\end{tabular}}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Resuelto al menos\\ una vez\end{tabular}}} & \multicolumn{3}{c|}{\textbf{Pruebas Estadísticas}} & \multirow{2}{*}{\textbf{Puntaje}} \\ \cline{4-6}
  &  &  & $\uparrow$ & $\downarrow$ & $\longleftrightarrow $ &  \\ \hline
 \textbf{EBOwithCMAR} & 8 & 14 & 35 & 56 & 59 & 50.28 \\ \hline
 \textbf{jSO} & 9 & 17 & 47 & 51 & 52 & 55.43 \\ \hline
@@ -712,7 +712,7 @@ Se puede apreciar el grado de diversidad mantenido explícitamente hasta el $95\
 \begin{scriptsize}
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
-\multirow{2}{*}{\textbf{Algoritmo}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Siempre \\ Resuelto\end{tabular}}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Resuelto al menos\\ una vez\end{tabular}}} & \multicolumn{3}{c|}{\textbf{Pruebas Estadísticas}} & \multirow{2}{*}{\textbf{Puntaje}} \\ \cline{4-6}
+\multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Siempre \\ Resuelto\end{tabular}}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Resuelto al menos\\ una vez\end{tabular}}} & \multicolumn{3}{c|}{\textbf{Pruebas Estadísticas}} & \multirow{2}{*}{\textbf{Puntaje}} \\ \cline{4-6}
 %\multirow{2}{*}{\textbf{Algorithm}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Always \\ solved\end{tabular}}} & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}At least one\\ time solved\end{tabular}}} & \multicolumn{3}{c|}{\textbf{Statistical Tests}} & \multirow{2}{*}{\textbf{Score}} \\ \cline{4-6}
  &  &  & $\uparrow$ & $\downarrow$ & $\longleftrightarrow $ &  \\ \hline
 \textbf{EBOwithCMAR} & 9 & 18 & 34 & 46 & 70 & 37.14 \\ \hline
@@ -736,7 +736,7 @@ Particularmente, en estas tablas se observa que nuestra propuesta resuelve a tod
 Además, varias funciones multi-modales son aproximadas de forma aceptable.
 %Also, several simple multi-modal functions were adequatelly approximated.
 %
-Principalmente, nuestra propuesta resolvió y mejoró significativamente varias funciones complejas (por ejemplo funciones compuestas), las cuales no fueron resueltas por los algoritmos del estado-del-arte.
+Principalmente, nuestra propuesta resolvió y mejoró significativamente varias funciones complejas (por ejemplo funciones computestas), las cuales no fueron resueltas por los algoritmos del estado-del-arte.
 %Principally, our proposal solved several complex functions (e.g. Composition Functions) that were not solved by the state-of-the-art.
 %
 \begin{table}[!t]
@@ -864,7 +864,7 @@ Principalmente se puede observar lo siguiente:
 %\item If the diversity is not promoted ($D_I = 0.0 $) the performance of the algorithms is seriously implicated.
 \item En este escenario la configuración ideal es de $D_I=0.3$, a pesar de que aún existen soluciones de calidad en el rango $[0.1, 0.4]$.
 %\item In this scenario the ideal configuration is $D_I=0.3$, although that the range $[0.1, 0.4]$ also provides quality solutions.
-\item Si se asigna excesivamente la diversidad inicial se observa un deterioro en la calidad de las soluciones.
+\item Si se asigna excesivamente la diversidad inicial se observa un deteriodo en la calidad de las soluciones.
 %\item If the diversity of the solutions increases (after a range) the quality of solutions is implicated.
 \end{itemize}
 Finalmente, es importante notar que en base a otras experimentos se observa que la calidad de las soluciones es más afectado por el factor de distancia inicial que por el tamaño de la población.

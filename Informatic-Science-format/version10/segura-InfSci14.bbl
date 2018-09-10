@@ -188,6 +188,11 @@ A.~Kumar, R.~K. Misra, D.~Singh, Improving the local search capability of
   in: Evolutionary Computation (CEC), 2017 IEEE Congress on, IEEE, 2017, pp.
   1835--1842.
 
+\bibitem{liu2009explore}
+S.-H. Liu, M.~Mernik, B.~R. Bryant, To explore or to exploit: An entropy-driven
+  approach for evolutionary algorithms, International Journal of
+  Knowledge-based and Intelligent Engineering Systems 13~(3-4) (2009) 185--206.
+
 \bibitem{lobo2007parameter}
 F.~Lobo, C.~F. Lima, Z.~Michalewicz, Parameter setting in evolutionary
   algorithms, vol.~54, Springer Science \& Business Media, 2007.

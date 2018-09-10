@@ -49,25 +49,25 @@ Para tener una revisión detallada de las estrategias que están relacionadas co
 
 Recientemente, en base a su mecanismo interno para promover la diversidad y para alcanzar un balance entre exploración e intensificación se han propuesto una serie de taxonomías para categorizar a los \EAS{}.
 %
-Especialmente, con el propósito de explicar la relación entre exploración e intensificación, Liu et al.\cite{liu2009explore} propusieron los enfoques uni-proceso y multiproceso.
+Especialmente, con el propósito de explicar la relación entre exploración e intensificación, Liu et al.\cite{liu2009explore} propusieron los enfoques uniproceso y multiproceso.
 %
-En el enfoque uni-proceso se alcanza un balance entre exploración e intensificación considerando un componente de forma independiente (selección, mutación y cruce), cada proceso es independientemente responsable para obtener este balance, y por lo tanto no hay una coordinación entre los procesos internos para lograr este balance. 
+En el enfoque uniproceso se alcanza un balance entre exploración e intensificación considerando un componente de forma independiente (selección, mutación y cruce), cada proceso es independientemente responsable para obtener este balance, y por lo tanto no hay una coordinación entre los procesos internos para lograr este balance. 
 %
 Un ejemplo ilustrativo es el operador de cruce, ya que en las primeras etapas cuando la población es aún diversa, este operador tiene un efecto de exploración, por otra parte en las últimas etapas se pierde la capacidad de exploración ya que la población pierde la diversidad y por lo tanto son recombinados individuos similares.
 %
 Sin embargo, el operador de cruce por sí mismo y sin cambiar la probabilidad de cruce, cambia gradualmente de exploración a intensificación.
 %
-Es importante notar que en los enfoques uni-proceso no se excluye del todo el uso de otros componentes en el proceso de exploración y/o intensificación, más bien un proceso único es controlado para obtener un balance entre exploración e intensificación, esto se puede realizar por medio de distintas técnicas (como ajustar los parámetros de control).
+Es importante notar que en los enfoques uniproceso no se excluye del todo el uso de otros componentes en el proceso de exploración y/o intensificación, más bien un proceso único es controlado para obtener un balance entre exploración e intensificación, esto se puede realizar por medio de distintas técnicas (como ajustar los parámetros de control).
 %
 Por otra parte, los enfoques multiproceso coordinan este balance a lo largo de distintos procesos (como con una presión de selección elevada para explotación y una razón elevada del operador de cruza y/o mutación para promover más exploración).
 %
-En lo particular los contribuciones de este capítulo están clasificados como uni-proceso.
+En lo particular los contribuciones de este capítulo están clasificados como uniproceso.
 %
 
 Otra clasificación de enfoques para controlar el balance entre exploración e intensificación y que utilizan el concepto de diversidad son los basados en poblaciones, basados en selección, basados en cruce/mutación e híbridos\cite{Crepinsek:13}.
 %
 \begin{itemize}
-\item \textbf{Enfoques basados en población}: la diversidad es alcanzada variando el tamaño de la población, eliminando individuos duplicados, utilizando técnicas de infusión, archivos externos o realizando migraciones entre poblaciones.
+\item \textbf{Enfoques basados en poblacion}: la diversidad es alcanzada variando el tamaño de la población, eliminando individuos duplicados, utilizando técnicas de infusión, archivos externos o realizando migraciones entre poblaciones.
 %
 \item \textbf{Enfoques basados en la selección}: la diversidad es alcanzada cambiando la presión de selección o utilizando restricciones de reemplazo.
 %
@@ -79,7 +79,7 @@ Otra clasificación de enfoques para controlar el balance entre exploración e i
 
 \subsection{Esquemas clásicos para administrar la diversidad}
 
-Los primeros \EAS{} se basaron principalmente en esquemas generacionales, por lo tanto con la intención de obtener un balance propio entre exploración e intensificación se desarrollaron varias estrategias la cuales no afectan el mecanismo para la selección de los sobrevivientes.
+Los primeros \EAS{} se basaron principalemente en esquemas generacionales, por lo tanto con la intención de obtener un balance propio entre exploración e intensificación se desarrollaron varias estrategias la cuales no afectan el mecanismo para la selección de los sobrevivientes.
 %
 Específicamente, en los \EAS{} generacionales se induce la presión de selección al considerar a la selección de padres.
 %
@@ -90,7 +90,7 @@ Además se diseñaron varias estrategias dinámicas con el fin de adaptar el bal
 Sin embargo, en base a varios estudios se observó que no se puede mantener un grado adecuado de diversidad considerando únicamente los operadores de selección, esto se mantiene con poblaciones grandes.
 %
 
-Además, se han desarrollado modelos poblacionales con el propósito de mejorar la preservación de diversidad en los \EAS{}.
+Además, se han desarrollado modelos poblacionales con el propósito de mejorar la presevación de diversidad en los \EAS{}.
 %
 Por lo tanto, en los últimos años los \EAS{} poblacionales han ganado reconocimiento~\cite{gao2014cluster}.
 %
@@ -100,7 +100,7 @@ De esta forma, se han ideado algunos esquemas con el propósito de reducir la in
 %
 Sin embargo, estos esquemas tienen efectos importantes en la diversidad~\cite{alba2005parallel}, que en consecuencia se utilizan como un mecanismo para promover la exploración.
 %
-Particularmente, estos esquemas no son efectivos en ejecuciones a largo plazo ya que no mantienen un grado de diversidad de forma explícita.
+Particularmente, estos esquemas no son efectivos en ejecuciones a largo plazo ya que no mantinen un grado de diversidad de forma explícita.
 %
 Además, no es sencillo controlar la reducción de la diversidad ya que existen varios componentes lo cuales influyen en la pérdida de diversidad~\cite{cantu2000efficient}.
 %
@@ -145,7 +145,7 @@ En base a esto se han propuesto varias estrategias para establecer los puntos de
 %
 Además, estos esquemas se implementan de forma fácil y en algunos casos han proporcionado mejoras significativas~\cite{koumousis2006saw}.
 %
-Adicionalmente, estas estrategias puede se utilizas con esquemas para mantener la diversidad ya que están enfocadas en recuperar la diversidad.
+Adicionalmente, estas estrategias puede se utilizas con esquemas para mantener la diversidad ya que estan enfocadas en recuperar la diversidad.
 %
 
 \subsection{Esquemas de reemplazamiento basados en diversidad}
@@ -154,7 +154,7 @@ Este tipo de mecanismos modifican la fase de reemplazo para preservar la diversi
 %
 La idea principal de estos esquemas es inducir un grado de exploración adecuado diversificando a los individuos sobrevivientes.
 %
-Esto se sucede ya son exploradas más regiones del espacio de búsqueda si se mantienen una población cuya diversidad sea elevada.
+Esto se sucede ya son exploradas más regiones del espacio de búsqueda si se mantinen una población cuya diversidad sea elevada.
 %
 Además, los operadores de cruce tienen un efecto de exploración al considerar individuos distantes~\cite{eiben1998evolutionary}.
 %
@@ -166,7 +166,7 @@ El principio del crowing se basa en forzar el ingreso de nuevos individuos los c
 
 La principal razón, es que en esa época la mayoría de esquemas eran generacionales, por lo tanto la presión de selección estaba definida principalmente en la selección de padres.
 %
-Sin embargo, se descubrió que únicamente considerando la selección de padres no es suficiente para aliviar la convergencia prematura~\cite{blickle1996comparison}.
+Sin embargo, se descubrió que únicamente considerando la selección de padres no es suficiente para alivar la convergencia prematura~\cite{blickle1996comparison}.
 %
 Posteriormente, una gran cantidad de \EAS{} incorporaron una fase de reemplazo y abandonaron (al menos parcialmente) a los métodos generacionales iniciales.
 %
@@ -179,7 +179,7 @@ Sin embargo, con la efectividad del elitismo y otras estrategias de reemplazo, e
 \subsection{Diversidad en evolución diferencial}
 %\subsection{Diversity in Differential Evolution}
 
-Los algoritmos basados en \DE{} son altamente susceptibles a la pérdida de diversidad, esto se debe a la estrategia de selección la cual es considerada muy agresiva.
+Los algoritmos basados en \DE{} son altamente suceptibles a la pérdida de diversidad, esto se debe a la estrategia de selección la cual es considerada muy agresiva.
 %\DE{} is highly susceptible to the loss of diversity due to the greedy strategy applied in the selection phase.
 %
 Sin embargo, se han desarrollado varios análisis para lidiar con este problema.
