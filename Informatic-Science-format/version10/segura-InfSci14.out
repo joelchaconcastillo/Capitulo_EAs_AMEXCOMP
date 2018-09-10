@@ -16,7 +16,7 @@
 \BOOKMARK [2][-]{subsection.4.1}{Algoritmos Evolutivos Multi-objetivo}{section.4}% 16
 \BOOKMARK [3][-]{subsubsection.4.1.1}{Algoritmos Basados en el concepto de Dominancia - NSGA-II }{subsection.4.1}% 17
 \BOOKMARK [3][-]{subsubsection.4.1.2}{Algoritmos multi-objetivo basados en descomposici\363n - MOEA/D}{subsection.4.1}% 18
-\BOOKMARK [3][-]{subsubsection.4.1.3}{Algoritmo multi-objetivo basados en indcadores - SMS-EMOA}{subsection.4.1}% 19
+\BOOKMARK [3][-]{subsubsection.4.1.3}{Algoritmos multi-objetivo basados en indcadores - SMS-EMOA}{subsection.4.1}% 19
 \BOOKMARK [2][-]{subsection.4.2}{Operadores de cruce}{section.4}% 20
 \BOOKMARK [3][-]{subsubsection.4.2.1}{El Operador de Cruce Basado en Simulaci\363n Binaria - SBX}{subsection.4.2}% 21
 \BOOKMARK [3][-]{subsubsection.4.2.2}{Implementaci\363n y an\341lisis del operador sbx}{subsection.4.2}% 22
