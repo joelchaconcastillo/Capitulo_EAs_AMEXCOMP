@@ -1,12 +1,14 @@
-Los Algoritmos Evolutivos (Evolutionary Algorithms - \EAS{}) son considerados como uno de los enfoques con mayor aficacia para resolver distintas categorías de optimización.
+Los Algoritmos Evolutivos (Evolutionary Algorithms - \EAS{}) son considerados como uno de los enfoques con mayor eficacia para resolver distintas categorías de 
+problemas de optimización.
 %
-Además, diversas variantes se han desarrollado y aplicado en muchos campos, como es en ciencia, economía e ingeniería.
+Se han desarrollado diversas variantes que han sido aplicadas en múltiples campos, como es en transporte, economía o ingeniería.
 %
-Particularmente, se han aplicado en problemas tanto de dominio continuo~\cite{glover2005handbook} como de dominio discreto~\cite{Joel:Dynamic_FAP}.
+Particularmente, se han aplicado tanto en problemas del dominio continuo~\cite{glover2005handbook} como en el dominio discreto~\cite{Joel:Dynamic_FAP}.
 %
-Especialmente, los \EAS{} son aplicados para resolver problemas complejos cuyo enfoque determinístico es complicado o imposible~\cite{chakraborty2008advances}.
+En general, los \EAS{} han sido especialmente exitosos en la resolución de problemas complejos en los que los enfoque exactos
+no han podido ser usados, como por ejemplo, en problemas NP-completos con espacios de búsqueda grandes~\cite{chakraborty2008advances}.
 % 
-Un problema de optimización puede ser definido de forma general como se indica en la ecuación (\ref{eqn:Model_general}).
+Para el ámbito de este artículos, se puede definir un problema de optimización como se indica en la ecuación (\ref{eqn:Model_general}).
 
 \begin{equation}
  \label{eqn:Model_general}
@@ -17,47 +19,56 @@ Un problema de optimización puede ser definido de forma general como se indica 
    \end{split}
 \end{equation}
 
-donde $D$ es la dimensión correspondiente al espacio de las variables, $\Omega$ es el espacio factible cuyo límite inferior es $x_i^{(L)}$ y límite superior es $x_i^{(U)}$, $\vec{X}$ es un vector compuesto por $D$ variables de decisión $\vec{X} = [x_1, x_2, ..., x_D]$, además cada solución es evaluada mediante el uso de la función $F : \Omega \rightarrow R^M$, la cual consiste de $M$ funciones objetivo y $R^M$ es conocido como el espacio objetivo, a no se que se indique lo contrario únicamente se considera una función objetivo.
-%
-Actualmente, los \EAS{} son probablemente conocidos como una de las metaheurísticas más conocidas~\cite{glover2005handbook}, y a pesar de su éxito, presentan la desventaja de ser configurados ante problemas nuevos.
-%
-Estos problemas implican la toma de varias decisiones difíciles.
-%
-Particularmente, como parte del diseño de un \EA{}, estan presentes varios aspectos relevantes con la meta de obtener soluciones de calidad.
-%
-Esto es alcanzado al inducir un balance adecuado entre exploración e intensificación~\cite{herrera1996adaptation}.
-%
-Sin embargo, no siempre se comprenden las implicaciones de mantener un grado de diversidad adecuado para alcanzar este balance, muchas veces esto se debe a que existen varios componentes específicos los cuales afectan a la exploración e intensificación~\cite{Crepinsek:13}
-%
+donde $\vec{X}$ es un vector compuesto por $D$ variables de decisión $\vec{X} = [x_1, x_2, ..., x_D]$, $D$ es la dimensión correspondiente al espacio de las variables de decisión, $\Omega$ es el espacio factible cuyo límite inferior es $x_i^{(L)}$ y límite superior es $x_i^{(U)}$, y en la que cada solución es evaluada mediante el uso de la función $F : \Omega \rightarrow R^M$, la cual consiste de $M$ funciones objetivo, siendo $R^M$ conocido como el espacio objetivo.
 
-Desde los inicios de los \EAS{} se han observado problemas de convegencia, que por ende son considerados como una desventaja muy importante\cite{Crepinsek:13}.
+Actualmente, los \EAS{} son una de las metaheurísticas más conocidas~\cite{glover2005handbook}, y a pesar de su éxito y uso muy extendido, adaptar los mismos
+a nuevos problemas implican la toma de varias decisiones de diseño complejas.
 %
-Particularmente, la convergencia prematura es originada cuando todos los miembros de la población están ubicados en una parte reducida del espacio de búsqueda, esta región es distinta a la región óptima y además los componentes seleccionados no son suficientes para escapar de esta región.
+Particularmente, a la hora de diseñar de forma apropiada un \EA{}, se ha visto que es muy importante conseguir
+inducir un balance adecuado entre la exploración e intensificación del espacio de búsqueda~\cite{herrera1996adaptation}.
 %
-En base a esto, se han desarrollado varias estrategias para aliviar tales inconvenientes.
+Nótese en este punto que, de manera informal, la exploración del espacio de búsqueda consiste en detectar regiones del espacio de búsqueda que contiene soluciones
+promisorias, y la explotación consiste en dada una de esas regiones, realizar una búsqueda más profunda para encontrar soluciones más refinadas.
 %
+Cuando en los algoritmos evolutivos todas o casi todas las soluciones se encuentran en diferentes regiones, se produce una búsqueda explorativa, mientras que cuando 
+casi todas las soluciones están en una o en unas pocas regiones, se produce una búsqueda intensificadora.
+%
+Uno de los problemas a la hora de diseñar los algoritmos evolutivos, es que en muchos casos, no se comprenden todas las implicaciones que los diferentes componentes
+tienen sobre el proceso de mantener la diversidad y sobre el balanceo entre exploración e intensificación~\cite{Crepinsek:13}, por lo que analizar y rediseñar en base
+a lo que está ocurriendo en este aspecto, es parte del proceso de diseño de los algoritmos evolutivos.
 
+Relacionado con lo anterior, aparece el concepto de convergencia prematura~\cite{Crepinsek:13}.
+%
+Se dice que un algoritmo converge de forma prematura cuando antes de alcanzar el criterio de paro, todas las soluciones están en una zona muy próxima.
+%
+En este sentido, a partir de ese momento es muy difícil seguir mejorando las soluciones, por lo que si esto ocurre se deben rediseñar algunos aspectos
+para preservar una mayor diversidad.
+%
+Sin embargo, si la población es muy diversa durante todo el proceso de búsqueda, no se podría alcanzar un grado adecuado de intensificación y por lo tanto 
+se tendría una convergencia lenta que posiblemente también resultaría en soluciones de baja calidad.
+%
+Por esta razón, Mahfoud~\cite{dasgupta2013evolutionary} utilizó el concepto de diversidad útil para referirse a la cantidad de diversidad necesaria para generar 
+soluciones de alta calidad.
 
-A través de varios estudios se ha revelado que mantener una populación diversa es un requisito previo para evitar la convergencia prematura~\cite{Crepinsek:13}.
+En relación al diseño de los \EAS{}, se puede observar que en sus inicios, la mayoría de enfoques fueron esquemas generacionales~\cite{de2006evolutionary} en los 
+que las soluciones hijas reemplazaban a la población anterior sin importar su respectiva aptitud o grado de diversidad.
 %
-Sin embargo, si la población es muy diversa no se podría alcanzar un grado adecuado de intensificación y por lo tanto se tendría una convergencia lenta, esto en consecuencia generaría soluciones de baja calidad.
+En estos esquemas iniciales se usaba la selección de padres para mover el proceso de búsqueda hacia las regiones más prometedoras.
 %
-Por esta razón, Mahfoud~\cite{dasgupta2013evolutionary} utilizó el concepto de diversidad útil, donde se refiere a la cantidad de diversidad necesaria para generar soluciones de calidad.
+En estas estrategias, con el propósito de alcanzar un balance adecuado entre exploración e intensificación, se desarrollaron muchas estrategias de selección de padres
+que permitían centrarse con mayor o menor velocidad en las mejores zonas encontradas.
 %
+Además, se desarrollaron otras alternativas en las cuales se modificaba la estrategia de variación~\cite{Joel:herrera2003fuzzy} y/o el modelo poblacional~\cite{alba2005parallel}.
+%
+En la mayor parte de \EAS{} más recientes, se introduce además la fase de reemplazamiento~\cite{eiben2003introduction}, es decir, la nueva población no tiene que formarse exclusivamente con los hijos,
+sino que se usan mecanismos para combinar la población anterior con la población hija y determinar así los nuevos sobrevivientes.
+%
+En este contexto, se suele introducir elitismo en los algoritmos, es decir, el mejor individuo encontrado sobrevivirá a la siguiente generación~\cite{Joel:CHC}.
+%
+De esta forma, ahora también se puede modificar esta última fase para conseguir el balanceo apropiado entre exploración e intensificación.
 
-En relación al diseño de los \EAS{}, se observa que en sus inicios, la mayoría de enfoques fueron generacionales~\cite{de2006evolutionary}, es decir que las soluciones hijo reemplazaban a la población sin importar su respectiva aptitud.
-%
-En estos esquemas iniciales se utilizó la selección de padres para influir al proceso de búsqueda hacia las regiones más prometedoras
-%
-En resultado y con el propósito de alcanzar un balance entre exploración e intensificación, se desarrollaron muchas estrategias basadas en las selección de padres.
-%
-Además se desarrollaron otras alternativas en las cuales se modificaba la estrategia de variación~\cite{Joel:herrera2003fuzzy} y/o un modelo poblacional~\cite{alba2005parallel}.
-%
-Sin embargo en los \EAS{} más recientes se reemplaza la ``reproducción con énfasis'' o al menos es combinado con el principio de ``el sobreviviente más apto''~\cite{Joel:CHC}.
-%
-Específicamente, estos algoritmos utilizan una fase de selección adicional (en lugar de reemplazar a la población anterior), esto se realiza con el propósito de elegir a los individuos que sobrevivirán a la siguiente generación~\cite{eiben2003introduction}, particularmente a este procediemento se le conoce como la estrategia de reemplazo o selección del sobreviviente.
-%
-De forma general, los trabajos que se presentan en este capítulo están basados en la hipótesis de que se puede inducir un balance entre exploración e intensificación al considerar un mecanismo para preservar la diversidad de forma explícita que en consecuencia se producirán soluciones de calidad al considerar ejecuciones a largo plazo~\cite{segura2016novel}.
+En los últimos años, algunos de los trabajos más exitosos en el área de evitación de convergencia prematura se han basado en considerar el criterio de parada y evaluaciones
+realizadas para balancear entre exploración e intensificación~\cite{segura2016novel}.
 %
 Esto se fundamenta en las fases de variación y selección de padres, estas fases realizan decisiones que podrían afectar a las generaciones actuales ya que la elección de los sobrevivientes influye  de forma significativa a todo proceso de optimización.
 %
