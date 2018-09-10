@@ -1,14 +1,15 @@
-Los Algoritmos Evolutivos (Evolutionary Algorithms - \EAS{}) son considerados como uno de los enfoques con mayor eficacia para resolver distintas categorías de 
+Los Algoritmos Evolutivos (Evolutionary Algorithms --- \EAS{}) son considerados como uno de los enfoques con mayor eficacia para resolver distintas categorías de 
 problemas de optimización.
 %
-Se han desarrollado diversas variantes que han sido aplicadas en múltiples campos, como es en transporte, economía o ingeniería.
+Se han desarrollado diversas variantes que han sido aplicadas en múltiples campos, como en transporte, economía o ingeniería.
 %
-Particularmente, se han aplicado tanto en problemas del dominio continuo~\cite{glover2005handbook} como en el dominio discreto~\cite{Joel:Dynamic_FAP}.
+Particularmente, se han aplicado tanto en problemas del dominio continuo~\cite{glover2005handbook} como del dominio discreto~\cite{Joel:Dynamic_FAP}.
 %
 En general, los \EAS{} han sido especialmente exitosos en la resolución de problemas complejos en los que los enfoque exactos
-no han podido ser usados, como por ejemplo, en problemas NP-completos con espacios de búsqueda grandes~\cite{chakraborty2008advances}.
+no son actualmente aplicables, como por ejemplo, en problemas NP-completos con espacios de búsqueda grandes~\cite{chakraborty2008advances}.
 % 
-Para el ámbito de este artículos, se puede definir un problema de optimización como se indica en la ecuación (\ref{eqn:Model_general}).
+Para el ámbito de este artículo se hace uso de problemas continuos mono-objetivo y multi-objetivo con restricciones de caja que se pueden definir 
+tal y como se indica en la ecuación (\ref{eqn:Model_general}).
 
 \begin{equation}
  \label{eqn:Model_general}
@@ -19,48 +20,58 @@ Para el ámbito de este artículos, se puede definir un problema de optimizació
    \end{split}
 \end{equation}
 
-donde $\vec{X}$ es un vector compuesto por $D$ variables de decisión $\vec{X} = [x_1, x_2, ..., x_D]$, $D$ es la dimensión correspondiente al espacio de las variables de decisión, $\Omega$ es el espacio factible cuyo límite inferior es $x_i^{(L)}$ y límite superior es $x_i^{(U)}$, y en la que cada solución es evaluada mediante el uso de la función $F : \Omega \rightarrow R^M$, la cual consiste de $M$ funciones objetivo, siendo $R^M$ conocido como el espacio objetivo.
+donde $\vec{X}$ es un vector compuesto por $D$ variables continuas de decisión $\vec{X} = [x_1, x_2, ..., x_D]$, 
+$D$ es la dimensión correspondiente al espacio de las variables de decisión, 
+$\Omega$ es el espacio factible cuyo límite inferior es $x_i^{(L)}$ y límite superior es $x_i^{(U)}$, y en la que cada solución es evaluada mediante el uso de la función $F : \Omega \rightarrow R^M$, la cual consiste de $M$ funciones objetivo, siendo $R^M$ conocido como el espacio objetivo.
 
-Actualmente, los \EAS{} son una de las metaheurísticas más conocidas~\cite{glover2005handbook}, y a pesar de su éxito y uso muy extendido, adaptar los mismos
-a nuevos problemas implican la toma de varias decisiones de diseño complejas.
+Actualmente, los \EAS{} son una de las metaheurísticas más conocidas~\cite{glover2005handbook}, pero a pesar de su éxito y de su uso tan extendido, adaptar los mismos
+a nuevos problemas implica la toma de varias decisiones de diseño complejas.
 %
 Particularmente, a la hora de diseñar de forma apropiada un \EA{}, se ha visto que es muy importante conseguir
-inducir un balance adecuado entre la exploración e intensificación del espacio de búsqueda~\cite{herrera1996adaptation}.
+inducir un balanceo adecuado entre la exploración e intensificación del espacio de búsqueda~\cite{herrera1996adaptation}.
 %
 Nótese en este punto que, de manera informal, la exploración del espacio de búsqueda consiste en detectar regiones del espacio de búsqueda que contiene soluciones
-promisorias, y la explotación consiste en dada una de esas regiones, realizar una búsqueda más profunda para encontrar soluciones más refinadas.
+promisorias, y la explotación consiste en dada una de esas regiones, realizar una búsqueda más profunda para encontrar soluciones más refinadas y de mayor calidad.
 %
-Cuando en los algoritmos evolutivos todas o casi todas las soluciones se encuentran en diferentes regiones, se produce una búsqueda explorativa, mientras que cuando 
-casi todas las soluciones están en una o en unas pocas regiones, se produce una búsqueda intensificadora.
+Cuando en los algoritmos evolutivos todas o casi todas las soluciones están en regiones distantes --- alta diversidad --- se produce habitualmente una búsqueda explorativa, 
+es decir, muchas de las nuevas soluciones evaluadas serán distantes a las ya evaluadas anteriormente.
 %
-Uno de los problemas a la hora de diseñar los algoritmos evolutivos, es que en muchos casos, no se comprenden todas las implicaciones que los diferentes componentes
-tienen sobre el proceso de mantener la diversidad y sobre el balanceo entre exploración e intensificación~\cite{Crepinsek:13}, por lo que analizar y rediseñar en base
-a lo que está ocurriendo en este aspecto, es parte del proceso de diseño de los algoritmos evolutivos.
+Sin embargo, cuando casi todas las soluciones están en una o en unas pocas regiones, se produce una búsqueda intensificadora.
+%
+Uno de los problemas a la hora de diseñar los algoritmos evolutivos es que en muchos casos no se comprenden todas las implicaciones que los diferentes componentes
+tienen sobre el mantenimiento de la diversidad de la población y por tanto, sobre el balanceo entre exploración e intensificación~\cite{Crepinsek:13}.
+%
+Por ello, analizar el comportamiento y rediseñar en base a lo que está ocurriendo en este aspecto, es parte del proceso de diseño de los \EAS{}.
 
 Relacionado con lo anterior, aparece el concepto de convergencia prematura~\cite{Crepinsek:13}.
 %
-Se dice que un algoritmo converge de forma prematura cuando antes de alcanzar el criterio de paro, todas las soluciones están en una zona muy próxima.
+Se dice que un algoritmo converge de forma prematura cuando mucho antes de alcanzar el criterio de paro, todas las soluciones están en una zona muy pequeña del espacio de búsqueda.
 %
-En este sentido, a partir de ese momento es muy difícil seguir mejorando las soluciones, por lo que si esto ocurre se deben rediseñar algunos aspectos
+En este sentido, a partir de ese momento es difícil seguir mejorando las soluciones de forma significativa ya que con alta probabilidad sólo se muestrearan soluciones de dicha
+región.
+%
+Por ello, es importante detectar si esta ocurre y en tal caso rediseñar algunos aspectos del \EA{}
 para preservar una mayor diversidad.
 %
-Sin embargo, si la población es muy diversa durante todo el proceso de búsqueda, no se podría alcanzar un grado adecuado de intensificación y por lo tanto 
+Sin embargo, si la población es muy diversa durante todo el proceso de búsqueda, se podría no alcanzar un grado adecuado de intensificación y por lo tanto 
 se tendría una convergencia lenta que posiblemente también resultaría en soluciones de baja calidad.
 %
 Por esta razón, Mahfoud~\cite{dasgupta2013evolutionary} utilizó el concepto de diversidad útil para referirse a la cantidad de diversidad necesaria para generar 
 soluciones de alta calidad.
 
-En relación al diseño de los \EAS{}, se puede observar que en sus inicios, la mayoría de enfoques fueron esquemas generacionales~\cite{de2006evolutionary} en los 
+En relación al diseño de \EAS{}, se puede observar que en sus inicios la mayoría de enfoques fueron esquemas generacionales~\cite{de2006evolutionary} en los 
 que las soluciones hijas reemplazaban a la población anterior sin importar su respectiva aptitud o grado de diversidad.
 %
-En estos esquemas iniciales se usaba la selección de padres para mover el proceso de búsqueda hacia las regiones más prometedoras.
+En estos esquemas iniciales se usaba la selección de padres para promover que se muestreara con mayor probabilidad las regiones más promisorias encontradas. 
 %
-En estas estrategias, con el propósito de alcanzar un balance adecuado entre exploración e intensificación, se desarrollaron muchas estrategias de selección de padres
-que permitían centrarse con mayor o menor velocidad en las mejores zonas encontradas.
+Por ello, con el propósito de alcanzar un balanceo adecuado entre exploración e intensificación, se desarrollaron muchas estrategias de selección de padres
+que permitían centrarse con mayor o menor velocidad en las regiones promisorias.
 %
-Además, se desarrollaron otras alternativas en las cuales se modificaba la estrategia de variación~\cite{Joel:herrera2003fuzzy} y/o el modelo poblacional~\cite{alba2005parallel}.
+Además, se desarrollaron alternativas que modifican otros aspectos como la estrategia de variación~\cite{Joel:herrera2003fuzzy} y/o 
+el modelo poblacional~\cite{alba2005parallel}.
 %
-En la mayor parte de \EAS{} más recientes, se introduce además la fase de reemplazamiento~\cite{eiben2003introduction}, es decir, la nueva población no tiene que formarse exclusivamente con los hijos,
+En la mayor parte de \EAS{} más recientes, se introduce además una fase de reemplazamiento~\cite{eiben2003introduction} por lo que
+la nueva población no tiene que formarse exclusivamente con los hijos,
 sino que se usan mecanismos para combinar la población anterior con la población hija y determinar así los nuevos sobrevivientes.
 %
 En este contexto, se suele introducir elitismo en los algoritmos, es decir, el mejor individuo encontrado sobrevivirá a la siguiente generación~\cite{Joel:CHC}.
@@ -70,26 +81,34 @@ De esta forma, ahora también se puede modificar esta última fase para consegui
 En los últimos años, algunos de los trabajos más exitosos en el área de evitación de convergencia prematura se han basado en considerar el criterio de parada y evaluaciones
 realizadas para balancear entre exploración e intensificación~\cite{segura2016novel}.
 %
-Esto se fundamenta en las fases de variación y selección de padres, estas fases realizan decisiones que podrían afectar a las generaciones actuales ya que la elección de los sobrevivientes influye  de forma significativa a todo proceso de optimización.
+Esto se fundamenta en que dado que el grado entre exploración e intensificación debería variar a lo largo de la ejecución, tiene sentido que las decisiones tomadas por
+las componentes varíen en función del instante de ejecución.
 %
-Especialmente, este mecanismo se enfoca en seleccionar a las soluciones que sobreviven en la siguiente generación, por lo tanto la fase de reemplazo puede actuar adecuadamente evitando la selección de los individuos no deseados que provienen de las fases de variación y selección de padres.
-
 %
-Particularmente, en este capítulo se describen dos aportaciones, la primera está enfocada al área de \textit{Evolución Diferencial} (Differential Evolution - \DE{}),esta primera aportación es nombrada \DE{} \textit{Mejorado con Mantenimiento de Diversidad} (\DE{} with Enhanced Diversity Maintenance \DEEDM{}) e integra una estrategia de reemplazo que mantiene un grado de diversidad de forma explícita considerando además una población elite.
+Particularmente, en este capítulo se describen dos aportaciones que pertenecen a este grupo de técnicas.
 %
-En la fase de reemplazo que incorpora el \DEEDM{} se promueve un balance entre exploración e intensificación de forma dinámica donde es considerando el criterio de paro.
+La primera, que se aplica en el área de \textit{Evolución Diferencial} (Differential Evolution --- \DE{}), recibe el nombre de \DE{} \textit{Mejorado con Mantenimiento de Diversidad} 
+(\DE{} with Enhanced Diversity Maintenance --- \DEEDM{}) e integra una estrategia de reemplazo que maneja la diversidad de forma explícita con una población elite.
 %
-De esta forma, en las primeras etapas se induce un grado de exploración ya que los individuos sobrevivientes son diversificados, posteriormente conforme transcurren las generaciones y de forma gradual se induce un grado de intensificación.
+En la fase de reemplazo que incorpora el \DEEDM{} se promueve un balanceo dinámico entre exploración e intensificación, teniendo en cuenta para ello el criterio de paro
+y las evaluaciones transcurridas para la toma de decisiones.
+%
+Concretamente, en las primeras etapas se induce un grado de exploración alto ya que los individuos sobrevivientes son diversificados, y posteriormente conforme transcurren las 
+generaciones se induce un mayor grado de intensificación.
 % 
-La segunda aportación está enfocada a los operadores de cruce, particularmente se analizan los componentes que conforman a \textit{El Operador de Cruce basado en Simulación Binaria} (Simulated Binary Crossover - SBX), y además se propone una variante \DSBX{} el cual es considerado como una modificación del operador \SBX{} cuyo comportamiento interno es alterado de forma dinámica con el propósito de alcanzar un balance.
+La segunda aportación está enfocada a la extensión de operadores de cruce.
 %
+Particularmente se analizan los componentes que conforman a \textit{El Operador de Cruce basado en Simulación Binaria} (Simulated Binary Crossover - SBX), 
+y se propone una variante dinámica (\DSBX{}) en la que el comportamiento interno es alterado en base al criterio de paro y evaluaciones transcurridas.
+
 El resto de este capítulo está organizado de la siguiente forma.
 %
-Inicialmente, son revisadas algunas taxonomías que están basadas en los componentes internos utilizados en los \EAS{}, además se mencionan algunas de las estrategias más populares para mantener la diversidad.
+Inicialmente, se revisan algunos de los trabajos más populares que se han propuesto para promover el mantenimiento de diversidad, exponiendo una de las clasificaciones más extendidas.
 %
-Posteriormente se describe y valida experimentalmente la primera aportación basada en evolución diferencial donde es considerada la diversidad de forma explícita y además el criterio de paro.
+Posteriormente, se describe y valida experimentalmente la aportación basada en evolución diferencial donde se considera la diversidad de forma explícita en la fase de reemplazamiento.
 %
-Siguiendo esta misma línea se lleva a cabo un análisis del operador de cruce \SBX{} y se mencionan algunas de sus implicaciones con la diversidad, además en base a una validación experimental se propone una variante dinámica en la cual se considera el criterio de paro.
+Siguiendo esta misma línea se lleva a cabo un análisis del operador de cruce \SBX{} mencionando algunas de sus implicaciones en la diversidad, 
+y se expone en base a ello una variante dinámica que se valida experimentalmente con problemas multi-objetivo.
 %
 Finalmente, se exponen las conclusiones y trabajo futuros trazados en base a los resultados obtenidos.
 %
