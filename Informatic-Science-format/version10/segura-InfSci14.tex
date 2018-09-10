@@ -94,7 +94,7 @@
 
 \begin{frontmatter}
 
-\title{Importancie de la Diversidad en el Diseño de Algoritmos Evolutivos}
+\title{Importancia de la Diversidad en el Diseño de Algoritmos Evolutivos}
 %\tnotetext[mytitlenote]{Fully documented templates are available in the elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
 
 %% or include affiliations in footnotes:
@@ -109,30 +109,36 @@
 \address[label1]{Area of Computer Science, Centre for Research in Mathematics (CIMAT), Callej\'on Jalisco s/n, Mineral de Valenciana, Guanajuato, Guanajuato 36240, Mexico}
 
 \begin{abstract}
-La convergencia prematura es uno de las mayores desventajas que afectan el rendimiento de los algoritmos evolutivos.
+La convergencia prematura es una de las mayores problemáticas que afectan al rendimiento de las metaheurísticas poblacionales por lo que
+a la hora de diseñar algoritmos evolutivos es un aspecto a tener en cuenta.
 %
-Mantener un grado de diversidad de forma explícito es una alternativa para lidiar con este problema.
+En este capítulo se enumeran diferentes técnicas que se han propuesto a lo largo de las últimas décadas para lidiar con este problema.
 %
-En este capítulo se realizan dos aportaciones para promover la diversidad en el espacio de las variables.
+Una de las alternativas más exitosas consiste en considerar los efectos que los diferentes componentes del algoritmo evolutivo
+tienen sobre la diversidad mantenida en la población y en base a ello rediseñarlos para modificar su comportamiento de forma dinámica.
 %
-En la primera en el ámbito de evolución diferencial propone una estrategia de reemplazo que combina una población elite y un mecanismo para mantener la diversidad de forma explícito.
+Con el objetivo de ilustrar de una forma detallada este último grupo, se discuten dos mecanismos que sirven para promover la diversidad en el espacio de las variables.
 %
-La novedad de esta primera propuesta es el uso de un balanceo dinámico entre exploración e intensificación en las distintas etapas de optimización.
+El primero se aplica en el ámbito de evolución diferencial y consiste en una estrategia de reemplazo que combina una población élite con un mecanismo para mantener 
+la diversidad de forma explícita.
 %
-La validación experimental es llevada a cabo con varios problemas de prueba propuestos en los problemas del Congreso de Cómputo Evolutivo.
+%La novedad de esta primera propuesta es el uso de un balanceo dinámico entre exploración e intensificación en las distintas etapas de optimización.
 %
-Por otra parte, en la segunda aportación enfocado a los operadores de cruce, se analiza el Operador de Cruce basado en Simulación Binaria (Simulated Binary Crossover - SBX).
+%La validación experimental es llevada a cabo con varios problemas de prueba propuestos en problemas de concurso del \textit{IEEE Congress on Evolutionary Computation}.
 %
-Además, se proponen extensiones del SBX donde se consideran modificaciones de forma dinámica donde es considerado el criterio de paro.
+El segundo caso está enfocado a los operadores de cruce, y concretamente se analiza y extiende el Operador de Cruce basado en Simulación 
+Binaria (Simulated Binary Crossover - SBX).
 %
-Esto con el propósito de inducir un cambio gradual entre exploración a intensificación en el proceso de búsqueda.
+En las extensiones se considera el criterio de paro para modificar de forma dinámica el comportamiento del operador con el propósito de inducir un cambio gradual 
+entre exploración a intensificación en el proceso de búsqueda.
 %
-La validación experimental se realizó con los problemas de prueba mas populares del ámbito multi-objetivo, donde se demostró una mejora significativa.
+La validación experimental se realizó con algunos de los problemas de prueba más populares del ámbito mono-objetivo y multi-objetivo, demostrándose mejoras significativas
+en ambos casos.
 %
 \end{abstract}
 
 \begin{keyword}
-Diversidad \sep Multi-objetivo \sep Convergencia Prematura \sep Evolución Diferencial
+Diversidad \sep Convergencia Prematura \sep Evolución Diferencial \sep Optimización Multi-objetivo 
 \end{keyword}
 
 \end{frontmatter}
