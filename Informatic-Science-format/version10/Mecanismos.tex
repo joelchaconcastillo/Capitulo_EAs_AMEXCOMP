@@ -13,7 +13,7 @@ la estrategia de reemplazamiento.
 Finalmente, dado que en este capítulo se extiende \DE{}, se revisan también los trabajos de esta área que tienen una relación
 significativa con el manejo de diversidad.
 %
-Se invita a los lectores que requieran conocer estos mecanismos con más detalle a consultar~\cite{Joel:Crepinsek} así como los artículos
+Se invita a los lectores que requieran conocer estos mecanismos con más detalle consultar~\cite{Joel:Crepinsek} así como los artículos
 específicos en que cada método es propuesto.
 
 \subsection{Clasificaciones de mecanismo para promover la diversidad}
@@ -33,18 +33,17 @@ hasta conseguir el comportamiento adecuado.
 Los esquemas uni-proceso son mucho más habituales actualmente~\cite{Crepinsek:13}, y en particular las dos propuestas incluidas en este capítulo son mecanismos
 uni-proceso.
 
-Extendiendo a la anterior, se propuso una clasificación más específica~\cite{Crepinsek:13}, en la que se tiene en cuenta cuál es la componente 
-que se cambia para categorizar a los métodos.
+Extendiendo a lo anterior, se propuso una clasificación más específica~\cite{Crepinsek:13}, en la que se tiene en cuenta cuál es la componente 
+que se cambia, y así categorizar cada método.
 %
 En este sentido, los más populares son los siguientes:
 
 \begin{itemize}
 \item \textbf{Enfoques basados en la selección}: son los más clásicos y se basan en cambiar la presión de selección que se produce hacia las zonas promisorias a la hora de realizar
 la selección de padres.
-\item \textbf{Enfoques basados en población}: se modifica el modelo poblacional, utilizando algunas técnicas como hacer variar el tamaño de la población de forma
-dinámica, eliminar individuos duplicados, utilizar técnicas de infusión o estblecer un mecanismo de islas con migraciones.
-\item \textbf{Enfoques basados en el cruce y/o mutación}: se basan en rediseñar los operadores de cruce y/o mutación habitualmente teniendo en cuenta el problema específico
-que se está resolviendo, en aplicar restricciones sobre el emparejamiento o en incluir operadores disruptivos que podrían ser utilizado sólo en ciertos instantes del proceso
+\item \textbf{Enfoques basados en población}: se modifica el modelo poblacional, utilizando algunas técnicas como variar el tamaño de la población de forma
+dinámica, eliminar individuos duplicados, utilizar técnicas de infusión o establecer un estrategia de islas con migraciones.
+\item \textbf{Enfoques basados en el cruce y/o mutación}: se basan en rediseñar los operadores de cruce y/o mutación, éstos habitualmente tienen en cuenta un problema específico a resolver. Por lo regular aplican restricciones sobre el emparejamiento y/o incluyen operadores disruptivos que podrían ser utilizados sólo en ciertos instantes del proceso
 de optimización.
 \end{itemize}
 
@@ -64,7 +63,7 @@ Sin embargo, en base a varios estudios teóricos y experimentales se observó qu
 cuando se quieren realizar ejecuciones a largo plazo, ya que se requerirían poblaciones excesivamente grandes para mantener un grado adecuado de diversidad.
 
 Otra alternativa fue modificar los modelos poblaciones, encontrando en este grupo los esquemas basados en islas~\cite{alba2005parallel}, los celulares
-o más recientemente los basados en clústeres~\cite{gao2014cluster}.
+o más recientemente los basados en \textit{agrupaciones o clústeres}~\cite{gao2014cluster}.
 %
 La idea de introducir restricciones en el emparejamiento, principalmente en base a la ubicación de los individuos en el espacio de búsqueda también
 ha sido bastante exitosa aunque controlar los mismos para obtener el balanceo apropiado ante diferentes criterios de parada
@@ -87,7 +86,7 @@ En algunos casos esto se consigue usando distintos valores en los parámetros pa
 mientras que en otros casos se hacen cambios más drásticos y se consideran varios operadores con distintas propiedades~\cite{lobo2007parameter}.
 %
 También existen mecanismos adaptativos que usan una memoria para almacenar información histórica sobre los efectos de la variación
-y en base a ello irla modificando~\cite{yuen2009genetic}.
+y en base a ello ir modificándola~\cite{yuen2009genetic}.
 %
 Cabe destacar que en la mayor parte de estos esquemas no se considera la diversidad de forma directa, sino que sólo se considera para analizar el comportamiento
 y en base a ello rediseñar.
@@ -102,17 +101,17 @@ En base a esto se han propuesto diversas estrategias para establecer los puntos 
 Estos esquemas se implementan de forma muy sencilla y en algunos casos han proporcionado mejoras significativas~\cite{koumousis2006saw} por lo que
 es un método a tener en cuenta, al menos como alternativa inicial.
 %
-Es común comibnar las estrategias basadas en reinicio con alguna de las técnicas anteriores, ya que las anteriores están basadas en mantener
+Es común combinar las estrategias basadas en reinicio con alguna de las técnicas anteriores, ya que las anteriores están basadas en mantener
 la diversidad, mientras que en esta última el objetivo es recuperar la diversidad.
 
 \subsection{Esquemas de reemplazamiento basados en diversidad}
 
-Recientemente se han propuesto diversos de mecanismos que modifican la fase de reemplazo para preservar la diversidad.
+Recientemente se han propuesto diversos mecanismos que modifican la fase de reemplazo para preservar la diversidad.
 %
 La idea principal de estos esquemas es inducir un grado de exploración adecuado diversificando a los individuos sobrevivientes,
 de forma que los operadores de reproducción puedan generar nuevas soluciones en diferentes regiones en las siguientes generaciones.
 %
-El principal principio en que se sustentan estos métodos es que los operadores de cruce tienen efecto de exploración al 
+Estos métodos están basados en el principio de que los operadores de cruce tienen un efecto de exploración al 
 considerar individuos distantes e intensificación al considerar individuos próximos~\cite{eiben1998evolutionary}.
 
 El esquema de pre-selección propuesto por Cavicchio~\cite{grefenstette1986optimization} es uno de los primeros estudios que utilizan 
@@ -123,6 +122,43 @@ en los últimos años~\cite{mahfoud1992crowding, mengshoel2014adaptive}.
 %
 El principio del crowding se basa en que los nuevos individuos que entren en la población sustituyan a individuos similares de generaciones anteriores, y en base
 a este principio, se han formulado diversas implementaciones.
+
+En esta misma línea, se han propuesto otras estrategias de reemplazo con el propósito de promover la diversidad.
+%
+Uno de los procedimientos más populares es la \textit{Estrategia de Limpieza} (Clearing Strategy - CLR)~\cite{lozano2008replacement}.
+%
+En el procedimiento CLR los mejores individuos de cada nicho son preservados e incluidos en la población de la siguiente generación.
+%
+Es importante notar el inconveniente de este procedimiento al detectar muchos nichos ya que esto podría afectar la inmovilización de la población.
+%
+En base a esto, Petrowski~\cite{petrowski1996clearing} propuso únicamente seleccionar a los mejores individuos de cada nicho cuya aptitud sea mejor que la media de la población.
+%
+
+
+Adicionalmente, otros métodos consideran funciones compuestas las cuales combinan la aptitud y diversidad.
+%
+Sin embargo, es complejo construir una función compuesta ya que las dos mediciones podrían no ser totalmente compatibles, por lo tanto este tipo de métodos dependen de cada problema.
+%
+Un ejemplo es el algoritmo de combinación (COMB)~\cite{vidal2013hybrid} donde los individuos son ordenados y categorizados en base a su aptitud y contribución a la diversidad.
+%
+La principal desventaja del COMB es que requiere dos parámetros de usuario.
+%
+Otra alternativa entre las estrategias de reemplazo es el procedimiento \textit{Reemplazamiento de Diversidad Basado en la Peor Contribución} (Contribution of Diversity/Replace Worst - CD/RW)~\cite{lozano2008replacement}.
+%
+En el método CD/RW un nuevo individuo reemplaza a un miembro de la población cuyo rendimiento sea peor tanto en aptitud como en contribución a la diversidad.
+%
+En caso de no encontrar un peor individuo bajo estos dos criterios, se procede a reemplazar al peor individuo en la población considerando únicamente a la aptitud.
+%
+Una última alternativa se basa en considerar explícitamente un objetivo como la diversidad de la población y aplicar un esquema de optimización multi-objetivo~\cite{bui2005multiobjective}~\cite{mouret2011novelty}.
+%
+Estos enfoques son identificados como algoritmos multi-objetivo basados en diversidad.
+%
+Existen varias estrategias para calcular al objetivo auxiliar~\cite{segura2013using}.
+%
+Uno de los enfoques más populares consiste en calcular la contribución a la diversidad de cada individuo en base a la \textit{Distancia al Vecino más Cercano} (Distance to the Closest Neighbor - DCN)~\cite{segura2016novel}.
+%
+Así, el objetivo auxiliar es calculado en base a la menor distancia entre un individuo dado y al miembro más cercano en la población.
+%
 
 
 \subsection{Diversidad en evolución diferencial}
@@ -136,10 +172,10 @@ Dado que en el área se conoce al menos de manera general, las implicaciones que
 en estimar de forma teórica cuáles deben ser los parámetros adecuados para que se produzca cierto tipo de comportamiento~\cite{zaharie2003control}.
 %
 Otros autores han estudiado el efecto que tiene la norma de los vectores diferencia sobre la mutación~\cite{montgomery2009differential} y en base
-a ello se han propuesto mecanismos que prohiben ciertos movimientos que pueden resultar perjediciales~\cite{montgomery2012simple}.
+a ello se han propuesto mecanismos que prohíben ciertos movimientos que pueden resultar perjudiciales~\cite{montgomery2012simple}.
 %
-En este último estudio, el tipo de movimientos aceptados varía a lo largo de la ejecución, descartando en concretos movimiento con norma
-menores a un umbral que es decrementado conforme transcurren las generaciones.
+En este último estudio, el tipo de movimientos aceptados varía a lo largo de la ejecución, descartando a los movimientos cuyos desplazamientos sean menor
+a un umbral el cual es decrementado conforme transcurren las generaciones.
 %
 Además, se han propuesto otras formas para establecer los movimientos aceptados~\cite{bolufe2013differential}.
 
@@ -160,7 +196,7 @@ Este esquema se ha extendido para incluir diferentes esquemas de perturbación~\
 Es interesante hacer notar que las variantes de \DE{} que alcanzaron los primeros lugares en varias competencias de optimización durante los últimos años
 no consideran estas modificaciones, y además estas variantes no han sido incorporadas en las herramientas de optimización más populares.
 %
-Esto se puede debe a que muchos de los concursos están orientados a obtener resultados en un número de evaluaciones bastante limitado en lugar de a largo plazo,
+Esto puede deberse a que muchos de los concursos están orientados a obtener resultados en un número de evaluaciones bastante limitado en lugar de a largo plazo,
 que es el ámbito en el que más beneficios suelen dar los mecanismos de control de diversidad.
 
 
