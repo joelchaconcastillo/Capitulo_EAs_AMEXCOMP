@@ -1,49 +1,43 @@
-La convergencia prematura una de las debilidades más importantes de los \EAS{}.
+%%%%La convergencia prematura es una de las debilidades más importantes de los \EAS{}.
 %
-Se ha demostrado que este problema se puede lidiar por medio de un balance adecuado entre exploración e intensificación.
+Una de las formas de lidiar con este problema consiste en inducir un balanceo adecuado entre exploración e intensificación.
 %
-Sin embargo, obtener este balance no es una tarea trivial debido a que cada problema de optimización tiene características distintas.
+Sin embargo, obtener este balanceo no es una tarea trivial debido a que cada problema de optimización tiene características distintas y por
+ello han surgido numerosos esquemas para tratar esta problemática.
 %
-En base a esto se han desarrollado varias taxonomías con el propósito de clasificar a los \EAS{} en base a su(s) mecanismo(s) internos para preservar y promover la diversidad.
+En base a esto se han desarrollado varias taxonomías con el propósito de clasificar las diferentes formas en que se puede preservar y promover la diversidad.
 %
-Particularmente, se han definido las clasificaciones uni-proceso y los multiproceso.
+En este trabajo, con el fin de ilustrar como se pueden realizar diseños de \EAS{} que tomen en cuenta el balanceo entre exploración e intensificación
+se presentan dos ejemplos.
 %
-Mientras los primeros únicamente se enfocan en configurar un sólo mecanismo interno con el propósito de alcanzar un balance deseado.
+De forma general, las propuestas establecen un comportamiento dinámico de algún componente del \EA{} teniendo en cuenta para ello el criterio de paro 
+y el instante en que se encuentra la ejecución.
 %
-Lo enfoques multiproceso consideran varios componentes para alcanza este balance.
+Así se obtuvo un balanceo adecuado en el que en las primeras fases se promueve más exploración y en las últimas más intensificación. 
 %
-En este trabajo se realizaron dos contribuciones las cuales están relacionados con el concepto de diversidad.
+De modo más específico, en la primera propuesta se modifica evolución diferencial para por medio de una nueva fase de reemplazo conseguir este balanceo. 
 %
-De forma general, éstas consideran esquemas dinámicos y el criterio de paro.
+Además esta contribución incorpora una población elite con el propósito de proporcionar soluciones de calidad tanto a mediano como a largo plazo.
 %
-Así se obtuvo un balance adecuado entre exploración e intensificación.
+En base a la validación experimental llevada a cabo, se observa que esta propuesta mejora a los mejores algoritmos que se habían propuesto en una competición
+que consideró las funciones de prueba usadas en este capítulo.
 %
-Específicamente, en el algoritmo basado en evolución diferencial se induce este balance por medio de una fase de reemplazo, incorporando una población elite y considerando el criterio de paro.
+Posteriormente, se presenta un análisis del operador de cruce \SBX{} y se desarrolló una variante que modifica varios componentes de forma dinámica
+considerando también el criterio de paro y generaciones transcurridas. 
 %
-Como resultado en las primeras etapas del proceso de optimización se promovió un grado de exploración al mantener la diversidad en al población de forma explícita.
+Los resultados obtenidos con problemas muy populares del ámbito de optimización multi-objetivo, muestran que usar el operador \SBX{} modificado ofrece ventajas muy importantes
+en varios \MOEAS{} y para diferentes indicadores.
 %
-Posteriormente en las últimas etapas del procedo de optimización se promovió un grado de intensificación.
-%
-Además este contribución incorpora una población elite con el propósito de proporcionar soluciones de calidad tanto a mediano como a largo plazo.
-%
-En base a la validación experimental llevada a cabo en la sección \ref{sec:ED}, se observa que esta propuesta mejora a los algoritmos que pertenecen a los primeros lugares en competencias de varios años.
-%
+De forma general se observa que obtener un balanceo apropiado entre exploración e intensificación es realmente importante, y que
+esto se puede conseguir utilizando técnicas radicalmente diferentes aunque siguiendo los mismos principios de diseño.
 
-
-Posteriormente, se realizó un análisis del operador de cruce \SBX{} donde se desarrolló una variante que modifica varios componentes de forma dinámica y además se considera el criterio de paro.
+El campo de diseño de \EAS{} es un campo muy activo y en el que hay muchas ideas aún por explorar.
 %
-En base a varios problemas de prueba que son populares en el ámbito multi-objetivo (DTLZ, WFG y UF), considerando dos y tres objetivos, se observó que una configuración adecuada de este operador puede mejorar de forma significativa el rendimiento de los \MOEAS{} basados en dominancia, basados en indicadores y basados en descomposición.
+Uno de los aspectos importantes es que este tipo de estrategias ofrece muchas ventajas a largo plazo, pero se debe hacer el esfuerzo por conseguir
+que se pueda reducir lo máximo el número de evaluaciones requeridas para obtener resultados prometedores.
 %
-
-De forma general y en base a los resultados obtenidos en este capítulo, se observan dos aspectos clave relacionados con diversidad y que deberían se considerador en el diseño de algoritmos evolutivos, estos son los componentes para promover la diversidad y el mecanismo para preservar la diversidad de la población.
+Otro aspecto importante es que en general, la mayor parte de estrategias de control de diversidad introduce nuevos parámetros, por lo que es importante
+combinar estos mecanismos con estrategias de control de parámetros adaptativas o auto-adaptativas para facilitar su utilización.
 %
-
-
-Varias extensiones de estas contribuciones podrían ser exploradas.
-%
-En el caso de evolución diferencial se podrían analizar varias estrategias para disminuir el número de evaluaciones a función.
-%
-Adicionalmente, se podría explorar una variante auto-adaptativa con la cual no sea necesario asignar un factor de distancia inicial.
-%
-También sería útil desarrollar una variante del operador de cruce \SBX{} donde sea considerado una estrategia de aprendizaje para lidiar con problemas donde las variables tengan un grado de dependencia elevado.
-
+Finalmente, para el caso específico del \SBX{}, sería interesante integrarlo con técnicas de aprendizaje para lidiar con problemas con dependencias y mejorar
+así aún más el rendimiento de la propuesta.
