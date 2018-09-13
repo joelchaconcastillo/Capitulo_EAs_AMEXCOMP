@@ -89,7 +89,7 @@ Estos algoritmos son representativos de los basados en dominancia, basados en de
 %%%%%
 %%%%Particularmente, los indicadores reemplazan a la relación de dominancia de Pareto con el propósito de guiar el proceso de optimización.
 %%%%%
-%%%%Principalmente, el hipervolúmen es un indicador ampliamente aceptado por su relación completa de Pareto (Pareto-compliance)~\cite{Joel:IGDPlus_And_GDPlus}.
+%%%%Principalmente, el hipervolumen es un indicador ampliamente aceptado por su relación completa de Pareto (Pareto-compliance)~\cite{Joel:IGDPlus_And_GDPlus}.
 %%%%%
 %%%%Una de la principales ventajas de estos algoritmos es que los indicadores normalmente consideran tanto la calidad de las soluciones como su diversidad, por lo tanto no se requieren mecanismos adicionales para preservar la diversidad.
 %%%%
@@ -97,11 +97,11 @@ Estos algoritmos son representativos de los basados en dominancia, basados en de
 %%%%%
 %%%%Este \MOEA{} es considerado como un algoritmo híbrido ya que utiliza tanto indicadores como el concepto de la dominancia de Pareto.
 %%%%%
-%%%%Esencialmente, este algoritmo integra el procedimiento para ordenar a las soluciones no dominadas con la métrica del hipervolúmen.
+%%%%Esencialmente, este algoritmo integra el procedimiento para ordenar a las soluciones no dominadas con la métrica del hipervolumen.
 %%%%%
-%%%%Por lo tanto el \SMSEMOA{} aplica el hipervolúmen como estimador de densidad el cual es computacionalmente complejo.
+%%%%Por lo tanto el \SMSEMOA{} aplica el hipervolumen como estimador de densidad el cual es computacionalmente complejo.
 %%%%%
-%%%%Particularmente, la fase de reemplazo elimina al individuo que pertenece al frente con peor rango y cuya contribución al hipervolúmen sea mínima.
+%%%%Particularmente, la fase de reemplazo elimina al individuo que pertenece al frente con peor rango y cuya contribución al hipervolumen sea mínima.
 %%%%%
 %%%%Debido a su comportamiento prometedor, el \SMSEMOA{} se ha considerado como parte de nuestra validación experimental.
 %
@@ -199,7 +199,7 @@ Sin embargo, en muchos problemas cada variable está limitada dentro de un lími
 Para considerar los límites del espacio de decisión se propuso una modificación de la distribución de probabilidad~\cite{deb1999self}, 
 que es la que se usa en este artículo.
 %
-Para el caso de nuestro método, no es demasiado importante conocer la fómrula exacta, sino el efecto del valor $\eta_c$ que se ha ilustrado previamente.
+Para el caso de nuestro método, no es demasiado importante conocer la fórmula exacta, sino el efecto del valor $\eta_c$ que se ha ilustrado previamente.
 
 
 %Thus, the modification of the probability distribution shown in Equation~(\ref{eq:sbx_spread}) 
@@ -337,7 +337,7 @@ múltiples variables.
 %
 Esencialmente, se consideran tres componentes clave que podrían afectar al rendimiento de los \MOEAS{}.
 %
-Primeramente, como ya se mencionó anteriormente, cada variable es alterada con una probabilidad fija igual a $0.5$.
+En primer lugar, como ya se mencionó anteriormente, cada variable es alterada con una probabilidad fija igual a $0.5$.
 %
 Si este valor de probabilidad se incrementa entonces los hijos tienden a crearse a mayor distancia de los padres debido a que se 
 modifican más variables de forma simultanea.
@@ -413,72 +413,54 @@ Es importante hacer notar que la implementación clásica no considera la dimens
 
 \subsection{Propuesta - \DSBX{}}
 
-Basado en el análisis anterior y con el propósito de inducir un balance entre exploración e intensificación, se proponen las siguiente modificaciones.
-%Based on the previous analyses and with the aim of inducing an appropriate balance between 
-%exploration and intensification, the following modifications are proposed.
+Basado en el análisis anterior y con el propósito de inducir un balanceo entre exploración e intensificación dinámica que dependa del instante de ejecución, 
+se proponen las siguiente modificaciones.
 %
-Primeramente, se modifica la probabilidad de alterar una variable ($\delta_1$) durante la ejecución de forma dinámica.
-%First, the probability to modify a variable ($\delta_1$) is dynamically
-%modified during the execution.
+En primer lugar, se modifica la probabilidad de alterar una variable ($\delta_1$) durante la ejecución de forma dinámica.
 %
-La intención de esta modificación es incrementar la capacidad de exploración en las primeras etapas alterando un conjunto de variables de forma simultánea y conforme la ejecución procede se reduce el número de variables que son modificadas.
-%The rationality behind this modification is to increase the exploration capability in the initial stages
-%by altering simultaneously several variables and then, as the evolution proceeds reduce the number of variables
-%that are modified.
+La intención de esta modificación es incrementar la capacidad de exploración en las primeras etapas incrementando para ello el número de 
+variables que se alteran de forma simultánea, mientras que conforme la ejecución avanza se reduce esta probabilidad, con el fin de reducir
+el número de variables que se modifican y promover así movimientos más pequeños.
 %
-El valor de $\delta_1$ se cambia en base a un modelo lineal decreciente, donde inicialmente se fija a $1.0$ y entonces se decrementa hasta la mitad del total de generaciones con un valor de $0.5$.
-%The value of $\delta_1$ is changed in base of a linear decreasing model, where initially it is fixed to $1.0$ and 
-%then it is decreased so that at the half of total generations is equal to $0.5$.
+El valor de $\delta_1$ se cambia en base a un modelo lineal decreciente, donde inicialmente se fija a $1.0$ y se decrementa de forma
+que a la mitad del total de generaciones alcanza el valor $0.5$.
 %
-Esta último valor es mantenido hasta el final de la ejecución, es decir desde la mitad de la ejecución este parámetro se comporta similar a la implementación tradicional del \SBX{}.
-%This last value is maintained until the end of the execution, i.e. from the half of the execution it behaves as the 
-%traditional \SBX{} implementation.
+Este último valor es mantenido hasta el final de la ejecución, es decir, desde la mitad de la ejecución este parámetro se fija 
+al mismo valor que el de la implementación tradicional del \SBX{}.
 %
+Para asignar el valor $\delta_1$ se utiliza la Ecuación (\ref{eqn:linear}), donde $G_{Transcurridas}$ corresponde a la generación actual 
+y $G_{Total}$ corresponde al número total de generaciones.
 
-Para asignar el valor $\delta_1$ se utiliza la Ecuación (\ref{eqn:linear}), donde $G_{Transcurridas}$ corresponde a la generación actual y $G_{Total}$ corresponde al número total de generaciones.
-%Equation (\ref{eqn:linear}) is the one used to set the value of $\delta_1$, where $G_{Elapsed}$ is the current generation 
-%and $G_{End}$ is the total number of generations.
-
-Similarmente, el segundo cambio está relacionado con la probabilidad de aplicar reflexiones ($1 - \delta_2$).
-%In a similar way, the second change is related to the probability of performing reflections ($1 - \delta_2$).
+El segundo cambio está relacionado con la probabilidad de aplicar reflexiones ($1 - \delta_2$).
 %
-En este caso $\delta_2$ es actualizado de acuerdo a la Ecuación (\ref{eqn:linear}), por lo tanto la probabilidad de aplicar una reflexión incrementa de $0.0$ a $0.5$ durante la ejecución.
-%In this case $\delta_2$ is also updated as in Equation (\ref{eqn:linear}), meaning that the probability of performing
-%a reflection increases from $0.0$ to $0.5$ during the execution.
+En este caso $\delta_2$ es actualizado de acuerdo a la Ecuación (\ref{eqn:linear}), por lo tanto la probabilidad de aplicar una reflexión 
+incrementa de $0.0$ a $0.5$ durante la ejecución.
 %
-Esta modificación se realiza con el propósito de evitar el comportamiento disruptivo de intercambiar variables en las primeras generaciones ya que esto provocaría modificaciones muy drásticas.
-%This modification is performed with the aim of avoiding the disruptive behavior of interchanging the variables at the
-%first generations because this might result in very drastic modifications.
+Esta modificación se realiza con el propósito de evitar el comportamiento disruptivo de intercambiar variables en las primeras generaciones 
+ya que esto provocaría modificaciones muy drásticas.
 %
-De esta forma, sería mas sensato aplicar estas reflexiones una vez que los individuos convergen a cierto grado.
-%Once that the individuals converge to certain degree it might make more sense to perform such reflections.
+De esta forma, sería mas sensato aplicar estas reflexiones una vez que los individuos convergen en cierto grado.
 %
-Por lo tanto, esta probabilidad es incrementada a $0.5$, siendo el valor utilizando en la implementación del \SBX{} estándar.
-%Thus, this probability is increased to $0.5$ which is the value used in the standard implementation of \SBX{}.
+Nótese que se incrementa hasta el valor $0.5$ el cual es el valor utilizando en la implementación del \SBX{} estándar, ya que no se quiere
+disponer de un comportamiento excesivamente disruptivo.
+%
+Sin embargo, en el futuro sería interesante realizar estudios con otros valores finales.
 
 \begin{equation}\label{eqn:linear}
 	\delta_1 = \delta_2 = max \left (0.5, 1.0 - \frac{G_{Transcurridas}}{G_{Total}} \right )
 \end{equation}
 
 Finalmente, el índice de distribución también es modificado durante la ejecución.
-%Finally, the distribution index is also changed during the execution. 
 %
-De esta forma, en la primeras etapas se promueve un índice de distribución pequeño con el propósito de incrementar la capacidad de exploración del \SBX{}.
-%At the first stages a low distribution index is induced with the aim of increasing the exploration capabilities 
-%of \SBX{}.
+En las primeras etapas se promueve un índice de distribución pequeño con el propósito de incrementar la capacidad de exploración del \SBX{}.
 %
-Posteriormente se decrementa de forma lineal, lo cual tiene el efecto de que la curva de distribución se cierre, por lo tanto se promueve un mayor grado de intensificación en las etapas finales.
-%Then, it is linearly incremented which has the effect of closing the distribution curve, meaning that more intensification is
-%promoted.
+Posteriormente se decrementa de forma lineal, lo cual tiene el efecto de que la curva de distribución se cierre, y por lo tanto se promueve 
+un mayor grado de intensificación en las etapas finales.
 %
-El incremento lineal es indicado en la Ecuación (\ref{eqn:index_eta}), por lo tanto el índice de distribución es alterado de $2$ a $22$.
-%The linear increment is governed by Equation (\ref{eqn:index_eta}), meaning that the distribution index is altered
-%from $2$ to $22$.
+El incremento lineal es llevado a cabo usando la Ecuación (\ref{eqn:index_eta}), por lo tanto el índice de distribución es alterado de $2$ a $22$.
 %
-Es importante aclarar que ya se han considerado modificaciones similares al índice de distribución \cite{zitzler1999multiobjective}, \cite{hamdan2012distribution}.
-%Note that modifications similar to this last one have been explored previously 
-%\cite{zitzler1999multiobjective}, \cite{hamdan2012distribution}.
-%
+Es importante aclarar que ya se han considerado modificaciones similares al índice de distribución \cite{zitzler1999multiobjective}, \cite{hamdan2012distribution},
+aunque las otras propiedades que se modifican nunca han sido estudiadas en profundidad.
 
 \begin{equation}\label{eqn:index_eta}
  \eta_c = 2 + 20 \times \left ( \frac{G_{Transcurridas}}{G_{Total}} \right)
@@ -606,221 +588,146 @@ Average IGD+ & 0.13 & 0.16 & 0.13 & \textbf{0.12} & \textbf{0.12} & 0.13 & 0.15 
 \end{table*}
 
 En este apartado se analizan los resultados obtenidos con las variantes dinámicas del \SBX{} (\DSBX{}).
-%This section is devoted to analyze the results obtained with the dynamic variants of \SBX{} (\DSBX{}).
 %
-Cada uno de los casos previamente analizados y una propuesta se integraron en los algoritmos \NSGAII{}, \MOEAD{} y \SMSEMOA{}.
-%The novel crossover operator was integrated with \NSGAII{}, \MOEAD{} and \SMSEMOA{}.
+El nuevo operador de cruce se integró en los algoritmos \NSGAII{}, \MOEAD{} y \SMSEMOA{}.
 %
-Primeramente, se analiza cada uno de los tres componentes que se analizaron con anterioridad.
-%First, three variants that alter only one of each of the components previously discussed are analyzed.
+En primer lugar, se analiza cada una de las tres modificaciones propuestas de forma aislada.
 %
-Posteriormente se construye un caso donde se consideran dos componentes de forma simultánea.
-%Then, a case that alters two of them simultaneously is taken into account.
+Posteriormente se construye un caso donde se consideran las dos modificaciones que mejores resultados ofrecieron de forma simultánea.
 %
-Como parte de la validación experimental se consideran los problemas de prueba WFG \cite{Joel:WFG}, DTLZ \cite{Joel:DTLZ_2} y UF \cite{zhang2009performance}.
-%The WFG \cite{Joel:WFG}, DTLZ \cite{Joel:DTLZ_2} and UF \cite{zhang2009performance} test problems have been used for our purpose.
+Como parte de la validación experimental se consideran los problemas de prueba WFG~\cite{Joel:WFG}, DTLZ~\cite{Joel:DTLZ_2} y UF~\cite{zhang2009performance}.
 %
-Además, con el propósito de comparar nuestra extensión del \SBX{} con otros operadores se incluye evolución diferencial mejor conocidos como \DEMO{}~\cite{tuvsar2007differential}.
-%Our experimental validation also includes the variant of Differential Evolution known as DEMO~\cite{tuvsar2007differential}
-%with the aim of comparing our extension of \SBX{} with other well-known operators.
-Debido a que todos los algoritmos son estocásticos cada ejecución se repitió $35$ veces con distintas semillas.
-%Given that all the methods are stochastic algorithms, each execution was repeated $35$ times with different seeds.
+Además, con el propósito de comparar nuestra extensión del \SBX{} con otros operadores se incluye la variante de evolución diferencial conocida como \DEMO{}~\cite{tuvsar2007differential}.
+
+Para llevar a cabo el análisis experimental, y dado que todos los algoritmos son estocásticos, cada caso fue ejecutado $35$ 
+veces con distintas semillas.
 %
-La configuración global que se aplica a todos los algoritmos se indica a continuación.
+La configuración global que se aplicó a todos los algoritmos fue la siguiente.
 %
-Se asigna el criterio de paro a $25,000$ generaciones, el tamaño de la población a $100$, se configuraron los problemas de prueba \WFG{} con dos y tres objetivos, además se consideraron 24 variables, donde $20$ variables eran considerados como parámetros de distancia y $4$ se consideraron como parámetros de posición.
-%The common configuration in all of them was the following: the stopping criterion was set to $25,000$ generations, 
-%the population size was fixed to 100, WFG test problems were configured with two and three objectives, and 24 variables
-%were considered, where 20 of them are distance parameters and 4 of them are position parameters.
+Se asignó el criterio de paro a $25,000$ generaciones, el tamaño de la población a $100$, 
+se configuraron los problemas de prueba \WFG{} con dos y tres objetivos considerando 24 variables, 
+donde $20$ variables son parámetros de distancia y $4$ son parámetros de posición.
 %
-Como es sugerido en \cite{Joel:DTLZ_2} se consideran $n=M+r-1$ variables de decisión en los problemas de prueba \DTLZ{}, donde para los problemas DTLZ1, DTLZ2 - DTLZ6 y DTLZ7 se consideraron $r=\{5, 10, 20\}$  respectivamente.
-%In the case of the DTLZ test instances, the number of decision variables were set to $n=M+r-1$, where $r=\{5, 10, 20\}$ 
-%for DTLZ1, DTLZ2 to DTLZ6 and DTLZ7 respectively, as is suggested in\cite{Joel:DTLZ_2}.  
+Como es sugerido en~\cite{Joel:DTLZ_2} se consideró $n=M+r-1$ variables de decisión en los problemas de prueba \DTLZ{}, 
+donde para los problemas DTLZ1, DTLZ2 - DTLZ6 y DTLZ7 se consideraron $r=\{5, 10, 20\}$  respectivamente.
 % 
-Para los problemas de prueba \UF{} se asignaron $10$ variable de decisión.
-%In the UF benchmark set the number of decision variables were set to 10.
+En el caso de los problemas de prueba \UF{} se utilizaron $10$ variable de decisión.
 %
-Finalmente, se asignó el operador de mutación polinomial con una probabilidad de cruce de $1/n$ y con un índice de distribución de $50$, mientras que el operador de cruce \SBX{} se asignó con una probabilidad de cruce de $0.9$ y un índice de distribución de $20$.
-%Finally, the polynomial mutation was used with a mutation probability equal to $1/n$ and with a distribution index equal to 50, 
-%whereas for the cases that used the \SBX{}, the crossover probability was set to $0.9$ and the distribution index
-%was set to 20.
-%
-A continuación se especifica la parametrización adicional de cada algoritmo:
-%The additional parameterization of each algorithm was as follows:
+Finalmente, se hizo uso del operador de mutación polinomial con una probabilidad de cruce de $1/n$ y con un índice de distribución igual a $50$, 
+mientras que el operador de cruce \SBX{} se utilizó con una probabilidad de cruce igual a $0.9$ y un índice de distribución de $20$.
+
+A continuación se especifica la parametrización adicional propia cada algoritmo:
 \begin{itemize}
 \item \textbf{DEMO}: CR = 0.3 y F = 0.5.
 \item \textbf{SMS-EMOA}: desplazamiento para calcular el HV = 100.
-%\item \textbf{SMS-EMOA}: offset = 100.
 \item \textbf{MOEA/D}: tamaño de la vecindad = 10, el número de actualizaciones por subproblema ($nr$) = 2 y $\delta = 0.9$.
-i%\item \textbf{MOEA/D}: size of neighborhood = 10, max updates by sub-problem (nr) = 2 and $\delta = 0.9$.
 \end{itemize}
 
-Para comparar los frentes obtenidos de cada método se utiliza el hipervolúmen normalizado (HV) y la \textit{Distancia Generacional Invertida Modificada} (Inverted Generational Distance Plus - IGD+).
-%In order to compare the fronts obtained by the different methods the 
-%normalized hypervolume (HV) and IGD+ was taken into account.
+Para comparar los frentes obtenidos por cada método se utiliza el hipervolumen normalizado (HV) y la 
+\textit{Distancia Generacional Invertida Modificada} (Inverted Generational Distance Plus - IGD+).
 %
-En la tabla \ref{tab:ReferencePoints} se presentan los puntos de referencia utilizados para el indicador del hipervolúmen los cuales son similares a los utilizados en \cite{Joel:Kuhn_Munkres, Joel:OperatorAHX}.
-%The reference points used for the hypervolume indicator are shown in the Table \ref{tab:ReferencePoints} 
-%and are similar to the ones used in \cite{Joel:Kuhn_Munkres, Joel:OperatorAHX}.
+En la tabla \ref{tab:ReferencePoints} se presentan los puntos de referencia utilizados para el indicador del hipervolumen los cuales son similares 
+a los utilizados en \cite{Joel:Kuhn_Munkres, Joel:OperatorAHX}.
 %
-Por otra parte para comparar los resultados estadísticamente (valores del IGD+ y HV), se siguió un procedimiento similar al que se propuso en~\cite{Joel:StatisticalTest}.
+Por otra parte para comparar los resultados estadísticamente (valores del IGD+ y HV), se siguió un procedimiento similar al que se propuso en~\cite{Joel:StatisticalTest},
+siendo el mismo que se aplicó para validar la primera propuesta.
 %In order to statistically compare the results (IGD+ and HV values), the following statistical tests were performed. 
 %In order to statistically compare the results, a similar guideline than the one proposed in~\cite{Joel:StatisticalTest} was used. 
 %
-En primer lugar, se utilizó la prueba Shapiro-Wilk para comprobar si los resultados se ajustaban a una distribución Gaussiana. 
+%En primer lugar, se utilizó la prueba Shapiro-Wilk para comprobar si los resultados se ajustaban a una distribución Gaussiana. 
 %
 %First a Shapiro-Wilk test was performed to check whatever or not the values of the results followed a Gaussian distribution. 
 %
-En los casos en que sí se ajustaban, se utilizó la prueba de Levene para comprobar la homogeneidad de las varianzas, procediendo con la prueba de ANOVA en caso positivo o con el de Welch en caso negativo.
+%En los casos en que sí se ajustaban, se utilizó la prueba de Levene para comprobar la homogeneidad de las varianzas, procediendo con la prueba de ANOVA en caso positivo o con el de Welch en caso negativo.
 %
 %If, so, the Levene test was used to check for the homogeneity of the variances. 
 %If samples had equal variance, an ANOVA test was done; if not, a Welch test was performed. 
 %
-Por otro lado, para los casos que no se ajustaban a distribuciones Guassianas, se utilizó la prueba de Kruskal-Wallis.
+%Por otro lado, para los casos que no se ajustaban a distribuciones Guassianas, se utilizó la prueba de Kruskal-Wallis.
 %For non-Gaussian distributions, the nonparametric Kruskal-Wallis test was used to test whether samples are drawn 
 %from the same distribution. 
 %
-En todos los casos se fijó el nivel de confianza al 95\%.
+%En todos los casos se fijó el nivel de confianza al 95\%.
 %
-Se considera que un algoritmo $X$ es superior a un algoritmo $Y$, si el procedimiento anterior reporta diferencias significativas, además si la media y mediana del hipervolúmen obtenido por el método $X$ son superiores a las obtenidas por el método $Y$.
+%Se considera que un algoritmo $X$ es superior a un algoritmo $Y$, si el procedimiento anterior reporta diferencias significativas, además si la media y mediana del hipervolumen obtenido por el método $X$ son superiores a las obtenidas por el método $Y$.
 %
 %An algorithm $X$ is said to win algorithm $Y$ when the differences between them are statistically significant, and
 %the mean and median obtained by $X$ are higher (in HV) or lower (in IGD+) than the mean and median achieved by $Y$.
 
 
-\subsection{Análisis de cada componente en el operador \SBX{}}
-%\subsection{Analysis of isolated components}
+\subsection{Análisis de cada modificación en el operador \SBX{}}
 
-En este apartado se analiza el efecto que cada componente tiene de forma independiente los cuales son modificador en base a un modelo dinámico.
-%In this section we discuss about the independent effect of each component that is dynamically modified.
+En este apartado se analiza el efecto que cada modificación propuesta tiene de forma independiente sobre los resultados obtenidos.
 %
-%
-Basados en el algoritmo \ref{alg:SBX_Operator} el efecto de cada componente es analizado a través de cuatro casos
-%The effect of each component is analyzed through four cases, based in the Algorithm \ref{alg:SBX_Operator}.
-%
-Cada caso es descrito a continuación.
-%Each case is described as follows:
+Para ello basados en el algoritmo \ref{alg:SBX_Operator} se proponen cuatro casos:
 
 \begin{itemize}
 \item \textbf{Caso 1}: Se aplica la versión estándar del operador \SBX{} donde $\delta_1 = \delta_2 = 0.5$ y $\eta_c = 20$.
-%\item \textbf{Case 1}: The standard SBX operator where $\delta_1 = \delta_2 = 0.5$ and $\eta_c = 20$.
 \item \textbf{Caso 2}: Se actualiza el valor $\delta_1$ como se indica en la Ecuación~(\ref{eqn:linear}),  $\delta_2=0.5$ y $\eta_c = 20$.
-%\item \textbf{Case 2}: The value $\delta_1$ is updated according to Equation~(\ref{eqn:linear}),  $\delta_2=0.5$ and $\eta_c = 20$.
 \item \textbf{Caso 3}: Se actualiza el valor $\delta_2$ como se indica en la Ecuación~(\ref{eqn:linear}), $\delta_1=0.5$ y $\eta_c = 20$.
-%\item \textbf{Case 3}: The value $\delta_2$ is updated according to Equation~(\ref{eqn:linear}), $\delta_1=0.5$ and $\eta_c = 20$.
 \item \textbf{Caso 4}: Se actualiza el índice de distribución de acuerdo a~(\ref{eqn:index_eta}), $\delta_1=\delta_2=0.5$.
-%\item \textbf{Case 4}: The distribution index is updated according to Equation~(\ref{eqn:index_eta}), $\delta_1=\delta_2=0.5$.
 \end{itemize}
 
-En las tablas \ref{tab:Metrics_2} y \ref{tab:Metrics_3} se muestra información del HV normalizado \cite{zitzler1999multiobjective} y del IGD+ \cite{Joel:IGDPlus_And_GDPlus} para cada caso (Posteriormente se analiza el Caso 5).
-%In order to analyze the performance of each Case (Case 5 is discussed later), Tables \ref{tab:Metrics_2} and
-%\ref{tab:Metrics_3} shows information about the Normalized Hyper-volume 
-%(HV)~\cite{zitzler1999multiobjective} and about the Inverted Generational Distance Plus (IGD+)~\cite{Joel:IGDPlus_And_GDPlus}.
+En las tablas \ref{tab:Metrics_2} y \ref{tab:Metrics_3} se muestra información del HV normalizado \cite{zitzler1999multiobjective} y del IGD+ \cite{Joel:IGDPlus_And_GDPlus} para cada caso, con
+dos y tres objetivos respectivamente (el caso 5 se comenta más adelante).
 %
 Específicamente, se muestra la media del HV e IGD+ para todos los problemas en dos y tres objetivos.
-%Specifically, the mean of the HV and IGD+ for all considered problems are shown for two and three objectives.
 %
 Se observa que considerando dos y tres objetivos el Caso 4 mejora al Caso 1, al Caso 2 y al Caso 3 en todos los algoritmos.
-%It is clear that case 4 outperforms case 1, case 2 and case 3 both with two and three objectives in all the tested algorithms.
 %
-Por lo tanto se aprecian los beneficios de incrementar el índice de distribución durante la ejecución.
-%%Therefore, increasing the distribution index during the execution seems to be the most beneficial action.
+Por lo tanto se aprecian de forma clara los beneficios de incrementar el índice de distribución durante la ejecución.
 %
-Esto sucede porque inicialmente la curva que corresponde a la distribución de probabilidad conduce a un grado elevado de exploración, mientras que al transcurrir las generaciones se cambia gradualmente a un procedo de intensificación.
-%This occurs because the initially open distribution curve leads to a higher degree of exploration, whereas as the evolution
-%proceeds more intensification is promoted.
-%
-Por otra parte, al considerar tres objetivos el Caso 2 presentó un rendimiento menor que al Caso 1.
-%On the other hand, case 2 presented a lower performance than case 1 when taking into account three objectives.
-%
-Por lo tanto, se observa que alterar todas las variables provoca un comportamiento muy disruptivo.
-%Thus, it seems that altering almost all the variables convert the new approach into a too disruptive operator.
+Por otra parte, al considerar tres objetivos, el Caso 2 presentó un rendimiento menor que al Caso 1, 
+posiblemente debido a que al alterar tantas variables de forma simultánea, se produce un comportamiento excesivamente disruptivo.
 %
 Quizás los resultados podrían mejorar si el parámetro $\delta_1$ es alterado de una forma distinta, sin embargo esto se deja como trabajo futuro.
-%Perhaps, altering $\delta_1$ in a different way might provide better results, but this is left as a future work.
+%
 Los análisis anteriores únicamente consideran la media obtenida en todos los problemas de prueba.
-%Previous analyses are only based on the mean obtained for all the problems.
 %
-Sin embargo, dependiendo en el tipo de problema el rendimiento del algoritmo podría cambiar.
-%However, depending on the problem the performance might vary.
+Sin embargo, dependiendo en el tipo de problema el rendimiento del algoritmo podría variar, hecho que se analiza en la siguiente sección.
 %
-Esto se analiza en la siguiente sección.
-%This is analyzed in the following section.
-%
-Adicionalmente, se anexan resultados detallados\footnote{https:\//\//github.com\//joelchaconcastillo\//SBX\_CEC2018.}.
-%Additionally, more detailed results are available\footnote{https:\//\//github.com\//joelchaconcastillo\//SBX\_CEC2018.}.
+Adicionalmente, se anexan resultados detallados para facilitar que otros investigadores puedan realizar comparativas con un mayor
+nivel de detalle\footnote{https:\//\//github.com\//joelchaconcastillo\//SBX\_CEC2018.}.
 
 
 \subsection{Modificación simultánea de varios componentes}
-%\subsection{Simultaneous modification of several components}
 
-En base a los resultados obtenidos con anterioridad se propone una variante del operador \SBX{}.
+En base a los análisis realizados con anterioridad se propone una variante del operador \SBX{} que incorpora las modificaciones propuestas
+en el Caso 3 y Caso 4 de forma simultánea, es decir, se incorpora un cambio dinámico tanto en el parámetro $\delta_2$ como en el índice de distribución.
 %
-En esta variante se incorporan los casos Caso 3 y Caso 4 de forma simultánea, es decir existen un cambio dinámico en el parámetro $\delta_2$ y en el índice de distribución.
-%Based on the previously discussed results, a variant of the \SBX{} is proposed where the case 3 and case 4 are mixed, 
-%i.e. both $\delta_2$ and the distribution index are updated dynamically.
+Debido a los pobres resultados del Caso 2 no se modifica de forma dinámica $\delta_1$.
 %
-Además, no es considerado el Caso 2 el cual aplica un mecanismo para actualizar $\delta_1$, eso ya que los beneficios con esta variante no fueron significativos.
-%Since case 2 did not report significant benefits, the updating mechanism for $\delta_1$ was discarded.
-%
-Particularmente, el Caso 5 se construye en base al Algoritmo \ref{alg:SBX_Operator} y se configure como se indica a continuación.
-%Specifically in our case 5, Algorithm \ref{alg:SBX_Operator} is configured as follows.
-%
-El parámetro $\delta_1$ es asignado con $0.5$ debido a que es la forma de la versión estándar del \SBX{}.
-%The parameter $\delta_1$ is fixed to $0.5$, i.e. in a similar way than the standard \SBX{}.
-%
-En base al Caso 3, el parámetro $\delta_2$ es actualizado de acuerdo a la Ecuación~(\ref{eqn:linear}).
-%Following the case 3, $\delta_2$ is updated according to Equation~(\ref{eqn:linear}).
-%
-Finalmente, en base al Caso 4, el parámetro $\delta_2$ es actualizado como se indica en la Ecuación (\ref{eqn:index_eta}).
-%Finally, according to case 4 $\eta_c$ is updated in base of Equation~(\ref{eqn:index_eta}).
+Particularmente, el Caso 5 se construye en base al Algoritmo \ref{alg:SBX_Operator} asignando el parámetro $\delta_1$ a $0.5$ debido
+a que es la forma de la versión estándar del \SBX{}, mientras que $\delta_2$ es actualizado de acuerdo a la Ecuación~(\ref{eqn:linear}) y
+y el parámetro $\eta_c$ es actualizado como se indica en la Ecuación (\ref{eqn:index_eta}).
 
-De acuerdo a la media del HV y del IGD+ que se obtuvieron en el Caso 5 (revisar tablas~\ref{tab:Metrics_2} y \ref{tab:Metrics_3}), se pueden observar los beneficios de integrando los Casos 3 y 4.
-%Attending to the mean HV and IGD+ obtained by the case 5 (see Tables~\ref{tab:Metrics_2} and \ref{tab:Metrics_3})
-%it is clear that integrating case 3 and case 4 is beneficial.
+De acuerdo a la media del HV y del IGD+ que se obtuvieron en el Caso 5 (ver tablas~\ref{tab:Metrics_2} y \ref{tab:Metrics_3}), es claro que integrar los 
+Casos 3 y 4 proporciona beneficios importantes.
 %
 En el caso de dos objetivos se observa una ventaja significativa, sin embargo en el caso de tres objetivo los Casos 4 y 5 son muy similares en base a la media.
-%The advantages are clearer in the case of two objectives, whereas in the case of three objectives, case 4
-%and case 5 are similar in terms of mean performance.
 %
-Además, al considerar tres objetivos los resultados que se obtuvieron en el Caso 5 son superiores a los obtenidos con \DE{}, mientras que al considerar la versión estándar de \SBX{} se observa un deterioro.
-%Moreover, results attained with case 5 are superior to the ones obtained with \DE{} in three objectives, whereas
-%when using the traditional \SBX{} results deteriorate.
+Además, al considerar tres objetivos los resultados que se obtuvieron en el Caso 5 son superiores a los obtenidos con \DE{}, 
+mientras que al considerar la versión estándar de \SBX{} se observa un deterioro.
 %
-Por lo tanto, si el operador \SBX{} es configurado adecuadamente puede generar resultados similares o superiores que los algoritmos \DEMO{}. 
-%Thus, when properly configuring a \DSBX{} results similar or superior to DEMO could be obtained.
+Por lo tanto, si el operador \SBX{} es configurado adecuadamente puede generar resultados similares o superiores que el algoritmo \DEMO{}. 
 
-Finalmente, debido a que los análisis previos únicamente consideran la media entre la problemas de prueba, a continuación se presenta un análisis adicional para comprender mejor las contribuciones de los distintos casos.
-%Finally, since previous analyses only consider the mean among all the benchmark problems, an additional analyses
-%was developed to better understand the contributions of the different cases.
+Finalmente, se presenta un análisis adicional para comprender mejor las contribuciones de los distintos casos.
 %
-Particularmente, se realizan comparaciones en pares en base a pruebas estadísticas entre los cinco casos donde es considerado el \SBX{} y \DSBX{}.
-%Particularly, pair-wise statistical tests among all the five cases that consider \SBX{} and \DSBX{} were carried out.
+Particularmente, se realizan comparaciones por pares en base a las pruebas estadísticas ya mencionadas entre los cinco casos.
 %
 Este procedimiento se realizó de forma independiente para cada el \NSGAII{}, \MOEAD{} y el \SMSEMOA{}.
-%This was performed independently for \NSGAII{}, \MOEAD{} and \SMSEMOA{}.
 %
 En la tabla ~\ref{tab:statistical_Tests}, se muestra los resultados de las pruebas estadísticas.
-%Results of these statistical tests are shown in Table~\ref{tab:statistical_Tests}.
 %
-Para cada algoritmo y para cada caso, la columna ``$\uparrow$'' reporta el número de comparaciones donde las pruebas estadísticas confirmaron la superioridad del caso correspondiente, mientras que en la columna ``$\downarrow$'' se reporta el número de veces donde este caso fue inferior y la columna ``$\longleftrightarrow$'' indica el número de comparaciones donde la diferencia estadística no fue significativamente distinto.
-%For each algorithm and case, the column ``$\uparrow$'' reports the number of comparisons where the statistical tests 
-%confirmed the superiority of the corresponding case, whereas the column ``$\downarrow$'' reports the number of cases 
-%where it was inferior and ``$\longleftrightarrow$'' indicates the number of comparisons where 
-%differences were not statistically significant.
+Para cada algoritmo y para cada caso, la columna ``$\uparrow$'' reporta el número de comparaciones donde las pruebas estadísticas confirmaron 
+la superioridad del caso correspondiente, mientras que en la columna ``$\downarrow$'' se reporta el número de veces donde este caso fue inferior 
+y la columna ``$\longleftrightarrow$'' indica el número de comparaciones donde la diferencia estadística no fue significativamente distinto.
 %%
-Los beneficios obtenidos por el caso 5 son suficientemente claros.
-%The advantages of case 5 are quite clear.
+Los beneficios obtenidos por el caso 5 son muy claros, de hecho,
+únicamente el Caso 4 obtuvo mejores resultados que el Caso 5 al considerar tres objetivos y al algoritmo \NSGAII{}.
 %
-Únicamente el Caso 4 obtuvo mejores resultados que el Caso 5 al considerar tres objetivos y al algoritmo \NSGAII{}.
-%Only in the case of \NSGAII{} with three objectives, case 4 could outperform the results obtained by case 5.
+Esto demuestra que se pueden obtener mejores resultados si se integran varias modificaciones dinámicas de forma simultánea.
 %
-Esto demuestra que se pueden obtener mejores resultados si se integran varias modificaciones dinámicas.
-%Thus, by properly combining several dynamic modification, results can be improved further.
+Además, los resultados confirman las ventajas de la versión dinámica frente al caso estándar (caso 1).
 %
-Principalmente, los resultados confirman varias ventajas al comparar nuestras variantes con la versión estándar del operador \SBX{} (Caso 1).
-%Moreover, results confirm the advantages of our proposals when compared to the standard \SBX{} (case 1).
-%
-El único caso que no es claramente superior a la versión estándar del \SBX{} es el Caso 2, el cual fue discutido con anterioridad.
-%The only case that is not clearly superior to the standard \SBX{} is the case number 2, as it was previously discussed.
-%
+El único caso que no presenta ventajas importantes frente a la versión estándar del \SBX{} es el Caso 2, el cual fue discutido con anterioridad.
