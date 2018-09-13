@@ -27,10 +27,10 @@ un conjunto de soluciones bien distribuidas y cercanas a las soluciones del fren
 
 En los últimos años, se han diseñado una gran cantidad de \MOEAS{} siguiendo distintos principios.
 %
-A raíz de esta se han propuesto varias taxonomías~\cite{Joel:BOOK_MOEAs} y, por ejemplo, en base a sus principios de diseño
+A raíz de esto se han propuesto varias taxonomías~\cite{Joel:BOOK_MOEAs} y, por ejemplo, en base a sus principios de diseño
 se pueden clasificar en basados en la dominancia de Pareto, indicadores y/o descomposición~\cite{pilat2010evolutionary}.
 %
-Hay algoritmos muy competitivos en cada uno de los grupos por lo que en esta sección se consideraron \MOEAS{} de todos los grupos para realizar la validación.
+Hay algoritmos muy competitivos de cada uno de los grupos por lo que en esta sección se consideraron \MOEAS{} de todos los grupos para realizar la validación.
 %
 Particularmente, la validación experimental se desarrolló incluyendo a los algoritmos \textit{Algoritmo Genético basado en Ordenación de los No-Dominados} 
 (Non-Dominated Sorting Genetic Algorithm - NSGA-II)~\cite{Joel:NSGAII}, el \textit{MOEA basado en descomposición} (MOEA based on Decomposition - \MOEAD{})~\cite{Joel:MOEAD} 
@@ -163,7 +163,7 @@ la combinación no es independiente.
 Así, este tipo de operadores pueden por ejemplo, realizar combinaciones lineales de las soluciones involucradas.
 %
 Algunos operadores que pertenecen a esta categoría son el \textit{Operador de Cruce Unimodal Normalmente Distribuido} (Unimodal Normally Distributed Crossover - \UNDX{})~\cite{Joel:UNDX}, 
-y el \textit{Operador de Cruce Simplex} (simplex crossover - \SPX{})~\cite{Joel:DE_Storn_SPX}.
+y el \textit{Operador de Cruce Simplex} (Simplex Crossover - \SPX{})~\cite{Joel:DE_Storn_SPX}.
 %
 Adicionalmente, los operadores de cruce pueden ser clasificados como \textit{centrados en los padres} y \textit{centrados en la media} \cite{jain2011parent}.
 %
@@ -175,7 +175,7 @@ en la media se tiende a crear a las soluciones hijas alrededor de la media de lo
 Entre los operadores de cruce, el \textit{Operador de Cruce Basado en Simulación Binaria} (Simulated Binary Crossover - \SBX{})~\cite{deb1994simulated}
 es uno de los más utilizados en dominios continuos y fue el que se decidió extender en nuestra propuesta, por lo que esta sección se centra en este operador de cruce.
 %
-El operador \SBX{} es clasificado con un operador centrado en los padres, por lo que las valores asociados a los hijos ($c_1$ y $c_2$) serán cercanos a 
+El operador \SBX{} es clasificado con un operador centrado en los padres, por lo que los valores asociados a los hijos ($c_1$ y $c_2$) serán cercanos a 
 los valores de los padres ($p_1$ y $p_2$).
 %
 Específicamente, el proceso para generar los valores de las soluciones hijo se basa en utilizar una distribución de probabilidad.
@@ -192,7 +192,7 @@ en la Figura~\ref{fig:fig_sim}.
 %
 La definición matemática de la distribución y la forma de generar los valores de las soluciones hijas pueden ser estudiados en~\cite{deb1994simulated}.
 %
-Las ecuaciones iniciales fueron formuladas en base a problema de optimización sin límites en las variables.
+Las ecuaciones iniciales fueron formuladas en base a un problema de optimización sin límites en las variables.
 %
 Sin embargo, en muchos problemas cada variable está limitada dentro de un límite inferior y superior.
 %
@@ -301,9 +301,9 @@ Para el caso de nuestro método, no es demasiado importante conocer la fórmula 
        \FOR{para cada variable $d$}
        %\FOR{ each variable d}
 	\IF{ $U[0, 1] \leq  \delta_1$} \label{alg:inherit_variable}
-		\STATE Generar $C_{1,d}$ utilizando las distribuciones dadas en~\cite{deb1999self}. 
+		\STATE Generar $C_{1,d}$ utilizando las distribuciones dadas en la Ecuación~(\cite{deb1999self}). 
 		%\STATE Generate $C_{1,d}$ with Equations (\ref{eq:sbx_spread}) and (\ref{eq:child_1}).
-		\STATE Generar $C_{2,d}$ utilizando las distribuciones dadas en~\cite{deb1999self}.
+		\STATE Generar $C_{2,d}$ utilizando las distribuciones dadas en la Ecuación~(\cite{deb1999self}).
 		%\STATE Generate $C_{1,d}$ with Equations (\ref{eq:sbx_spread}) and (\ref{eq:child_1}).
 		 \IF{$ U[0, 1]  \leq  (1 - \delta_2) $} 
 			\STATE Intercambiar $C_{1,d}$ con $C_{2,d}$.
@@ -327,7 +327,7 @@ una estrategia simple para escoger las variables que se van a cruzar~\cite{Joel:
 %
 Específicamente, en base a los principios del operador de cruce uniforme, cada variable es cruzada con una probabilidad igual a $0.5$.
 %
-A pesar de su sencillez y no de tener en cuenta las posibles dependencias entre variables, hoy en día esta es la forma más común de 
+A pesar de su sencillez y de no tener en cuenta las posibles dependencias entre variables, hoy en día esta es la forma más común de 
 aplicar el \SBX{}.
 
 \subsubsection{Implementación y análisis del operador \SBX{}}
@@ -342,10 +342,10 @@ En primer lugar, como ya se mencionó anteriormente, cada variable es alterada c
 Si este valor de probabilidad se incrementa entonces los hijos tienden a crearse a mayor distancia de los padres debido a que se 
 modifican más variables de forma simultanea.
 %
-En los problemas separables, en general interesa modificar sólo una variable mientras que en los no separable suele ser más conveniente
+En los problemas separables, en general interesa modificar sólo una variable mientras que en los no separables suele ser más conveniente
 modificar varias variables a la vez.
 %
-En la figura~\ref{fig:Simulation_pv} se pueden observar las implicaciones de modificar esta probabilidad considerando un problema con dos variables.
+En la Figura~\ref{fig:Simulation_pv} se pueden observar las implicaciones de modificar esta probabilidad considerando un problema con dos variables.
 %
 Particularmente, en la parte derecha se muestra que una probabilidad pequeña provoca que algunos valores permanezcan intactos, es decir,
 hay una tendencia de generar desplazamientos paralelos a los ejes, lo cual suele ser ideal para problemas separables.
@@ -366,7 +366,7 @@ que existe entre las soluciones padres e hijas.
 \label{fig:Simulation_Case_3}
 \end{figure}
 
-El segundo aspecto importante es que después de generar los dos valores de las soluciones hijas, los valores son intercambiados con una probabilidad fija 
+El segundo aspecto importante es que después de generar los dos valores de las soluciones hijas, éstos valores son intercambiados con una probabilidad fija 
 (usualmente es $0.5$), es decir el valor de la solución hijo $c_1$ no siempre es heredado a partir de la solución padre más cercana $p_1$.
 %
 Esta es una característica no muy discutida, sin embargo es un aspecto muy relevante que afecta al rendimiento del algoritmo.
@@ -381,7 +381,7 @@ De hecho, debido a esto, no es totalmente claro que el \SBX{} deba ser categoriz
 Estos intercambios que existen entre los valores de las soluciones hijo tienen un efecto de realizar múltiples ``reflexiones'' en el espacio de búsqueda.
 %
 Así, conforme se incrementa la dimensionalidad en el espacio de las variables, el número de regiones cubiertas crece de forma exponencial como se puede observar en 
-los casos de dos y tres dimensiones en la figura \ref{fig:Simulations_Index_20}.
+los casos de dos y tres dimensiones en la Figura \ref{fig:Simulations_Index_20}.
 %
 Es importante notar que esta característica tiene un efecto relevante en la distancia entre las soluciones padre y las soluciones hijas.
 
@@ -391,13 +391,13 @@ Un índice de distribución pequeño provoca un grado de exploración elevado.
 %
 De hecho, un índice de distribución igual a uno tiene un efecto similar al \textit{Operador de Recombinación Difusa} (Fuzzy Recombination Operator)~\cite{voigt1995fuzzy}.
 %
-En la figura~\ref{fig:Simulation_Case_3} se puede observar el efecto de aplicar distintos índices de distribución.
+En la Figura~\ref{fig:Simulation_Case_3} se puede observar el efecto de aplicar distintos índices de distribución.
 %
 Particularmente, en la parte izquierda se considera un índice de distribución pequeño, mientras en la parte derecha se considera un índice de distribución grande.
 %
 Se observa que este último genera soluciones candidatas similares a las soluciones padre.
 
-En el algoritmo \ref{alg:SBX_Operator} se muestra la implementación del operador \SBX{}.
+En el Algoritmo \ref{alg:SBX_Operator} se muestra la implementación del operador \SBX{}.
 %The \SBX{} implementation is shown in Algorithm \ref{alg:SBX_Operator}.
 %
 Este pseudocódigo está basado en la implementación que está integrada en el código del \NSGAII{} propuesto por Deb et al.~\cite{Joel:NSGAII}, 
@@ -413,13 +413,13 @@ Es importante hacer notar que la implementación clásica no considera la dimens
 
 \subsection{Propuesta - \DSBX{}}
 
-Basado en el análisis anterior y con el propósito de inducir un balanceo entre exploración e intensificación dinámica que dependa del instante de ejecución, 
+Basado en el análisis anterior y con el propósito de inducir un balanceo entre exploración e intensificación de forma dinámica y que dependa del instante de ejecución, 
 se proponen las siguiente modificaciones.
 %
-En primer lugar, se modifica la probabilidad de alterar una variable ($\delta_1$) durante la ejecución de forma dinámica.
+En primer lugar, se modifica la probabilidad de alterar una variable ($\delta_1$) durante la ejecución.
 %
-La intención de esta modificación es incrementar la capacidad de exploración en las primeras etapas incrementando para ello el número de 
-variables que se alteran de forma simultánea, mientras que conforme la ejecución avanza se reduce esta probabilidad, con el fin de reducir
+La intención de esta modificación es estimular la capacidad de exploración considerando inicialmente una probabilidad elevada 
+para alterar más variables de forma simultánea, mientras que conforme la ejecución avanza se reduce esta probabilidad, con el fin de reducir
 el número de variables que se modifican y promover así movimientos más pequeños.
 %
 El valor de $\delta_1$ se cambia en base a un modelo lineal decreciente, donde inicialmente se fija a $1.0$ y se decrementa de forma
@@ -593,7 +593,7 @@ El nuevo operador de cruce se integró en los algoritmos \NSGAII{}, \MOEAD{} y \
 %
 En primer lugar, se analiza cada una de las tres modificaciones propuestas de forma aislada.
 %
-Posteriormente se construye un caso donde se consideran las dos modificaciones que mejores resultados ofrecieron de forma simultánea.
+Posteriormente se construye un caso donde se consideran las dos modificaciones ofrecieron mejores resultados de forma simultánea.
 %
 Como parte de la validación experimental se consideran los problemas de prueba WFG~\cite{Joel:WFG}, DTLZ~\cite{Joel:DTLZ_2} y UF~\cite{zhang2009performance}.
 %
@@ -611,9 +611,9 @@ donde $20$ variables son parámetros de distancia y $4$ son parámetros de posic
 Como es sugerido en~\cite{Joel:DTLZ_2} se consideró $n=M+r-1$ variables de decisión en los problemas de prueba \DTLZ{}, 
 donde para los problemas DTLZ1, DTLZ2 - DTLZ6 y DTLZ7 se consideraron $r=\{5, 10, 20\}$  respectivamente.
 % 
-En el caso de los problemas de prueba \UF{} se utilizaron $10$ variable de decisión.
+En el caso de los problemas de prueba \UF{} se utilizaron $10$ variables de decisión.
 %
-Finalmente, se hizo uso del operador de mutación polinomial con una probabilidad de cruce de $1/n$ y con un índice de distribución igual a $50$, 
+Finalmente, se hizo uso del operador de mutación polinomial con una probabilidad de mutación de $1/n$ y con un índice de distribución igual a $50$, 
 mientras que el operador de cruce \SBX{} se utilizó con una probabilidad de cruce igual a $0.9$ y un índice de distribución de $20$.
 
 A continuación se especifica la parametrización adicional propia cada algoritmo:
@@ -626,7 +626,7 @@ A continuación se especifica la parametrización adicional propia cada algoritm
 Para comparar los frentes obtenidos por cada método se utiliza el hipervolumen normalizado (HV) y la 
 \textit{Distancia Generacional Invertida Modificada} (Inverted Generational Distance Plus - IGD+).
 %
-En la tabla \ref{tab:ReferencePoints} se presentan los puntos de referencia utilizados para el indicador del hipervolumen los cuales son similares 
+En la Tabla \ref{tab:ReferencePoints} se presentan los puntos de referencia utilizados para el indicador del hipervolumen los cuales son similares 
 a los utilizados en \cite{Joel:Kuhn_Munkres, Joel:OperatorAHX}.
 %
 Por otra parte para comparar los resultados estadísticamente (valores del IGD+ y HV), se siguió un procedimiento similar al que se propuso en~\cite{Joel:StatisticalTest},
@@ -659,17 +659,17 @@ siendo el mismo que se aplicó para validar la primera propuesta.
 
 En este apartado se analiza el efecto que cada modificación propuesta tiene de forma independiente sobre los resultados obtenidos.
 %
-Para ello basados en el algoritmo \ref{alg:SBX_Operator} se proponen cuatro casos:
+Para ello basados en el Algoritmo \ref{alg:SBX_Operator} se proponen cuatro casos:
 
 \begin{itemize}
-\item \textbf{Caso 1}: Se aplica la versión estándar del operador \SBX{} donde $\delta_1 = \delta_2 = 0.5$ y $\eta_c = 20$.
-\item \textbf{Caso 2}: Se actualiza el valor $\delta_1$ como se indica en la Ecuación~(\ref{eqn:linear}),  $\delta_2=0.5$ y $\eta_c = 20$.
-\item \textbf{Caso 3}: Se actualiza el valor $\delta_2$ como se indica en la Ecuación~(\ref{eqn:linear}), $\delta_1=0.5$ y $\eta_c = 20$.
-\item \textbf{Caso 4}: Se actualiza el índice de distribución de acuerdo a~(\ref{eqn:index_eta}), $\delta_1=\delta_2=0.5$.
+\item \textbf{Caso 1}: se aplica la versión estándar del operador \SBX{} donde $\delta_1 = \delta_2 = 0.5$ y $\eta_c = 20$.
+\item \textbf{Caso 2}: se actualiza el valor $\delta_1$ como se indica en la Ecuación~(\ref{eqn:linear}),  $\delta_2=0.5$ y $\eta_c = 20$.
+\item \textbf{Caso 3}: se actualiza el valor $\delta_2$ como se indica en la Ecuación~(\ref{eqn:linear}), $\delta_1=0.5$ y $\eta_c = 20$.
+\item \textbf{Caso 4}: se actualiza el índice de distribución de acuerdo a~(\ref{eqn:index_eta}), $\delta_1=\delta_2=0.5$.
 \end{itemize}
 
-En las tablas \ref{tab:Metrics_2} y \ref{tab:Metrics_3} se muestra información del HV normalizado \cite{zitzler1999multiobjective} y del IGD+ \cite{Joel:IGDPlus_And_GDPlus} para cada caso, con
-dos y tres objetivos respectivamente (el caso 5 se comenta más adelante).
+En las Tablas \ref{tab:Metrics_2} y \ref{tab:Metrics_3} se muestra información del HV normalizado \cite{zitzler1999multiobjective} y del IGD+ \cite{Joel:IGDPlus_And_GDPlus} para cada caso, con
+dos y tres objetivos respectivamente (el Caso 5 se comenta más adelante).
 %
 Específicamente, se muestra la media del HV e IGD+ para todos los problemas en dos y tres objetivos.
 %
@@ -684,7 +684,24 @@ Quizás los resultados podrían mejorar si el parámetro $\delta_1$ es alterado 
 %
 Los análisis anteriores únicamente consideran la media obtenida en todos los problemas de prueba.
 %
-Sin embargo, dependiendo en el tipo de problema el rendimiento del algoritmo podría variar, hecho que se analiza en la siguiente sección.
+%Sin embargo, dependiendo en el tipo de problema el rendimiento del algoritmo podría variar, hecho que se analiza en la siguiente sección.
+En la Tabla~\ref{tab:statistical_Tests} se muestra los resultados de las pruebas estadísticas (el Caso 5 se discute en la siguiente sección).
+%
+Particularmente, se realizan comparaciones por pares en base a las pruebas estadísticas ya mencionadas entre los cinco casos.
+%
+Este procedimiento se realizó de forma independiente para cada el \NSGAII{}, \MOEAD{} y el \SMSEMOA{}.
+
+Para cada algoritmo y para cada caso, la columna ``$\uparrow$'' reporta el número de comparaciones donde las pruebas estadísticas confirmaron 
+la superioridad del caso correspondiente, mientras que en la columna ``$\downarrow$'' se reporta el número de veces donde este caso fue inferior 
+y la columna ``$\longleftrightarrow$'' indica el número de comparaciones donde la diferencia estadística no fue significativamente distinto.
+%
+Principalmente se observa que el Caso 3 es superior al Caso 1 y al Caso 2, sin embargo el Caso 3 es peor que el Caso 4, el motivo de esto es que alterar el índice de distribución tiene un impacto considerable en el proceso de búsqueda.
+%
+Por otra parte, se observa que el Caso 3 es mejor que la versión estándar del operador SBX (Caso 1), además el Caso 2 es peor que el Caso 1.
+%
+Por lo tanto se puede intuir que las modificaciones impuestas por el Caso 3 y el Caso 4 pueden ser aplicadas de forma simultánea, ya que incrementar el índice de distribución y aumentar el número de veces en que se intercambian los valores hijos induce un balanceo adecuado entre exploración e intensificación de las regiones promisorias.
+%
+%Además, combinar el Caso 4 y el Caso 2 tendría efectos negativos, esto en base a que se obtuvieron malos resultados considerando únicamente al Caso 2, por lo tanto juntar este último y aumentar el índice de distribución tendrá un comportamiento inestable.
 %
 Adicionalmente, se anexan resultados detallados para facilitar que otros investigadores puedan realizar comparativas con un mayor
 nivel de detalle\footnote{https:\//\//github.com\//joelchaconcastillo\//SBX\_CEC2018.}.
@@ -695,13 +712,13 @@ nivel de detalle\footnote{https:\//\//github.com\//joelchaconcastillo\//SBX\_CEC
 En base a los análisis realizados con anterioridad se propone una variante del operador \SBX{} que incorpora las modificaciones propuestas
 en el Caso 3 y Caso 4 de forma simultánea, es decir, se incorpora un cambio dinámico tanto en el parámetro $\delta_2$ como en el índice de distribución.
 %
-Debido a los pobres resultados del Caso 2 no se modifica de forma dinámica $\delta_1$.
+Debido a los resultados de baja calidad del Caso 2 el parámetro $\delta_1$ no se modifica de forma dinámica.
 %
 Particularmente, el Caso 5 se construye en base al Algoritmo \ref{alg:SBX_Operator} asignando el parámetro $\delta_1$ a $0.5$ debido
 a que es la forma de la versión estándar del \SBX{}, mientras que $\delta_2$ es actualizado de acuerdo a la Ecuación~(\ref{eqn:linear}) y
-y el parámetro $\eta_c$ es actualizado como se indica en la Ecuación (\ref{eqn:index_eta}).
+el parámetro $\eta_c$ es actualizado como se indica en la Ecuación (\ref{eqn:index_eta}).
 
-De acuerdo a la media del HV y del IGD+ que se obtuvieron en el Caso 5 (ver tablas~\ref{tab:Metrics_2} y \ref{tab:Metrics_3}), es claro que integrar los 
+De acuerdo a la media del HV y del IGD+ que se obtuvieron en el Caso 5 (ver Tablas~\ref{tab:Metrics_2} y \ref{tab:Metrics_3}), es claro que integrar los 
 Casos 3 y 4 proporciona beneficios importantes.
 %
 En el caso de dos objetivos se observa una ventaja significativa, sin embargo en el caso de tres objetivo los Casos 4 y 5 son muy similares en base a la media.
@@ -711,23 +728,25 @@ mientras que al considerar la versión estándar de \SBX{} se observa un deterio
 %
 Por lo tanto, si el operador \SBX{} es configurado adecuadamente puede generar resultados similares o superiores que el algoritmo \DEMO{}. 
 
-Finalmente, se presenta un análisis adicional para comprender mejor las contribuciones de los distintos casos.
-%
-Particularmente, se realizan comparaciones por pares en base a las pruebas estadísticas ya mencionadas entre los cinco casos.
-%
-Este procedimiento se realizó de forma independiente para cada el \NSGAII{}, \MOEAD{} y el \SMSEMOA{}.
-%
-En la tabla ~\ref{tab:statistical_Tests}, se muestra los resultados de las pruebas estadísticas.
-%
-Para cada algoritmo y para cada caso, la columna ``$\uparrow$'' reporta el número de comparaciones donde las pruebas estadísticas confirmaron 
-la superioridad del caso correspondiente, mientras que en la columna ``$\downarrow$'' se reporta el número de veces donde este caso fue inferior 
-y la columna ``$\longleftrightarrow$'' indica el número de comparaciones donde la diferencia estadística no fue significativamente distinto.
+%Finalmente, se presenta un análisis adicional para comprender mejor las contribuciones de los distintos casos.
 %%
-Los beneficios obtenidos por el caso 5 son muy claros, de hecho,
+%Particularmente, se realizan comparaciones por pares en base a las pruebas estadísticas ya mencionadas entre los cinco casos.
+%%
+%Este procedimiento se realizó de forma independiente para cada el \NSGAII{}, \MOEAD{} y el \SMSEMOA{}.
+%%%%%%%%%%%%%%%%%
+%En la Tabla~\ref{tab:statistical_Tests}, se muestra los resultados de las pruebas estadísticas.
+%%
+%Para cada algoritmo y para cada caso, la columna ``$\uparrow$'' reporta el número de comparaciones donde las pruebas estadísticas confirmaron 
+%la superioridad del caso correspondiente, mientras que en la columna ``$\downarrow$'' se reporta el número de veces donde este caso fue inferior 
+%y la columna ``$\longleftrightarrow$'' indica el número de comparaciones donde la diferencia estadística no fue significativamente distinto.
+%%
+Finalmente, en la Tabla~\ref{tab:statistical_Tests}, se muestra los resultados de las pruebas estadísticas.
+%
+Los beneficios obtenidos por el Caso 5 son muy claros, de hecho,
 únicamente el Caso 4 obtuvo mejores resultados que el Caso 5 al considerar tres objetivos y al algoritmo \NSGAII{}.
 %
 Esto demuestra que se pueden obtener mejores resultados si se integran varias modificaciones dinámicas de forma simultánea.
 %
-Además, los resultados confirman las ventajas de la versión dinámica frente al caso estándar (caso 1).
+Además, los resultados confirman las ventajas de la versión dinámica frente al caso estándar (Caso 1).
 %
 El único caso que no presenta ventajas importantes frente a la versión estándar del \SBX{} es el Caso 2, el cual fue discutido con anterioridad.
