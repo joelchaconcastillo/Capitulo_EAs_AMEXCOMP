@@ -8,8 +8,8 @@ variantes más complejas~\cite{das2011differential}.
 %
 De hecho, la propuesta que se presenta en este capítulo como ejemplo extiende al \DE{}/rand/1/bin.
 %
-\DE{} fue propuesta como un método de búsqueda directo para optimización continuo mono-objetivo y es el ámbito en que
-se usará en este capítulo, es decir, se considera la Ecuación~\ref{eqn:Model_general}, fijando $M = 1$.
+\DE{} fue propuesto como un método de búsqueda directa para optimización continua mono-objetivo y es el ámbito en que
+se usará en este capítulo, es decir, se considera la Ecuación~(\ref{eqn:Model_general}), fijando $M = 1$.
 
 \DE{} es un algoritmo estocástico basado en población, por lo que en cada instante maneja un conjunto de soluciones 
 candidatas que van evolucionando de forma iterativa.
@@ -49,7 +49,7 @@ La variante clásica de \DE{} aplica la estrategia conocida como rand/1, en la c
 \vec{V}_{i,G} = \vec{X}_{r1, G} + F \times (\vec{X}_{r2, G} - \vec{X}_{r3, G}) \quad r1 \neq r2 \neq r3
 \end{equation}
 
-En la ecuación~\ref{eqn:mutation} los índices $r1, r2, r3 \in [1,NP]$ deben ser enteros distintos que son generados de forma aleatoria i
+En la Ecuación~(\ref{eqn:mutation}) los índices $r1, r2, r3 \in [1,NP]$ deben ser enteros distintos y son generados de forma aleatoria
 en el rango $[1, NP]$.
 %
 Además, estos índices son distintos al índice $i$.
@@ -73,14 +73,15 @@ La estrategia de cruce mas típica es conocida como \textit{cruce binomial} y ac
 \begin{equation} \label{eqn:crossover}
 \vec{U}_{j,i,G}= 
 \begin{cases}
-    \vec{V}_{j,i,G},& \text{si} (rand_{i,j}[0,1] \leq CR \quad or \quad j = j_{rand}  )\\
+    \vec{V}_{j,i,G},& \text{si} (rand_{i,j}[0,1] \leq CR \quad o \quad j = j_{rand}  )\\
     \vec{X}_{j,i,G},              & \text{de otra forma}
 \end{cases}
 \end{equation}
 
-En la ecuación~\ref{eqn:crossover} $rand_{i,j}[0,1]$ es un número uniformemente distribuido, 
+En la Ecuación~(\ref{eqn:crossover}) $rand_{i,j}[0,1]$ es un número uniformemente distribuido, 
 $j_{rand}$ es un índice seleccionado aleatoriamente que asegura que $\vec{U}_{i,G}$ genera al menos un componente 
-de $\vec{V}_{i,G}$ y $CR \in [0,1]$ es el ratio de cruce.
+de $\vec{V}_{i,G}$ y $CR \in [0,1]$ es la razón de cruce.
+%el ratio de cruce.
 
 \subsubsection{Operador de selección}
 Finalmente, se aplica una selección elitista para determinar los vectores sobrevivientes que participarán en la siguiente generación.
@@ -100,14 +101,14 @@ Debido a la forma de seleccionar a los sobrevivientes en cada generación los mi
 Por ello, se considera que \DE{} hace uso de una selección muy elitista y es una de las razones por la que en ciertos casos puede
 sufrir de una convergencia demasiado acelerada.
 
-\subsection{Propuesta basada en Diversidad}
+\subsection{Propuesta basada en diversidad}
 
 El método que se presenta en esta sección está motivado principalmente por dos trabajos.
 %
 El primero de ellos es un estudio empírico desarrollado por Montgomery et al.~\cite{montgomery2012simple} que confirma que 
 \DE{} sufre de convergencia prematura en varios problemas.
 %
-El segundo es un trabajo propuesto por Segura et al.~\cite{segura2016novel} que proporciona mejoras significativas en el campo optimización combinatoria
+El segundo es un trabajo propuesto por Segura et al.~\cite{segura2016novel} que proporciona mejoras significativas en el campo de optimización combinatoria
 utilizando para ello una fase de reemplazo conocida como \textit{Reemplazo con Control de Diversidad Dinámica Basada en Varios Objetivos} 
 (Replacement with Multi-objective based Dynamic Diversity Control - \RMDDC{}).
 %
@@ -168,7 +169,7 @@ Así, se establecerá un grado de diversidad mínimo deseado dependiente del tie
 
 La estrategia de reemplazo (ver Algoritmo \ref{alg:Replacement}) funciona de la siguiente forma.
 %
-Inicialmente, recibe a la población padre (vectores objetivo) a la población de hijos (vectores de prueba) y a los vectores élite.
+Inicialmente, recibe a la población padre (vectores objetivo) a la población de hijos (vectores de prueba) y a los vectores elite.
 %
 De entre todos ellos, debe seleccionar a $NP$ vectores para forma la siguiente población de padres.
 %
@@ -182,20 +183,20 @@ Posteriormente, se inicializa tanto el conjunto de individuos sobrevivientes com
 %
 Para seleccionar a los $NP$ sobrevivientes se repite el proceso iterativo (líneas 5 - 13) que se describe a continuación.
 %
-En cada iteración comienza seleccionando como superviviente al mejor individuo del \textit{Conjunto de Candidatos}, es decir al individuo que tiene la mejor aptitud.
+En cada iteración se comienza seleccionando como sobreviviente al mejor individuo del \textit{Conjunto de Candidatos}, es decir al individuo que tiene la mejor aptitud.
 %
 Este individuo se mueve al \textit{Conjunto de Sobrevivientes} y los individuos del \textit{Conjunto de Candidatos} cuya distancia al individuo seleccionado sea menor 
 que $D_t$ se transfieren al \textit{Conjunto de Penalizados} (línea 9).
 %
-La forma de calcular la distancia entre dos individuos es en base a la distancia Euclidiana normalizada descrita en la Ecuación~\ref{eqn:distance}, 
-donde $D$ es la dimensión del problema, y $a_d, b_d$ son los límites menores y mayores de cada dimensión ($d$).
+La forma de calcular la distancia entre dos individuos es en base a la distancia Euclidiana normalizada descrita en la Ecuación~(\ref{eqn:distance}), 
+donde $D$ es la dimensión del problema, y $x_d^{(L)}, x_d^{(U)}$ son los límites menores y mayores de cada dimensión ($d$).
 %
-En los casos donde \textit{El conjunto de Candidatos} queda vacío antes de seleccionar a $NP$ individuos, 
+En los casos donde el \textit{conjunto de Candidatos} queda vacío antes de seleccionar a $NP$ individuos, 
 el \textit{Conjunto de Sobrevivientes} se llena seleccionando en cada iteración al individuo $Penalizado$ con la mayor distancia al individuo más cercano 
 al \textit{Conjunto de Sobrevivientes} (líneas 10 - 13).
 
 \begin{equation}\label{eqn:distance}
-distancia ( x_{i}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{i}^d - x_j^d}{b_d - a_d} \right )^2  }} {\sqrt{D}}
+distancia ( x_{i}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{i}^d - x_j^d}{x_d^{(U)} - x_d^{(L)}} \right )^2  }} {\sqrt{D}}
 \end{equation}
 
 
@@ -262,18 +263,17 @@ La distancia inicial ($D_I$) afecta de forma considerable al rendimiento de \DEE
 Si este parámetro es elevado, el algoritmo maximiza la diversidad de la población en las primeras etapas de optimización resultando en una exploración adecuada 
 que es muy importante en varios tipos de problemas como los multi-modales y deceptivos.
 %
-Sin embargo, un valor demasiado elevado de $D_I$ podría inducir un grado excesivo de exploración excesivamente y la intensificación podría fallar.
+Sin embargo, un valor demasiado elevado de $D_I$ podría inducir un grado excesivo de exploración y en consecuencia la intensificación podría fallar.
 %
 Por otra parte, un valor muy pequeño de $D_I$ provocaría muy poca exploración y por lo tanto sería más difícil evitar óptimos locales.
 %
-El valor óptimo de $D_I$ podría variar dependiendo del tipo problema y el criterio de paro y se podría trabajar con variantes adaptativas.
+El valor óptimo de $D_I$ podría variar dependiendo del tipo de problema y el criterio de paro. %, además en base a esto se podría trabajar con variantes adaptativas.
 %
-Sin embargo, en esta primera versión no se adapta el valor $D_I$ para cada problema.
+Sin embargo, en esta primera versión no se aplica un valor $D_I$ para cada problema.
 %
-En su lugar, se realizó un análisis previo para determinar un valor adecuado, estableciéndose que al menos para los problemas de benchmark
-el valor $D_I = 0.3$ reporta resultados muy promisorios.
+En su lugar, se realizó un análisis previo para determinar un valor adecuado, estableciéndose así el valor $D_I = 0.3$ ya que reporta resultados de calidad.
 %
-Todos los resultados que se muestran en este capítulo consideraron dicho valor para $D_I$.
+Por lo tanto todos los resultados que se muestran en este capítulo consideraron dicho valor para $D_I$.
 
 Al igual que en la versión estándar de \DE{}, en \DEEDM{} es necesario asignar una probabilidad de cruce ($CR$) y un factor de mutación ($F$).
 %
@@ -286,12 +286,12 @@ Así, los valores pequeños de $CR$ resultan en una búsqueda alineada a un núm
 %
 Esto provoca una mejora gradual con convergencia lenta que en algunos escenarios podría resultar beneficioso.
 %
-Por otra parte, los valores elevados de $CR$ en general, generan soluciones de mayor calidad con una menor probabilidad.
-pero las transformaciones realizadas se basan en desplazamientos largos que cuando son exitosos pueden mejorar la aptitud 
-de forma significativa.
+Por otra parte, los valores elevados de $CR$ en general, proporcionan soluciones de mayor calidad con una menor probabilidad, ya que en algunas veces se realizan desplazamientos largos y exitosos que en consecuencia puedan mejorar la aptitud de forma significativa.
+%sin embargo estapero las transformaciones realizadas se basan en desplazamientos largos que cuando son exitosos pueden mejorar la aptitud 
+%de forma significativa.
 %
 En base a esto, en nuestra propuesta se emplean los dos mecanismos, es decir, valores elevados y pequeños de $CR$ tal y como se muestra
-en la Ecuación \ref{eqn:cr}.
+en la Ecuación~(\ref{eqn:cr}).
 
 \begin{equation} \label{eqn:cr}
 CR = 
@@ -310,14 +310,14 @@ Particularmente, cada valor $F$ se muestrea de una distribución Cauchy (Ecuaci�
  Cauchy(0.5, 0.5*nfes/max\_nfes)
 \end{equation}
 
-El efecto de esta distribución es que en las primeras etapas de optimización se generan valores de $F$ cercanos a $0.5$.
+El efecto de esta distribución es que en las primeras etapas de optimización se generen valores de $F$ cercanos a $0.5$.
 %
 Posteriormente, conforme la ejecución transcurre, la función de densidad sufre una transformación gradual ya que la varianza se incrementa.
 %
 Esto implica que se generan valores fuera del intervalo $[0.0, 1.0]$ con una probabilidad más alta.
 %
 En los casos en que los valores son mayores a $1.0$, se utiliza el valor $1.0$, mientras
-que si se genera un valor negativo, se regenera el valor.
+que si se genera un valor negativo, se vuelve a muestrear el valor.
 %
 Uno de los efectos de este enfoque es el de incrementar la probabilidad de generar valores elevados de $F$ conforme transcurren las generaciones, lo que ayuda a evitar
 la convergencia acelerada en las últimas etapas de optimización.
@@ -334,7 +334,7 @@ Particularmente, se consideraron los conjuntos de prueba de los concursos de opt
 Cada uno está compuesto de treinta problemas distintos.
 %
 En la comparativa incluimos a los algoritmos que obtuvieron los primeros lugares en cada año, así como una versión de \DE{} que usa la misma
-parametrización que \DEEDM{} pero que no incluye la población élite ni el reemplazamiento basado en diversidad.
+parametrización que \DEEDM{} pero que no incluye la población elite ni el reemplazamiento basado en diversidad.
 %
 Los algoritmos considerados del \CEC{} 2016 son el UMOEAs-II~\cite{elsayed2016testing} y L-SHADE-EpSin \cite{awad2016ensemble}, que alcanzaron el primero y el segundo lugar respectivamente,
 mientras que del \CEC{} 2017 se consideran el EBOwithCMAR~\cite{kumar2017improving} y el jSO~\cite{brest2017single}.
@@ -351,7 +351,7 @@ Para cada algoritmo se utilizó la parametrización indicada por sus autores y q
 
 \begin{itemize}
 \item \textbf{EBOwithCMAR}: Para la parte EBO, el tamaño máximo de la población de $S_1 = 18D$, 
-el tamaño mínimo de la población de $S_1 = 4$, el tamaño máximo de la población de $S_2 = 146.8D$, 
+el tamaño mínimo de la población de $S_1 = 4$, el tamaño máximo de la población de $S_2 = (146.8)D$, 
 el tamaño mínimo de la población de $S_2 = 10$, el tamaño de la memoria histórica H=$6$. 
 Para la parte de CMAR el tamaño de la población $S_3 = 4 + 3log(D)$, $\sigma=0.3$, CS = $50$, 
 la probabilidad de búsqueda local $pl = 0.1$ y $cfe_{ls} = 0.4* FE_{max}$.
@@ -384,7 +384,7 @@ En todos los casos se fijó el nivel de confianza al 95\%.
 Se considera que un algoritmo $X$ es superior a un algoritmo $Y$, si el procedimiento anterior reporta diferencias significativas y si la media y mediana 
 del error obtenido por el método $X$ son inferiores a las obtenidas por el método $Y$.
 
-En las tablas \ref{tab:Summary_CEC2016} y \ref{tab:Summary_CEC2017} se presenta un resumen de los resultados obtenidos para el \CEC{} 2016 y el \CEC{} 2017 respectivamente.
+En las Tablas \ref{tab:Summary_CEC2016} y \ref{tab:Summary_CEC2017} se presenta un resumen de los resultados obtenidos para el \CEC{} 2016 y el \CEC{} 2017 respectivamente.
 %
 La columna etiquetada con ``Siempre Resuelto'' muestra el número de funciones en que se obtuvo un error de cero en las 51 ejecuciones.
 %
@@ -406,7 +406,7 @@ Finalmente, la columna etiquetada con $\longleftrightarrow$ muestra el número d
 Las pruebas estadísticas indican que el \DEEDM{} alcanzó los mejores resultados en los dos años.
 %
 De hecho el número de comparaciones en que nuestra propuesta ganó en el \CEC{} 2016 y el \CEC{} 2017 fue de $77$ y $88$ respectivamente y
-sólo perdio en $25$ y $6$, respectivamente, valores muy superiores a los del resto de algoritmos.
+sólo perdió en $25$ y $6$, respectivamente, valores muy superiores a los del resto de algoritmos.
 %
 La última columna etiquetada con ``Puntaje'' muestra la puntuación siguiendo los lineamientos propuestos en las competencias del \CEC{}.
 %
@@ -417,28 +417,33 @@ definiendo el puntaje final como $Score = Score_1 + Score_2$.
 %
 \begin{equation}\label{eqn:total_scores}
 \begin{split}
-Score_1 &= \left (1 - \frac{SE - SE_{min}}{SE} \right) \times 50, \\
-Score_2 &= \left  (1 - \frac{SR - SR_{min}}{SR} \right ) \times 50, \\
+Score_1 &= \left (1 - \frac{SE_i - SE_{min}}{SE_i} \right) \times 50, \\
+Score_2 &= \left  (1 - \frac{SR_i - SR_{min}}{SR_i} \right ) \times 50, \\
 \end{split}
 \end{equation}
 
-En la ecuación~\ref{eqn:total_scores} $SE_{min}$ es la suma errores mínimo entre todos los algoritmos, y $SE$ es la suma de errores dado un algoritmo $SE = \sum_{i=1}^{30} error\_f_i$.
+%En la Ecuación~\ref{eqn:total_scores} 
+Específicamente, $SE_i$ es la sumatoria de errores del $i$-ésimo algoritmo ($SE_i = \sum_{j=1}^{30} error\_\hat{f}_j$), además $error\_\hat{f}_j$ es el error promedio de la $j$-ésima función.
 %
-Por su parte, $SR_{min}$ es la suma mínima de los rangos entre todos los algoritmos, específicamente se aplica la suma de cada rango en cada función para todos 
-los algoritmos $SE = \sum_{i=1}^{30} error\_f_i$.
+$SE_{min}$ es la mínima sumatoria de errores entre todos los algoritmos.
 %
-Nuestra propuesta alcanzó el mejor puntaje ($100.00$) en los dos años, demostrando su superioridad. 
+Por su parte, $SR_i$ es la sumatoria del rango de cada función en el $i$-ésimo algoritmo ($SR_i = \sum_{j=1}^{30} rango_j$). %, además $rango_j$ es el error promedio de la $j$-ésima función.
 %
-Adicionalmente, es remarcable que la versión estándar de \DE{} alcanzó resultados bastante buenos, de hecho obtuvo el tercer y el segundo lugar en los años 2016 y 2017, respectivamente.
+Además, $SR_{min}$ es la sumatoria mínima de los rangos entre todos los algoritmos. %, específicamente se aplica la sumatoria de cada rango en cada función para todos  
+%los algoritmos $SR = \sum_{i=1}^{30} error\_f_i$.
 %
-Esto muestra que el rendimiento de los algoritmos del estado-del-arte difiere al considerar ejecuciones a largo plazo pues esos algoritmos que fueron muy promisorios a corto plazo,
+Nuestra propuesta alcanzó el mejor puntaje de $100.00$ en los dos años, demostrando su superioridad. 
+%
+Adicionalmente, es remarcable que la versión estándar de \DE{} alcanzó resultados buenos, de hecho obtuvo el tercer y el segundo lugar en los años 2016 y 2017, respectivamente.
+%
+Esto muestra que el rendimiento de los algoritmos del estado-del-arte difiere al considerar ejecuciones a largo plazo pues esos algoritmos que fueron muy efectivos a corto plazo,
 no lo son tanto a largo plazo.
 %
 También es remarcable que el algoritmo L-SHADE-Epsilon obtuvo un puntaje competitivo a pesar de que en el \CEC{} del 2017 
 alcanzó el menor número de comparaciones positivas dentro de las pruebas estadísticas.
 %
-En el puntaje propuesto en las competiciones no se consideran validaciones estadísticas, por lo que si se es superior en media en algún caso a pesar de que los tests
-indiquen que no hay diferencias significativas, se puntúa de forma positiva al algoritmo, mientras que al considerar los test estadísticos se considera que ambos son iguales.
+En el puntaje propuesto y utilizado en las competiciones no se consideran validaciones estadísticas, por lo tanto bajo ese esquema al realizar una comparación un algoritmo puede ser superior que otro en media y por lo tanto calificar de forma positiva al algoritmo mientras que en las pruebas estadísticas podrían no encontrarse diferencias significativas y por lo tanto se considerarían los dos iguales.
+%En el puntaje propuesto en las compreticiones no se consideran validaciones estadísticas, por lo que si se es superior en media en algún caso a pesar de que los tests indiquen que no hay diferencias sigificativas, se puntúa de forma positiva al algoritmo, mientras que al considerar los test estadísticos se considera que ambos son iguales.
 %
 En cualquier caso, la superioridad del \DEEDM{} es clara con ambos tipos de comparativas.
 
@@ -516,11 +521,11 @@ En cualquier caso, la superioridad del \DEEDM{} es clara con ambos tipos de comp
 \end{table}
 
 
-Además, con el fin de proporcionar resultados que puedan usar otros autores para realizar comparativas, en las tablas \ref{tab:Results_CEC2016} y \ref{tab:Results_CEC2017} 
+Además, con el fin de proporcionar resultados que puedan usar otros autores para realizar comparativas, en las Tablas \ref{tab:Results_CEC2016} y \ref{tab:Results_CEC2017} 
 se reporta el mejor, peor, mediana, media, desviación estándar y razón de éxito para el \CEC{} 2016 y 2017, respectivamente.
 %In order, to provide comparable results of our proposal, in the tables \ref{tab:Results_CEC2016} and \ref{tab:Results_CEC2017} are reported the best, worst, median, mean, standard deviation and success ratio.
 %
-En estas tablas se observa que nuestra propuesta resuelve todos los problemas unimodales y que en la mayor parte de las multi-modales
+En estas tablas se observa que nuestra propuesta resuelve todos los problemas uni-modales y que en la mayor parte de los problemas multi-modales
 se obtienen resultados muy aceptables con respecto a los reportados por otros métodos.
 %Particularly, these tables show that the uni-modal were solved by our proposal.
 %
