@@ -43,7 +43,7 @@ En este sentido, los más populares son los siguientes:
 la selección de padres.
 \item \textbf{Enfoques basados en población}: se modifica el modelo poblacional utilizando algunas técnicas como variar el tamaño de la población de forma
 dinámica, eliminar individuos duplicados, utilizar técnicas de infusión o establecer un estrategia de islas con migraciones.
-\item \textbf{Enfoques basados en el cruce y/o mutación}: se basan en rediseñar los operadores de cruce y/o mutación, considerando en algunos casos información específica del problema. Algunas opciones más generales son aplicar restricciones sobre el emparejamiento y/o incluir operadores disruptivos que podrían ser utilizados sólo en ciertos instantes del proceso
+\item \textbf{Enfoques basados en el cruce y/o mutación}: se basan en rediseñar los operadores de cruce y/o mutación, considerando en algunos casos información específica del problema. También se incluyen en este grupo opciones más generales como aplicar restricciones sobre el emparejamiento y/o incluir operadores disruptivos que podrían ser utilizados sólo en ciertos instantes del proceso
 de optimización.
 \end{itemize}
 
@@ -137,10 +137,10 @@ Por ello, Petrowski~\cite{petrowski1996clearing} propuso una variante para únic
 
 Otros métodos de este grupo consideran funciones de aptitud que combinan la función objetivo original con la diversidad.
 %
-Sin embargo, es complejo construir una función compuesta ya que las dos mediciones podrían no son directamente compatibles
+Sin embargo, es complejo construir una función compuesta ya que las dos mediciones podrían no ser directamente compatibles
 y por lo tanto las funciones adecuadas suelen depender de cada problema.
 %
-Una forma de suavizar este problema fue propuesta en el algoritmo de combinación (COMB)~\cite{vidal2013hybrid} donde los individuos son ordenados 
+Una forma de suavizar este inconveniente fue propuesta en el algoritmo de combinación (COMB)~\cite{vidal2013hybrid} donde los individuos son ordenados 
 y categorizados en base a su aptitud y contribución a la diversidad, y la función compuesta se diseña en base al orden y no en base a los valores de función objetivo
 y contribución a diversidad.
 %
@@ -158,7 +158,7 @@ optimización multi-objetivo~\cite{bui2005multiobjective}~\cite{mouret2011novelt
 %
 Estos enfoques son identificados como algoritmos multi-objetivo basados en diversidad.
 %
-Existen varias estrategias para calcular al objetivo auxiliar~\cite{segura2013using}.
+Existen varias estrategias para calcular el objetivo auxiliar~\cite{segura2013using}.
 %
 Uno de los enfoques más populares consiste en calcular la contribución a la diversidad de cada individuo en base a 
 la \textit{Distancia al Vecino más Cercano} (Distance to the Closest Neighbor - DCN)~\cite{segura2016novel} de entre los individuos que ya hayan sido seleccionados
