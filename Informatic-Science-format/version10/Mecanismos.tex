@@ -11,20 +11,20 @@ describir mecanismos clásicos específicos, así como algunas estrategias más 
 la estrategia de reemplazamiento.
 %
 Finalmente, dado que en este capítulo se extiende \DE{}, se revisan también los trabajos de esta área que tienen una relación
-significativa con el manejo de diversidad.
+estrecha con el manejo de diversidad.
 %
-Se invita a los lectores que requieran conocer estos mecanismos con más detalle consultar~\cite{Joel:Crepinsek} así como los artículos
+Se recomienda a los lectores que requieran conocer estos mecanismos con más detalle consultar~\cite{Joel:Crepinsek} así como los artículos
 específicos en que cada método es propuesto.
 
 \subsection{Clasificaciones de mecanismo para promover la diversidad}
 
 Debido a la gran cantidad de métodos desarrollados en esta área, se han propuesto varias clasificaciones de los mismos.
 %
-Liu et al.\cite{liu2009explore} propuso diferenciar entre los enfoques uni-proceso y multi-proceso.
+Liu et al.~\cite{liu2009explore} propuso diferenciar entre los enfoques uni-proceso y multi-proceso.
 %
 En el enfoque uni-proceso se modifica la preservación de la diversidad actuando sobre un único componente del \EA{}. 
 %
-Es importante notar que en los enfoques uni-proceso no se excluye el uso de otros componentes en el proceso de exploración y/o intensificación, 
+Es importante destacar que en los enfoques uni-proceso no se excluye el uso de otros componentes en el proceso de exploración y/o intensificación, 
 sino que más bien, si no se consigue el balanceo adecuado, sólo se modifica una componente hasta conseguir el comportamiento deseado.
 %
 Por otra parte, en los enfoques multi-proceso se tienen en cuenta las implicaciones de varios componentes en el balanceo, y se actúa modificando o rediseñando varios de ellos
@@ -34,16 +34,16 @@ Los esquemas uni-proceso son mucho más habituales actualmente~\cite{Crepinsek:1
 uni-proceso.
 
 Extendiendo a lo anterior, se propuso una clasificación más específica~\cite{Crepinsek:13}, en la que se tiene en cuenta cuál es la componente 
-que se cambia, y así categorizar cada método.
+que se cambia para categorizar a cada método.
 %
 En este sentido, los más populares son los siguientes:
 
 \begin{itemize}
 \item \textbf{Enfoques basados en la selección}: son los más clásicos y se basan en cambiar la presión de selección que se produce hacia las zonas promisorias a la hora de realizar
 la selección de padres.
-\item \textbf{Enfoques basados en población}: se modifica el modelo poblacional, utilizando algunas técnicas como variar el tamaño de la población de forma
+\item \textbf{Enfoques basados en población}: se modifica el modelo poblacional utilizando algunas técnicas como variar el tamaño de la población de forma
 dinámica, eliminar individuos duplicados, utilizar técnicas de infusión o establecer un estrategia de islas con migraciones.
-\item \textbf{Enfoques basados en el cruce y/o mutación}: se basan en rediseñar los operadores de cruce y/o mutación, éstos habitualmente tienen en cuenta un problema específico a resolver. Por lo regular aplican restricciones sobre el emparejamiento y/o incluyen operadores disruptivos que podrían ser utilizados sólo en ciertos instantes del proceso
+\item \textbf{Enfoques basados en el cruce y/o mutación}: se basan en rediseñar los operadores de cruce y/o mutación, considerando en algunos casos información específica del problema. Algunas opciones más generales son aplicar restricciones sobre el emparejamiento y/o incluir operadores disruptivos que podrían ser utilizados sólo en ciertos instantes del proceso
 de optimización.
 \end{itemize}
 
@@ -59,10 +59,10 @@ prematura se basaron en modificar el proceso de selección de padres.
 Así, en los 90s se desarrollaron varios esquemas que alteraban la presión de selección~\cite{eiben2003introduction}
 de forma estática o dinámica.
 %
-Sin embargo, en base a varios estudios teóricos y experimentales se observó que actuar exclusivamente sobre los operadores de selección no es suficiente, especialmente
+Sin embargo, en base a varios estudios teóricos y experimentales se observó que generalmente actuar exclusivamente sobre los operadores de selección no es suficiente, especialmente
 cuando se quieren realizar ejecuciones a largo plazo, ya que se requerirían poblaciones excesivamente grandes para mantener un grado adecuado de diversidad.
 
-Otra alternativa fue modificar los modelos poblaciones, encontrando en este grupo los esquemas basados en islas~\cite{alba2005parallel}, los celulares
+Otra alternativa fue modificar los modelos poblacionales, encontrando en este grupo los esquemas basados en islas~\cite{alba2005parallel}, los celulares
 o más recientemente los basados en \textit{agrupaciones o clústeres}~\cite{gao2014cluster}.
 %
 La idea de introducir restricciones en el emparejamiento, principalmente en base a la ubicación de los individuos en el espacio de búsqueda también
@@ -101,7 +101,7 @@ En base a esto se han propuesto diversas estrategias para establecer los puntos 
 Estos esquemas se implementan de forma muy sencilla y en algunos casos han proporcionado mejoras significativas~\cite{koumousis2006saw} por lo que
 es un método a tener en cuenta, al menos como alternativa inicial.
 %
-Es común combinar las estrategias basadas en reinicio con alguna de las técnicas anteriores, ya que las anteriores están basadas en mantener
+Es común combinar las estrategias basadas en reinicio con algunas de las técnicas anteriores, ya que las anteriores están basadas en mantener
 la diversidad, mientras que en esta última el objetivo es recuperar la diversidad.
 
 \subsection{Esquemas de reemplazamiento basados en diversidad}
@@ -117,7 +117,7 @@ considerar individuos distantes e intensificación al considerar individuos pró
 El esquema de pre-selección propuesto por Cavicchio~\cite{grefenstette1986optimization} es uno de los primeros estudios que utilizan 
 la fase de reemplazamiento para controlar la diversidad.
 %
-El esquema inicial de Cavicchio se extendió para generar el \textit{amontonamiento o crowding}~\cite{de1975analysis}, el cual ha sido muy popular 
+El esquema inicial de Cavicchio se extendió para generar el esquema denominado \textit{amontonamiento o crowding}~\cite{de1975analysis}, el cual ha sido muy popular 
 en los últimos años~\cite{mahfoud1992crowding, mengshoel2014adaptive}.
 %
 El principio del crowding se basa en que los nuevos individuos que entren en la población sustituyan a individuos similares de generaciones anteriores, y en base
@@ -125,40 +125,44 @@ a este principio, se han formulado diversas implementaciones.
 
 En esta misma línea, se han propuesto otras estrategias de reemplazo con el propósito de promover la diversidad.
 %
-Uno de los procedimientos más populares es la \textit{Estrategia de Limpieza} (Clearing Strategy - CLR)~\cite{lozano2008replacement}.
+Uno de los procedimientos más populares es la \textit{Estrategia de Limpieza} (Clearing Strategy - \CLR{})~\cite{lozano2008replacement}.
 %
-En el procedimiento CLR los mejores individuos de cada nicho son preservados e incluidos en la población de la siguiente generación.
+En el procedimiento \CLR{} se agrupan a los individuos en grupos denominados nichos, y los mejores individuos de cada nicho son preservados e incluidos 
+en la población de la siguiente generación.
 %
-Es importante notar el inconveniente de este procedimiento al detectar muchos nichos ya que esto podría afectar la inmovilización de la población.
+Un inconveniente de este procedimiento es que los casos en que se detectan muchos nichos provocan una fuerte inmovilización de la población.
 %
-En base a esto, Petrowski~\cite{petrowski1996clearing} propuso únicamente seleccionar a los mejores individuos de cada nicho cuya aptitud sea mejor que la media de la población.
-%
+Por ello, Petrowski~\cite{petrowski1996clearing} propuso una variante para únicamente seleccionar a individuos cuya aptitud sea mejor que la media de la población.
 
 
-Adicionalmente, otros métodos consideran funciones compuestas las cuales combinan la aptitud y diversidad.
+Otros métodos de este grupo consideran funciones de aptitud que combinan la función objetivo original con la diversidad.
 %
-Sin embargo, es complejo construir una función compuesta ya que las dos mediciones podrían no ser totalmente compatibles, por lo tanto este tipo de métodos dependen de cada problema.
+Sin embargo, es complejo construir una función compuesta ya que las dos mediciones podrían no son directamente compatibles
+y por lo tanto las funciones adecuadas suelen depender de cada problema.
 %
-Un ejemplo es el algoritmo de combinación (COMB)~\cite{vidal2013hybrid} donde los individuos son ordenados y categorizados en base a su aptitud y contribución a la diversidad.
+Una forma de suavizar este problema fue propuesta en el algoritmo de combinación (COMB)~\cite{vidal2013hybrid} donde los individuos son ordenados 
+y categorizados en base a su aptitud y contribución a la diversidad, y la función compuesta se diseña en base al orden y no en base a los valores de función objetivo
+y contribución a diversidad.
 %
-La principal desventaja del COMB es que requiere dos parámetros de usuario.
+La principal desventaja del COMB es que requiere dos parámetros de usuario, aunque independientemente de esto, se ha usado con bastante éxito.
 %
-Otra alternativa entre las estrategias de reemplazo es el procedimiento \textit{Reemplazamiento de Diversidad Basado en la Peor Contribución} (Contribution of Diversity/Replace Worst - CD/RW)~\cite{lozano2008replacement}.
+Otra alternativa es el procedimiento \textit{Reemplazamiento Basado en Contribución a la Diversidad y Sustitución del Peor} 
+(Contribution of Diversity/Replace Worst - CD/RW)~\cite{lozano2008replacement}.
 %
 En el método CD/RW un nuevo individuo reemplaza a un miembro de la población cuyo rendimiento sea peor tanto en aptitud como en contribución a la diversidad.
 %
 En caso de no encontrar un peor individuo bajo estos dos criterios, se procede a reemplazar al peor individuo en la población considerando únicamente a la aptitud.
 %
-Una última alternativa se basa en considerar explícitamente un objetivo como la diversidad de la población y aplicar un esquema de optimización multi-objetivo~\cite{bui2005multiobjective}~\cite{mouret2011novelty}.
+Una última alternativa se basa en considerar a la contribución a la diversidad como un objetivo adicional y aplicar un esquema de 
+optimización multi-objetivo~\cite{bui2005multiobjective}~\cite{mouret2011novelty}.
 %
 Estos enfoques son identificados como algoritmos multi-objetivo basados en diversidad.
 %
 Existen varias estrategias para calcular al objetivo auxiliar~\cite{segura2013using}.
 %
-Uno de los enfoques más populares consiste en calcular la contribución a la diversidad de cada individuo en base a la \textit{Distancia al Vecino más Cercano} (Distance to the Closest Neighbor - DCN)~\cite{segura2016novel}.
-%
-Así, el objetivo auxiliar es calculado en base a la menor distancia entre un individuo dado y al miembro más cercano en la población.
-%
+Uno de los enfoques más populares consiste en calcular la contribución a la diversidad de cada individuo en base a 
+la \textit{Distancia al Vecino más Cercano} (Distance to the Closest Neighbor - DCN)~\cite{segura2016novel} de entre los individuos que ya hayan sido seleccionados
+como supervivientes.
 
 
 \subsection{Diversidad en evolución diferencial}
@@ -172,26 +176,26 @@ Dado que en el área se conoce al menos de manera general, las implicaciones que
 en estimar de forma teórica cuáles deben ser los parámetros adecuados para que se produzca cierto tipo de comportamiento~\cite{zaharie2003control}.
 %
 Otros autores han estudiado el efecto que tiene la norma de los vectores diferencia sobre la mutación~\cite{montgomery2009differential} y en base
-a ello se han propuesto mecanismos que prohíben ciertos movimientos que pueden resultar perjudiciales~\cite{montgomery2012simple}.
+a ello se han propuesto mecanismos que prohiben ciertos movimientos que pueden resultar perjudiciales~\cite{montgomery2012simple}.
 %
-En este último estudio, el tipo de movimientos aceptados varía a lo largo de la ejecución, descartando a los movimientos cuyos desplazamientos sean menor
+En este último estudio, el tipo de movimientos aceptados varía a lo largo de la ejecución, descartando a los movimientos cuyos desplazamientos sean menores
 a un umbral el cual es decrementado conforme transcurren las generaciones.
 %
 Además, se han propuesto otras formas para establecer los movimientos aceptados~\cite{bolufe2013differential}.
 
 Una alternativa distinta se basa en alterar el operador de selección~\cite{sa2008exploration}.
 %
-Específicamente, con el propósito de mantener mayor diversidad en la población se altera la presión utilizando una selección probabilística que
+Específicamente, con el propósito de mantener mayor diversidad en la población se altera la presión de selección utilizando una selección probabilística que
 permite escapar en algunos casos de las bases de atracción de óptimos locales.
 %
 Sin embargo, este método no es demasiado robusto debido a que considera la aptitud para definir las probabilidades para seleccionar a un individuo por lo que ciertas 
 transformaciones de la función pueden modificar de forma drástica el tipo de búsqueda que se realiza.
 
-Finalmente, la variante de \DE{} con \textit{Diversidad de la Población Auto-Mejorado} (\textit{Auto-Enhanced Population Diversity} - \textsc{aepd}) 
+Finalmente, la variante \DE{} con \textit{Diversidad de la Población Auto-Mejorado} (\textit{Auto-Enhanced Population Diversity} - \textsc{aepd}) 
 mide la diversidad de forma explícita y cuando se detecta la existencia de un nivel bajo de diversidad en la población, se 
 lanza un mecanismo de diversificación~\cite{yang2015differential}.
 %
-Este esquema se ha extendido para incluir diferentes esquemas de perturbación~\cite{zhao2016differential}.
+Este esquema se ha extendido para considerar diferentes esquemas de perturbación~\cite{zhao2016differential}.
 
 Es interesante hacer notar que las variantes de \DE{} que alcanzaron los primeros lugares en varias competencias de optimización durante los últimos años
 no consideran estas modificaciones, y además estas variantes no han sido incorporadas en las herramientas de optimización más populares.
