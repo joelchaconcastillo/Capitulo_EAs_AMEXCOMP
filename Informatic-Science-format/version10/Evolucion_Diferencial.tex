@@ -122,7 +122,7 @@ Este nuevo algoritmo recibe el nombre de \textit{Evolución Diferencial con Mant
 %This novel optimizer is called \textit{Differential Evolution with Enhanced Diversity Maintenance} (\DEEDM{}) and its source
 %code is freely available~\footnote{The code in C++ can be downloaded in the next link \url{https://github.com/joelchaconcastillo/Diversity\_DE\_Research.git}}.
 
-\DEEDM{} (ver algoritmo~\ref{alg:DEEDM}) es bastante similar a la versión clásica de \DE{}, de hecho, 
+\DEEDM{} (ver Algoritmo~\ref{alg:DEEDM}) es bastante similar a la versión clásica de \DE{}, de hecho, 
 la forma en que se crean los vectores de prueba (líneas 5 y 6) se mantiene intacta.
 %
 La novedad del \DEEDM{} es que incorpora una población élite ($E$) y una estrategia de reemplazo basada en diversidad.
@@ -169,7 +169,7 @@ Así, se establecerá un grado de diversidad mínimo deseado dependiente del tie
 
 La estrategia de reemplazo (ver Algoritmo \ref{alg:Replacement}) funciona de la siguiente forma.
 %
-Inicialmente, recibe a la población padre (vectores objetivo) a la población de hijos (vectores de prueba) y a los vectores élite.
+Inicialmente, recibe a la población padre (vectores objetivo), a la población de hijos (vectores de prueba) y a los vectores élite.
 %
 De entre todos ellos, debe seleccionar a $NP$ vectores para formar la siguiente población de padres.
 %
@@ -317,7 +317,7 @@ El efecto de esta distribución es que en las primeras etapas de optimización s
 %
 Posteriormente, conforme la ejecución transcurre, la función de densidad sufre una transformación gradual ya que la varianza se incrementa.
 %
-Esto implica que se generan valores fuera del intervalo $[0.0, 1.0]$ con una probabilidad más alta.
+Esto implica que se generen valores fuera del intervalo $[0.0, 1.0]$ con una probabilidad más alta.
 %
 En los casos en que los valores son mayores a $1.0$, se utiliza el valor $1.0$, mientras
 que si se genera un valor negativo, se vuelve a muestrear el valor.
@@ -346,6 +346,8 @@ Todos estos algoritmos fueron probados con los dos conjuntos de prueba como se s
 %
 Debido a que todos los algoritmos son estocásticos se realizaron 51 ejecuciones con distintas semillas
 y en cada caso, el criterio de paro fue asignado a $25,000,000$ de evaluaciones de la función objetivo.
+%
+Además se consideraron diez variables en cada función ($D=10$).
 %
 La evaluación de los algoritmos se realizó siguiendo los lineamientos de las competencias del \CEC{}, de forma que
 se asignó un error igual a $0$ si la diferencia entre la mejor solución encontrada y la solución óptima era menor que $10^{-8}$.
