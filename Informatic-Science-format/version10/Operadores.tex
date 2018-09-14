@@ -12,7 +12,7 @@ es validado experimentalmente.
 
 Los \EAS{} han sido utilizados frecuentemente para lidiar con problemas de optimización multi-objetivo (Multi-objective Optimization Problems - MOPs).
 %
-Particularmente, un MOP continuo basado en minimización puede ser definido como se indica en la Ecuación (\ref{eqn:Model_general}) de la sección~\ref{sec:Introduction}, fijando la $M$
+Particularmente, un MOP de dominio continuo y que es basado en minimización puede ser definido como se indica en la Ecuación (\ref{eqn:Model_general}) de la sección~\ref{sec:Introduction}, fijando la $M$
 a un valor mayor que uno.
 %
 Dadas dos soluciones $\vec{x}$, $\vec{y}$ $\in \Omega$, $\vec{x}$ domina a $\vec{y}$, denotado por $\vec{x} \prec \vec{y}$, 
@@ -613,7 +613,7 @@ donde $20$ variables son parámetros de distancia y $4$ son parámetros de posic
 Como es sugerido en~\cite{Joel:DTLZ_2} se consideró $n=M+r-1$ variables de decisión en los problemas de prueba \DTLZ{}, 
 donde para los problemas DTLZ1, DTLZ2 - DTLZ6 y DTLZ7 se consideraron $r=\{5, 10, 20\}$  respectivamente.
 % 
-En el caso de los problemas de prueba \UF{} se utilizaron $10$ variables de decisión.
+En el caso de los problemas de prueba \UF{} se utilizaron $30$ variables de decisión.
 %
 Finalmente, se hizo uso del operador de mutación polinomial con una probabilidad de mutación de $1/n$ y con un índice de distribución igual a $50$, 
 mientras que el operador de cruce \SBX{} se utilizó con una probabilidad de cruce igual a $0.9$ y un índice de distribución de $20$.
@@ -687,7 +687,7 @@ Quizás los resultados podrían mejorar si el parámetro $\delta_1$ es alterado 
 Los análisis anteriores únicamente consideran la media obtenida en todos los problemas de prueba.
 %
 %Sin embargo, dependiendo en el tipo de problema el rendimiento del algoritmo podría variar, hecho que se analiza en la siguiente sección.
-En la Tabla~\ref{tab:statistical_Tests} se muestra los resultados de las pruebas estadísticas (el Caso 5 se discute en la siguiente sección).
+En la Tabla~\ref{tab:statistical_Tests} se muestran los resultados de las pruebas estadísticas (el Caso 5 se discute en la siguiente sección).
 %
 Particularmente, se realizan comparaciones por pares en base a las pruebas estadísticas ya mencionadas entre los cinco casos.
 %

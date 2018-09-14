@@ -8,6 +8,7 @@
 \journal{Information Science}
 \usepackage[spanish]{babel}
 \selectlanguage{spanish}
+\decimalpoint
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 %\usepackage{cite}
@@ -89,11 +90,18 @@
 %\newcommand{\HMR}{{\sc hmr}}
 %\newcommand{\METCO}{\mbox{\sc{metco}}{}}
 %\newcommand{\NP}{{\sc np}}
+%\mathcode`\.=\mathcode`\,
+%\DeclareMathSymbol{.}{\mathord}{letters}{"3B}
+%\mathcode`\.="8000
+%{\catcode`\.=\active
+%\gdef.{,}}
 
 \renewcommand\spanishtablename{Tabla}
 \makeatletter
 \renewcommand{\ALG@name}{Algoritmo}
 \makeatother
+
+
 \begin{document}
 
 \begin{frontmatter}
@@ -111,7 +119,7 @@
 
 %\cortext[cor1]{Corresponding author. Tel.: + 52 473 732 7155}
 \cortext[cor1]{Autor de contacto. Tel.: + 52 473 732 7155}
-\address[label1]{Área de Ciencias de Computación, Centro de Investigación de Matemáticas (CIMAT), Callej\'on Jalisco s/n, Mineral de Valenciana, Guanajuato, Guanajuato 36240, Mexico}
+\address[label1]{Área de Ciencias de Computación, Centro de Investigación de Matemáticas (CIMAT), Callej\'on Jalisco s/n, Mineral de Valenciana, Guanajuato, Guanajuato 36240, México}
 %\address[label1]{Area of Computer Science, Centre for Research in Mathematics (CIMAT), Callej\'on Jalisco s/n, Mineral de Valenciana, Guanajuato, Guanajuato 36240, Mexico}
 
 \begin{abstract}
