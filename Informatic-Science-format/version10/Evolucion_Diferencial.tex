@@ -16,15 +16,15 @@ candidatas que van evolucionando de forma iterativa.
 %
 En \DE{} dichas soluciones candidatas son usualmente conocidas como vectores.
 %
-En la variante básica de \DE{}, para cada miembro de la población (conocido como \textit{vectores objetivo}) 
+En la variante básica de \DE{}, para cada miembro de la población (conocidos como \textit{vectores objetivo}) 
 se genera un nuevo vector que es conocido como el \textit{vector mutado}.
 %
 A continuación, el vector mutado se combina con el vector objetivo para generar al \textit{vector de prueba} y 
-finalmente se procede con la fase de selección para seleccionar a los vectores sobrevivientes.
+finalmente se procede con la fase de selección para elegir a los vectores sobrevivientes.
 %
 De esta forma, las generaciones transcurren de forma iterativa hasta cumplir el criterio de paro.
 %
-En esta capítulo, el $i$-ésimo vector de la población en la generación $G$ se denota como$\vec{X}_{i,G} = [x_{1,i,G}, x_{2,i,G},..., X_{D,i, G}]$.
+En esta capítulo, el $i$-ésimo vector de la población en la generación $G$ se denota como$\vec{X}_{i,G} = [x_{1,i,G}, x_{2,i,G},..., x_{D,i, G}]$.
 %
 A continuación se explica en más detalle cada componente de \DE{}.
 
@@ -125,9 +125,9 @@ Este nuevo algoritmo recibe el nombre de \textit{Evolución Diferencial con Mant
 \DEEDM{} (ver algoritmo~\ref{alg:DEEDM}) es bastante similar a la versión clásica de \DE{}, de hecho, 
 la forma en que se crean los vectores de prueba (líneas 5 y 6) se mantiene intacta.
 %
-La novedad del \DEEDM{} es que incorpora una población elite ($E$) y una estrategia de reemplazo basada en diversidad.
+La novedad del \DEEDM{} es que incorpora una población élite ($E$) y una estrategia de reemplazo basada en diversidad.
 %
-Específicamente, con el propósito de seleccionar a los miembros de la población elite se considera el operador de selección elitista de la versión clásica
+Específicamente, con el propósito de seleccionar a los miembros de la población élite se considera el operador de selección elitista de la versión clásica
 de \DE{} (línea 7).
 %
 Posteriormente, se aplica la estrategia de reemplazo (línea 8) para determinar a los sobrevivientes.
@@ -155,7 +155,7 @@ Así, se establecerá un grado de diversidad mínimo deseado dependiente del tie
 		%\STATE Mutation: Generate the mutant vector ($V_{i,G}$) according to Eq. (\ref{eqn:mutation}).
 		\STATE Cruce: Utilizar la recombinación para general al vector de prueba ($U_{i,G}$) de acuerdo a la Ecuación (\ref{eqn:crossover}).
 		%\STATE Crossover: use recombination to generate the trial vector ($U_{i,G}$) according to Eq. (\ref{eqn:crossover}).
-		\STATE Selección: Actualizar al vector elite ($E_{i,G}$ en lugar de $X_{i,G}$) de acuerdo a la Ecuación (\ref{eqn:selection}).
+		\STATE Selección: Actualizar al vector élite ($E_{i,G}$ en lugar de $X_{i,G}$) de acuerdo a la Ecuación (\ref{eqn:selection}).
 		%\STATE Selection: Update the elite vector ($E_{i,G}$ instead of $X_{i,G}$) according to Eq. (\ref{eqn:selection}).
 	   \ENDFOR
 		\STATE Reemplazo: Seleccionar a los vectores objetivo ($X_{G+1}$) de acuerdo a la Ecuación (\ref{alg:Replacement}).
@@ -169,9 +169,9 @@ Así, se establecerá un grado de diversidad mínimo deseado dependiente del tie
 
 La estrategia de reemplazo (ver Algoritmo \ref{alg:Replacement}) funciona de la siguiente forma.
 %
-Inicialmente, recibe a la población padre (vectores objetivo) a la población de hijos (vectores de prueba) y a los vectores elite.
+Inicialmente, recibe a la población padre (vectores objetivo) a la población de hijos (vectores de prueba) y a los vectores élite.
 %
-De entre todos ellos, debe seleccionar a $NP$ vectores para forma la siguiente población de padres.
+De entre todos ellos, debe seleccionar a $NP$ vectores para formar la siguiente población de padres.
 %
 En primer lugar, en base al número de evaluaciones de función transcurridas y criterio de parada, se calcula una distancia mínima deseada ($D_t$) para mantener 
 en la población (línea 2).
@@ -189,7 +189,7 @@ Este individuo se mueve al \textit{Conjunto de Sobrevivientes} y los individuos 
 que $D_t$ se transfieren al \textit{Conjunto de Penalizados} (línea 9).
 %
 La forma de calcular la distancia entre dos individuos es en base a la distancia Euclidiana normalizada descrita en la Ecuación~(\ref{eqn:distance}), 
-donde $D$ es la dimensión del problema, y $x_d^{(L)}, x_d^{(U)}$ son los límites menores y mayores de cada dimensión ($d$).
+donde $D$ es la dimensión del problema, y $x_d^{(L)}, x_d^{(U)}$ son los límites menores y mayores de la dimensión $d$.
 %
 En los casos donde el \textit{conjunto de Candidatos} queda vacío antes de seleccionar a $NP$ individuos, 
 el \textit{Conjunto de Sobrevivientes} se llena seleccionando en cada iteración al individuo $Penalizado$ con la mayor distancia al individuo más cercano 
@@ -212,17 +212,17 @@ distancia ( x_{i}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{i}^d - x_j
 	%\STATE Update $D_t = D_I - D_I *(nfes/(0.95*max\_nfes)) $ 
 	\STATE \textit{Candidatos = Población} $\cup$ \textit{Hijos} $\cup$ \textit{Elite}.
 	%\STATE $Current = Population \cup Offspring \cup Elite$.
-	\STATE \textit{Sobrevivientes} $=$ \textit{Penalizados} $\emptyset$.
+	\STATE \textit{Sobrevivientes} $=$ \textit{Penalizados} $=$ $\emptyset$.
 	%\STATE $Survivors = Penalized = \emptyset$.
-	\WHILE{ \textit{Sobrevivientes} $< NP$  y $|$\textit{Candidatos}$| > 0$ }
+	\WHILE{ $|$\textit{Sobrevivientes}$|$ $< NP$  y $|$\textit{Candidatos}$| > 0$ }
 	%\WHILE{ $|Survivors| < NP$ And $|Current| > 0$ }
 	   \STATE \textit{Seleccionados} = Seleccionar al mejor individuo de \textit{Candidatos}.
 	   %\STATE $Selected$ = Select the best individual of $Current$.
 		 \STATE Eliminar \textit{Seleccionado} de \textit{Candidatos}.
 		 %\STATE Remove $Selected$ from $Current$.
-	   \STATE Copias \textit{Seleccionado} a \textit{Sobrevivientes}.
+	   \STATE Copiar \textit{Seleccionado} a \textit{Sobrevivientes}.
 	  % \STATE Copy $Selected$ to $Survivors$.
-	   \STATE Encontrar a los individuos de \textit{Candidatos} cuya distancia a \textit{Seleccionados} sea menor que $D_t$ y moverlos al \textit{Penalizados}. En esta parte se considera la distancia normalizada (Ecuación \ref{eqn:distance}).
+	   \STATE Encontrar a los individuos de \textit{Candidatos} cuya distancia a \textit{Seleccionados} sea menor que $D_t$ y moverlos a \textit{Penalizados}. En esta parte se considera la distancia normalizada (Ecuación \ref{eqn:distance}).
 	   %\STATE Find the individuals from $Current$ with a distance to $Selected$ lower than $D_t$ and move them to $Penalized$. Normalized distance is considered (Eq. \ref{eqn:distance}).
 	\ENDWHILE
 	\WHILE{ $|$\textit{Sobrevivientes}$| < NP$ }
@@ -238,7 +238,7 @@ distancia ( x_{i}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{i}^d - x_j
 \end{algorithmic}
 \end{algorithm}
 
-Con el propósito de completar la descripción de \DEEDM{} se especifica la forma en que se calcula $D_t$ y el procedimiento con el cual se actualizan a los individuos elite.
+Con el propósito de completar la descripción de \DEEDM{} se especifica la forma en que se calcula $D_t$ y el procedimiento con el cual se actualizan a los individuos élite.
 %
 El resto del algoritmo se mantiene igual que la variante clásica de \DE{}.
 %
@@ -271,22 +271,25 @@ El valor óptimo de $D_I$ podría variar dependiendo del tipo de problema y el c
 %
 Sin embargo, en esta primera versión no se aplica un valor $D_I$ para cada problema.
 %
-En su lugar, se realizó un análisis previo para determinar un valor adecuado, estableciéndose así el valor $D_I = 0.3$ ya que reporta resultados de calidad.
-%
-Por lo tanto todos los resultados que se muestran en este capítulo consideraron dicho valor para $D_I$.
+En su lugar, se realizó un análisis previo para determinar un valor adecuado, usándose el valor $D_I = 0.3$ en todos los 
+problemas.
 
 Al igual que en la versión estándar de \DE{}, en \DEEDM{} es necesario asignar una probabilidad de cruce ($CR$) y un factor de mutación ($F$).
 %
 De acuerdo a varios estudios desarrollados por Montgomery y otros~\cite{montgomery2010analysis} la probabilidad de cruce tiene un efecto
 muy importante.
 %
-Estos autores mostraron de forma empírica que los valores extremos de $CR$ resultan en un comportamiento muy distintos entre sí, pero de gran utilidad.
+Estos autores mostraron de forma empírica que los valores extremos de $CR$ resultan en comportamientos 
+muy distintos entre sí, pero de gran utilidad.
 %
 Así, los valores pequeños de $CR$ resultan en una búsqueda alineada a un número reducido de ejes e induce pequeños desplazamientos.
 %
 Esto provoca una mejora gradual con convergencia lenta que en algunos escenarios podría resultar beneficioso.
 %
-Por otra parte, los valores elevados de $CR$ en general, proporcionan soluciones de mayor calidad con una menor probabilidad, ya que en algunas veces se realizan desplazamientos largos y exitosos que en consecuencia puedan mejorar la aptitud de forma significativa.
+Por otra parte, los valores elevados de $CR$ en general, proporcionan soluciones de mayor calidad con una menor probabilidad, 
+ya que se tiende a realizar desplazamientos largos.
+%
+Sin embargo, cuando son exitosos puedan mejorar la aptitud de forma significativa y permiten explorar zonas distantes.
 %sin embargo estapero las transformaciones realizadas se basan en desplazamientos largos que cuando son exitosos pueden mejorar la aptitud 
 %de forma significativa.
 %
@@ -334,7 +337,7 @@ Particularmente, se consideraron los conjuntos de prueba de los concursos de opt
 Cada uno está compuesto de treinta problemas distintos.
 %
 En la comparativa incluimos a los algoritmos que obtuvieron los primeros lugares en cada año, así como una versión de \DE{} que usa la misma
-parametrización que \DEEDM{} pero que no incluye la población elite ni el reemplazamiento basado en diversidad.
+parametrización que \DEEDM{} pero que no incluye la población élite ni el reemplazamiento basado en diversidad.
 %
 Los algoritmos considerados del \CEC{} 2016 son el UMOEAs-II~\cite{elsayed2016testing} y L-SHADE-EpSin \cite{awad2016ensemble}, que alcanzaron el primero y el segundo lugar respectivamente,
 mientras que del \CEC{} 2017 se consideran el EBOwithCMAR~\cite{kumar2017improving} y el jSO~\cite{brest2017single}.
@@ -423,7 +426,7 @@ Score_2 &= \left  (1 - \frac{SR_i - SR_{min}}{SR_i} \right ) \times 50, \\
 \end{equation}
 
 %En la Ecuación~\ref{eqn:total_scores} 
-Específicamente, $SE_i$ es la sumatoria de errores del $i$-ésimo algoritmo ($SE_i = \sum_{j=1}^{30} error\_\hat{f}_j$), además $error\_\hat{f}_j$ es el error promedio de la $j$-ésima función.
+Específicamente, $SE_i$ es la sumatoria de errores del $i$-ésimo algoritmo ($SE_i = \sum_{j=1}^{30} error\_\hat{f}_j$), además $error\_\hat{f}_j$ es el error promedio en la $j$-ésima función.
 %
 $SE_{min}$ es la mínima sumatoria de errores entre todos los algoritmos.
 %
@@ -439,13 +442,13 @@ Adicionalmente, es remarcable que la versión estándar de \DE{} alcanzó result
 Esto muestra que el rendimiento de los algoritmos del estado-del-arte difiere al considerar ejecuciones a largo plazo pues esos algoritmos que fueron muy efectivos a corto plazo,
 no lo son tanto a largo plazo.
 %
-También es remarcable que el algoritmo L-SHADE-Epsilon obtuvo un puntaje competitivo a pesar de que en el \CEC{} del 2017 
-alcanzó el menor número de comparaciones positivas dentro de las pruebas estadísticas.
+%También es remarcable que el algoritmo L-SHADE-Epsilon obtuvo un puntaje competitivo a pesar de que en el \CEC{} del 2017 
+%alcanzó el menor número de comparaciones positivas dentro de las pruebas estadísticas.
 %
-En el puntaje propuesto y utilizado en las competiciones no se consideran validaciones estadísticas, por lo tanto bajo ese esquema al realizar una comparación un algoritmo puede ser superior que otro en media y por lo tanto calificar de forma positiva al algoritmo mientras que en las pruebas estadísticas podrían no encontrarse diferencias significativas y por lo tanto se considerarían los dos iguales.
+%En el puntaje propuesto y utilizado en las competiciones no se consideran validaciones estadísticas, por lo tanto bajo ese esquema al realizar una comparación un algoritmo puede ser superior que otro en media y por lo tanto calificar de forma positiva al algoritmo mientras que en las pruebas estadísticas podrían no encontrarse diferencias significativas y por lo tanto se considerarían los dos iguales.
 %En el puntaje propuesto en las compreticiones no se consideran validaciones estadísticas, por lo que si se es superior en media en algún caso a pesar de que los tests indiquen que no hay diferencias sigificativas, se puntúa de forma positiva al algoritmo, mientras que al considerar los test estadísticos se considera que ambos son iguales.
 %
-En cualquier caso, la superioridad del \DEEDM{} es clara con ambos tipos de comparativas.
+La superioridad del \DEEDM{} es clara en base a todos los tipos de comparativas descritas.
 
 %TODO: Poner Dado que nuestra novedad está en el control de la diversidad, para comprender mejor el comportamiento de la propuesta...
 %Dado que nuestra propuesta está basada en el control explícito de la diversidad y con el objetivo de entender mejor su comportamiento, en la figura \ref{fig:diversity} se muestra la evolución de la diversidad a través de las evaluaciones a función.
@@ -454,9 +457,9 @@ En cualquier caso, la superioridad del \DEEDM{} es clara con ambos tipos de comp
 %
 %Basado en sus propiedades, la primera función se resuelve de forma sencilla (unimodal) y la segunda función es considerada como una de las más difíciles (híbrida).
 %
-%En la parte izquierda se muestra la diversidad que se mantienen en la población elite.
+%En la parte izquierda se muestra la diversidad que se mantienen en la población élite.
 %
-%A pesar de que existen mecanismos para evitar la pérdida de diversidad en la población elite, se puede observar que en las dos funciones se mantiene un grado de diversidad de forma implícito.
+%A pesar de que existen mecanismos para evitar la pérdida de diversidad en la población élite, se puede observar que en las dos funciones se mantiene un grado de diversidad de forma implícito.
 %
 %Similarmente, la parte derecha corresponde a la diversidad de los vectores de prueba.
 %
