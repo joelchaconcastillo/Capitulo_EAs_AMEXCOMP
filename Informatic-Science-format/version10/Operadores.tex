@@ -177,7 +177,7 @@ en la media se tiende a crear a las soluciones hijas alrededor de la media de lo
 Entre los operadores de cruce, el \textit{Operador de Cruce Basado en Simulación Binaria} (Simulated Binary Crossover - \SBX{})~\cite{deb1994simulated}
 es uno de los más utilizados en dominios continuos y fue el que se decidió extender en nuestra propuesta, por lo que esta sección se centra en este operador de cruce.
 %
-El operador \SBX{} es clasificado con un operador centrado en los padres, por lo que los valores asociados a los hijos ($c_1$ y $c_2$) 
+El operador \SBX{} es clasificado como un operador centrado en los padres, por lo que los valores asociados a los hijos ($c_1$ y $c_2$) 
 tienden a ser cercanos a los valores de los padres ($p_1$ y $p_2$).
 %
 Específicamente, el proceso para generar los valores de las soluciones hijas se basa en utilizar una distribución de probabilidad.
@@ -322,7 +322,7 @@ Para el caso de nuestro método, no es demasiado importante conocer la fórmula 
 \end{algorithmic}
 \end{algorithm}
 
-Es importante aclarar que la primer versión del \SBX{} fue diseñada en base a una sola variable.
+Es importante aclarar que la primera versión del \SBX{} fue diseñada en base a una sola variable.
 %
 Posteriormente los autores consideraron aplicarlo a problemas con múltiples variables~\cite{Joel:SBX1994}, considerando
 una estrategia simple para escoger las variables que se van a cruzar~\cite{Joel:UNDX}.
@@ -369,7 +369,7 @@ que existe entre las soluciones padres e hijas.
 \end{figure}
 
 El segundo aspecto importante es que después de generar los dos valores de las soluciones hijas, éstos valores son intercambiados con una probabilidad fija 
-(usualmente es $0.5$), es decir el valor de la solución hijo $c_1$ no siempre es heredado a partir de la solución padre más cercana $p_1$.
+(usualmente es $0.5$), es decir el valor de la solución hija $c_1$ no siempre es heredado a partir de la solución padre más cercana $p_1$.
 %
 Esta es una característica no muy discutida, sin embargo es un aspecto muy relevante que afecta al rendimiento del algoritmo.
 %
@@ -443,7 +443,7 @@ ya que esto provocaría modificaciones muy drásticas.
 %
 De esta forma, sería más sensato aplicar estas reflexiones una vez que los individuos convergen en cierto grado.
 %
-Nótese que se incrementa hasta el valor $0.5$ el cual es el valor utilizando en la implementación del \SBX{} estándar, ya que no se quiere
+Nótese que se incrementa hasta el valor $0.5$ el cual es el valor utilizado en la implementación del \SBX{} estándar, ya que no se quiere
 disponer de un comportamiento excesivamente disruptivo.
 %
 Sin embargo, en el futuro sería interesante realizar estudios con otros valores finales.
@@ -625,8 +625,10 @@ A continuación se especifica la parametrización adicional propia de cada algor
 \item \textbf{MOEA/D}: tamaño de la vecindad = 10, el número de actualizaciones por subproblema ($nr$) = 2 y $\delta = 0.9$.
 \end{itemize}
 
-Para comparar los frentes obtenidos por cada método se utiliza el hipervolumen normalizado (HV) y la 
-\textit{Distancia Generacional Invertida Modificada} (Inverted Generational Distance Plus - IGD+).
+Para comparar los frentes obtenidos por cada método se utiliza el hipervolumen normalizado (HV), 
+que se debe maximizar, 
+y la \textit{Distancia Generacional Invertida Modificada} (Inverted Generational Distance Plus - IGD+), que se
+debe minimizar.
 %
 En la Tabla \ref{tab:ReferencePoints} se presentan los puntos de referencia utilizados para el indicador del hipervolumen los cuales son similares 
 a los utilizados en \cite{Joel:Kuhn_Munkres, Joel:OperatorAHX}.
@@ -695,7 +697,7 @@ Este procedimiento se realizó de forma independiente para el \NSGAII{}, \MOEAD{
 %
 Para cada algoritmo y para cada caso, la columna ``$\uparrow$'' reporta el número de comparaciones donde las pruebas estadísticas confirmaron 
 la superioridad del caso correspondiente, mientras que en la columna ``$\downarrow$'' se reporta el número de veces donde este caso fue inferior 
-y la columna ``$\longleftrightarrow$'' indica el número de comparaciones donde la diferencia estadística no fue significativamente distinto.
+y la columna ``$\longleftrightarrow$'' indica el número de comparaciones donde las diferencias no fueron significativas.
 %
 En base a estos resultados se puede observar que el caso 3 y caso 4 aportan con respecto al caso 1, mientras que el caso 2 no es
 robusto, siendo en varios algoritmos inferior al caso 1.

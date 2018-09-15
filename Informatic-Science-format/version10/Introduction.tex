@@ -20,10 +20,11 @@ tal y como se indica en la Ecuación (\ref{eqn:Model_general}).
    \end{split}
 \end{equation}
 
-donde $\vec{X}$ es un vector compuesto por $D$ variables continuas de decisión $\vec{X} = [x_1, x_2, ..., x_D]$, además cada variable pertenece al conjunto de los reales $x_i \in \Re$,
+donde $\vec{X}$ es un vector compuesto por $D$ variables continuas de decisión $\vec{X} = [x_1, x_2, ..., x_D]$, 
+cada variable pertenece al conjunto de los reales $x_i \in \Re$,
 $D$ es la dimensión correspondiente al espacio de las variables de decisión, $\vec{F}$ es un vector compuesto por $M$ funciones objetivo $\vec{F} = [f_1(\vec{X}), f_2(\vec{X}), ..., f_M(\vec{X})]$,
 $\Omega$ es el espacio factible cuyo límite inferior es $x_i^{(L)}$ y límite superior es $x_i^{(U)}$, es decir $\Omega = \prod _{j=1}^D[x_j^{(L)}, x_j^{(U)}]$. 
-Cada vector de variables es mapeado con $M$-funciones objetivo $\vec{F}(\vec{X})( \vec{F} : \Omega \subseteq \Re^D \rightarrow \Re^M)$, al espacio $\Re^M$ que es conocido como el espacio objetivo.
+Cada vector de variables es mapeado con $M$-funciones objetivo $\vec{F}(\vec{X})( \vec{F} : \Omega \subseteq \Re^D \rightarrow \Re^M)$ al espacio $\Re^M$ que es conocido como el espacio objetivo.
 
 Actualmente, los \EAS{} son una de las metaheurísticas más conocidas~\cite{glover2005handbook}, pero a pesar de su éxito y de su uso tan extendido, adaptar los mismos
 a nuevos problemas implica la toma de varias decisiones de diseño complejas.
@@ -106,7 +107,7 @@ y se propone una variante dinámica (Dynamic Simulated Binary Crossover --- \DSB
 
 El resto de este capítulo está organizado de la siguiente forma.
 %
-Inicialmente, en la sección \ref{sec:Mecanismos} se revisan algunas de las técnicas más populares que se han propuesto para promover el mantenimiento de diversidad, exponiendo una de las clasificaciones más extendidas.
+En primer lugar, en la sección \ref{sec:Mecanismos} se revisan algunas de las técnicas más populares que se han propuesto para promover el mantenimiento de diversidad, exponiendo una de las clasificaciones más extendidas.
 %
 Posteriormente, en la sección \ref{sec:ED} se describe y valida experimentalmente la aportación basada en evolución diferencial donde se considera la diversidad de forma explícita en la fase de reemplazamiento.
 %

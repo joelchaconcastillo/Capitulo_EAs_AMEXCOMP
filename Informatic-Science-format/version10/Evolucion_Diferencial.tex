@@ -68,7 +68,7 @@ El operador de cruce se aplica con el objetivo de combinar la información de di
 Específicamente, cada vector objetivo $\vec{X}_{i,G}$ se mezcla con su correspondiente vector mutado $V_{i,G}$ para generar un vector de 
 prueba $\vec{U_{i,G}} = [u_{1,i,G},u_{2,i,G}, ..., u_{D,i,G} ]$.
 %
-La estrategia de cruce mas típica es conocida como \textit{cruce binomial} y actúa de la siguiente forma:
+La estrategia de cruce más típica es conocida como \textit{cruce binomial} y actúa de la siguiente forma:
 
 \begin{equation} \label{eqn:crossover}
 \vec{U}_{j,i,G}= 
@@ -153,12 +153,12 @@ Así, se establecerá un grado de diversidad mínimo deseado dependiente del tie
 	   \FOR{ $i=1$ to $NP$} 
 		\STATE Mutación: Generar al vector mutado ($V_{i,G}$) de acuerdo a la Ecuación (\ref{eqn:mutation}).
 		%\STATE Mutation: Generate the mutant vector ($V_{i,G}$) according to Eq. (\ref{eqn:mutation}).
-		\STATE Cruce: Utilizar la recombinación para general al vector de prueba ($U_{i,G}$) de acuerdo a la Ecuación (\ref{eqn:crossover}).
+		\STATE Cruce: Utilizar la recombinación para generar al vector de prueba ($U_{i,G}$) de acuerdo a la Ecuación (\ref{eqn:crossover}).
 		%\STATE Crossover: use recombination to generate the trial vector ($U_{i,G}$) according to Eq. (\ref{eqn:crossover}).
 		\STATE Selección: Actualizar al vector élite ($E_{i,G}$ en lugar de $X_{i,G}$) de acuerdo a la Ecuación (\ref{eqn:selection}).
 		%\STATE Selection: Update the elite vector ($E_{i,G}$ instead of $X_{i,G}$) according to Eq. (\ref{eqn:selection}).
 	   \ENDFOR
-		\STATE Reemplazo: Seleccionar a los vectores objetivo ($X_{G+1}$) de acuerdo a la Ecuación (\ref{alg:Replacement}).
+		\STATE Reemplazo: Seleccionar a los vectores objetivo ($X_{G+1}$) de acuerdo al Algoritmo~\ref{alg:Replacement}.
 		%\STATE Replacement: Select the target vectors ($X_{G+1}$) according to Algorithm \ref{alg:Replacement} .
 	   \STATE $G=G+1$
 	\ENDWHILE
@@ -193,7 +193,7 @@ donde $D$ es la dimensión del problema, y $x_d^{(L)}, x_d^{(U)}$ son los límit
 %
 En los casos donde el \textit{conjunto de Candidatos} queda vacío antes de seleccionar a $NP$ individuos, 
 el \textit{Conjunto de Sobrevivientes} se llena seleccionando en cada iteración al individuo $Penalizado$ con la mayor distancia al individuo más cercano 
-al \textit{Conjunto de Sobrevivientes} (líneas 10 - 13).
+del \textit{Conjunto de Sobrevivientes} (líneas 10 - 13).
 
 \begin{equation}\label{eqn:distance}
 distancia ( x_{i}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{i}^d - x_j^d}{x_d^{(U)} - x_d^{(L)}} \right )^2  }} {\sqrt{D}}
@@ -227,7 +227,7 @@ distancia ( x_{i}, x_j ) = \frac{\sqrt{ \sum_{d=1}^D \left ( \frac{x_{i}^d - x_j
 	\ENDWHILE
 	\WHILE{ $|$\textit{Sobrevivientes}$| < NP$ }
 	%\WHILE{ $|Survivors| < NP$ }
-	   \STATE \textit{Seleccionado} = Seleccionar al individuo de \textit{Penalizados} con la mayor distancia al individuo mas cercano a \textit{Sobrevivientes}.
+	   \STATE \textit{Seleccionado} = Seleccionar al individuo de \textit{Penalizados} con la mayor distancia al individuo más cercano a \textit{Sobrevivientes}.
 	   %\STATE $Selected$ = Select the individual from $Penalized$ with the largest distance to the closest individual in $Survivors$.
 		 \STATE Eliminar \textit{Seleccionado} de \textit{Penalizados}.
 		 %\STATE Remove $Selected$ from $Penalized$.
@@ -269,7 +269,7 @@ Por otra parte, un valor muy pequeño de $D_I$ provocaría muy poca exploración
 %
 El valor óptimo de $D_I$ podría variar dependiendo del tipo de problema y el criterio de paro. %, además en base a esto se podría trabajar con variantes adaptativas.
 %
-Sin embargo, en esta primera versión no se aplica un valor $D_I$ para cada problema.
+Sin embargo, en esta primera versión no se adapta el valor de $D_I$ para cada problema.
 %
 En su lugar, se realizó un análisis previo para determinar un valor adecuado, usándose el valor $D_I = 0.3$ en todos los 
 problemas.
@@ -441,7 +441,8 @@ Nuestra propuesta alcanzó el mejor puntaje de $100.00$ en los dos años, demost
 %
 Adicionalmente, es remarcable que la versión estándar de \DE{} alcanzó resultados buenos, de hecho obtuvo el tercer y el segundo lugar en los años 2016 y 2017, respectivamente.
 %
-Esto muestra que el rendimiento de los algoritmos del estado-del-arte difiere al considerar ejecuciones a largo plazo pues esos algoritmos que fueron muy efectivos a corto plazo,
+Esto muestra que el rendimiento de los algoritmos del estado-del-arte se deteriora al considerar 
+ejecuciones a largo plazo pues esos algoritmos que fueron muy efectivos a corto plazo,
 no lo son tanto a largo plazo.
 %
 %También es remarcable que el algoritmo L-SHADE-Epsilon obtuvo un puntaje competitivo a pesar de que en el \CEC{} del 2017 
