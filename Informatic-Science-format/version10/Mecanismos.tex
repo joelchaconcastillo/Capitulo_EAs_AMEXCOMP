@@ -16,7 +16,7 @@ estrecha con el manejo de diversidad.
 Se recomienda a los lectores que requieran conocer estos mecanismos con más detalle consultar~\cite{Joel:Crepinsek} así como los artículos
 específicos en que cada método es propuesto.
 
-\subsection{Clasificaciones de mecanismo para promover la diversidad}
+\subsection{Clasificaciones de mecanismos para promover la diversidad}
 
 Debido a la gran cantidad de métodos desarrollados en esta área, se han propuesto varias clasificaciones de los mismos.
 %
@@ -44,7 +44,7 @@ En este sentido, los más populares son los siguientes:
 la selección de padres.
 \item \textbf{Enfoques basados en población}: se modifica el modelo poblacional utilizando algunas técnicas como variar el tamaño de la población de forma
 dinámica, eliminar individuos duplicados, utilizar técnicas de infusión o establecer un estrategia de islas con migraciones.
-\item \textbf{Enfoques basados en el cruce y/o mutación}: se basan en rediseñar los operadores de cruce y/o mutación, considerando en algunos casos información específica del problema. También se incluyen en este grupo opciones más generales como aplicar restricciones sobre el emparejamiento y/o incluir operadores disruptivos que podrían ser utilizados sólo en ciertos instantes del proceso
+\item \textbf{Enfoques basados en ela cruza y/o la mutación}: se basan en rediseñar los operadores de cruza y/o mutación, considerando en algunos casos información específica del problema. También se incluyen en este grupo opciones más generales como aplicar restricciones sobre el emparejamiento y/o incluir operadores disruptivos que podrían ser utilizados sólo en ciertos instantes del proceso
 de optimización.
 \end{itemize}
 
@@ -53,20 +53,20 @@ de optimización.
 
 Los primeros \EAS{} se basaron principalmente en esquemas generacionales que no incluían fase de reemplazo.
 %
-En estos esquemas la selección de padres era la principal responsable de que se muestreara con mayor probabilidad las zonas
+En estos esquemas, la selección de padres era la principal responsable de que se muestrearan con mayor probabilidad las zonas
 más promisorias encontradas hasta el momento, y por tanto muchos de los primeros esquemas que trataron de evitar la convergencia 
 prematura se basaron en modificar el proceso de selección de padres.
 %
 Así, en los 90s se desarrollaron varios esquemas que alteraban la presión de selección~\cite{eiben2003introduction}
 de forma estática o dinámica.
 %
-Sin embargo, en base a varios estudios teóricos y experimentales se observó que generalmente actuar exclusivamente sobre los operadores de selección no es suficiente, especialmente
+Sin embargo, con base en varios estudios teóricos y experimentales se observó que, generalmente, actuar exclusivamente sobre el operador de selección no es suficiente, especialmente
 cuando se quieren realizar ejecuciones a largo plazo, ya que se requerirían poblaciones excesivamente grandes para mantener un grado adecuado de diversidad.
 
 Otra alternativa fue modificar los modelos poblacionales, encontrando en este grupo los esquemas basados en islas~\cite{alba2005parallel}, los celulares
-o más recientemente los basados en \textit{agrupaciones o clústeres}~\cite{gao2014cluster}.
+o, más recientemente, los basados en \textit{agrupaciones o clústeres}~\cite{gao2014cluster}.
 %
-La idea de introducir restricciones en el emparejamiento, principalmente en base a la ubicación de los individuos en el espacio de búsqueda también
+La idea de introducir restricciones en el emparejamiento, principalmente con base en la ubicación de los individuos en el espacio de búsqueda también
 ha sido bastante exitosa aunque controlar los mismos para obtener el balanceo apropiado ante diferentes criterios de parada
 es bastante complejo.
 %
@@ -87,22 +87,22 @@ En algunos casos esto se consigue usando distintos valores en los parámetros pa
 mientras que en otros casos se hacen cambios más drásticos y se consideran varios operadores con distintas propiedades~\cite{lobo2007parameter}.
 %
 También existen mecanismos adaptativos que usan una memoria para almacenar información histórica sobre los efectos de la variación
-y en base a ello ir modificándola~\cite{yuen2009genetic}.
+y con base en ello ir modificándola~\cite{yuen2009genetic}.
 %
 Cabe destacar que en la mayor parte de estos esquemas no se considera la diversidad de forma directa, sino que sólo se considera para analizar el comportamiento
-y en base a ello rediseñar.
+y con base en ello se procede a un rediseño.
 
 Finalmente, un esquema muy sencillo pero no por ello menos importante es el basado en reinicios.
 %
 En estos esquemas, en lugar de evitar la convergencia acelerada, se aplica un reinicio total o parcial de la población cada cierto número de
 generaciones o cuando se detecta que la población ha convergido.
 %
-En base a esto se han propuesto diversas estrategias para establecer los puntos de reinicio~\cite{jansen2002analysis}.
+Con base en esto se han propuesto diversas estrategias para establecer los puntos de reinicio~\cite{jansen2002analysis}.
 %
 Estos esquemas se implementan de forma muy sencilla y en algunos casos han proporcionado mejoras significativas~\cite{koumousis2006saw} por lo que
 es un método a tener en cuenta, al menos como alternativa inicial.
 %
-Es común combinar las estrategias basadas en reinicio con algunas de las técnicas anteriores, ya que las anteriores están basadas en mantener
+Es común combinar las estrategias basadas en reinicio con algunas de las técnicas anteriores, ya que dichas técnicas están basadas en mantener
 la diversidad, mientras que en esta última el objetivo es recuperar la diversidad.
 
 \subsection{Esquemas de reemplazamiento basados en diversidad}
@@ -112,8 +112,8 @@ Recientemente se han propuesto diversos mecanismos que modifican la fase de reem
 La idea principal de estos esquemas es inducir un grado de exploración adecuado diversificando a los individuos sobrevivientes,
 de forma que los operadores de reproducción puedan generar nuevas soluciones en diferentes regiones en las siguientes generaciones.
 %
-Estos métodos están basados en el principio de que los operadores de cruce tienen un efecto de exploración al 
-considerar individuos distantes e intensificación al considerar individuos próximos~\cite{eiben1998evolutionary}.
+Estos métodos están basados en el principio de que los operadores de cruza tienen un efecto de exploración al 
+considerar individuos distantes y de intensificación al considerar individuos próximos~\cite{eiben1998evolutionary}.
 
 El esquema de pre-selección propuesto por Cavicchio~\cite{grefenstette1986optimization} es uno de los primeros estudios que utilizan 
 la fase de reemplazamiento para controlar la diversidad.
@@ -121,8 +121,8 @@ la fase de reemplazamiento para controlar la diversidad.
 El esquema inicial de Cavicchio se extendió para generar el esquema denominado \textit{amontonamiento o crowding}~\cite{de1975analysis}, el cual ha sido muy popular 
 en los últimos años~\cite{mahfoud1992crowding, mengshoel2014adaptive}.
 %
-El principio del crowding se basa en que los nuevos individuos que entren en la población sustituyan a individuos similares de generaciones anteriores, y en base
-a este principio, se han formulado diversas implementaciones.
+El principio del crowding se basa en que los nuevos individuos que entren en la población sustituyan a individuos similares de generaciones anteriores, y con base
+en este principio, se han formulado diversas implementaciones.
 
 En esta misma línea, se han propuesto otras estrategias de reemplazo con el propósito de promover la diversidad.
 %
@@ -138,11 +138,11 @@ Por ello, Petrowski~\cite{petrowski1996clearing} propuso una variante para únic
 
 Otros métodos de este grupo consideran funciones de aptitud que combinan la función objetivo original con la diversidad.
 %
-Sin embargo, es complejo construir una función compuesta ya que las dos mediciones podrían no ser directamente compatibles
-y por lo tanto las funciones adecuadas suelen depender de cada problema.
+Sin embargo, es complejo construir una función compuesta ya que las dos mediciones podrían no ser directamente compatibles,
+y por lo tanto, las funciones adecuadas suelen depender de cada problema.
 %
-Una forma de suavizar este inconveniente fue propuesta en el algoritmo de combinación (COMB)~\cite{vidal2013hybrid} donde los individuos son ordenados 
-y categorizados en base a su aptitud y contribución a la diversidad, y la función compuesta se diseña en base al orden y no en base a los valores de función objetivo
+Una forma de suavizar este inconveniente fue propuesto en el algoritmo de combinación (COMB)~\cite{vidal2013hybrid} donde los individuos son ordenados 
+y categorizados con base en su aptitud y contribución a la diversidad, y la función compuesta se diseña con base en el orden y no con base en los valores de función objetivo
 y contribución a diversidad.
 %
 La principal desventaja del COMB es que requiere dos parámetros de usuario, aunque independientemente de esto, se ha usado con bastante éxito.
@@ -161,7 +161,7 @@ Estos enfoques son identificados como algoritmos multi-objetivo basados en diver
 %
 Existen varias estrategias para calcular el objetivo auxiliar~\cite{segura2013using}.
 %
-Uno de los enfoques más populares consiste en calcular la contribución a la diversidad de cada individuo en base a 
+Uno de los enfoques más populares consiste en calcular la contribución a la diversidad de cada individuo con base en 
 la \textit{Distancia al Vecino más Cercano} (Distance to the Closest Neighbor - DCN)~\cite{segura2016novel} de entre los individuos que ya hayan sido seleccionados
 como supervivientes.
 
@@ -173,11 +173,11 @@ Los algoritmos basados en \DE{} son altamente susceptibles a la pérdida de dive
 %
 Debido a ello, se han desarrollado varios análisis para lidiar con este problema.
 %
-Dado que en el área se conoce al menos de manera general, las implicaciones que tiene cada parámetro sobre la diversidad, algunos autores han trabajado
+Dado que en el área se conoce, al menos de manera general, las implicaciones que tiene cada parámetro sobre la diversidad, algunos autores han trabajado
 en estimar de forma teórica cuáles deben ser los parámetros adecuados para que se produzca cierto tipo de comportamiento~\cite{zaharie2003control}.
 %
-Otros autores han estudiado el efecto que tiene la norma de los vectores de diferencia sobre la mutación~\cite{montgomery2009differential} y en base
-a ello se han propuesto mecanismos que prohíben ciertos movimientos que pueden resultar perjudiciales para la diversidad~\cite{montgomery2012simple}.
+Otros autores han estudiado el efecto que tiene la norma de los vectores de diferencia sobre la mutación~\cite{montgomery2009differential} y con base
+en ello se han propuesto mecanismos que prohíben ciertos movimientos que pueden resultar perjudiciales para la diversidad~\cite{montgomery2012simple}.
 %
 En este último estudio, el tipo de movimientos aceptados varía a lo largo de la ejecución, descartando a los movimientos cuyos desplazamientos sean menores
 a un umbral el cual es decrementado conforme transcurren las generaciones.

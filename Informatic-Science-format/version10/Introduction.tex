@@ -26,8 +26,7 @@ $D$ es la dimensión correspondiente al espacio de las variables de decisión, $
 $\Omega$ es el espacio factible cuyo límite inferior es $x_i^{(L)}$ y límite superior es $x_i^{(U)}$, es decir $\Omega = \prod _{j=1}^D[x_j^{(L)}, x_j^{(U)}]$. 
 Cada vector de variables es mapeado con $M$-funciones objetivo $\vec{F}(\vec{X})( \vec{F} : \Omega \subseteq \Re^D \rightarrow \Re^M)$ al espacio $\Re^M$ que es conocido como el espacio objetivo.
 
-Actualmente, los \EAS{} son una de las metaheurísticas más conocidas~\cite{glover2005handbook}, pero a pesar de su éxito y de su uso tan extendido, adaptar los mismos
-a nuevos problemas implica la toma de varias decisiones de diseño complejas.
+Actualmente, los \EAS{} son una de las metaheurísticas más conocidas~\cite{glover2005handbook}, pero a pesar de su éxito y de su uso tan extendido, adaptarlas a nuevos problemas implica la toma de varias decisiones de diseño complejas.
 %
 Particularmente, a la hora de diseñar de forma apropiada un \EA{}, se ha visto que es muy importante conseguir
 inducir un balanceo adecuado entre la exploración e intensificación del espacio de búsqueda~\cite{herrera1996adaptation}.
@@ -75,7 +74,7 @@ el modelo poblacional~\cite{alba2005parallel}.
 %
 En la mayor parte de \EAS{} más recientes, se introduce además una fase de reemplazamiento~\cite{eiben2003introduction} por lo que
 la nueva población no tiene que formarse exclusivamente con los hijos,
-sino que se usan mecanismos para combinar la población anterior con la población hija y determinar así los nuevos sobrevivientes.
+más bien se usan mecanismos para combinar la población anterior con la población hija y determinar así los nuevos sobrevivientes.
 %
 En este contexto, se suele introducir elitismo en los algoritmos, es decir, el mejor individuo encontrado sobrevivirá a la siguiente generación~\cite{Joel:CHC}.
 %
@@ -97,13 +96,13 @@ La primera, que se aplica en el área de \textit{Evolución Diferencial} (Differ
 En la fase de reemplazo que incorpora el \DEEDM{} se promueve un balanceo dinámico entre exploración e intensificación, teniendo en cuenta para ello el criterio de paro
 y las evaluaciones transcurridas para la toma de decisiones.
 %
-Concretamente, en las primeras etapas se induce un grado de exploración alto ya que los individuos sobrevivientes son diversificados, y posteriormente conforme transcurren las 
+Concretamente, en las primeras etapas se induce un grado de exploración alto ya que los individuos sobrevivientes son diversificados y, posteriormente, conforme transcurren las 
 generaciones se induce un mayor grado de intensificación.
 % 
-La segunda aportación está enfocada a la extensión de operadores de cruce.
+La segunda aportación está enfocada a la extensión de operadores de cruza.
 %
-Particularmente se analizan los componentes que conforman al \textit{Operador de Cruce basado en Simulación Binaria} (Simulated Binary Crossover - SBX), 
-y se propone una variante dinámica (Dynamic Simulated Binary Crossover --- \DSBX{}) en la que el comportamiento interno es alterado en base al criterio de paro y evaluaciones transcurridas.
+Particularmente se analizan los componentes que conforman al \textit{Operador de Cruza basado en Simulación Binaria} (Simulated Binary Crossover - SBX), 
+y se propone una variante dinámica (Dynamic Simulated Binary Crossover --- \DSBX{}) en la que el comportamiento interno es alterado en base al criterio de paro y a las evaluaciones realizadas hasta el momento.
 
 El resto de este capítulo está organizado de la siguiente forma.
 %
@@ -111,7 +110,7 @@ En primer lugar, en la sección \ref{sec:Mecanismos} se revisan algunas de las t
 %
 Posteriormente, en la sección \ref{sec:ED} se describe y valida experimentalmente la aportación basada en evolución diferencial donde se considera la diversidad de forma explícita en la fase de reemplazamiento.
 %
-Siguiendo esta misma línea en la sección \ref{sec:Operadores} se lleva a cabo un análisis del operador de cruce \SBX{} mencionando algunas de sus implicaciones en la diversidad, 
+Siguiendo esta misma línea en la sección \ref{sec:Operadores} se lleva a cabo un análisis del operador de cruza \SBX{} mencionando algunas de sus implicaciones en la diversidad, 
 y se expone en base a ello una variante dinámica que se valida experimentalmente con problemas multi-objetivo.
 %
 Finalmente, en la sección \ref{sec:Conclusion} se exponen las conclusiones y trabajos futuros trazados en base a los resultados obtenidos.

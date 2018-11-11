@@ -32,7 +32,7 @@ A continuación se explica en más detalle cada componente de \DE{}.
 
 Usualmente, \DE{} inicia el proceso de optimización con una población de $NP$ vectores que son creados de forma aleatoria.
 %
-Habitualmente los vectores de la población inicial son generados en base a una distribución uniforme, ya que usualmente no se posee 
+Habitualmente los vectores de la población inicial son generados con base en una distribución uniforme, ya que usualmente no se posee 
 información sobre cuáles son las zonas más promisorias del espacio de búsqueda.
 %
 Por lo tanto, el $j$-ésimo componente del $i$-ésimo vector es inicializado de la forma $x_{j,i,0} = x_{j}^{(L)} + rand_{i,j}[0,1] (x_{j}^{(U)} - x_{j}^{(L)})$,
@@ -61,14 +61,14 @@ los vectores mutados son similares a los vectores objetivo si el grado de divers
 %
 Como consecuencia de esto es claro que es crítico mantener un grado mínimo de diversidad en \DE{}.
 
-\subsubsection{Operador de cruce}
+\subsubsection{Operador de cruza}
 
-El operador de cruce se aplica con el objetivo de combinar la información de distintas soluciones candidatas y de incrementar la diversidad de los vectores.
+El operador de cruza se aplica con el objetivo de combinar la información de distintas soluciones candidatas y de incrementar la diversidad de los vectores.
 %
-Específicamente, cada vector objetivo $\vec{X}_{i,G}$ se mezcla con su correspondiente vector mutado $V_{i,G}$ para generar un vector de 
+Específicamente, cada vector objetivo $\vec{X}_{i,G}$ se mezcla con su correspondiente vector mutado $\vec{V_{i,G}}$ para generar un vector de 
 prueba $\vec{U_{i,G}} = [u_{1,i,G},u_{2,i,G}, ..., u_{D,i,G} ]$.
 %
-La estrategia de cruce más típica es conocida como \textit{cruce binomial} y actúa de la siguiente forma:
+La estrategia de cruza más típica es conocida como \textit{cruza binomial} y actúa de la siguiente forma:
 
 \begin{equation} \label{eqn:crossover}
 \vec{U}_{j,i,G}= 
@@ -80,7 +80,7 @@ La estrategia de cruce más típica es conocida como \textit{cruce binomial} y a
 
 En la Ecuación~(\ref{eqn:crossover}) $rand_{i,j}[0,1]$ es un número uniformemente distribuido, 
 $j_{rand}$ es un índice seleccionado aleatoriamente que asegura que $\vec{U}_{i,G}$ genera al menos un componente 
-de $\vec{V}_{i,G}$ y $CR \in [0,1]$ es la razón de cruce.
+de $\vec{V}_{i,G}$ y $CR \in [0,1]$ es la proporción de cruza.
 %el ratio de cruce.
 
 \subsubsection{Operador de selección}
@@ -112,9 +112,9 @@ El segundo es un trabajo propuesto por Segura et al.~\cite{segura2016novel} que 
 utilizando para ello una fase de reemplazo conocida como \textit{Reemplazo con Control de Diversidad Dinámica Basada en Varios Objetivos} 
 (Replacement with Multi-objective based Dynamic Diversity Control - \RMDDC{}).
 %
-Particularmente el \RMDDC{} controla el grado de diversidad relacionándolo con el criterio de paro y generaciones transcurridas.
+Particularmente, el \RMDDC{} controla el grado de diversidad, relacionándolo con el criterio de paro y generaciones transcurridas.
 %
-En base a las conclusiones de cada uno de los trabajos, en esta sección se ilustra una propuesta que es una variante novedosa de \DE{} que
+Con base en las conclusiones de cada uno de los trabajos, en esta sección se ilustra una propuesta que es una variante novedosa de \DE{} que
 incluye un mecanismo de reemplazo que sigue los mismos principios que guiaron el diseño de \RMDDC{}.
 %
 Este nuevo algoritmo recibe el nombre de \textit{Evolución Diferencial con Mantenimiento Mejorado de Diversidad} 
@@ -122,7 +122,7 @@ Este nuevo algoritmo recibe el nombre de \textit{Evolución Diferencial con Mant
 %This novel optimizer is called \textit{Differential Evolution with Enhanced Diversity Maintenance} (\DEEDM{}) and its source
 %code is freely available~\footnote{The code in C++ can be downloaded in the next link \url{https://github.com/joelchaconcastillo/Diversity\_DE\_Research.git}}.
 
-\DEEDM{} (ver Algoritmo~\ref{alg:DEEDM}) es bastante similar a la versión clásica de \DE{}, de hecho, 
+\DEEDM{} (ver Algoritmo~\ref{alg:DEEDM}) es bastante similar a la versión clásica de \DE{}; de hecho, 
 la forma en que se crean los vectores de prueba (líneas 5 y 6) se mantiene intacta.
 %
 La novedad del \DEEDM{} es que incorpora una población élite ($E$) y una estrategia de reemplazo basada en diversidad.
@@ -153,7 +153,7 @@ Así, se establecerá un grado de diversidad mínimo deseado dependiente del tie
 	   \FOR{ $i=1$ to $NP$} 
 		\STATE Mutación: Generar al vector mutado ($V_{i,G}$) de acuerdo a la Ecuación (\ref{eqn:mutation}).
 		%\STATE Mutation: Generate the mutant vector ($V_{i,G}$) according to Eq. (\ref{eqn:mutation}).
-		\STATE Cruce: Utilizar la recombinación para generar al vector de prueba ($U_{i,G}$) de acuerdo a la Ecuación (\ref{eqn:crossover}).
+		\STATE Cruza: Utilizar la recombinación para generar al vector de prueba ($U_{i,G}$) de acuerdo a la Ecuación (\ref{eqn:crossover}).
 		%\STATE Crossover: use recombination to generate the trial vector ($U_{i,G}$) according to Eq. (\ref{eqn:crossover}).
 		\STATE Selección: Actualizar al vector élite ($E_{i,G}$ en lugar de $X_{i,G}$) de acuerdo a la Ecuación (\ref{eqn:selection}).
 		%\STATE Selection: Update the elite vector ($E_{i,G}$ instead of $X_{i,G}$) according to Eq. (\ref{eqn:selection}).
@@ -173,7 +173,7 @@ Inicialmente, recibe a la población padre (vectores objetivo), a la población 
 %
 De entre todos ellos, debe seleccionar a $NP$ vectores para formar la siguiente población de padres.
 %
-En primer lugar, en base al número de evaluaciones de función transcurridas y criterio de parada, se calcula una distancia mínima deseada ($D_t$) para mantener 
+En primer lugar, con base en el número de evaluaciones de función transcurridas y el criterio de parada, se calcula una distancia mínima deseada ($D_t$) para mantener 
 en la población (línea 2).
 %
 A continuación, se juntan las tres poblaciones en un conjunto de miembros candidatos (línea 3) que contiene en cada momento a los vectores candidatos 
@@ -188,7 +188,7 @@ En cada iteración se comienza seleccionando como sobreviviente al mejor individ
 Este individuo se mueve al \textit{Conjunto de Sobrevivientes} y los individuos del \textit{Conjunto de Candidatos} cuya distancia al individuo seleccionado sea menor 
 que $D_t$ se transfieren al \textit{Conjunto de Penalizados} (línea 9).
 %
-La forma de calcular la distancia entre dos individuos es en base a la distancia Euclidiana normalizada descrita en la Ecuación~(\ref{eqn:distance}), 
+La forma de calcular la distancia entre dos individuos es con base en la distancia Euclidiana normalizada descrita en la Ecuación~(\ref{eqn:distance}), 
 donde $D$ es la dimensión del problema, y $x_d^{(L)}, x_d^{(U)}$ son los límites menores y mayores de la dimensión $d$.
 %
 En los casos donde el \textit{conjunto de Candidatos} queda vacío antes de seleccionar a $NP$ individuos, 
@@ -251,7 +251,7 @@ en las últimas etapas de optimización.
 En nuestro esquema se requiere asignar un valor inicial para $D_t$ ($D_I$), y a continuación de manera similar a como se hace en~\cite{segura2016novel}, 
 se realiza una reducción lineal de $D_t$ considerando las evaluaciones transcurridas y el criterio de paro.
 %
-Particularmente, en este trabajo, el criterio de paro se asigna en base a las evaluaciones a función
+Particularmente, en este trabajo, el criterio de paro se asigna con base en las evaluaciones a función
 y la reducción se calcula de tal forma que al $95\%$ del número máximo de evaluaciones el valor de diversidad mínimo requerido es cero,
 lo que quiere decir que en la última fase la diversidad no es considerada para nada.
 %
@@ -274,9 +274,9 @@ Sin embargo, en esta primera versión no se adapta el valor de $D_I$ para cada p
 En su lugar, se realizó un análisis previo para determinar un valor adecuado, usándose el valor $D_I = 0.3$ en todos los 
 problemas.
 
-Al igual que en la versión estándar de \DE{}, en \DEEDM{} es necesario asignar una probabilidad de cruce ($CR$) y un factor de mutación ($F$).
+Al igual que en la versión estándar de \DE{}, en \DEEDM{} es necesario asignar una probabilidad de cruza ($CR$) y un factor de mutación ($F$).
 %
-De acuerdo a varios estudios desarrollados por Montgomery y otros~\cite{montgomery2010analysis} la probabilidad de cruce tiene un efecto
+De acuerdo a varios estudios desarrollados por Montgomery y otros~\cite{montgomery2010analysis} la probabilidad de cruza tiene un efecto
 muy importante.
 %
 Estos autores mostraron de forma empírica que los valores extremos de $CR$ resultan en comportamientos 
@@ -293,7 +293,7 @@ Sin embargo, cuando son exitosos puedan mejorar la aptitud de forma significativ
 %sin embargo estapero las transformaciones realizadas se basan en desplazamientos largos que cuando son exitosos pueden mejorar la aptitud 
 %de forma significativa.
 %
-En base a esto, en nuestra propuesta se emplean los dos mecanismos, es decir, valores elevados y pequeños de $CR$ tal y como se muestra
+Con base en esto, en nuestra propuesta se emplean los dos mecanismos, es decir, valores elevados y pequeños de $CR$ tal y como se muestra
 en la Ecuación~(\ref{eqn:cr}).
 
 \begin{equation} \label{eqn:cr}
@@ -370,7 +370,7 @@ tamaño mínimo de la población = $4$, valor inicial p-best = $0.25*N$, valor f
 valor de la mutación inicial de la memoria $M_F = 0.5$, probabilidad inicial de la memoria $M_{CR} = 0.5$, frecuencia inicial de la memoria $\mu_F = 0.5$, 
 tamaño mínimo de la población = $4$, valor inicial p-best = $0.25*N$, valor final p-best = $2$, generaciones de la búsqueda local $G_{LS}=250$.
 \item \textbf{DE-EDM}: $D_I = 0.3$, tamaño de la población = $250$.
-\item \textbf{Standard-DE}: tamaño de la población = $250$ (mismos operadores que en \DEEDM{}).
+\item \textbf{Standard-DE}: Tamaño de la población = $250$ (mismos operadores que en \DEEDM{}).
 \end{itemize}
 %
 
@@ -389,7 +389,7 @@ En todos los casos se fijó el nivel de confianza al 95\%.
 Se considera que un algoritmo $X$ es superior a un algoritmo $Y$, si el procedimiento anterior reporta diferencias significativas y si la media y mediana 
 del error obtenido por el método $X$ son inferiores a las obtenidas por el método $Y$.
 
-En las Tablas \ref{tab:Summary_CEC2016} y \ref{tab:Summary_CEC2017} se presenta un resumen de los resultados obtenidos para el \CEC{} 2016 y el \CEC{} 2017 respectivamente.
+En las tablas \ref{tab:Summary_CEC2016} y \ref{tab:Summary_CEC2017} se presenta un resumen de los resultados obtenidos para el \CEC{} 2016 y el \CEC{} 2017 respectivamente.
 %
 La columna etiquetada con ``Siempre Resuelto'' muestra el número de funciones en que se obtuvo un error de cero en las 51 ejecuciones.
 %
@@ -411,7 +411,7 @@ Finalmente, la columna etiquetada con $\longleftrightarrow$ muestra el número d
 Las pruebas estadísticas indican que el \DEEDM{} alcanzó los mejores resultados en los dos años.
 %
 De hecho el número de comparaciones en que nuestra propuesta ganó en el \CEC{} 2016 y el \CEC{} 2017 fue de $77$ y $88$ respectivamente y
-sólo perdió en $25$ y $6$, respectivamente, valores muy superiores a los del resto de algoritmos.
+sólo perdió en $25$ y $6$, respectivamente, que son valores muy superiores a los del resto de algoritmos.
 %
 La última columna etiquetada con ``Puntaje'' muestra la puntuación siguiendo los lineamientos propuestos en las competencias del \CEC{}.
 %
@@ -439,7 +439,7 @@ Además, $SR_{min}$ es la sumatoria mínima de los rangos entre todos los algori
 %
 Nuestra propuesta alcanzó el mejor puntaje de $100.00$ en los dos años, demostrando su superioridad. 
 %
-Adicionalmente, es remarcable que la versión estándar de \DE{} alcanzó resultados buenos, de hecho obtuvo el tercer y el segundo lugar en los años 2016 y 2017, respectivamente.
+Adicionalmente, es destacable que la versión estándar de \DE{} alcanzó resultados buenos, de hecho obtuvo el tercer y el segundo lugar en los años 2016 y 2017, respectivamente.
 %
 Esto muestra que el rendimiento de los algoritmos del estado-del-arte se deteriora al considerar 
 ejecuciones a largo plazo pues esos algoritmos que fueron muy efectivos a corto plazo,
@@ -451,7 +451,7 @@ no lo son tanto a largo plazo.
 %En el puntaje propuesto y utilizado en las competiciones no se consideran validaciones estadísticas, por lo tanto bajo ese esquema al realizar una comparación un algoritmo puede ser superior que otro en media y por lo tanto calificar de forma positiva al algoritmo mientras que en las pruebas estadísticas podrían no encontrarse diferencias significativas y por lo tanto se considerarían los dos iguales.
 %En el puntaje propuesto en las compreticiones no se consideran validaciones estadísticas, por lo que si se es superior en media en algún caso a pesar de que los tests indiquen que no hay diferencias sigificativas, se puntúa de forma positiva al algoritmo, mientras que al considerar los test estadísticos se considera que ambos son iguales.
 %
-La superioridad del \DEEDM{} es clara en base a todos los tipos de comparativas descritas.
+La superioridad del \DEEDM{} es clara con base en todos los tipos de comparativas descritas.
 
 %TODO: Poner Dado que nuestra novedad está en el control de la diversidad, para comprender mejor el comportamiento de la propuesta...
 %Dado que nuestra propuesta está basada en el control explícito de la diversidad y con el objetivo de entender mejor su comportamiento, en la figura \ref{fig:diversity} se muestra la evolución de la diversidad a través de las evaluaciones a función.
@@ -527,7 +527,7 @@ La superioridad del \DEEDM{} es clara en base a todos los tipos de comparativas 
 \end{table}
 
 
-Además, con el fin de proporcionar resultados que puedan usar otros autores para realizar comparativas, en las Tablas \ref{tab:Results_CEC2016} y \ref{tab:Results_CEC2017} 
+Además, con el fin de proporcionar resultados que puedan usar otros autores para realizar comparativas, en las tablas \ref{tab:Results_CEC2016} y \ref{tab:Results_CEC2017} 
 se reporta el mejor, peor, mediana, media, desviación estándar y razón de éxito para el \CEC{} 2016 y 2017, respectivamente.
 %In order, to provide comparable results of our proposal, in the tables \ref{tab:Results_CEC2016} and \ref{tab:Results_CEC2017} are reported the best, worst, median, mean, standard deviation and success ratio.
 %

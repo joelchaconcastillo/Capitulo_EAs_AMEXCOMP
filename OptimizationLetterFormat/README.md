@@ -1,1 +1,0 @@
-# Capitulo_EAs_AMEXCOMP

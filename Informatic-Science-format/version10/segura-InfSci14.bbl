@@ -17,6 +17,14 @@ N.~H. Awad, M.~Z. Ali, P.~N. Suganthan, R.~G. Reynolds, An ensemble sinusoidal
   problems, in: Evolutionary Computation (CEC), 2016 IEEE Congress on, IEEE,
   2016, pp. 2958--2965.
 
+\bibitem{back1996evolutionary}
+T.~Back, Evolutionary algorithms in theory and practice: evolution strategies,
+  evolutionary programming, genetic algorithms, Oxford university press, 1996.
+
+\bibitem{back2000evolutionary}
+T.~B{\"a}ck, D.~B. Fogel, Z.~Michalewicz, Evolutionary computation 1: Basic
+  algorithms and operators, vol.~1, CRC press, 2000.
+
 \bibitem{Joel:Kuhn_Munkres}
 J.~A.~M. Berenguer, C.~A.~C. Coello, Evolutionary many-objective optimization
   based on kuhn-munkres’ algorithm, in: International Conference on
@@ -26,10 +34,6 @@ J.~A.~M. Berenguer, C.~A.~C. Coello, Evolutionary many-objective optimization
 N.~Beume, B.~Naujoks, M.~Emmerich, {SMS-EMOA: Multiobjective selection based on
   dominated hypervolume }, European Journal of Operational Research 181~(3)
   (2007) 1653 -- 1669.
-
-\bibitem{blickle1996comparison}
-T.~Blickle, L.~Thiele, A comparison of selection schemes used in evolutionary
-  algorithms, Evolutionary Computation 4~(4) (1996) 361--394.
 
 \bibitem{bolufe2013differential}
 A.~Boluf{\'e}-R{\"o}hler, S.~Est{\'e}vez-Velarde, A.~Piad-Morffis, S.~Chen,
@@ -47,13 +51,23 @@ J.~Brest, M.~S. Mau{\v{c}}ec, B.~Bo{\v{s}}kovi{\'c}, Single objective
   real-parameter optimization: Algorithm jso, in: Evolutionary Computation
   (CEC), 2017 IEEE Congress on, IEEE, 2017, pp. 1311--1318.
 
-\bibitem{cantu2000efficient}
-E.~Cantu-Paz, Efficient and accurate parallel genetic algorithms, vol.~1,
-  Springer Science \& Business Media, 2000.
+\bibitem{bui2005multiobjective}
+L.~T. Bui, H.~A. Abbass, J.~Branke, Multiobjective optimization for dynamic
+  environments, in: Evolutionary Computation, 2005. The 2005 IEEE Congress on,
+  vol.~3, IEEE, 2005, pp. 2349--2356.
 
 \bibitem{chakraborty2008advances}
 U.~K. Chakraborty, Advances in differential evolution, vol. 143, Springer,
   2008.
+
+\bibitem{coello2007evolutionary}
+C.~A.~C. Coello, G.~B. Lamont, D.~A. Van~Veldhuizen, et~al., Evolutionary
+  algorithms for solving multi-objective problems, vol.~5, Springer, 2007.
+
+\bibitem{Joel:Coello}
+C.~A.~C. Coello, G.~B. Lamont, D.~A.~V. Veldhuizen, {Evolutionary Algorithms
+  for Solving Multi-Objective Problems (Genetic and Evolutionary Computation)},
+  Springer-Verlag New York, Inc., Secaucus, NJ, USA, 2006.
 
 \bibitem{das2011differential}
 S.~Das, P.~N. Suganthan, Differential evolution: A survey of the
@@ -81,6 +95,10 @@ K.~Deb, R.~B. Agrawal, Simulated binary crossover for continuous search space,
 \bibitem{deb1999self}
 K.~Deb, H.-G. Beyer, Self-adaptive genetic algorithms with simulated binary
   crossover, Secretary of the SFB 531, 1999.
+
+\bibitem{Joel:Kalyanmoy}
+K.~Deb, D.~Kalyanmoy, {Multi-Objective Optimization Using Evolutionary
+  Algorithms}, John Wiley \& Sons, Inc., New York, NY, USA, 2001.
 
 \bibitem{Joel:NSGAII}
 K.~Deb, A.~Pratap, S.~Agarwal, T.~Meyarivan, {A fast and elitist multiobjective
@@ -148,12 +166,6 @@ F.~Herrera, M.~Lozano, Adaptation of genetic algorithm parameters based on
 \bibitem{Joel:herrera2003fuzzy}
 F.~Herrera, M.~Lozano, Fuzzy adaptive genetic algorithms: design, taxonomy, and
   future directions, Soft Computing 7~(8) (2003) 545--562.
-
-\bibitem{horoba2008benefits}
-C.~Horoba, F.~Neumann, Benefits and drawbacks for the use of epsilon-dominance
-  in evolutionary multi-objective optimization, in: Proceedings of the 10th
-  annual conference on Genetic and evolutionary computation, ACM, 2008, pp.
-  641--648.
 
 \bibitem{Joel:WFG}
 S.~Huband, L.~Barone, L.~While, P.~Hingston, {A Scalable Multi-objective Test
@@ -230,6 +242,10 @@ J.~Montgomery, S.~Chen, A simple strategy for maintaining diversity and
   reducing crowding in differential evolution, in: Evolutionary Computation
   (CEC), 2012 IEEE Congress on, IEEE, 2012, pp. 1--8.
 
+\bibitem{mouret2011novelty}
+J.-B. Mouret, Novelty-based multiobjectivization, in: New horizons in
+  evolutionary robotics, Springer, 2011, pp. 139--154.
+
 \bibitem{muhlenbein1993predictive}
 H.~M{\"u}hlenbein, D.~Schlierkamp-Voosen, Predictive models for the breeder
   genetic algorithm i. continuous parameter optimization, Evolutionary
@@ -246,6 +262,11 @@ I.~Ono, H.~Kita, S.~Kobayashi, Advances in evolutionary computing, chap. A
 H.~M. Pandey, A.~Chaudhary, D.~Mehrotra, A comparative review of approaches to
   prevent premature convergence in ga, Applied Soft Computing 24 (2014)
   1047--1077.
+
+\bibitem{petrowski1996clearing}
+A.~P{\'e}trowski, A clearing procedure as a niching method for genetic
+  algorithms, in: Evolutionary Computation, 1996., Proceedings of IEEE
+  International Conference on, IEEE, 1996, pp. 798--803.
 
 \bibitem{pilat2010evolutionary}
 M.~Pil{\'a}t, Evolutionary multiobjective optimization: A short survey of the
@@ -266,10 +287,10 @@ E.~Segredo, C.~Segura, C.~Le{\'o}n, A multiobjectivised memetic algorithm for
   the frequency assignment problem, in: Evolutionary Computation (CEC), 2011
   IEEE Congress on, IEEE, 2011, pp. 1132--1139.
 
-\bibitem{segredo2014fuzzy}
-E.~Segredo, C.~Segura, C.~Le{\'o}n, Fuzzy logic-controlled diversity-based
-  multi-objective memetic algorithm applied to a frequency assignment problem,
-  Engineering Applications of Artificial Intelligence 30 (2014) 199--212.
+\bibitem{segura2013using}
+C.~Segura, C.~A.~C. Coello, G.~Miranda, C.~Le{\'o}n, Using multi-objective
+  evolutionary algorithms for single-objective optimization, 4OR 11~(3) (2013)
+  201--228.
 
 \bibitem{segura2016novel}
 C.~Segura, C.~A.~C. Coello, E.~Segredo, A.~H. Aguirre, A novel diversity-based
@@ -300,6 +321,11 @@ M.~\v{C}repin\v{s}ek, S.-H. Liu, M.~Mernik, Exploration and exploitation in
 M.~\v{C}repin\v{s}ek, S.-H. Liu, M.~Mernik, {Exploration and Exploitation in
   Evolutionary Algorithms: A Survey}, ACM Computing Surveys 45~(3) (2013)
   35:1--35:33.
+
+\bibitem{vidal2013hybrid}
+T.~Vidal, T.~G. Crainic, M.~Gendreau, C.~Prins, A hybrid genetic algorithm with
+  adaptive diversity management for a large class of vehicle routing problems
+  with time-windows, Computers \& operations research 40~(1) (2013) 475--489.
 
 \bibitem{voigt1995fuzzy}
 H.-M. Voigt, H.~M{\"u}hlenbein, D.~Cvetkovic, Fuzzy recombination for the
@@ -344,6 +370,10 @@ L.~Zhao, C.-j. Sun, X.-c. Huang, B.-x. Zhou, Differential evolution with
 Q.~Zhu, Q.~Lin, Z.~Du, Z.~Liang, W.~Wang, Z.~Zhu, J.~Chen, P.~Huang, Z.~Ming,
   {A novel adaptive hybrid crossover operator for multiobjective evolutionary
   algorithm }, Information Sciences 345 (2016) 177 -- 198.
+
+\bibitem{zitzler1999evolutionary}
+E.~Zitzler, Evolutionary algorithms for multiobjective optimization: Methods
+  and applications, vol.~63, Citeseer, 1999.
 
 \bibitem{zitzler1999multiobjective}
 E.~Zitzler, L.~Thiele, Multiobjective evolutionary algorithms: a comparative

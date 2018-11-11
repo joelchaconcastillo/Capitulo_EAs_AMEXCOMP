@@ -1,28 +1,24 @@
 \BOOKMARK [1][-]{section.1}{Introducci\363n}{}% 1
 \BOOKMARK [1][-]{section.2}{Preservaci\363n de diversidad en algoritmos evolutivos}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Taxonom\355as basadas en el mecanismo para promover la diversidad}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.1}{Clasificaciones de mecanismos para promover la diversidad}{section.2}% 3
 \BOOKMARK [2][-]{subsection.2.2}{Esquemas cl\341sicos para administrar la diversidad}{section.2}% 4
 \BOOKMARK [2][-]{subsection.2.3}{Esquemas de reemplazamiento basados en diversidad}{section.2}% 5
 \BOOKMARK [2][-]{subsection.2.4}{Diversidad en evoluci\363n diferencial}{section.2}% 6
 \BOOKMARK [1][-]{section.3}{Dise\361o de evoluci\363n diferencial basado en diversidad}{}% 7
-\BOOKMARK [2][-]{subsection.3.1}{Evoluci\363n diferencial: conceptos b\341sicos}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.1}{Evoluci\363n diferencial: Conceptos b\341sicos}{section.3}% 8
 \BOOKMARK [3][-]{subsubsection.3.1.1}{Inicializaci\363n}{subsection.3.1}% 9
 \BOOKMARK [3][-]{subsubsection.3.1.2}{Operador de mutaci\363n}{subsection.3.1}% 10
-\BOOKMARK [3][-]{subsubsection.3.1.3}{Operador de cruce}{subsection.3.1}% 11
+\BOOKMARK [3][-]{subsubsection.3.1.3}{Operador de cruza}{subsection.3.1}% 11
 \BOOKMARK [3][-]{subsubsection.3.1.4}{Operador de selecci\363n}{subsection.3.1}% 12
-\BOOKMARK [2][-]{subsection.3.2}{Propuesta}{section.3}% 13
-\BOOKMARK [2][-]{subsection.3.3}{Resultados de-edm }{section.3}% 14
-\BOOKMARK [2][-]{subsection.3.4}{An\341lisis emp\355rico del factor de distancia inicial}{section.3}% 15
-\BOOKMARK [1][-]{section.4}{Dise\361o de operadores de cruce basados en diversidad}{}% 16
-\BOOKMARK [2][-]{subsection.4.1}{Algoritmos evolutivos multi-objetivo}{section.4}% 17
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Algoritmos basados en el concepto de dominancia - NSGA-II }{subsection.4.1}% 18
-\BOOKMARK [3][-]{subsubsection.4.1.2}{Algoritmos multi-objetivo basados en descomposici\363n - MOEA/D}{subsection.4.1}% 19
-\BOOKMARK [3][-]{subsubsection.4.1.3}{Algoritmos multi-objetivo basados en indicadores - SMS-EMOA}{subsection.4.1}% 20
-\BOOKMARK [2][-]{subsection.4.2}{Operadores de cruce}{section.4}% 21
-\BOOKMARK [3][-]{subsubsection.4.2.1}{El operador de cruce basado en simulaci\363n binaria - SBX}{subsection.4.2}% 22
-\BOOKMARK [3][-]{subsubsection.4.2.2}{Implementaci\363n y an\341lisis del operador sbx}{subsection.4.2}% 23
-\BOOKMARK [2][-]{subsection.4.3}{Propuesta - dsbx}{section.4}% 24
-\BOOKMARK [2][-]{subsection.4.4}{Resultados}{section.4}% 25
-\BOOKMARK [2][-]{subsection.4.5}{An\341lisis de cada componente en el operador sbx}{section.4}% 26
-\BOOKMARK [2][-]{subsection.4.6}{Modificaci\363n simult\341nea de varios componentes}{section.4}% 27
-\BOOKMARK [1][-]{section.5}{Conclusiones y trabajo futuro}{}% 28
+\BOOKMARK [2][-]{subsection.3.2}{Propuesta basada en diversidad}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.3}{Resultados de de-edm }{section.3}% 14
+\BOOKMARK [1][-]{section.4}{Dise\361o de operadores de cruza basados en diversidad}{}% 15
+\BOOKMARK [2][-]{subsection.4.1}{Algoritmos evolutivos multi-objetivo}{section.4}% 16
+\BOOKMARK [2][-]{subsection.4.2}{Operadores de cruza}{section.4}% 17
+\BOOKMARK [3][-]{subsubsection.4.2.1}{El operador de cruza basado en simulaci\363n binaria - SBX}{subsection.4.2}% 18
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Implementaci\363n y an\341lisis del operador sbx}{subsection.4.2}% 19
+\BOOKMARK [2][-]{subsection.4.3}{Propuesta - dsbx}{section.4}% 20
+\BOOKMARK [2][-]{subsection.4.4}{Resultados}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.5}{An\341lisis de cada modificaci\363n en el operador sbx}{section.4}% 22
+\BOOKMARK [2][-]{subsection.4.6}{Modificaci\363n simult\341nea de varios componentes}{section.4}% 23
+\BOOKMARK [1][-]{section.5}{Conclusiones y trabajo futuro}{}% 24
