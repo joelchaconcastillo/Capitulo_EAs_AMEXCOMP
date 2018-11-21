@@ -1,0 +1,194 @@
+%\documentclass[review,3p]{elsarticle}
+%\documentclass[preprint,3p]{elsarticle}
+\documentclass[3p]{elsarticle}
+
+%\usepackage{lineno,hyperref}
+%\modulolinenumbers[5]
+
+\journal{AMEXCOMP}
+\usepackage[spanish]{babel}
+\selectlanguage{spanish}
+\decimalpoint
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+%\usepackage{cite}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{multirow}
+%\usepackage{algpseudocode}
+%\usepackage[none]{hyphenat}
+\usepackage{algorithm}
+\usepackage{hyperref}
+\usepackage[noend]{algorithmic}
+%\usepackage[]{algorithm2e}
+\usepackage[normalem]{ulem}
+ \useunder{\uline}{\ul}{}
+
+
+\newcommand{\CLR}{{\sc clr}}
+\newcommand{\DCN}{{\sc dcn}}
+\newcommand{\DE}{{\sc de}}
+\newcommand{\DEEDM}{{\sc de-edm}}
+\newcommand{\EAS}{{\sc ea}s}
+\newcommand{\EA}{{\sc ea}}
+\newcommand{\RMDDC}{{\sc rmddc}}
+\newcommand{\CEC}{{\sc cec}}
+\newcommand{\DSBX}{{\sc dsbx}}
+\newcommand{\SBX}{{\sc sbx}}
+\newcommand{\BLX}{{\sc blx}}
+\newcommand{\UNDX}{{\sc undx}}
+\newcommand{\SPX}{{\sc spx}}
+\newcommand{\MOEAS}{{\sc moea}s}
+\newcommand{\MOEA}{{\sc moea}}
+\newcommand{\SMSEMOA}{{\sc SMS-EMOA}}
+\newcommand{\MOP}{{\sc MOP}}
+\newcommand{\MOEAD}{{\sc MOEA/D}}
+\newcommand{\MOEADDE}{{\sc MOEA/D-DE}}
+\newcommand{\NSGAII}{{\sc NSGA-II}}
+\newcommand{\DEMO}{{\sc demo}}
+\newcommand{\WFG}{{\sc wfg}}
+\newcommand{\DTLZ}{{\sc dtlz}}
+\newcommand{\UF}{{\sc uf}}
+%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% Elsevier bibliography styles
+%%%%%%%%%%%%%%%%%%%%%%%
+%% To change the style, put a % in front of the second line of the current style and
+%% remove the % from the second line of the style you would like to use.
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Numbered
+%\bibliographystyle{model1-num-names}
+
+%% Numbered without titles
+%\bibliographystyle{model1a-num-names}
+
+%% Harvard
+%\bibliographystyle{model2-names.bst}\biboptions{authoryear}
+
+%% Vancouver numbered
+%\usepackage{numcompress}\bibliographystyle{model3-num-names}
+
+%% Vancouver name/year
+%\usepackage{numcompress}\bibliographystyle{model4-names}\biboptions{authoryear}
+
+%% APA style
+%\bibliographystyle{model5-names}\biboptions{authoryear}
+
+%% AMA style
+%\usepackage{numcompress}\bibliographystyle{model6-num-names}
+\usepackage{xcolor}
+%% `Elsevier LaTeX' style
+\bibliographystyle{elsart-num-sort}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newcommand{\EAS}{{\sc ea}s}
+%\newcommand{\CDE}{c{\sc de}}
+%\newcommand{\DE}{{\sc de}}
+%\newcommand{\HMR}{{\sc hmr}}
+%\newcommand{\METCO}{\mbox{\sc{metco}}{}}
+%\newcommand{\NP}{{\sc np}}
+%\mathcode`\.=\mathcode`\,
+%\DeclareMathSymbol{.}{\mathord}{letters}{"3B}
+%\mathcode`\.="8000
+%{\catcode`\.=\active
+%\gdef.{,}}
+
+\renewcommand\spanishtablename{Tabla}
+\makeatletter
+\renewcommand{\ALG@name}{Algoritmo}
+\makeatother
+
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Importancia de la Diversidad en el Diseño de Algoritmos Evolutivos}
+%\tnotetext[mytitlenote]{Fully documented templates are available in the elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
+
+%% or include affiliations in footnotes:
+\author[label1]{Carlos Segura\corref{cor1}}
+\ead{carlos.segura@cimat.mx}
+
+\author[label1]{Joel Chac\'on Castillo}
+\ead{joel.chacon@cimat.mx}
+
+
+%\cortext[cor1]{Corresponding author. Tel.: + 52 473 732 7155}
+\cortext[cor1]{Autor de contacto.}
+\address[label1]{Área de Ciencias de Computación, Centro de Investigación de Matemáticas (CIMAT), Callej\'on Jalisco s/n, Mineral de Valenciana, Guanajuato, Guanajuato 36240, México}
+%\address[label1]{Area of Computer Science, Centre for Research in Mathematics (CIMAT), Callej\'on Jalisco s/n, Mineral de Valenciana, Guanajuato, Guanajuato 36240, Mexico}
+
+\begin{abstract}
+La convergencia prematura es una de las mayores problemáticas que afectan al rendimiento de las metaheurísticas poblacionales por lo que
+a la hora de diseñar algoritmos evolutivos es un aspecto a tener en cuenta.
+%
+En este capítulo se enumeran diferentes técnicas que se han propuesto a lo largo de las últimas décadas para lidiar con este problema.
+%
+Una de las alternativas más exitosas consiste en examinar los efectos que los diferentes componentes del algoritmo evolutivo
+tienen sobre la diversidad mantenida en la población y con base en ello rediseñarlos para modificar su comportamiento de forma dinámica.
+%
+Con el objetivo de ilustrar de una forma detallada este último grupo de técnicas, se discuten dos mecanismos que pertenecen a este grupo.
+%
+El primero se aplica en el ámbito de evolución diferencial y consiste en una estrategia de reemplazo que combina una población élite con un mecanismo para mantener 
+la diversidad de forma explícita.
+%
+%La novedad de esta primera propuesta es el uso de un balanceo dinámico entre exploración e intensificación en las distintas etapas de optimización.
+%
+%La validación experimental es llevada a cabo con varios problemas de prueba propuestos en problemas de concurso del \textit{IEEE Congress on Evolutionary Computation}.
+%
+El segundo caso está enfocado a los operadores de cruza, donde concretamente se analiza y extiende el Operador de Cruza basado en Simulación 
+Binaria (Simulated Binary Crossover - SBX).
+%
+En las extensiones se considera el criterio de paro para modificar de forma dinámica el comportamiento del operador con el propósito de inducir un cambio gradual 
+desde exploración hacia intensificación en el proceso de búsqueda.
+%
+La validación experimental se realizó con algunos de los problemas de prueba más populares del ámbito mono-objetivo y multi-objetivo,
+alcanzándose mejoras significativas en ambos casos.
+%
+\end{abstract}
+
+\begin{keyword}
+Diversidad \sep Convergencia Prematura \sep Evolución Diferencial \sep Optimización Multi-objetivo 
+\end{keyword}
+
+\end{frontmatter}
+
+%\linenumbers
+
+\section{Introducción}
+\label{sec:Introduction}
+\input{Introduction.tex}
+
+%\section{Mecanismos para evitar la convergencia prematura}
+\section{Preservación de diversidad en algoritmos evolutivos}
+\label{sec:Mecanismos}
+\input{Mecanismos.tex}
+
+\section{Diseño de evolución diferencial basado en diversidad}
+\label{sec:ED}
+\input{Evolucion_Diferencial.tex}
+
+\section{Diseño de operadores de cruza basados en diversidad}
+\label{sec:Operadores}
+\input{Operadores.tex}
+
+\section{Conclusiones y trabajo futuro}
+\label{sec:Conclusion}
+\input{Conclusion.tex}
+
+\section*{Para saber más}
+\label{sec:Para_saber_mas}
+\input{Para_saber_mas.tex}
+
+\section*{Agradeciemientos}
+Los autores agradecen el apoyo financiero proporcionado por CONACyT a través del proyecto no. 285599.
+
+%\bibliographystyle{spphys}       % APS-like style for physics
+
+\bibliography{AMEXCOMP-Segura-18}
+
+\end{document}

@@ -1,0 +1,208 @@
+La convergencia prematura es una problemática muy conocida en el ámbito de los \EAS{} por lo que se han desarrollado gran cantidad de técnicas 
+para lidiar con la misma~\cite{pandey2014comparative}.
+%
+Estas técnicas modifican de manera directa o indirecta la cantidad de diversidad mantenida por el algoritmo~\cite{Joel:Crepinsek}
+y varían desde técnicas generales hasta mecanismos dependientes de un problema dado.
+%
+En este apartado se revisan algunas de las técnicas generales más populares.
+%
+Inicialmente, se describen algunas maneras de clasificar a este tipo de estrategias, para posteriormente
+describir mecanismos clásicos específicos, así como algunas estrategias más novedosas que se basan en modificar
+la estrategia de reemplazamiento.
+%
+Finalmente, dado que en este capítulo se extiende \DE{}, se revisan también los trabajos de esta área que tienen una relación
+estrecha con el manejo de diversidad.
+%
+Se recomienda a los lectores que requieran conocer estos mecanismos con más detalle consultar~\cite{Joel:Crepinsek} así como los artículos
+específicos en que cada método es propuesto.
+
+\subsection{Clasificaciones de mecanismos para promover la diversidad}
+
+Debido a la gran cantidad de métodos desarrollados en esta área, se han propuesto varias clasificaciones de los mismos.
+%
+Liu et al.~\cite{liu2009explore} propuso diferenciar entre los enfoques uni-proceso y multi-proceso.
+%
+En el enfoque uni-proceso se modifica la preservación de la diversidad actuando sobre un único componente del \EA{}. 
+%
+Es importante destacar que en los enfoques uni-proceso no se excluye el uso de otros componentes en el proceso de exploración y/o intensificación, 
+sino que más bien, si no se consigue el balanceo adecuado, sólo se modifica una componente hasta conseguir el comportamiento deseado.
+%
+Por otra parte, en los enfoques multi-proceso se tiene en cuenta las implicaciones que varios componentes 
+provocan sobre el balanceo, y se actúa modificando o rediseñando varios de ellos
+hasta conseguir el comportamiento adecuado.
+%
+Los esquemas uni-proceso son mucho más habituales actualmente~\cite{Crepinsek:13}, y en particular las dos propuestas incluidas en este capítulo son mecanismos
+uni-proceso.
+
+Extendiendo a lo anterior, se propuso una clasificación más específica~\cite{Crepinsek:13}, en la que se tiene en cuenta cuál es la componente 
+que se cambia para categorizar a cada método.
+%
+En este sentido, los más populares son los siguientes:
+
+\begin{itemize}
+\item \textbf{Enfoques basados en la selección}: son los más clásicos y se basan en cambiar la presión de selección que se produce hacia las zonas promisorias a la hora de realizar
+la selección de padres.
+\item \textbf{Enfoques basados en población}: se modifica el modelo poblacional utilizando algunas técnicas como variar el tamaño de la población de forma
+dinámica, eliminar individuos duplicados, utilizar técnicas de infusión o establecer un estrategia de islas con migraciones.
+\item \textbf{Enfoques basados en ela cruza y/o la mutación}: se basan en rediseñar los operadores de cruza y/o mutación, considerando en algunos casos información específica del problema. También se incluyen en este grupo opciones más generales como aplicar restricciones sobre el emparejamiento y/o incluir operadores disruptivos que podrían ser utilizados sólo en ciertos instantes del proceso
+de optimización.
+\end{itemize}
+
+
+\subsection{Esquemas clásicos para administrar la diversidad}
+
+Los primeros \EAS{} se basaron principalmente en esquemas generacionales que no incluían fase de reemplazo.
+%
+En estos esquemas, la selección de padres era la principal responsable de que se muestrearan con mayor probabilidad las zonas
+más promisorias encontradas hasta el momento, y por tanto muchos de los primeros esquemas que trataron de evitar la convergencia 
+prematura se basaron en modificar el proceso de selección de padres.
+%
+Así, en los 90s se desarrollaron varios esquemas que alteraban la presión de selección~\cite{eiben2003introduction}
+de forma estática o dinámica.
+%
+Sin embargo, con base en varios estudios teóricos y experimentales se observó que, generalmente, actuar exclusivamente sobre el operador de selección no es suficiente, especialmente
+cuando se quieren realizar ejecuciones a largo plazo, ya que se requerirían poblaciones excesivamente grandes para mantener un grado adecuado de diversidad.
+
+Otra alternativa fue modificar los modelos poblacionales, encontrando en este grupo los esquemas basados en islas~\cite{alba2005parallel}, los celulares
+o, más recientemente, los basados en \textit{agrupaciones o clústeres}~\cite{gao2014cluster}.
+%
+La idea de introducir restricciones en el emparejamiento, principalmente con base en la ubicación de los individuos en el espacio de búsqueda también
+ha sido bastante exitosa aunque controlar los mismos para obtener el balanceo apropiado ante diferentes criterios de parada
+es bastante complejo.
+%
+En algunos casos resultó ser más prometedor promover el emparejamiento entre individuos no similares~\cite{Joel:CHC}, mientras que en otros escenarios 
+se hace exactamente lo opuesto~\cite{deb1989investigation}.
+%
+Otro problema común de muchas de las estrategias anteriores es que suelen introducir parámetros adicionales, por lo que el proceso de ajuste de parámetros, que ya de por sí
+es un problema importante en los \EAS{}, se vuelve aún más complejo.
+%
+Es importante resaltar que todas estas estrategias clásicas no evitan por completo la convergencia sino que la idea es disponer de mecanismos para acelerarla o retrasarla.
+
+Otra alternativa diferente ha sido adaptar la fase de variación.
+%
+En este sentido se han desarrollado diversas técnicas para controlar los parámetros que se consideran en la variación con el propósito de 
+adaptar el balanceo entre exploración e intensificación.
+%
+En algunos casos esto se consigue usando distintos valores en los parámetros para distintas etapas a lo largo del proceso de optimización~\cite{yu2014differential},
+mientras que en otros casos se hacen cambios más drásticos y se consideran varios operadores con distintas propiedades~\cite{lobo2007parameter}.
+%
+También existen mecanismos adaptativos que usan una memoria para almacenar información histórica sobre los efectos de la variación
+y con base en ello ir modificándola~\cite{yuen2009genetic}.
+%
+Cabe destacar que en la mayor parte de estos esquemas no se considera la diversidad de forma directa, sino que sólo se considera para analizar el comportamiento
+y con base en ello se procede a un rediseño.
+
+Finalmente, un esquema muy sencillo pero no por ello menos importante es el basado en reinicios.
+%
+En estos esquemas, en lugar de evitar la convergencia acelerada, se aplica un reinicio total o parcial de la población cada cierto número de
+generaciones o cuando se detecta que la población ha convergido.
+%
+Con base en esto se han propuesto diversas estrategias para establecer los puntos de reinicio~\cite{jansen2002analysis}.
+%
+Estos esquemas se implementan de forma muy sencilla y en algunos casos han proporcionado mejoras significativas~\cite{koumousis2006saw} por lo que
+es un método a tener en cuenta, al menos como alternativa inicial.
+%
+Es común combinar las estrategias basadas en reinicio con algunas de las técnicas anteriores, ya que dichas técnicas están basadas en mantener
+la diversidad, mientras que en esta última el objetivo es recuperar la diversidad.
+
+\subsection{Esquemas de reemplazamiento basados en diversidad}
+
+Recientemente se han propuesto diversos mecanismos que modifican la fase de reemplazo para preservar la diversidad.
+%
+La idea principal de estos esquemas es inducir un grado de exploración adecuado diversificando a los individuos sobrevivientes,
+de forma que los operadores de reproducción puedan generar nuevas soluciones en diferentes regiones en las siguientes generaciones.
+%
+Estos métodos están basados en el principio de que los operadores de cruza tienen un efecto de exploración al 
+considerar individuos distantes y de intensificación al considerar individuos próximos~\cite{eiben1998evolutionary}.
+
+El esquema de pre-selección propuesto por Cavicchio~\cite{grefenstette1986optimization} es uno de los primeros estudios que utilizan 
+la fase de reemplazamiento para controlar la diversidad.
+%
+El esquema inicial de Cavicchio se extendió para generar el esquema denominado \textit{amontonamiento o crowding}~\cite{de1975analysis}, el cual ha sido muy popular 
+en los últimos años~\cite{mahfoud1992crowding, mengshoel2014adaptive}.
+%
+El principio del crowding se basa en que los nuevos individuos que entren en la población sustituyan a individuos similares de generaciones anteriores, y con base
+en este principio, se han formulado diversas implementaciones.
+
+En esta misma línea, se han propuesto otras estrategias de reemplazo con el propósito de promover la diversidad.
+%
+Uno de los procedimientos más populares es la \textit{Estrategia de Limpieza} (Clearing Strategy - \CLR{})~\cite{lozano2008replacement}.
+%
+En el procedimiento \CLR{} se agrupan a los individuos en grupos denominados nichos, y los mejores individuos de cada nicho son preservados e incluidos 
+en la población de la siguiente generación.
+%
+Un inconveniente de este procedimiento es que los casos en que se detectan muchos nichos provocan una fuerte inmovilización de la población.
+%
+Por ello, Petrowski~\cite{petrowski1996clearing} propuso una variante para únicamente seleccionar a individuos cuya aptitud sea mejor que la media de la población.
+
+
+Otros métodos de este grupo consideran funciones de aptitud que combinan la función objetivo original con la diversidad.
+%
+Sin embargo, es complejo construir una función compuesta ya que las dos mediciones podrían no ser directamente compatibles,
+y por lo tanto, las funciones adecuadas suelen depender de cada problema.
+%
+Una forma de suavizar este inconveniente fue propuesto en el algoritmo de combinación (COMB)~\cite{vidal2013hybrid} donde los individuos son ordenados 
+y categorizados con base en su aptitud y contribución a la diversidad, y la función compuesta se diseña con base en el orden y no con base en los valores de función objetivo
+y contribución a diversidad.
+%
+La principal desventaja del COMB es que requiere dos parámetros de usuario, aunque independientemente de esto, se ha usado con bastante éxito.
+%
+Otra alternativa es el procedimiento \textit{Reemplazamiento Basado en Contribución a la Diversidad y Sustitución del Peor} 
+(Contribution of Diversity/Replace Worst - CD/RW)~\cite{lozano2008replacement}.
+%
+En el método CD/RW un nuevo individuo reemplaza a un miembro de la población cuyo rendimiento sea peor tanto en aptitud como en contribución a la diversidad.
+%
+En caso de no encontrar un peor individuo bajo estos dos criterios, se procede a reemplazar al peor individuo en la población considerando únicamente a la aptitud.
+%
+Una última alternativa se basa en considerar a la contribución a la diversidad como un objetivo adicional y aplicar un esquema de 
+optimización multi-objetivo~\cite{bui2005multiobjective}~\cite{mouret2011novelty}.
+%
+Estos enfoques son identificados como algoritmos multi-objetivo basados en diversidad.
+%
+Existen varias estrategias para calcular el objetivo auxiliar~\cite{segura2013using}.
+%
+Uno de los enfoques más populares consiste en calcular la contribución a la diversidad de cada individuo con base en 
+la \textit{Distancia al Vecino más Cercano} (Distance to the Closest Neighbor - DCN)~\cite{segura2016novel} de entre los individuos que ya hayan sido seleccionados
+como supervivientes.
+
+
+\subsection{Diversidad en evolución diferencial}
+%\subsection{Diversity in Differential Evolution}
+
+Los algoritmos basados en \DE{} son altamente susceptibles a la pérdida de diversidad debido a que se basan en una estrategia de selección muy elitista.
+%
+Debido a ello, se han desarrollado varios análisis para lidiar con este problema.
+%
+Dado que en el área se conoce, al menos de manera general, las implicaciones que tiene cada parámetro sobre la diversidad, algunos autores han trabajado
+en estimar de forma teórica cuáles deben ser los parámetros adecuados para que se produzca cierto tipo de comportamiento~\cite{zaharie2003control}.
+%
+Otros autores han estudiado el efecto que tiene la norma de los vectores de diferencia sobre la mutación~\cite{montgomery2009differential} y con base
+en ello se han propuesto mecanismos que prohíben ciertos movimientos que pueden resultar perjudiciales para la diversidad~\cite{montgomery2012simple}.
+%
+En este último estudio, el tipo de movimientos aceptados varía a lo largo de la ejecución, descartando a los movimientos cuyos desplazamientos sean menores
+a un umbral el cual es decrementado conforme transcurren las generaciones.
+%
+Además, se han propuesto otras formas para establecer los movimientos aceptados~\cite{bolufe2013differential}.
+
+Una alternativa distinta se basa en alterar el operador de selección~\cite{sa2008exploration}.
+%
+Específicamente, con el propósito de mantener mayor diversidad en la población se altera la presión de selección utilizando una selección probabilística que
+permite escapar en algunos casos de las bases de atracción de óptimos locales.
+%
+Sin embargo, este método no es demasiado robusto debido a que considera la aptitud para definir las probabilidades para seleccionar a un individuo por lo que ciertas 
+transformaciones de la función pueden modificar de forma drástica el tipo de búsqueda que se realiza.
+
+Finalmente, la variante \DE{} con \textit{Diversidad de la Población Auto-Mejorado} (\textit{Auto-Enhanced Population Diversity} - \textsc{aepd}) 
+mide la diversidad de forma explícita y cuando se detecta la existencia de un nivel bajo de diversidad en la población, se 
+lanza un mecanismo de diversificación~\cite{yang2015differential}.
+%
+Esta propuesta se ha extendido para considerar diferentes esquemas de perturbación~\cite{zhao2016differential}.
+
+Es interesante hacer notar que las variantes de \DE{} que alcanzaron los primeros lugares en varias competencias de optimización durante los últimos años
+no consideran estas modificaciones, y además estas variantes no han sido incorporadas en las herramientas de optimización más populares.
+%
+Esto puede deberse a que muchos de los concursos están orientados a obtener resultados en un número de 
+evaluaciones bastante limitado en lugar de a largo plazo,
+que es el ámbito en el que más beneficios suelen dar los mecanismos de control de diversidad.
+
+

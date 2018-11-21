@@ -1,0 +1,117 @@
+Los Algoritmos Evolutivos (Evolutionary Algorithms --- \EAS{}) son considerados como uno de los enfoques con mayor eficacia para resolver distintas categorías de 
+problemas de optimización.
+%
+Se han desarrollado diversas variantes que han sido aplicadas en múltiples campos, como en transporte, economía o ingeniería.
+%
+Particularmente, se han aplicado tanto en problemas del dominio continuo~\cite{glover2005handbook} como del dominio discreto~\cite{Joel:Dynamic_FAP}.
+%
+En general, los \EAS{} han sido especialmente exitosos en la resolución de problemas complejos en los que los enfoques exactos
+no son actualmente aplicables, como por ejemplo, en problemas NP-completos con espacios de búsqueda grandes~\cite{chakraborty2008advances}.
+% 
+Para el ámbito de este capítulo se hace uso de problemas continuos mono-objetivo y multi-objetivo con restricciones de caja que se pueden definir 
+tal y como se indica en la Ecuación (\ref{eqn:Model_general}).
+
+\begin{equation}
+ \label{eqn:Model_general}
+   \begin{split}
+    Minimizar \quad & \vec{F}(\vec{X})\\
+%   Sujeto \quad a \quad &  x_i^{(L)} \leq x_i \leq x_i^{(U)}, \quad i=1,2,..., D \\
+   Sujeto \quad a \quad & \vec{X} \in \Omega
+   \end{split}
+\end{equation}
+
+donde $\vec{X}$ es un vector compuesto por $D$ variables continuas de decisión $\vec{X} = [x_1, x_2, ..., x_D]$, 
+cada variable pertenece al conjunto de los reales $x_i \in \Re$,
+$D$ es la dimensión correspondiente al espacio de las variables de decisión, $\vec{F}$ es un vector compuesto por $M$ funciones objetivo $\vec{F} = [f_1(\vec{X}), f_2(\vec{X}), ..., f_M(\vec{X})]$,
+$\Omega$ es el espacio factible cuyo límite inferior es $x_i^{(L)}$ y límite superior es $x_i^{(U)}$, es decir $\Omega = \prod _{j=1}^D[x_j^{(L)}, x_j^{(U)}]$. 
+Cada vector de variables es mapeado con $M$-funciones objetivo $\vec{F}(\vec{X})( \vec{F} : \Omega \subseteq \Re^D \rightarrow \Re^M)$ al espacio $\Re^M$ que es conocido como el espacio objetivo.
+
+Actualmente, los \EAS{} son una de las metaheurísticas más conocidas~\cite{glover2005handbook}, pero a pesar de su éxito y de su uso tan extendido, adaptarlas a nuevos problemas implica la toma de varias decisiones de diseño complejas.
+%
+Particularmente, a la hora de diseñar de forma apropiada un \EA{}, se ha visto que es muy importante conseguir
+inducir un balanceo adecuado entre la exploración e intensificación del espacio de búsqueda~\cite{herrera1996adaptation}.
+%
+Nótese en este punto que, de manera informal, la exploración del espacio de búsqueda consiste en evaluar regiones del espacio de búsqueda que no han sido muestreadas
+con el fin de detectar regiones promisorias, y la explotación consiste en muestrear en zonas ya evaluadas previamente para realizar una búsqueda más profunda 
+con el fin de encontrar soluciones más refinadas y de mayor calidad.
+%
+Cuando en los algoritmos evolutivos todas o casi todas las soluciones están en regiones distantes --- alta diversidad --- se produce habitualmente una búsqueda exploratoria, 
+es decir, muchas de las nuevas soluciones evaluadas serán distantes a las ya evaluadas anteriormente.
+%
+Sin embargo, cuando casi todas las soluciones están en una o en unas pocas regiones, se produce una búsqueda intensificadora.
+%
+Uno de los problemas a la hora de diseñar los algoritmos evolutivos es que en muchos casos no se comprenden todas las implicaciones que los diferentes componentes
+tienen sobre el mantenimiento de la diversidad de la población y por tanto, sobre el balanceo entre exploración e intensificación~\cite{Crepinsek:13}.
+%
+Por ello, analizar el comportamiento y rediseñar en base a lo que está ocurriendo en este aspecto, es parte del proceso de diseño de los \EAS{}.
+
+Relacionado con lo anterior, aparece el concepto de convergencia prematura~\cite{Crepinsek:13}.
+%
+Se dice que un algoritmo converge de forma prematura cuando mucho antes de alcanzar el criterio de paro, todas las soluciones están en una zona muy pequeña del espacio de búsqueda.
+%
+En este sentido, a partir de ese momento es difícil seguir mejorando las soluciones de forma significativa ya que con alta probabilidad sólo se va a realizar un muestreo de soluciones en dicha
+región.
+%
+Por ello, es importante detectar si esto ocurre y en tal caso rediseñar algunos aspectos del \EA{}
+para preservar una mayor diversidad.
+%
+Sin embargo, si la población es muy diversa durante todo el proceso de búsqueda, se podría no alcanzar un grado adecuado de intensificación y por lo tanto 
+se tendría una convergencia lenta que posiblemente también resultaría en soluciones de baja calidad.
+%
+Por esta razón, Mahfoud~\cite{dasgupta2013evolutionary} utilizó el concepto de diversidad útil para referirse a la cantidad de diversidad necesaria para generar 
+soluciones de alta calidad.
+
+En relación al diseño de \EAS{}, se puede observar que en sus inicios la mayoría de enfoques fueron esquemas generacionales~\cite{de2006evolutionary} en los 
+que las soluciones hijas reemplazaban a la población anterior sin importar su respectiva aptitud o grado de diversidad.
+%
+En estos esquemas iniciales se usaba la selección de padres para promover que el proceso de muestreo se realizara con mayor probabilidad en las regiones más promisorias encontradas. 
+%
+Por ello, con el propósito de alcanzar un balanceo adecuado entre exploración e intensificación, se desarrollaron muchas estrategias de selección de padres
+que permitían centrarse con mayor o menor velocidad en las regiones promisorias.
+%
+Además, se desarrollaron alternativas que modifican otros aspectos como la estrategia de variación~\cite{Joel:herrera2003fuzzy} y/o 
+el modelo poblacional~\cite{alba2005parallel}.
+%
+En la mayor parte de \EAS{} más recientes, se introduce además una fase de reemplazamiento~\cite{eiben2003introduction} por lo que
+la nueva población no tiene que formarse exclusivamente con los hijos,
+más bien se usan mecanismos para combinar la población anterior con la población hija y determinar así los nuevos sobrevivientes.
+%
+En este contexto, se suele introducir elitismo en los algoritmos, es decir, el mejor individuo encontrado sobrevivirá a la siguiente generación~\cite{Joel:CHC}.
+%
+De esta forma, ahora también se puede modificar esta última fase para conseguir el balanceo apropiado entre exploración e intensificación.
+
+En los últimos años, algunos de los trabajos más exitosos en el área de evitación de convergencia prematura se han basado en considerar el criterio de parada y evaluaciones
+realizadas para balancear entre exploración e intensificación~\cite{segura2016novel}.
+%
+Esto se fundamenta en la premisa de que el grado entre exploración e intensificación debería variar a lo largo de la ejecución, por lo tanto tiene sentido que las decisiones tomadas por las componentes varíen en función del instante de ejecución.
+%Esto se fundamenta en que dado que el grado entre exploración e intensificación debería variar a lo largo de la ejecución, tiene sentido que las decisiones tomadas por
+%las componentes varíen en función del instante de ejecución.
+%
+%
+Particularmente, en este capítulo se describen dos aportaciones que pertenecen a este grupo de técnicas.
+%
+La primera, que se aplica en el área de \textit{Evolución Diferencial} (Differential Evolution --- \DE{}), recibe el nombre de \DE{} \textit{Mejorado con Mantenimiento de Diversidad} 
+(\DE{} with Enhanced Diversity Maintenance --- \DEEDM{}) e integra una estrategia de reemplazo que maneja la diversidad de forma explícita con una población élite.
+%
+En la fase de reemplazo que incorpora el \DEEDM{} se promueve un balanceo dinámico entre exploración e intensificación, teniendo en cuenta para ello el criterio de paro
+y las evaluaciones transcurridas para la toma de decisiones.
+%
+Concretamente, en las primeras etapas se induce un grado de exploración alto ya que los individuos sobrevivientes son diversificados y, posteriormente, conforme transcurren las 
+generaciones se induce un mayor grado de intensificación.
+% 
+La segunda aportación está enfocada a la extensión de operadores de cruza.
+%
+Particularmente se analizan los componentes que conforman al \textit{Operador de Cruza basado en Simulación Binaria} (Simulated Binary Crossover - SBX), 
+y se propone una variante dinámica (Dynamic Simulated Binary Crossover --- \DSBX{}) en la que el comportamiento interno es alterado en base al criterio de paro y a las evaluaciones realizadas hasta el momento.
+
+El resto de este capítulo está organizado de la siguiente forma.
+%
+En primer lugar, en la sección \ref{sec:Mecanismos} se revisan algunas de las técnicas más populares que se han propuesto para promover el mantenimiento de diversidad, exponiendo una de las clasificaciones más extendidas.
+%
+Posteriormente, en la sección \ref{sec:ED} se describe y valida experimentalmente la aportación basada en evolución diferencial donde se considera la diversidad de forma explícita en la fase de reemplazamiento.
+%
+Siguiendo esta misma línea en la sección \ref{sec:Operadores} se lleva a cabo un análisis del operador de cruza \SBX{} mencionando algunas de sus implicaciones en la diversidad, 
+y se expone en base a ello una variante dinámica que se valida experimentalmente con problemas multi-objetivo.
+%
+Finalmente, en la sección \ref{sec:Conclusion} se exponen las conclusiones y trabajos futuros trazados en base a los resultados obtenidos.
+%

@@ -1,0 +1,44 @@
+La convergencia prematura es una de las debilidades más importantes de los \EAS{}.
+%
+Una de las formas de lidiar con este problema consiste en inducir un balanceo adecuado entre exploración e intensificación.
+%
+Sin embargo, obtener este balanceo no es una tarea trivial debido a que cada problema de optimización tiene características distintas y por
+ello han surgido numerosos esquemas para tratar esta problemática.
+%
+Con base en esto se han desarrollado varias taxonomías con el propósito de clasificar las diferentes formas en que se puede preservar y promover la diversidad.
+%
+En este trabajo, con el fin de ilustrar como se pueden realizar diseños de \EAS{} que tomen en cuenta el balanceo entre exploración e intensificación
+se presentan dos ejemplos.
+%
+De forma general, las propuestas establecen un comportamiento dinámico de algún componente del \EA{} teniendo en cuenta para ello el criterio de paro 
+y el instante en que se encuentra la ejecución.
+%
+Así, se obtuvo un balanceo adecuado en el que en las primeras fases se promueve más exploración y en las últimas se promueve más la intensificación. 
+%
+De modo más específico, en la primera propuesta se modifica evolución diferencial por medio de una nueva fase de reemplazo con el propósito de conseguir este balanceo. 
+%
+Además, esta contribución incorpora una población élite con el propósito de proporcionar soluciones de calidad tanto a mediano como a largo plazo.
+%
+Con base en la validación experimental llevada a cabo, se observa que esta propuesta mejora a los mejores algoritmos que se habían propuesto en una competición
+que consideró las funciones de prueba usadas en este capítulo.
+%
+Posteriormente, se presenta un análisis del operador de cruza \SBX{} y se desarrolló una variante que modifica varios componentes de forma dinámica
+considerando también el criterio de paro y las generaciones transcurridas. 
+%
+Con base en los resultados obtenidos con problemas muy populares del ámbito de optimización multi-objetivo, se muestra que usar el operador \SBX{} modificado ofrece ventajas muy importantes
+en varios \MOEAS{} y para diferentes indicadores.
+%
+De forma general se observa que obtener un balanceo apropiado entre exploración e intensificación es realmente importante, y que
+esto se puede conseguir utilizando técnicas radicalmente diferentes aunque siguiendo los mismos principios de diseño.
+
+El campo de diseño de \EAS{} es un campo muy activo y en el que hay muchas ideas aún por explorar.
+%
+Uno de los aspectos importantes es que las estrategias de control de diversidad ofrecen muchas ventajas a largo plazo, 
+pero se debe hacer el esfuerzo por conseguir que se pueda reducir el número de evaluaciones requeridas para obtener 
+resultados prometedores.
+%
+Otro aspecto importante es que, en general, la mayor parte de las estrategias de control de diversidad introduce nuevos parámetros, por lo que es importante
+combinar estos mecanismos con estrategias de control de parámetros adaptativas o auto-adaptativas para facilitar su utilización.
+%
+Finalmente, para el caso específico del \DSBX{}, sería interesante integrarlo con técnicas de aprendizaje para lidiar con problemas con dependencias y mejorar
+así aún más el rendimiento de la propuesta.
